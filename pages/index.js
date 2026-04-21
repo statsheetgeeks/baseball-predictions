@@ -1,67 +1,252 @@
-import Layout from '../components/Layout'
-import { ModelCard, StatBox } from '../components/PredictionTable'
+import Image from 'next/image';
+import Link from 'next/link';
+import Layout from '../components/Layout';
 
-const CATEGORIES = [
+const CARDS = [
   {
-    title: 'Game Predictions',
-    description: '5 models — Log5, Research-Based, XGBoost, Random Forest, and Composite ensemble.',
-    href: '/games',
-    tag: 'Win Probability',
+    href:    '/games',
+    tag:     'Win Probability',
+    title:   'Game Predictions',
+    desc:    'Five models predicting today\'s MLB game outcomes. Log5, Research-Based, XGBoost, Random Forest, and Composite ensemble.',
+    models:  ['Log5', 'Research-Based', 'XGBoost', 'Random Forest', 'Composite'],
+    count:   5,
   },
   {
-    title: 'Hitter Predictions',
-    description: '3 models — Log5 hit probability, ML hit model, and home run probability.',
-    href: '/hitters',
-    tag: 'Batter Performance',
+    href:    '/hitters',
+    tag:     'Batter Performance',
+    title:   'Hitter Predictions',
+    desc:    'Per-player hit probability and home run projections for everyone in today\'s lineups.',
+    models:  ['Log5 Hit', 'ML Hit Model', 'HR Model'],
+    count:   3,
   },
   {
-    title: 'Pitcher Predictions',
-    description: '1 model — Strikeout projections for starting pitchers.',
-    href: '/pitchers',
-    tag: 'Pitcher Performance',
+    href:    '/pitchers',
+    tag:     'Pitcher Performance',
+    title:   'Pitcher Predictions',
+    desc:    'Projected strikeout totals for every starting pitcher on today\'s slate.',
+    models:  ['Strikeout Model'],
+    count:   1,
   },
-]
+];
+
+const STATS = [
+  { value: '9',     label: 'Prediction Models' },
+  { value: '3',     label: 'Categories' },
+  { value: 'MLB',   label: 'Official StatsAPI' },
+  { value: 'Daily', label: 'Via GitHub Actions' },
+];
 
 export default function Home() {
   return (
-    <Layout title="Home">
+    <Layout title="Dashboard">
 
-      {/* Hero */}
-      <div style={{ marginBottom: '3rem' }}>
-        <div className="mono" style={{ fontSize: 11, color: 'var(--red)', letterSpacing: '0.15em',
-                                       textTransform: 'uppercase', marginBottom: 16 }}>
-          MLB Analytics Platform
+      {/* ── Hero ──────────────────────────────────────────────────────────── */}
+      <div style={{
+        display:       'flex',
+        alignItems:    'center',
+        gap:           36,
+        marginBottom:  44,
+        paddingBottom: 36,
+        borderBottom:  '1px solid var(--navy-border)',
+        flexWrap:      'wrap',
+      }}>
+        <Image
+          src="/images/logo-blue.png"
+          alt="Chalk Line Labs"
+          width={120}
+          height={120}
+          style={{ objectFit: 'contain', flexShrink: 0 }}
+          priority
+        />
+        <div>
+          <div style={{
+            fontFamily:    "'Barlow Condensed', sans-serif",
+            fontWeight:    900,
+            fontSize:      48,
+            letterSpacing: 1,
+            lineHeight:    1,
+            color:         'var(--white)',
+            marginBottom:  8,
+          }}>
+            CHALK LINE LABS
+          </div>
+          <div style={{
+            fontFamily:    "'Barlow Condensed', sans-serif",
+            fontWeight:    600,
+            fontSize:      16,
+            letterSpacing: 3,
+            textTransform: 'uppercase',
+            color:         'var(--accent)',
+            marginBottom:  14,
+          }}>
+            MLB Prediction Dashboard
+          </div>
+          <p style={{
+            color:      'var(--silver)',
+            fontSize:   14.5,
+            maxWidth:   520,
+            lineHeight: 1.65,
+          }}>
+            Statistical and machine-learning models for MLB game outcomes, individual
+            hitter performance, and pitcher projections — powered by the MLB StatsAPI,
+            updated daily.
+          </p>
         </div>
-        <h1 className="display" style={{ fontSize: '3.5rem', color: 'var(--text)', lineHeight: 1.05, marginBottom: 16 }}>
-          DATA-DRIVEN<br />
-          <span style={{ color: 'var(--red)' }}>BASEBALL</span><br />
-          PREDICTIONS
-        </h1>
-        <p style={{ fontSize: 14, color: 'var(--muted)', maxWidth: 500, lineHeight: 1.7 }}>
-          Statistical and machine learning models for MLB game outcomes, individual hitter 
-          performance, and pitcher projections — powered by the MLB Statsapi, updated daily.
-        </p>
       </div>
 
-      {/* Quick stats */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
-                    gap: 12, marginBottom: '3rem' }}>
-        <StatBox label="Models" value="9" sub="Prediction models" />
-        <StatBox label="Categories" value="3" sub="Games · Hitters · Pitchers" />
-        <StatBox label="Data" value="MLB" sub="Official Statsapi" />
-        <StatBox label="Updated" value="Daily" sub="Via GitHub Actions" />
+      {/* ── Stats bar ────────────────────────────────────────────────────── */}
+      <div style={{
+        display:       'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
+        gap:           1,
+        background:    'var(--navy-border)',
+        border:        '1px solid var(--navy-border)',
+        borderRadius:  10,
+        overflow:      'hidden',
+        marginBottom:  40,
+      }}>
+        {STATS.map(s => (
+          <div key={s.label} style={{
+            background:  'var(--navy)',
+            padding:     '18px 20px',
+            textAlign:   'center',
+          }}>
+            <div style={{
+              fontFamily:    "'Barlow Condensed', sans-serif",
+              fontWeight:    800,
+              fontSize:      28,
+              color:         'var(--white)',
+              lineHeight:    1,
+              marginBottom:  4,
+            }}>
+              {s.value}
+            </div>
+            <div style={{
+              fontSize:   11,
+              color:      'var(--silver-dim)',
+              fontFamily: "'DM Mono', monospace",
+              letterSpacing: 0.5,
+            }}>
+              {s.label}
+            </div>
+          </div>
+        ))}
       </div>
 
-      {/* Category cards */}
-      <div style={{ marginBottom: '1rem' }}>
-        <div className="mono" style={{ fontSize: 10, color: 'var(--muted)', letterSpacing: '0.1em',
-                                       textTransform: 'uppercase', marginBottom: 16 }}>
-          Browse by Category
-        </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
-          {CATEGORIES.map(c => <ModelCard key={c.href} {...c} />)}
-        </div>
+      {/* ── Section label ────────────────────────────────────────────────── */}
+      <div style={{
+        fontFamily:    "'Barlow Condensed', sans-serif",
+        fontWeight:    700,
+        fontSize:      12,
+        letterSpacing: 2.5,
+        textTransform: 'uppercase',
+        color:         'var(--silver-dim)',
+        marginBottom:  16,
+      }}>
+        Browse by Category
+      </div>
+
+      {/* ── Category cards ───────────────────────────────────────────────── */}
+      <div style={{
+        display:             'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))',
+        gap:                 20,
+      }}>
+        {CARDS.map(card => (
+          <Link key={card.href} href={card.href}>
+            <div style={{
+              background:   'var(--navy)',
+              border:       '1px solid var(--navy-border)',
+              borderRadius: 10,
+              padding:      '26px 24px',
+              cursor:       'pointer',
+              height:       '100%',
+              transition:   'border-color 0.15s, box-shadow 0.15s, transform 0.15s',
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.borderColor = 'var(--accent)';
+              e.currentTarget.style.boxShadow   = '0 8px 32px rgba(74,144,217,0.12)';
+              e.currentTarget.style.transform   = 'translateY(-2px)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.borderColor = 'var(--navy-border)';
+              e.currentTarget.style.boxShadow   = 'none';
+              e.currentTarget.style.transform   = 'none';
+            }}
+            >
+              {/* Tag */}
+              <div style={{
+                display:       'inline-block',
+                padding:       '3px 9px',
+                borderRadius:  4,
+                background:    'var(--accent-glow)',
+                border:        '1px solid rgba(74,144,217,0.3)',
+                color:         'var(--accent)',
+                fontSize:      11,
+                fontFamily:    "'DM Mono', monospace",
+                fontWeight:    500,
+                marginBottom:  14,
+                letterSpacing: 0.3,
+              }}>
+                {card.tag}
+              </div>
+
+              {/* Title */}
+              <div style={{
+                fontFamily:    "'Barlow Condensed', sans-serif",
+                fontWeight:    700,
+                fontSize:      24,
+                color:         'var(--white)',
+                marginBottom:  10,
+              }}>
+                {card.title}
+              </div>
+
+              {/* Description */}
+              <p style={{
+                color:        'var(--silver)',
+                fontSize:     13.5,
+                lineHeight:   1.6,
+                marginBottom: 20,
+              }}>
+                {card.desc}
+              </p>
+
+              {/* Model chips */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 20 }}>
+                {card.models.map(m => (
+                  <span key={m} style={{
+                    padding:       '3px 9px',
+                    borderRadius:  4,
+                    background:    'rgba(184,197,211,0.07)',
+                    border:        '1px solid var(--navy-border)',
+                    color:         'var(--silver)',
+                    fontSize:      11,
+                    fontFamily:    "'DM Mono', monospace",
+                  }}>
+                    {m}
+                  </span>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div style={{
+                display:     'flex',
+                alignItems:  'center',
+                gap:         6,
+                color:       'var(--accent)',
+                fontSize:    13,
+                fontFamily:  "'Barlow Condensed', sans-serif",
+                fontWeight:  700,
+                letterSpacing: 1,
+              }}>
+                VIEW PREDICTIONS
+                <span style={{ fontSize: 16 }}>→</span>
+              </div>
+            </div>
+          </Link>
+        ))}
       </div>
     </Layout>
-  )
+  );
 }
