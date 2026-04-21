@@ -1,0 +1,71 @@
+name: Run Prediction Models Daily
+
+on:
+  schedule:
+    # Runs every day at 10:00 AM ET (14:00 UTC)
+    # Adjust this time to run after MLB posts the day's schedule
+    - cron: '0 14 * * *'
+
+  # Also allows you to trigger it manually from GitHub's Actions tab
+  workflow_dispatch:
+
+jobs:
+  run-models:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Check out your repo ──────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Set up Python ────────────────────────────────────────────────────
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # ── 3. Install dependencies ─────────────────────────────────────────────
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      # ── 4. Run each model ───────────────────────────────────────────────────
+      # Each script should write its output JSON to public/data/<filename>.json
+      # See models/README.md for the expected output format.
+
+      - name: Run Games — Log5
+        run: python models/games_log5.py
+
+      - name: Run Games — Research
+        run: python models/games_research.py
+
+      - name: Run Games — XGBoost
+        run: python models/games_xgboost.py
+
+      - name: Run Games — Random Forest
+        run: python models/games_random_forest.py
+
+      - name: Run Games — Composite
+        run: python models/games_composite.py
+
+      - name: Run Hitters — Log5 Hit
+        run: python models/hitters_log5_hit.py
+
+      - name: Run Hitters — ML Hit
+        run: python models/hitters_ml_hit.py
+
+      - name: Run Hitters — HR Model
+        run: python models/hitters_hr_model.py
+
+      - name: Run Pitchers — Strikeout
+        run: python models/pitchers_strikeout.py
+
+      # ── 5. Commit updated JSON files back to the repo ──────────────────────
+      - name: Commit and push updated predictions
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/*.json
+          # Only commit if there are actual changes
+          git diff --cached --quiet || git commit -m "chore: update predictions $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push

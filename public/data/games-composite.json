@@ -1,0 +1,35 @@
+{
+  "updated": "2025-04-20T10:00:00Z",
+  "predictions": [
+    {
+      "game_time": "1:10 PM ET",
+      "home_team": "Chicago Cubs", "away_team": "Milwaukee Brewers",
+      "log5_home": 0.558, "research_home": 0.541, "xgboost_home": 0.529, "rf_home": 0.544,
+      "composite_home": 0.543, "composite_away": 0.457
+    },
+    {
+      "game_time": "4:05 PM ET",
+      "home_team": "San Diego Padres", "away_team": "Colorado Rockies",
+      "log5_home": 0.638, "research_home": 0.671, "xgboost_home": 0.701, "rf_home": 0.689,
+      "composite_home": 0.675, "composite_away": 0.325
+    },
+    {
+      "game_time": "7:05 PM ET",
+      "home_team": "New York Yankees", "away_team": "Houston Astros",
+      "log5_home": 0.574, "research_home": 0.561, "xgboost_home": 0.584, "rf_home": 0.571,
+      "composite_home": 0.573, "composite_away": 0.427
+    },
+    {
+      "game_time": "7:10 PM ET",
+      "home_team": "Los Angeles Dodgers", "away_team": "San Francisco Giants",
+      "log5_home": 0.621, "research_home": 0.601, "xgboost_home": 0.648, "rf_home": 0.634,
+      "composite_home": 0.626, "composite_away": 0.374
+    },
+    {
+      "game_time": "7:40 PM ET",
+      "home_team": "Atlanta Braves", "away_team": "Philadelphia Phillies",
+      "log5_home": 0.517, "research_home": 0.512, "xgboost_home": 0.501, "rf_home": 0.523,
+      "composite_home": 0.513, "composite_away": 0.487
+    }
+  ]
+}

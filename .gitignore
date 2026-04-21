@@ -1,0 +1,28 @@
+# Node
+node_modules/
+.next/
+out/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+venv/
+*.pkl
+*.joblib
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
+
+# Local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
