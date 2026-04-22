@@ -36,29 +36,29 @@ jobs:
       - name: Run Games — Log5
         run: python models/games_log5.py
 
-      - # name: Run Games — Research
-        # run: python models/games_research.py
+      #- name: Run Games — Research
+      #  run: python models/games_research.py
 
-      - # name: Run Games — XGBoost
-        # run: python models/games_xgboost.py
+      #- name: Run Games — XGBoost
+      #  run: python models/games_xgboost.py
 
-      - # name: Run Games — Random Forest
-        # run: python models/games_random_forest.py
+      #- name: Run Games — Random Forest
+      #  run: python models/games_random_forest.py
 
-      - # name: Run Games — Composite
-        # run: python models/games_composite.py
+      #- name: Run Games — Composite
+      #  run: python models/games_composite.py
 
-      - # name: Run Hitters — Log5 Hit
-        # run: python models/hitters_log5_hit.py
+      #- name: Run Hitters — Log5 Hit
+      #  run: python models/hitters_log5_hit.py
 
-      - # name: Run Hitters — ML Hit
-        # run: python models/hitters_ml_hit.py
+      #- name: Run Hitters — ML Hit
+      #  run: python models/hitters_ml_hit.py
 
-      - # name: Run Hitters — HR Model
-        # run: python models/hitters_hr_model.py
+      #- name: Run Hitters — HR Model
+      #  run: python models/hitters_hr_model.py
 
-      - # name: Run Pitchers — Strikeout
-        # run: python models/pitchers_strikeout.py
+      #- name: Run Pitchers — Strikeout
+      #  run: python models/pitchers_strikeout.py
 
       # ── 5. Commit updated JSON files back to the repo ──────────────────────
       # Note: public/data/ includes both the daily prediction JSON files AND
