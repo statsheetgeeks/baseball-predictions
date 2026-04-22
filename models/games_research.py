@@ -252,26 +252,24 @@ def engineer_team(games, stat_cols):
     """
     Compute 4 feature variants per stat (std, exp, r7, r15) for each team/season.
     Uses shift(1) throughout — zero data leakage.
+
+    exp variant uses pandas ewm() with com=19 (equivalent to lambda=0.95 decay
+    per game), replacing the original O(n²) Python loop with a vectorized call.
     """
     rows = []
     MK = ['team', 'season', 'date', 'is_home', 'won', 'opp_id']
     for (team, season), grp in games.groupby(['team', 'season'], sort=False):
-        grp = grp.sort_values('date').reset_index(drop=True)
+        grp   = grp.sort_values('date').reset_index(drop=True)
         stats = grp[stat_cols].apply(pd.to_numeric, errors='coerce')
 
+        # Season-to-date cumulative mean (shift 1 = only past games)
         std = stats.expanding().mean().shift(1)
 
-        weights = pd.Series([0.95 ** (len(grp) - 1 - i) for i in range(len(grp))])
-        exp_rows = []
-        for i in range(len(grp)):
-            if i == 0:
-                exp_rows.append({c: np.nan for c in stat_cols})
-            else:
-                w = weights.iloc[:i].values
-                w = w / w.sum()
-                exp_rows.append(dict(zip(stat_cols, (w @ stats.iloc[:i].values))))
-        exp = pd.DataFrame(exp_rows)
+        # Exponentially-decayed weighted mean — vectorized, same as lambda=0.95
+        # com=19 gives decay factor 1/(1+1/19) ≈ 0.95 per game
+        exp = stats.ewm(com=19, adjust=True).mean().shift(1)
 
+        # Rolling windows
         r7  = stats.rolling(ROLL7,  min_periods=1).mean().shift(1)
         r15 = stats.rolling(ROLL15, min_periods=1).mean().shift(1)
 
