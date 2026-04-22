@@ -51,23 +51,23 @@ function ConfBadge({ confidence }) {
   if (confidence == null) return null
   const pct = confidence * 100
   let bg, color
-  if      (pct >= 80) { bg = '#1a3a1a'; color = '#4ade80' }
-  else if (pct >= 70) { bg = '#1a2e3a'; color = '#60a5fa' }
-  else if (pct >= 60) { bg = '#2a2a1a'; color = '#facc15' }
-  else                { bg = '#2a1a1a'; color = '#fb923c' }
+  if      (pct >= 80) { bg = '#166534'; color = '#dcfce7' }  // dark green / light green text
+  else if (pct >= 70) { bg = '#1e3a5f'; color = '#dbeafe' }  // dark blue / light blue text
+  else if (pct >= 60) { bg = '#713f12'; color = '#fef9c3' }  // dark amber / light yellow text
+  else                { bg = '#7c2d12'; color = '#ffedd5' }  // dark red / light orange text
 
   return (
     <span style={{
-      background:   bg,
+      background:    bg,
       color,
-      border:       `1px solid ${color}40`,
-      borderRadius: 4,
-      padding:      '2px 8px',
-      fontSize:     12,
-      fontWeight:   700,
-      fontFamily:   "'Barlow Condensed', sans-serif",
+      borderRadius:  4,
+      padding:       '2px 10px',
+      fontSize:      12,
+      fontWeight:    700,
+      fontFamily:    "'Barlow Condensed', sans-serif",
       letterSpacing: 0.5,
-      whiteSpace:   'nowrap',
+      whiteSpace:    'nowrap',
+      display:       'inline-block',
     }}>
       {pct.toFixed(1)}%
     </span>
