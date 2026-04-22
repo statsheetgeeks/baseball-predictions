@@ -50,24 +50,20 @@ function downloadCSV(predictions, dateStr) {
 function ConfBadge({ confidence }) {
   if (confidence == null) return null
   const pct = confidence * 100
-  let bg, color
-  if      (pct >= 80) { bg = '#166534'; color = '#dcfce7' }  // dark green / light green text
-  else if (pct >= 70) { bg = '#1e3a5f'; color = '#dbeafe' }  // dark blue / light blue text
-  else if (pct >= 60) { bg = '#713f12'; color = '#fef9c3' }  // dark amber / light yellow text
-  else                { bg = '#7c2d12'; color = '#ffedd5' }  // dark red / light orange text
+  let color
+  if      (pct >= 80) { color = '#4ade80' }  // bright green
+  else if (pct >= 70) { color = '#60a5fa' }  // bright blue
+  else if (pct >= 60) { color = '#fbbf24' }  // bright amber
+  else                { color = '#fb923c' }  // bright orange
 
   return (
     <span style={{
-      background:    bg,
       color,
-      borderRadius:  4,
-      padding:       '2px 10px',
-      fontSize:      12,
+      fontSize:      13,
       fontWeight:    700,
       fontFamily:    "'Barlow Condensed', sans-serif",
       letterSpacing: 0.5,
       whiteSpace:    'nowrap',
-      display:       'inline-block',
     }}>
       {pct.toFixed(1)}%
     </span>
