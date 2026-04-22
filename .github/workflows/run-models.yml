@@ -9,12 +9,11 @@ on:
   # Also allows you to trigger it manually from GitHub's Actions tab
   workflow_dispatch:
   
-  permissions:
-    contents: write 
-
 jobs:
   run-models:
     runs-on: ubuntu-latest
+    permissions:
+        contents: write 
 
     steps:
       # ── 1. Check out your repo ──────────────────────────────────────────────
