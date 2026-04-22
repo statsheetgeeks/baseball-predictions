@@ -31,10 +31,9 @@ jobs:
           pip install -r requirements.txt
 
       # ── 4. Restore model cache ──────────────────────────────────────────────
-      # The mlb_cache_v2 folder holds historical game log JSONs and the trained
-      # model pkl file. Using actions/cache keeps this off your repo entirely —
-      # no large files in git, no pull conflicts on your local machine.
-      # Cache is keyed by year so it rebuilds automatically each new season.
+      # Shared cache for all ML models — game log JSONs + trained pkl files.
+      # Keyed by run ID so each run saves a fresh copy, but restores the most
+      # recent previous run via the mlb-cache- prefix fallback.
       - name: Restore model cache
         uses: actions/cache@v4
         with:
@@ -50,8 +49,8 @@ jobs:
       - name: Run Games — Research
         run: python models/games_research.py
 
-      # - name: Run Games — XGBoost
-      #   run: python models/games_xgboost.py
+      - name: Run Games — XGBoost
+        run: python models/games_xgboost.py
 
       # - name: Run Games — Random Forest
       #   run: python models/games_random_forest.py
@@ -71,9 +70,7 @@ jobs:
       # - name: Run Pitchers — Strikeout
       #   run: python models/pitchers_strikeout.py
 
-      # ── 6. Commit updated prediction JSONs back to the repo ────────────────
-      # Only public/data/ is committed — the model cache stays in Actions cache,
-      # completely off your local machine and out of git history.
+      # ── 6. Commit updated prediction JSONs ─────────────────────────────────
       - name: Commit and push updated predictions
         run: |
           git config user.name  "github-actions[bot]"
