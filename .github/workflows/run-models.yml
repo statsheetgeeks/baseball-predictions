@@ -30,7 +30,20 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      # ── 4. Run each model ───────────────────────────────────────────────────
+      # ── 4. Restore model cache ──────────────────────────────────────────────
+      # The mlb_cache_v2 folder holds historical game log JSONs and the trained
+      # model pkl file. Using actions/cache keeps this off your repo entirely —
+      # no large files in git, no pull conflicts on your local machine.
+      # Cache is keyed by year so it rebuilds automatically each new season.
+      - name: Restore model cache
+        uses: actions/cache@v4
+        with:
+          path: models/mlb_cache_v2
+          key: mlb-cache-${{ github.run_id }}
+          restore-keys: |
+            mlb-cache-
+
+      # ── 5. Run each model ───────────────────────────────────────────────────
       - name: Run Games — Log5
         run: python models/games_log5.py
 
@@ -58,14 +71,13 @@ jobs:
       # - name: Run Pitchers — Strikeout
       #   run: python models/pitchers_strikeout.py
 
-      # ── 5. Commit updated files back to the repo ───────────────────────────
-      # public/data/         — daily prediction JSONs + history files
-      # models/mlb_cache_v2/ — cached game log JSONs + trained model pkl files
+      # ── 6. Commit updated prediction JSONs back to the repo ────────────────
+      # Only public/data/ is committed — the model cache stays in Actions cache,
+      # completely off your local machine and out of git history.
       - name: Commit and push updated predictions
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add public/data/
-          git add models/mlb_cache_v2/ 2>/dev/null || true
           git diff --cached --quiet || git commit -m "chore: update predictions $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
