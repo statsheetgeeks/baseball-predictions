@@ -1,65 +1,24 @@
 {
-  "updated": "2025-04-20T10:00:00Z",
-  "predictions": [
-    {
-      "game_time": "1:10 PM ET",
-      "home_team": "Chicago Cubs",
-      "away_team": "Milwaukee Brewers",
-      "home_starter": "Justin Steele",
-      "away_starter": "Freddy Peralta",
-      "home_era": 3.44,
-      "away_era": 3.81,
-      "run_diff_home": 12,
-      "home_prob": 0.541,
-      "away_prob": 0.459
-    },
-    {
-      "game_time": "4:05 PM ET",
-      "home_team": "San Diego Padres",
-      "away_team": "Colorado Rockies",
-      "home_starter": "Dylan Cease",
-      "away_starter": "Austin Gomber",
-      "home_era": 3.12,
-      "away_era": 5.44,
-      "run_diff_home": 31,
-      "home_prob": 0.671,
-      "away_prob": 0.329
-    },
-    {
-      "game_time": "7:05 PM ET",
-      "home_team": "New York Yankees",
-      "away_team": "Houston Astros",
-      "home_starter": "Gerrit Cole",
-      "away_starter": "Framber Valdez",
-      "home_era": 2.88,
-      "away_era": 3.21,
-      "run_diff_home": 18,
-      "home_prob": 0.561,
-      "away_prob": 0.439
-    },
-    {
-      "game_time": "7:10 PM ET",
-      "home_team": "Los Angeles Dodgers",
-      "away_team": "San Francisco Giants",
-      "home_starter": "Yoshinobu Yamamoto",
-      "away_starter": "Logan Webb",
-      "home_era": 2.54,
-      "away_era": 2.98,
-      "run_diff_home": 44,
-      "home_prob": 0.601,
-      "away_prob": 0.399
-    },
-    {
-      "game_time": "7:40 PM ET",
-      "home_team": "Atlanta Braves",
-      "away_team": "Philadelphia Phillies",
-      "home_starter": "Spencer Strider",
-      "away_starter": "Zack Wheeler",
-      "home_era": 2.67,
-      "away_era": 2.91,
-      "run_diff_home": 9,
-      "home_prob": 0.512,
-      "away_prob": 0.488
-    }
-  ]
+  "updated": null,
+  "date": null,
+  "predictions": [],
+  "yesterday": {
+    "date": null,
+    "total": { "wins": 0, "losses": 0, "total": 0 },
+    "by_confidence": [
+      { "band": "50-59%", "wins": 0, "losses": 0, "total": 0 },
+      { "band": "60-69%", "wins": 0, "losses": 0, "total": 0 },
+      { "band": "70-79%", "wins": 0, "losses": 0, "total": 0 },
+      { "band": "80%+",   "wins": 0, "losses": 0, "total": 0 }
+    ]
+  },
+  "alltime": {
+    "total": { "wins": 0, "losses": 0, "total": 0 },
+    "by_confidence": [
+      { "band": "50-59%", "wins": 0, "losses": 0, "total": 0 },
+      { "band": "60-69%", "wins": 0, "losses": 0, "total": 0 },
+      { "band": "70-79%", "wins": 0, "losses": 0, "total": 0 },
+      { "band": "80%+",   "wins": 0, "losses": 0, "total": 0 }
+    ]
+  }
 }
