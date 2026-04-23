@@ -1,10 +1,24 @@
 {
-  "updated": "2025-04-20T10:00:00Z",
-  "predictions": [
-    { "game_time": "1:10 PM ET", "home_team": "Chicago Cubs",        "away_team": "Milwaukee Brewers",    "home_prob": 0.544, "away_prob": 0.456 },
-    { "game_time": "4:05 PM ET", "home_team": "San Diego Padres",    "away_team": "Colorado Rockies",     "home_prob": 0.689, "away_prob": 0.311 },
-    { "game_time": "7:05 PM ET", "home_team": "New York Yankees",    "away_team": "Houston Astros",       "home_prob": 0.571, "away_prob": 0.429 },
-    { "game_time": "7:10 PM ET", "home_team": "Los Angeles Dodgers", "away_team": "San Francisco Giants", "home_prob": 0.634, "away_prob": 0.366 },
-    { "game_time": "7:40 PM ET", "home_team": "Atlanta Braves",      "away_team": "Philadelphia Phillies","home_prob": 0.523, "away_prob": 0.477 }
-  ]
+  "updated": null,
+  "date": null,
+  "predictions": [],
+  "yesterday": {
+    "date": null,
+    "total": { "wins": 0, "losses": 0, "total": 0 },
+    "by_confidence": [
+      { "band": "50-59%", "wins": 0, "losses": 0, "total": 0 },
+      { "band": "60-69%", "wins": 0, "losses": 0, "total": 0 },
+      { "band": "70-79%", "wins": 0, "losses": 0, "total": 0 },
+      { "band": "80%+",   "wins": 0, "losses": 0, "total": 0 }
+    ]
+  },
+  "alltime": {
+    "total": { "wins": 0, "losses": 0, "total": 0 },
+    "by_confidence": [
+      { "band": "50-59%", "wins": 0, "losses": 0, "total": 0 },
+      { "band": "60-69%", "wins": 0, "losses": 0, "total": 0 },
+      { "band": "70-79%", "wins": 0, "losses": 0, "total": 0 },
+      { "band": "80%+",   "wins": 0, "losses": 0, "total": 0 }
+    ]
+  }
 }

@@ -31,9 +31,6 @@ jobs:
           pip install -r requirements.txt
 
       # ── 4. Restore model cache ──────────────────────────────────────────────
-      # Shared cache for all ML models — game log JSONs + trained pkl files.
-      # Keyed by run ID so each run saves a fresh copy, but restores the most
-      # recent previous run via the mlb-cache- prefix fallback.
       - name: Restore model cache
         uses: actions/cache@v4
         with:
@@ -52,8 +49,8 @@ jobs:
       - name: Run Games — XGBoost
         run: python models/games_xgboost.py
 
-      # - name: Run Games — Random Forest
-      #   run: python models/games_random_forest.py
+      - name: Run Games — Random Forest
+        run: python models/games_random_forest.py
 
       # - name: Run Games — Composite
       #   run: python models/games_composite.py
