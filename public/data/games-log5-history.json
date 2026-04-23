@@ -7,12 +7,12 @@
           "game_time": "1:05 PM ET",
           "away_team": "Atlanta Braves",
           "home_team": "Washington Nationals",
-          "away_pct": 0.667,
-          "home_pct": 0.458,
-          "away_prob": 0.7027,
-          "home_prob": 0.2973,
+          "away_pct": 0.68,
+          "home_pct": 0.44,
+          "away_prob": 0.7301,
+          "home_prob": 0.2699,
           "pick": "Atlanta Braves",
-          "confidence": 0.7027,
+          "confidence": 0.7301,
           "actual_winner": null,
           "correct": null
         },
@@ -20,12 +20,12 @@
           "game_time": "1:10 PM ET",
           "away_team": "Milwaukee Brewers",
           "home_team": "Detroit Tigers",
-          "away_pct": 0.591,
-          "home_pct": 0.5,
-          "away_prob": 0.5909,
-          "home_prob": 0.4091,
+          "away_pct": 0.565,
+          "home_pct": 0.52,
+          "away_prob": 0.5455,
+          "home_prob": 0.4545,
           "pick": "Milwaukee Brewers",
-          "confidence": 0.5909,
+          "confidence": 0.5455,
           "actual_winner": null,
           "correct": null
         },
@@ -85,12 +85,12 @@
           "game_time": "6:10 PM ET",
           "away_team": "New York Yankees",
           "home_team": "Boston Red Sox",
-          "away_pct": 0.609,
-          "home_pct": 0.391,
-          "away_prob": 0.7076,
-          "home_prob": 0.2924,
+          "away_pct": 0.625,
+          "home_pct": 0.375,
+          "away_prob": 0.7353,
+          "home_prob": 0.2647,
           "pick": "New York Yankees",
-          "confidence": 0.7076,
+          "confidence": 0.7353,
           "actual_winner": null,
           "correct": null
         },
@@ -213,8 +213,8 @@
           "home_prob": 0.4091,
           "pick": "Milwaukee Brewers",
           "confidence": 0.5909,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Detroit Tigers",
+          "correct": false
         },
         {
           "game_time": "6:45 PM ET",
@@ -226,8 +226,8 @@
           "home_prob": 0.2973,
           "pick": "Atlanta Braves",
           "confidence": 0.7027,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Atlanta Braves",
+          "correct": true
         },
         {
           "game_time": "6:45 PM ET",
@@ -239,8 +239,8 @@
           "home_prob": 0.2924,
           "pick": "New York Yankees",
           "confidence": 0.7076,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "New York Yankees",
+          "correct": true
         },
         {
           "game_time": "7:10 PM ET",
