@@ -248,7 +248,7 @@ export default function RandomForestGame() {
       <PageHeader
         tag="Games → Random Forest"
         title="RANDOM FOREST MODEL"
-        subtitle="Random Forest classifier trained on 2015–2023 MLB game logs with isotonic regression calibration on a held-out 2024 season — correcting the probability compression inherent to ensemble vote averaging."
+        subtitle="Random Forest classifier of 500 decision trees trained on 2015–2024 MLB game logs — season-to-date, exponentially-decayed, and rolling-window hitting and pitching features with native probability estimation."
       />
 
       {updatedLabel && (

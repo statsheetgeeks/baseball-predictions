@@ -19,7 +19,7 @@ Data:
 Caching:
   models/mlb_cache_v2/
     {TEAM}_{YEAR}_{h|p}.json   ← shared with all ML models
-    rf_standalone_v1.pkl       ← scaler + RF + isotonic calibrator
+    rf_standalone_v2.pkl       ← scaler + RF (no calibration)
 ──────────────────────────────────────────────────────────────────────────────
 """
 
@@ -30,7 +30,6 @@ import numpy as np
 import pandas as pd
 import requests
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.isotonic import IsotonicRegression
 from sklearn.preprocessing import MinMaxScaler
 
 warnings.filterwarnings('ignore')
@@ -42,7 +41,7 @@ DATA_DIR   = os.path.join(BASE_DIR, '..', 'public', 'data')
 CACHE_DIR  = os.path.join(BASE_DIR, 'mlb_cache_v2')
 MAIN_JSON  = os.path.join(DATA_DIR, 'games-random-forest.json')
 HIST_JSON  = os.path.join(DATA_DIR, 'games-random-forest-history.json')
-MODELS_PKL = os.path.join(CACHE_DIR, 'rf_standalone_v1.pkl')
+MODELS_PKL = os.path.join(CACHE_DIR, 'rf_standalone_v2.pkl')
 
 os.makedirs(DATA_DIR,  exist_ok=True)
 os.makedirs(CACHE_DIR, exist_ok=True)
@@ -318,27 +317,21 @@ def select_features(matchups):
     ]
 
 # ── Model training ────────────────────────────────────────────────────────────
-def train_model(X_train, y_train, X_calib, y_calib):
+def train_model(X_train, y_train):
     """
-    Train Random Forest on 2015-2023, then fit isotonic regression calibrator
-    on the held-out 2024 season.
+    Train Random Forest using native probability outputs.
 
-    RF natively compresses probabilities toward 0.5 (vote averaging across trees).
-    Isotonic regression on a separate held-out season corrects this without
-    over-squashing — unlike cross-validation Platt scaling which introduces
-    its own compression.
+    Isotonic regression calibration was removed because RF probabilities are
+    so compressed toward 0.5 that the isotonic step function collapsed all
+    predictions into only 3-4 distinct values. RF native predict_proba()
+    produces continuous differentiated probabilities that are more useful
+    in practice, even if they remain somewhat compressed (45-65% range).
     """
     print('  Training Random Forest...')
     rf = RandomForestClassifier(**RF_PARAMS)
     rf.fit(X_train, y_train)
     print(f'  OOB score: {rf.oob_score_:.4f}')
-
-    print('  Fitting isotonic calibrator on 2024 held-out season...')
-    raw_probs  = rf.predict_proba(X_calib)[:, 1]
-    calibrator = IsotonicRegression(out_of_bounds='clip')
-    calibrator.fit(raw_probs, y_calib)
-
-    return rf, calibrator
+    return rf
 
 # ── Live feature vector ───────────────────────────────────────────────────────
 def team_live_features(team_abbr, is_home, features, window=15):
@@ -501,11 +494,10 @@ def run():
             retrain = True
         else:
             print('Loaded cached Random Forest model.')
-            scaler     = cache['scaler']
-            all_feat   = cache['all_feat']
-            stat_cols  = cache['stat_cols']
-            rf         = cache['rf']
-            calibrator = cache['calibrator']
+            scaler    = cache['scaler']
+            all_feat  = cache['all_feat']
+            stat_cols = cache['stat_cols']
+            rf        = cache['rf']
 
     if retrain:
         print('Collecting historical game log data...')
@@ -534,22 +526,17 @@ def run():
         matchups = make_matchups(features, stat_cols, eng_cols)
         all_feat = select_features(matchups)
 
-        # Split: train on 2015-2023, calibrate on 2024
-        train_df = matchups[matchups['season'].isin(TRAIN_SEASONS)].copy()
-        calib_df = matchups[matchups['season'].isin(CALIB_SEASON)].copy()
-
-        for df in [train_df, calib_df]:
-            df.dropna(subset=all_feat, thresh=int(len(all_feat) * 0.7), inplace=True)
-            for c in all_feat:
-                df[c] = df[c].fillna(df[c].median())
+        # Train on all historical seasons (2015-2024)
+        train_df = matchups[matchups['season'].isin(TRAIN_SEASONS + CALIB_SEASON)].copy()
+        train_df = train_df.dropna(subset=all_feat, thresh=int(len(all_feat) * 0.7))
+        for c in all_feat:
+            train_df[c] = train_df[c].fillna(train_df[c].median())
 
         scaler  = MinMaxScaler()
         X_train = scaler.fit_transform(train_df[all_feat].values)
         y_train = train_df['label'].values
-        X_calib = scaler.transform(calib_df[all_feat].values)
-        y_calib = calib_df['label'].values
 
-        rf, calibrator = train_model(X_train, y_train, X_calib, y_calib)
+        rf = train_model(X_train, y_train)
 
         with open(MODELS_PKL, 'wb') as f:
             pickle.dump({
@@ -558,7 +545,6 @@ def run():
                 'all_feat':     all_feat,
                 'stat_cols':    stat_cols,
                 'rf':           rf,
-                'calibrator':   calibrator,
             }, f)
         print('✓ Random Forest model trained and cached.')
 
@@ -595,8 +581,7 @@ def run():
             continue
 
         vec_sc    = scaler.transform(vec.reshape(1, -1))
-        raw_prob  = float(rf.predict_proba(vec_sc)[0, 1])
-        home_prob = float(calibrator.predict([raw_prob])[0])
+        home_prob = float(rf.predict_proba(vec_sc)[0, 1])
         away_prob = 1.0 - home_prob
         pick      = g['home'] if home_prob >= 0.5 else g['away']
         confidence = max(home_prob, away_prob)
