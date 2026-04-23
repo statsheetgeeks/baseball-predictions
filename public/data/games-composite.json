@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-23T03:11:41.630151+00:00",
+  "updated": "2026-04-23T05:06:35.694724+00:00",
   "date": "2026-04-23",
   "predictions": [
     {
@@ -116,7 +116,7 @@
       "home_team": "San Francisco Giants",
       "log5": {
         "pick": "Los Angeles Dodgers",
-        "confidence": 0.7482
+        "confidence": 0.7027
       },
       "research": {
         "pick": "Los Angeles Dodgers",
@@ -131,7 +131,7 @@
         "confidence": 0.5068
       },
       "composite_pick": "Los Angeles Dodgers",
-      "composite_confidence": 0.5424,
+      "composite_confidence": 0.531,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
@@ -170,7 +170,7 @@
       "home_team": "Arizona Diamondbacks",
       "log5": {
         "pick": "Arizona Diamondbacks",
-        "confidence": 0.6691
+        "confidence": 0.7
       },
       "research": {
         "pick": "Chicago White Sox",
@@ -185,7 +185,7 @@
         "confidence": 0.5043
       },
       "composite_pick": "Arizona Diamondbacks",
-      "composite_confidence": 0.516,
+      "composite_confidence": 0.5237,
       "vote_count": 2,
       "total_votes": 4,
       "actual_winner": null,
@@ -224,7 +224,7 @@
       "home_team": "Colorado Rockies",
       "log5": {
         "pick": "San Diego Padres",
-        "confidence": 0.7921
+        "confidence": 0.75
       },
       "research": {
         "pick": "Colorado Rockies",
@@ -239,7 +239,7 @@
         "confidence": 0.5113
       },
       "composite_pick": "Colorado Rockies",
-      "composite_confidence": 0.4383,
+      "composite_confidence": 0.4488,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
@@ -249,17 +249,17 @@
   "model_standings": [
     {
       "model": "Research",
-      "wins": 7,
-      "losses": 5,
-      "total": 12,
-      "pct": 0.5833
+      "wins": 8,
+      "losses": 7,
+      "total": 15,
+      "pct": 0.5333
     },
     {
       "model": "Log5",
-      "wins": 6,
-      "losses": 6,
-      "total": 12,
-      "pct": 0.5
+      "wins": 7,
+      "losses": 8,
+      "total": 15,
+      "pct": 0.4667
     },
     {
       "model": "XGBoost",

@@ -46,12 +46,12 @@
           "game_time": "3:10 PM ET",
           "away_team": "San Diego Padres",
           "home_team": "Colorado Rockies",
-          "away_pct": 0.696,
-          "home_pct": 0.375,
-          "away_prob": 0.7921,
-          "home_prob": 0.2079,
+          "away_pct": 0.667,
+          "home_pct": 0.4,
+          "away_prob": 0.75,
+          "home_prob": 0.25,
           "pick": "San Diego Padres",
-          "confidence": 0.7921,
+          "confidence": 0.75,
           "actual_winner": null,
           "correct": null
         },
@@ -59,12 +59,12 @@
           "game_time": "3:40 PM ET",
           "away_team": "Chicago White Sox",
           "home_team": "Arizona Diamondbacks",
-          "away_pct": 0.391,
-          "home_pct": 0.565,
-          "away_prob": 0.3309,
-          "home_prob": 0.6691,
+          "away_pct": 0.375,
+          "home_pct": 0.583,
+          "away_prob": 0.3,
+          "home_prob": 0.7,
           "pick": "Arizona Diamondbacks",
-          "confidence": 0.6691,
+          "confidence": 0.7,
           "actual_winner": null,
           "correct": null
         },
@@ -72,12 +72,12 @@
           "game_time": "3:45 PM ET",
           "away_team": "Los Angeles Dodgers",
           "home_team": "San Francisco Giants",
-          "away_pct": 0.696,
-          "home_pct": 0.435,
-          "away_prob": 0.7482,
-          "home_prob": 0.2518,
+          "away_pct": 0.667,
+          "home_pct": 0.458,
+          "away_prob": 0.7027,
+          "home_prob": 0.2973,
           "pick": "Los Angeles Dodgers",
-          "confidence": 0.7482,
+          "confidence": 0.7027,
           "actual_winner": null,
           "correct": null
         },
@@ -291,8 +291,8 @@
           "home_prob": 0.2079,
           "pick": "San Diego Padres",
           "confidence": 0.7921,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Colorado Rockies",
+          "correct": false
         },
         {
           "game_time": "9:40 PM ET",
@@ -304,8 +304,8 @@
           "home_prob": 0.6691,
           "pick": "Arizona Diamondbacks",
           "confidence": 0.6691,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Arizona Diamondbacks",
+          "correct": true
         },
         {
           "game_time": "9:45 PM ET",
@@ -317,8 +317,8 @@
           "home_prob": 0.2518,
           "pick": "Los Angeles Dodgers",
           "confidence": 0.7482,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "San Francisco Giants",
+          "correct": false
         }
       ]
     }
