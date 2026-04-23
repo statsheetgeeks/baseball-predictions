@@ -199,6 +199,7 @@ export default function MlHit() {
     .sort((a, b) => {
       let av = a[sortCol] ?? '', bv = b[sortCol] ?? ''
       if (typeof av === 'string') { av = av.toLowerCase(); bv = bv.toLowerCase() }
+      if (av === bv) return (a.rank ?? 0) - (b.rank ?? 0)
       return sortAsc ? (av > bv ? 1 : -1) : (av < bv ? 1 : -1)
     })
 
