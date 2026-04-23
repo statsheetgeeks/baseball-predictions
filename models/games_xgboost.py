@@ -30,7 +30,6 @@ from datetime import date, timedelta, timezone, datetime
 import numpy as np
 import pandas as pd
 import requests
-from sklearn.calibration import CalibratedClassifierCV
 from sklearn.preprocessing import MinMaxScaler
 from xgboost import XGBClassifier
 
@@ -43,7 +42,7 @@ DATA_DIR   = os.path.join(BASE_DIR, '..', 'public', 'data')
 CACHE_DIR  = os.path.join(BASE_DIR, 'mlb_cache_v2')   # shared with research
 MAIN_JSON  = os.path.join(DATA_DIR, 'games-xgboost.json')
 HIST_JSON  = os.path.join(DATA_DIR, 'games-xgboost-history.json')
-MODELS_PKL = os.path.join(CACHE_DIR, 'xgb_standalone_v1.pkl')
+MODELS_PKL = os.path.join(CACHE_DIR, 'xgb_standalone_v2.pkl')
 
 os.makedirs(DATA_DIR,  exist_ok=True)
 os.makedirs(CACHE_DIR, exist_ok=True)
@@ -329,19 +328,17 @@ def select_features(matchups):
 # ── Model training ────────────────────────────────────────────────────────────
 def train_model(X_train, y_train):
     """
-    Train XGBoost with Platt (sigmoid) calibration.
-    Trained on all historical seasons — no train/meta split needed.
-    cv=5 uses 5-fold cross-validation to fit the calibrator without
-    requiring a separate held-out calibration set.
+    Train XGBoost using native probability outputs.
+    XGBoost optimizes log-loss directly (eval_metric='logloss'), which produces
+    well-calibrated probabilities without needing a separate calibration layer.
+    Platt scaling (CalibratedClassifierCV) was removed because it compressed
+    all predictions toward 50% by over-regularizing the narrow probability range
+    that is natural in MLB game prediction.
     """
     print('  Training XGBoost...')
-    xgb = XGBClassifier(**XGB_PARAMS)
-
-    print('  Calibrating with Platt scaling (5-fold CV)...')
-    calibrated = CalibratedClassifierCV(xgb, method='sigmoid', cv=5)
-    calibrated.fit(X_train, y_train)
-
-    return calibrated
+    model = XGBClassifier(**XGB_PARAMS)
+    model.fit(X_train, y_train)
+    return model
 
 # ── Live feature vector ───────────────────────────────────────────────────────
 def team_live_features(team_abbr, is_home, features, window=15):
