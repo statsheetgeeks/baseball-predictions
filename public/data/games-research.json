@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-23T00:54:30.204117+00:00",
+  "updated": "2026-04-23T01:47:47.799429+00:00",
   "date": "2026-04-23",
   "predictions": [
     {
@@ -62,13 +62,13 @@
       "game_time": "3:40 PM ET",
       "away_team": "Chicago White Sox",
       "home_team": "Arizona Diamondbacks",
-      "away_prob": 0.5293,
-      "home_prob": 0.4707,
-      "base_logr_home": 0.4723,
-      "base_xgb_home": 0.5045,
-      "base_mlp_home": 0.7474,
+      "away_prob": 0.5622,
+      "home_prob": 0.4378,
+      "base_logr_home": 0.4747,
+      "base_xgb_home": 0.4791,
+      "base_mlp_home": 0.6525,
       "pick": "Chicago White Sox",
-      "confidence": 0.5293,
+      "confidence": 0.5622,
       "actual_winner": null,
       "correct": null
     },
@@ -76,13 +76,13 @@
       "game_time": "3:45 PM ET",
       "away_team": "Los Angeles Dodgers",
       "home_team": "San Francisco Giants",
-      "away_prob": 0.5622,
-      "home_prob": 0.4378,
-      "base_logr_home": 0.495,
-      "base_xgb_home": 0.4772,
-      "base_mlp_home": 0.1572,
+      "away_prob": 0.5293,
+      "home_prob": 0.4707,
+      "base_logr_home": 0.4949,
+      "base_xgb_home": 0.518,
+      "base_mlp_home": 0.2826,
       "pick": "Los Angeles Dodgers",
-      "confidence": 0.5622,
+      "confidence": 0.5293,
       "actual_winner": null,
       "correct": null
     },
@@ -132,16 +132,16 @@
   "yesterday": {
     "date": "2026-04-22",
     "total": {
-      "wins": 3,
-      "losses": 3,
-      "total": 6
+      "wins": 5,
+      "losses": 4,
+      "total": 9
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 3,
-        "losses": 3,
-        "total": 6
+        "wins": 5,
+        "losses": 4,
+        "total": 9
       },
       {
         "band": "60-69%",
@@ -165,16 +165,16 @@
   },
   "alltime": {
     "total": {
-      "wins": 3,
-      "losses": 3,
-      "total": 6
+      "wins": 5,
+      "losses": 4,
+      "total": 9
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 3,
-        "losses": 3,
-        "total": 6
+        "wins": 5,
+        "losses": 4,
+        "total": 9
       },
       {
         "band": "60-69%",
