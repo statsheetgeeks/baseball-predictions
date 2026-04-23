@@ -61,8 +61,8 @@ jobs:
       # - name: Run Hitters — ML Hit
       #   run: python models/hitters_ml_hit.py
 
-      # - name: Run Hitters — HR Model
-      #   run: python models/hitters_hr_model.py
+      - name: Run Hitters — HR Model
+        run: python models/hitters_hr_model.py
 
       # - name: Run Pitchers — Strikeout
       #   run: python models/pitchers_strikeout.py
