@@ -55,8 +55,8 @@ jobs:
       - name: Run Games — Composite
         run: python models/games_composite.py
 
-      # - name: Run Hitters — Log5 Hit
-      #   run: python models/hitters_log5_hit.py
+      - name: Run Hitters — Log5 Hit
+        run: python models/hitters_log5_hit.py
 
       # - name: Run Hitters — ML Hit
       #   run: python models/hitters_ml_hit.py
