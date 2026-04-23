@@ -6,25 +6,7 @@
       "predictions": [
         {
           "rank": 1,
-          "player": "Luis Campusano",
-          "team": "SD",
-          "score": 85,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 2,
           "player": "Aaron Judge",
-          "team": "NYY",
-          "score": 82,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 3,
-          "player": "Ben Rice",
           "team": "NYY",
           "score": 81,
           "confidence": "high",
@@ -32,17 +14,8 @@
           "correct": null
         },
         {
-          "rank": 4,
-          "player": "Mickey Moniak",
-          "team": "COL",
-          "score": 80,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 5,
-          "player": "Amed Rosario",
+          "rank": 2,
+          "player": "Ben Rice",
           "team": "NYY",
           "score": 80,
           "confidence": "high",
@@ -50,16 +23,25 @@
           "correct": null
         },
         {
-          "rank": 6,
-          "player": "Hunter Goodman",
+          "rank": 3,
+          "player": "Mickey Moniak",
           "team": "COL",
-          "score": 77,
+          "score": 79,
           "confidence": "high",
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 7,
+          "rank": 4,
+          "player": "Amed Rosario",
+          "team": "NYY",
+          "score": 79,
+          "confidence": "high",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 5,
           "player": "Dillon Dingler",
           "team": "DET",
           "score": 72,
@@ -68,16 +50,16 @@
           "correct": null
         },
         {
-          "rank": 8,
+          "rank": 6,
           "player": "Ram\u00f3n Laureano",
           "team": "SD",
-          "score": 72,
+          "score": 71,
           "confidence": "high",
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 9,
+          "rank": 7,
           "player": "Kerry Carpenter",
           "team": "DET",
           "score": 68,
@@ -86,7 +68,7 @@
           "correct": null
         },
         {
-          "rank": 10,
+          "rank": 8,
           "player": "Brandon Lowe",
           "team": "PIT",
           "score": 67,
@@ -95,7 +77,7 @@
           "correct": null
         },
         {
-          "rank": 11,
+          "rank": 9,
           "player": "Munetaka Murakami",
           "team": "CWS",
           "score": 65,
@@ -104,7 +86,7 @@
           "correct": null
         },
         {
-          "rank": 12,
+          "rank": 10,
           "player": "James Wood",
           "team": "WSH",
           "score": 64,
@@ -113,7 +95,7 @@
           "correct": null
         },
         {
-          "rank": 13,
+          "rank": 11,
           "player": "Matt Olson",
           "team": "ATL",
           "score": 64,
@@ -122,16 +104,7 @@
           "correct": null
         },
         {
-          "rank": 14,
-          "player": "Gavin Sheets",
-          "team": "SD",
-          "score": 64,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 15,
+          "rank": 12,
           "player": "Ty France",
           "team": "SD",
           "score": 64,
@@ -140,7 +113,7 @@
           "correct": null
         },
         {
-          "rank": 16,
+          "rank": 13,
           "player": "Everson Pereira",
           "team": "CWS",
           "score": 64,
@@ -149,7 +122,7 @@
           "correct": null
         },
         {
-          "rank": 17,
+          "rank": 14,
           "player": "Oneil Cruz",
           "team": "PIT",
           "score": 64,
@@ -158,16 +131,7 @@
           "correct": null
         },
         {
-          "rank": 18,
-          "player": "Joey Wiemer",
-          "team": "WSH",
-          "score": 63,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 19,
+          "rank": 15,
           "player": "Dominic Smith",
           "team": "ATL",
           "score": 63,
@@ -176,16 +140,7 @@
           "correct": null
         },
         {
-          "rank": 20,
-          "player": "Xander Bogaerts",
-          "team": "SD",
-          "score": 63,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 21,
+          "rank": 16,
           "player": "Ildemaro Vargas",
           "team": "AZ",
           "score": 63,
@@ -194,16 +149,7 @@
           "correct": null
         },
         {
-          "rank": 22,
-          "player": "Giancarlo Stanton",
-          "team": "NYY",
-          "score": 63,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 23,
+          "rank": 17,
           "player": "Drake Baldwin",
           "team": "ATL",
           "score": 62,
@@ -212,8 +158,8 @@
           "correct": null
         },
         {
-          "rank": 24,
-          "player": "Jackson Merrill",
+          "rank": 18,
+          "player": "Xander Bogaerts",
           "team": "SD",
           "score": 62,
           "confidence": "medium",
@@ -221,10 +167,64 @@
           "correct": null
         },
         {
-          "rank": 25,
-          "player": "Cody Bellinger",
+          "rank": 19,
+          "player": "Jackson Merrill",
+          "team": "SD",
+          "score": 61,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 20,
+          "player": "Giancarlo Stanton",
           "team": "NYY",
           "score": 61,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 21,
+          "player": "Michael Harris II",
+          "team": "ATL",
+          "score": 60,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 22,
+          "player": "Colson Montgomery",
+          "team": "CWS",
+          "score": 60,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 23,
+          "player": "CJ Abrams",
+          "team": "WSH",
+          "score": 59,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 24,
+          "player": "Dalton Rushing",
+          "team": "LAD",
+          "score": 59,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 25,
+          "player": "Max Muncy",
+          "team": "LAD",
+          "score": 59,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
