@@ -30,14 +30,31 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      # ── 4. Restore model cache ──────────────────────────────────────────────
-      - name: Restore model cache
+      # ── 4. Restore model + data caches ─────────────────────────────────────
+      # Games model cache (shared by research, xgboost, random forest)
+      - name: Restore games model cache
         uses: actions/cache@v4
         with:
           path: models/mlb_cache_v2
           key: mlb-cache-${{ github.run_id }}
           restore-keys: |
             mlb-cache-
+
+      # ML hit model: box score data cache (thousands of per-game JSON files)
+      # Keyed by year so the cache persists all season but rebuilds each new year
+      - name: Restore ML hit data cache
+        uses: actions/cache@v4
+        with:
+          path: hit_pred_cache
+          key: hit-pred-cache-${{ env.CURRENT_YEAR }}-${{ github.run_id }}
+          restore-keys: |
+            hit-pred-cache-${{ env.CURRENT_YEAR }}-
+        env:
+          CURRENT_YEAR: ${{ steps.get-year.outputs.year }}
+
+      - name: Get current year for cache key
+        id: get-year
+        run: echo "year=$(date +'%Y')" >> $GITHUB_OUTPUT
 
       # ── 5. Run each model (composite MUST run last) ─────────────────────────
       - name: Run Games — Log5
@@ -58,8 +75,8 @@ jobs:
       - name: Run Hitters — Log5 Hit
         run: python models/hitters_log5_hit.py
 
-      # - name: Run Hitters — ML Hit
-      #   run: python models/hitters_ml_hit.py
+      - name: Run Hitters — ML Hit
+        run: python models/hitters_ml_hit.py
 
       - name: Run Hitters — HR Model
         run: python models/hitters_hr_model.py

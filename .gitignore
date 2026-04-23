@@ -14,8 +14,9 @@ venv/
 *.pkl
 *.joblib
 
-# Model cache — kept in GitHub Actions cache, not in git
-models/mlb_cache_v2/
+# ML hit model — box score + player stat cache (can be thousands of files)
+# Restored between runs via GitHub Actions cache (actions/cache)
+hit_pred_cache/
 
 # OS
 .DS_Store
