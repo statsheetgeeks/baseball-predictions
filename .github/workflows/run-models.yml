@@ -39,7 +39,7 @@ jobs:
           restore-keys: |
             mlb-cache-
 
-      # ── 5. Run each model ───────────────────────────────────────────────────
+      # ── 5. Run each model (composite MUST run last) ─────────────────────────
       - name: Run Games — Log5
         run: python models/games_log5.py
 
@@ -52,8 +52,8 @@ jobs:
       - name: Run Games — Random Forest
         run: python models/games_random_forest.py
 
-      # - name: Run Games — Composite
-      #   run: python models/games_composite.py
+      - name: Run Games — Composite
+        run: python models/games_composite.py
 
       # - name: Run Hitters — Log5 Hit
       #   run: python models/hitters_log5_hit.py
