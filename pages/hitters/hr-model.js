@@ -184,6 +184,45 @@ function SummaryPanel({ title, total, hr_count, hit_rate_pct, by_bucket }) {
   )
 }
 
+// ── CSV download ──────────────────────────────────────────────────────────────
+function downloadCSV(rows, dateStr) {
+  const headers = [
+    'Rank', 'Player', 'Team', 'Hand', 'Game', 'Time', 'Park',
+    'Score', 'Confidence',
+    'Batter Score', 'Pitcher Score', 'SP Score', 'Bullpen Score', 'Park Score', 'Context Score',
+    'SP Name', 'SP ERA',
+    'HR (Season)', 'HR/AB', 'ISO', 'SLG', 'OPS',
+    'Temp (°F)', 'Wind (mph)', 'Wind HR Adj', 'HR Factor',
+    'Recent Form',
+  ]
+  const escape = v => {
+    const s = v == null ? '' : String(v)
+    return s.includes(',') || s.includes('"') || s.includes('\n')
+      ? `"${s.replace(/"/g, '""')}"` : s
+  }
+  const csvRows = [
+    headers.join(','),
+    ...rows.map(p => [
+      p.rank, p.player, p.team, p.hand, p.game, p.game_time, p.park,
+      p.score, p.confidence,
+      p.batter_score, p.pitcher_score, p.sp_score, p.bullpen_score, p.park_score, p.context_score,
+      p.sp_name, p.sp_era,
+      p.hr, p.hr_per_ab, p.iso, p.slg, p.ops,
+      p.temp_f, p.wind_mph, p.wind_hr_adj, p.hr_factor,
+      p.recent_form,
+    ].map(escape).join(',')),
+  ]
+  const blob = new Blob([csvRows.join('\n')], { type: 'text/csv' })
+  const url  = URL.createObjectURL(blob)
+  const a    = document.createElement('a')
+  a.href     = url
+  a.download = `hr_picks_${(dateStr ?? 'today').replace(/-/g, '')}.csv`
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+  setTimeout(() => URL.revokeObjectURL(url), 100)
+}
+
 // ── Main page ──────────────────────────────────────────────────────────────────
 export default function HRModel() {
   const [fullData,   setFullData]   = useState(null)
@@ -307,47 +346,6 @@ export default function HRModel() {
 
       {!loading && !error && fullData && (
         <>
-          {/* ── Summary panels ──────────────────────────────────────────── */}
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 24 }}>
-            <SummaryPanel
-              title={`Yesterday (${yesterday.date || '—'})`}
-              total={yesterday.total || 0}
-              hr_count={yesterday.hr_count || 0}
-              hit_rate_pct={yesterday.hit_rate_pct || 0}
-              by_bucket={yesterday.by_bucket}
-            />
-            <SummaryPanel
-              title="All-Time"
-              total={alltime.total || 0}
-              hr_count={alltime.hr_count || 0}
-              hit_rate_pct={alltime.hit_rate_pct || 0}
-              by_bucket={alltime.by_bucket}
-            />
-            {/* Dots legend */}
-            <div style={{
-              background: 'var(--navy)', border: '1px solid var(--navy-border)',
-              borderRadius: 6, padding: '14px 18px', flex: '1 1 180px',
-            }}>
-              <div style={{
-                fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--silver-dim)',
-                letterSpacing: '2px', textTransform: 'uppercase', marginBottom: 10,
-              }}>Factor Dots</div>
-              {[
-                { label: 'Batter Power',      sub: '42% of score — ISO, HR/AB, OPS' },
-                { label: 'Pitcher Vuln.',      sub: '35% — 65% SP + 35% bullpen' },
-                { label: 'Park Factor',        sub: '15% — hand-adjusted HR index' },
-                { label: 'Context',            sub: '8% — temperature at game time' },
-              ].map(item => (
-                <div key={item.label} style={{ marginBottom: 6 }}>
-                  <div style={{ fontSize: 11, color: 'var(--white)' }}>
-                    <span style={{ color: 'var(--yellow)' }}>⬤ </span>{item.label}
-                  </div>
-                  <div style={{ fontSize: 10, color: 'var(--silver-dim)', paddingLeft: 14 }}>{item.sub}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* ── Filter controls ──────────────────────────────────────────── */}
           <div style={{ display: 'flex', gap: 10, marginBottom: 16, flexWrap: 'wrap', alignItems: 'center' }}>
             {[
@@ -384,8 +382,26 @@ export default function HRModel() {
               </div>
             )}
 
-            <div style={{ marginLeft: 'auto', fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--silver-dim)' }}>
-              {filtered.length} players · click row to expand
+            <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 12 }}>
+              <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: 'var(--silver-dim)' }}>
+                {filtered.length} players · click row to expand
+              </span>
+              <button
+                onClick={() => downloadCSV(filtered, gameDate)}
+                disabled={filtered.length === 0}
+                style={{
+                  background: 'transparent', border: '1px solid var(--accent)',
+                  borderRadius: 4, color: 'var(--accent)', fontSize: 11, fontWeight: 700,
+                  fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: 1,
+                  textTransform: 'uppercase', padding: '5px 12px', cursor: filtered.length === 0 ? 'not-allowed' : 'pointer',
+                  opacity: filtered.length === 0 ? 0.4 : 1,
+                  transition: 'background 0.15s, color 0.15s',
+                }}
+                onMouseEnter={e => { if (filtered.length > 0) { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = '#000' }}}
+                onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--accent)' }}
+              >
+                ↓ Download CSV
+              </button>
             </div>
           </div>
 
@@ -572,19 +588,47 @@ export default function HRModel() {
             </div>
           )}
 
-          {/* ── Footer ───────────────────────────────────────────────────── */}
-          <div style={{
-            marginTop: 20, padding: '10px 14px',
-            background: 'var(--navy)', border: '1px solid var(--navy-border)',
-            borderRadius: 4, fontFamily: "'DM Mono', monospace",
-            fontSize: 10, color: 'var(--silver-dim)', lineHeight: 1.7,
-          }}>
-            ⚠ FOR ENTERTAINMENT PURPOSES ONLY — Predictions use live MLB Stats API data and weather.
-            Each batter is scored against the opposing team's pitcher only (never their own team's).
-            Pitcher score blends starter (65 %) and team bullpen (35 %); when SP is TBD, team pitching
-            used in full. Weights: Batter 42 % · Pitcher 35 % · Park 15 % · Context 8 %.
-            Do not use for wagering.
+          {/* ── Tracking panels ──────────────────────────────────────────── */}
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 24 }}>
+            <SummaryPanel
+              title={`Yesterday (${yesterday.date || '—'})`}
+              total={yesterday.total || 0}
+              hr_count={yesterday.hr_count || 0}
+              hit_rate_pct={yesterday.hit_rate_pct || 0}
+              by_bucket={yesterday.by_bucket}
+            />
+            <SummaryPanel
+              title="All-Time"
+              total={alltime.total || 0}
+              hr_count={alltime.hr_count || 0}
+              hit_rate_pct={alltime.hit_rate_pct || 0}
+              by_bucket={alltime.by_bucket}
+            />
+            {/* Factor dots legend */}
+            <div style={{
+              background: 'var(--navy)', border: '1px solid var(--navy-border)',
+              borderRadius: 6, padding: '14px 18px', flex: '1 1 180px',
+            }}>
+              <div style={{
+                fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'var(--silver-dim)',
+                letterSpacing: '2px', textTransform: 'uppercase', marginBottom: 10,
+              }}>Factor Dots</div>
+              {[
+                { label: 'Batter Power',  sub: '42% of score — ISO, HR/AB, OPS' },
+                { label: 'Pitcher Vuln.', sub: '35% — 65% SP + 35% bullpen' },
+                { label: 'Park Factor',   sub: '15% — hand-adjusted HR index' },
+                { label: 'Context',       sub: '8% — temperature at game time' },
+              ].map(item => (
+                <div key={item.label} style={{ marginBottom: 6 }}>
+                  <div style={{ fontSize: 11, color: 'var(--white)' }}>
+                    <span style={{ color: 'var(--yellow)' }}>⬤ </span>{item.label}
+                  </div>
+                  <div style={{ fontSize: 10, color: 'var(--silver-dim)', paddingLeft: 14 }}>{item.sub}</div>
+                </div>
+              ))}
+            </div>
           </div>
+
         </>
       )}
     </Layout>
