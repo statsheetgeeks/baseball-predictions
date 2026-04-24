@@ -24,6 +24,8 @@ const NAV = [
       { label: 'Log5 Hit',     href: '/hitters/log5-hit' },
       { label: 'ML Hit Model', href: '/hitters/ml-hit' },
       { label: 'HR Model',     href: '/hitters/hr-model' },
+      { label: 'ML HR Model',  href: '/hitters/ml-hr' },
+      { label: 'Composite',    href: '/hitters/composite' },
     ],
   },
   {
