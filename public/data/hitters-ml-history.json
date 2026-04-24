@@ -1,8 +1,239 @@
 {
   "records": [
     {
-      "date": "2026-04-23",
+      "date": "2026-04-24",
       "graded": false,
+      "predictions": [
+        {
+          "rank": 1,
+          "player": "Bo Bichette",
+          "team": "NYM",
+          "p_mlp": 0.9669,
+          "p_ens": 0.8675,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 2,
+          "player": "Juan Soto",
+          "team": "NYM",
+          "p_mlp": 0.9557,
+          "p_ens": 0.8554,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 3,
+          "player": "Francisco Alvarez",
+          "team": "NYM",
+          "p_mlp": 0.9544,
+          "p_ens": 0.8549,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 4,
+          "player": "Mark Vientos",
+          "team": "NYM",
+          "p_mlp": 0.9449,
+          "p_ens": 0.8417,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 5,
+          "player": "Luis Robert Jr.",
+          "team": "NYM",
+          "p_mlp": 0.9438,
+          "p_ens": 0.8386,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 6,
+          "player": "Marcus Semien",
+          "team": "NYM",
+          "p_mlp": 0.9413,
+          "p_ens": 0.8359,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 7,
+          "player": "Tommy Pham",
+          "team": "NYM",
+          "p_mlp": 0.926,
+          "p_ens": 0.8156,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 8,
+          "player": "Ronny Mauricio",
+          "team": "NYM",
+          "p_mlp": 0.9221,
+          "p_ens": 0.8269,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 9,
+          "player": "Tyrone Taylor",
+          "team": "NYM",
+          "p_mlp": 0.9213,
+          "p_ens": 0.8286,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 10,
+          "player": "Kevin McGonigle",
+          "team": "DET",
+          "p_mlp": 0.9033,
+          "p_ens": 0.813,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 11,
+          "player": "Gleyber Torres",
+          "team": "DET",
+          "p_mlp": 0.9016,
+          "p_ens": 0.8131,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 12,
+          "player": "Brett Baty",
+          "team": "NYM",
+          "p_mlp": 0.9,
+          "p_ens": 0.8162,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 13,
+          "player": "Carson Benge",
+          "team": "NYM",
+          "p_mlp": 0.8981,
+          "p_ens": 0.7979,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 14,
+          "player": "Xavier Edwards",
+          "team": "MIA",
+          "p_mlp": 0.8947,
+          "p_ens": 0.8032,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 15,
+          "player": "Chase Meidroth",
+          "team": "CWS",
+          "p_mlp": 0.8943,
+          "p_ens": 0.819,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 16,
+          "player": "MJ Melendez",
+          "team": "NYM",
+          "p_mlp": 0.8774,
+          "p_ens": 0.7758,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 17,
+          "player": "Miguel Vargas",
+          "team": "CWS",
+          "p_mlp": 0.8699,
+          "p_ens": 0.7918,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 18,
+          "player": "Riley Greene",
+          "team": "DET",
+          "p_mlp": 0.8663,
+          "p_ens": 0.7915,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 19,
+          "player": "Munetaka Murakami",
+          "team": "CWS",
+          "p_mlp": 0.858,
+          "p_ens": 0.7843,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 20,
+          "player": "Luis Torrens",
+          "team": "NYM",
+          "p_mlp": 0.8571,
+          "p_ens": 0.781,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 21,
+          "player": "Connor Norby",
+          "team": "MIA",
+          "p_mlp": 0.8523,
+          "p_ens": 0.7655,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 22,
+          "player": "Otto Lopez",
+          "team": "MIA",
+          "p_mlp": 0.8499,
+          "p_ens": 0.7707,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 23,
+          "player": "Lawrence Butler",
+          "team": "ATH",
+          "p_mlp": 0.8464,
+          "p_ens": 0.7835,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 24,
+          "player": "Spencer Torkelson",
+          "team": "DET",
+          "p_mlp": 0.8441,
+          "p_ens": 0.7813,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 25,
+          "player": "Jacob Wilson",
+          "team": "ATH",
+          "p_mlp": 0.8406,
+          "p_ens": 0.7871,
+          "actual_hits": null,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "graded": true,
       "predictions": [
         {
           "rank": 1,
@@ -10,8 +241,8 @@
           "team": "CHC",
           "p_mlp": 0.8059,
           "p_ens": 0.759,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 2,
@@ -19,8 +250,8 @@
           "team": "CHC",
           "p_mlp": 0.8044,
           "p_ens": 0.7662,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 3,
@@ -28,8 +259,8 @@
           "team": "COL",
           "p_mlp": 0.7924,
           "p_ens": 0.7739,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 4,
@@ -37,8 +268,8 @@
           "team": "COL",
           "p_mlp": 0.7919,
           "p_ens": 0.7689,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 5,
@@ -46,8 +277,8 @@
           "team": "LAD",
           "p_mlp": 0.7864,
           "p_ens": 0.7337,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 6,
@@ -55,8 +286,8 @@
           "team": "NYY",
           "p_mlp": 0.7807,
           "p_ens": 0.7149,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 7,
@@ -64,8 +295,8 @@
           "team": "SD",
           "p_mlp": 0.7786,
           "p_ens": 0.7236,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 8,
@@ -73,8 +304,8 @@
           "team": "SD",
           "p_mlp": 0.7751,
           "p_ens": 0.7083,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 9,
@@ -82,8 +313,8 @@
           "team": "CHC",
           "p_mlp": 0.7671,
           "p_ens": 0.7495,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 10,
@@ -91,8 +322,8 @@
           "team": "SD",
           "p_mlp": 0.7645,
           "p_ens": 0.7043,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 11,
@@ -100,8 +331,8 @@
           "team": "SD",
           "p_mlp": 0.7645,
           "p_ens": 0.7043,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 12,
@@ -109,8 +340,8 @@
           "team": "SD",
           "p_mlp": 0.7606,
           "p_ens": 0.6988,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 13,
@@ -118,8 +349,8 @@
           "team": "COL",
           "p_mlp": 0.7546,
           "p_ens": 0.7188,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 14,
@@ -127,8 +358,8 @@
           "team": "COL",
           "p_mlp": 0.754,
           "p_ens": 0.7446,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 15,
@@ -136,8 +367,8 @@
           "team": "SD",
           "p_mlp": 0.7528,
           "p_ens": 0.697,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 16,
@@ -145,8 +376,8 @@
           "team": "COL",
           "p_mlp": 0.7524,
           "p_ens": 0.7376,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 17,
@@ -154,8 +385,8 @@
           "team": "DET",
           "p_mlp": 0.7447,
           "p_ens": 0.6973,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 18,
@@ -163,8 +394,8 @@
           "team": "DET",
           "p_mlp": 0.7394,
           "p_ens": 0.6906,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 19,
@@ -172,8 +403,8 @@
           "team": "COL",
           "p_mlp": 0.738,
           "p_ens": 0.7152,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 20,
@@ -181,8 +412,8 @@
           "team": "SD",
           "p_mlp": 0.7299,
           "p_ens": 0.6673,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 21,
@@ -190,8 +421,8 @@
           "team": "CHC",
           "p_mlp": 0.7275,
           "p_ens": 0.7199,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 22,
@@ -199,8 +430,8 @@
           "team": "COL",
           "p_mlp": 0.7237,
           "p_ens": 0.7113,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 23,
@@ -208,8 +439,8 @@
           "team": "LAD",
           "p_mlp": 0.7217,
           "p_ens": 0.6969,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 24,
@@ -217,8 +448,8 @@
           "team": "ATL",
           "p_mlp": 0.7212,
           "p_ens": 0.6822,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 25,
@@ -226,10 +457,28 @@
           "team": "NYY",
           "p_mlp": 0.7168,
           "p_ens": 0.7052,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         }
-      ]
+      ],
+      "summary": {
+        "total": 25,
+        "hit_count": 0,
+        "hit_rate_pct": 0.0,
+        "hit_players": [],
+        "by_bucket": {
+          "75%+": {
+            "predicted": 16,
+            "hits": 0,
+            "rate_pct": 0.0
+          },
+          "65-74%": {
+            "predicted": 9,
+            "hits": 0,
+            "rate_pct": 0.0
+          }
+        }
+      }
     }
   ]
 }
