@@ -30,8 +30,13 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      # ── 4. Restore model + data caches ─────────────────────────────────────
-      # Games model cache (shared by research, xgboost, random forest)
+      # ── 4. Get current year (used as cache key) ─────────────────────────────
+      - name: Get current year
+        id: get-year
+        run: echo "year=$(date +'%Y')" >> $GITHUB_OUTPUT
+
+      # ── 5. Restore caches ───────────────────────────────────────────────────
+      # Games model cache
       - name: Restore games model cache
         uses: actions/cache@v4
         with:
@@ -40,23 +45,25 @@ jobs:
           restore-keys: |
             mlb-cache-
 
-      # ML hit model: box score data cache (thousands of per-game JSON files)
-      # Keyed by year so the cache persists all season but rebuilds each new year
+      # ML hit model: box score data cache
       - name: Restore ML hit data cache
         uses: actions/cache@v4
         with:
           path: hit_pred_cache
-          key: hit-pred-cache-${{ env.CURRENT_YEAR }}-${{ github.run_id }}
+          key: hit-pred-cache-${{ steps.get-year.outputs.year }}-${{ github.run_id }}
           restore-keys: |
-            hit-pred-cache-${{ env.CURRENT_YEAR }}-
-        env:
-          CURRENT_YEAR: ${{ steps.get-year.outputs.year }}
+            hit-pred-cache-${{ steps.get-year.outputs.year }}-
 
-      - name: Get current year for cache key
-        id: get-year
-        run: echo "year=$(date +'%Y')" >> $GITHUB_OUTPUT
+      # ML HR model: box score, Statcast, weather, and handedness cache
+      - name: Restore ML HR data cache
+        uses: actions/cache@v4
+        with:
+          path: hr_pred_cache
+          key: hr-pred-cache-${{ steps.get-year.outputs.year }}-${{ github.run_id }}
+          restore-keys: |
+            hr-pred-cache-${{ steps.get-year.outputs.year }}-
 
-      # ── 5. Run each model (composite MUST run last) ─────────────────────────
+      # ── 6. Run each model (composite MUST run last) ─────────────────────────
       - name: Run Games — Log5
         run: python models/games_log5.py
 
@@ -81,10 +88,13 @@ jobs:
       - name: Run Hitters — HR Model
         run: python models/hitters_hr_model.py
 
+      - name: Run Hitters — ML HR Model
+        run: python models/hitters_ml_hr.py
+
       # - name: Run Pitchers — Strikeout
       #   run: python models/pitchers_strikeout.py
 
-      # ── 6. Commit updated prediction JSONs ─────────────────────────────────
+      # ── 7. Commit updated prediction JSONs ─────────────────────────────────
       - name: Commit and push updated predictions
         run: |
           git config user.name  "github-actions[bot]"

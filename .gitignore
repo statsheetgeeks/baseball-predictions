@@ -14,9 +14,13 @@ venv/
 *.pkl
 *.joblib
 
-# ML hit model — box score + player stat cache (can be thousands of files)
+# ML hit model — box score + player stat cache
 # Restored between runs via GitHub Actions cache (actions/cache)
 hit_pred_cache/
+
+# ML HR model — box score, Statcast, weather, and handedness cache
+# Restored between runs via GitHub Actions cache (actions/cache)
+hr_pred_cache/
 
 # OS
 .DS_Store
