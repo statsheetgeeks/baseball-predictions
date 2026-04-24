@@ -63,7 +63,7 @@ jobs:
           restore-keys: |
             hr-pred-cache-${{ steps.get-year.outputs.year }}-
 
-      # ── 6. Run each model (composite MUST run last) ─────────────────────────
+      # ── 6. Run games models (composite MUST run last) ───────────────────────
       - name: Run Games — Log5
         run: python models/games_log5.py
 
@@ -79,6 +79,7 @@ jobs:
       - name: Run Games — Composite
         run: python models/games_composite.py
 
+      # ── 7. Run hitter models ────────────────────────────────────────────────
       - name: Run Hitters — Log5 Hit
         run: python models/hitters_log5_hit.py
 
@@ -91,10 +92,16 @@ jobs:
       - name: Run Hitters — ML HR Model
         run: python models/hitters_ml_hr.py
 
+      # Spotlight MUST run after all four hitter models —
+      # it reads their output JSONs to compute today's spotlight players
+      # and reads their history JSONs to grade yesterday's spotlight players.
+      - name: Run Hitters — Spotlight
+        run: python models/hitters_spotlight.py
+
       # - name: Run Pitchers — Strikeout
       #   run: python models/pitchers_strikeout.py
 
-      # ── 7. Commit updated prediction JSONs ─────────────────────────────────
+      # ── 8. Commit updated prediction JSONs ─────────────────────────────────
       - name: Commit and push updated predictions
         run: |
           git config user.name  "github-actions[bot]"
