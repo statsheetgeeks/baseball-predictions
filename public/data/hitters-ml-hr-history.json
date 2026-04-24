@@ -6,33 +6,24 @@
       "predictions": [
         {
           "rank": 1,
-          "player": "Munetaka Murakami",
+          "player": "Colson Montgomery",
           "team": "CWS",
-          "lambda_poisson": 0.9925699830055237,
-          "prob_binary": 0.7998999953269958,
+          "lambda_poisson": 0.675790011882782,
+          "prob_binary": 0.8928999900817871,
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 2,
-          "player": "Colson Montgomery",
-          "team": "CWS",
-          "lambda_poisson": 0.8953499794006348,
-          "prob_binary": 0.9122999906539917,
+          "player": "Ian Happ",
+          "team": "CHC",
+          "lambda_poisson": 0.666700005531311,
+          "prob_binary": 0.9241999983787537,
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 3,
-          "player": "Ian Happ",
-          "team": "CHC",
-          "lambda_poisson": 0.8281800150871277,
-          "prob_binary": 0.9366999864578247,
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 4,
           "player": "Corey Seager",
           "team": "TEX",
           "lambda_poisson": 0.6632400155067444,
@@ -41,11 +32,20 @@
           "correct": null
         },
         {
+          "rank": 4,
+          "player": "Munetaka Murakami",
+          "team": "CWS",
+          "lambda_poisson": 0.6517400145530701,
+          "prob_binary": 0.7803999781608582,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
           "rank": 5,
-          "player": "Freddie Freeman",
-          "team": "LAD",
-          "lambda_poisson": 0.6009200215339661,
-          "prob_binary": 0.8705000281333923,
+          "player": "Mike Trout",
+          "team": "LAA",
+          "lambda_poisson": 0.5789399743080139,
+          "prob_binary": 0.819100022315979,
           "actual_hr": null,
           "correct": null
         },
@@ -53,31 +53,22 @@
           "rank": 6,
           "player": "Jos\u00e9 Ram\u00edrez",
           "team": "CLE",
-          "lambda_poisson": 0.5947700142860413,
-          "prob_binary": 0.8233000040054321,
+          "lambda_poisson": 0.5733100175857544,
+          "prob_binary": 0.8219000101089478,
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 7,
-          "player": "Gunnar Henderson",
-          "team": "BAL",
-          "lambda_poisson": 0.5884299874305725,
-          "prob_binary": 0.8234999775886536,
+          "player": "Freddie Freeman",
+          "team": "LAD",
+          "lambda_poisson": 0.5441399812698364,
+          "prob_binary": 0.8242999911308289,
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 8,
-          "player": "Dansby Swanson",
-          "team": "CHC",
-          "lambda_poisson": 0.5493999719619751,
-          "prob_binary": 0.7754999995231628,
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 9,
           "player": "Brandon Nimmo",
           "team": "TEX",
           "lambda_poisson": 0.5385400056838989,
@@ -86,16 +77,16 @@
           "correct": null
         },
         {
-          "rank": 10,
-          "player": "Oneil Cruz",
-          "team": "PIT",
-          "lambda_poisson": 0.5318700075149536,
-          "prob_binary": 0.8837000131607056,
+          "rank": 9,
+          "player": "Dansby Swanson",
+          "team": "CHC",
+          "lambda_poisson": 0.5211300253868103,
+          "prob_binary": 0.7746999859809875,
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 11,
+          "rank": 10,
           "player": "Shea Langeliers",
           "team": "ATH",
           "lambda_poisson": 0.5166400074958801,
@@ -104,43 +95,43 @@
           "correct": null
         },
         {
+          "rank": 11,
+          "player": "Gunnar Henderson",
+          "team": "BAL",
+          "lambda_poisson": 0.5137100219726562,
+          "prob_binary": 0.8432999849319458,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
           "rank": 12,
           "player": "Kyle Schwarber",
           "team": "PHI",
-          "lambda_poisson": 0.5015699863433838,
-          "prob_binary": 0.8672000169754028,
+          "lambda_poisson": 0.5000399947166443,
+          "prob_binary": 0.8550999760627747,
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 13,
-          "player": "Bryce Harper",
-          "team": "PHI",
-          "lambda_poisson": 0.48677998781204224,
-          "prob_binary": 0.8840000033378601,
+          "player": "Willy Adames",
+          "team": "SF",
+          "lambda_poisson": 0.48778000473976135,
+          "prob_binary": 0.6966999769210815,
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 14,
-          "player": "Miguel Vargas",
-          "team": "CWS",
-          "lambda_poisson": 0.4713299870491028,
-          "prob_binary": 0.8230000138282776,
+          "player": "Bryce Harper",
+          "team": "PHI",
+          "lambda_poisson": 0.4775499999523163,
+          "prob_binary": 0.8712999820709229,
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 15,
-          "player": "Nico Hoerner",
-          "team": "CHC",
-          "lambda_poisson": 0.470660001039505,
-          "prob_binary": 0.8205999732017517,
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 16,
           "player": "Byron Buxton",
           "team": "MIN",
           "lambda_poisson": 0.46491000056266785,
@@ -149,7 +140,7 @@
           "correct": null
         },
         {
-          "rank": 17,
+          "rank": 16,
           "player": "Alec Burleson",
           "team": "STL",
           "lambda_poisson": 0.45166000723838806,
@@ -158,34 +149,16 @@
           "correct": null
         },
         {
-          "rank": 18,
+          "rank": 17,
           "player": "Michael Busch",
           "team": "CHC",
-          "lambda_poisson": 0.44350001215934753,
-          "prob_binary": 0.6304000020027161,
+          "lambda_poisson": 0.4342400133609772,
+          "prob_binary": 0.6064000129699707,
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 19,
-          "player": "Mike Trout",
-          "team": "LAA",
-          "lambda_poisson": 0.4415700137615204,
-          "prob_binary": 0.8083000183105469,
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 20,
-          "player": "Nolan Schanuel",
-          "team": "LAA",
-          "lambda_poisson": 0.4337800145149231,
-          "prob_binary": 0.7390000224113464,
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 21,
+          "rank": 18,
           "player": "Jake Burger",
           "team": "TEX",
           "lambda_poisson": 0.43015000224113464,
@@ -194,16 +167,34 @@
           "correct": null
         },
         {
-          "rank": 22,
-          "player": "Willy Adames",
-          "team": "SF",
-          "lambda_poisson": 0.42517000436782837,
-          "prob_binary": 0.6947000026702881,
+          "rank": 19,
+          "player": "Miguel Vargas",
+          "team": "CWS",
+          "lambda_poisson": 0.4260599911212921,
+          "prob_binary": 0.7849000096321106,
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 23,
+          "rank": 20,
+          "player": "Rafael Devers",
+          "team": "SF",
+          "lambda_poisson": 0.42245998978614807,
+          "prob_binary": 0.5611000061035156,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 21,
+          "player": "Nolan Schanuel",
+          "team": "LAA",
+          "lambda_poisson": 0.4220600128173828,
+          "prob_binary": 0.669700026512146,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 22,
           "player": "Nick Kurtz",
           "team": "ATH",
           "lambda_poisson": 0.4193199872970581,
@@ -212,20 +203,29 @@
           "correct": null
         },
         {
+          "rank": 23,
+          "player": "Oneil Cruz",
+          "team": "PIT",
+          "lambda_poisson": 0.4159199893474579,
+          "prob_binary": 0.8787000179290771,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
           "rank": 24,
-          "player": "Kyle Tucker",
-          "team": "LAD",
-          "lambda_poisson": 0.4101499915122986,
-          "prob_binary": 0.7217000126838684,
+          "player": "Nico Hoerner",
+          "team": "CHC",
+          "lambda_poisson": 0.4135900139808655,
+          "prob_binary": 0.801800012588501,
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 25,
-          "player": "Rafael Devers",
-          "team": "SF",
-          "lambda_poisson": 0.3971399962902069,
-          "prob_binary": 0.5625,
+          "player": "Zach Neto",
+          "team": "LAA",
+          "lambda_poisson": 0.3931899964809418,
+          "prob_binary": 0.758899986743927,
           "actual_hr": null,
           "correct": null
         }
