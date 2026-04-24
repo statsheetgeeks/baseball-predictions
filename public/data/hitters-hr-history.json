@@ -24,6 +24,15 @@
         },
         {
           "rank": 3,
+          "player": "Mike Trout",
+          "team": "LAA",
+          "score": 79,
+          "confidence": "high",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 4,
           "player": "Everson Pereira",
           "team": "CWS",
           "score": 79,
@@ -32,34 +41,16 @@
           "correct": null
         },
         {
-          "rank": 4,
-          "player": "Mike Trout",
-          "team": "LAA",
-          "score": 78,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
           "rank": 5,
-          "player": "Dalton Rushing",
+          "player": "Max Muncy",
           "team": "LAD",
-          "score": 78,
+          "score": 77,
           "confidence": "high",
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 6,
-          "player": "Max Muncy",
-          "team": "LAD",
-          "score": 78,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 7,
           "player": "Chase DeLauter",
           "team": "CLE",
           "score": 74,
@@ -68,7 +59,7 @@
           "correct": null
         },
         {
-          "rank": 8,
+          "rank": 7,
           "player": "Jos\u00e9 Ram\u00edrez",
           "team": "CLE",
           "score": 74,
@@ -77,7 +68,7 @@
           "correct": null
         },
         {
-          "rank": 9,
+          "rank": 8,
           "player": "Shea Langeliers",
           "team": "ATH",
           "score": 73,
@@ -86,16 +77,16 @@
           "correct": null
         },
         {
-          "rank": 10,
+          "rank": 9,
           "player": "Oswald Peraza",
           "team": "LAA",
-          "score": 71,
+          "score": 72,
           "confidence": "high",
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 11,
+          "rank": 10,
           "player": "Miguel Vargas",
           "team": "CWS",
           "score": 71,
@@ -104,25 +95,7 @@
           "correct": null
         },
         {
-          "rank": 12,
-          "player": "Andy Pages",
-          "team": "LAD",
-          "score": 71,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 13,
-          "player": "Ian Happ",
-          "team": "CHC",
-          "score": 71,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 14,
+          "rank": 11,
           "player": "Mois\u00e9s Ballesteros",
           "team": "CHC",
           "score": 71,
@@ -131,7 +104,7 @@
           "correct": null
         },
         {
-          "rank": 15,
+          "rank": 12,
           "player": "Tristan Gray",
           "team": "MIN",
           "score": 70,
@@ -140,7 +113,7 @@
           "correct": null
         },
         {
-          "rank": 16,
+          "rank": 13,
           "player": "Ben Rice",
           "team": "NYY",
           "score": 70,
@@ -149,8 +122,17 @@
           "correct": null
         },
         {
-          "rank": 17,
-          "player": "Seiya Suzuki",
+          "rank": 14,
+          "player": "Andy Pages",
+          "team": "LAD",
+          "score": 70,
+          "confidence": "high",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 15,
+          "player": "Ian Happ",
           "team": "CHC",
           "score": 70,
           "confidence": "high",
@@ -158,7 +140,7 @@
           "correct": null
         },
         {
-          "rank": 18,
+          "rank": 16,
           "player": "Mickey Moniak",
           "team": "COL",
           "score": 69,
@@ -167,7 +149,7 @@
           "correct": null
         },
         {
-          "rank": 19,
+          "rank": 17,
           "player": "Jorge Soler",
           "team": "LAA",
           "score": 69,
@@ -176,7 +158,16 @@
           "correct": null
         },
         {
-          "rank": 20,
+          "rank": 18,
+          "player": "Seiya Suzuki",
+          "team": "CHC",
+          "score": 69,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 19,
           "player": "Aaron Judge",
           "team": "NYY",
           "score": 68,
@@ -185,9 +176,18 @@
           "correct": null
         },
         {
-          "rank": 21,
+          "rank": 20,
           "player": "Daniel Schneemann",
           "team": "CLE",
+          "score": 66,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 21,
+          "player": "Oneil Cruz",
+          "team": "PIT",
           "score": 66,
           "confidence": "medium",
           "actual_hr": null,
@@ -204,15 +204,6 @@
         },
         {
           "rank": 23,
-          "player": "Oneil Cruz",
-          "team": "PIT",
-          "score": 66,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 24,
           "player": "Jeremiah Jackson",
           "team": "BAL",
           "score": 65,
@@ -221,10 +212,19 @@
           "correct": null
         },
         {
-          "rank": 25,
+          "rank": 24,
           "player": "Zach Neto",
           "team": "LAA",
           "score": 65,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 25,
+          "player": "Gunnar Henderson",
+          "team": "BAL",
+          "score": 64,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
