@@ -412,21 +412,25 @@ def grade_yesterday(history, yesterday_str):
         return
 
     print(f'  Grading picks for {yesterday_str}...')
+    # Fetch schedule first to get game PKs, then each box score directly.
+    # Hydrating boxscore through the schedule endpoint is unreliable.
     try:
-        sched = mlb_get('/schedule', {
-            'sportId': 1,
-            'date':    yesterday_str,
-            'hydrate': 'boxscore',
-        })
+        sched_meta = mlb_get('/schedule', {'sportId': 1, 'date': yesterday_str})
     except Exception as e:
         print(f'    WARN: could not fetch box scores: {e}')
         return
 
-    # Build {player_name: hits} from all box scores
+    game_pks = [
+        g['gamePk']
+        for d in sched_meta.get('dates', [])
+        for g in d.get('games', [])
+    ]
+
+    # Build {player_name: hits} from direct box score fetches
     hit_lookup = {}
-    for d in sched.get('dates', []):
-        for g in d.get('games', []):
-            box = g.get('boxscore', {})
+    for pk in game_pks:
+        try:
+            box = mlb_get(f'/game/{pk}/boxscore')
             for side in ['home', 'away']:
                 for _pid, pdata in (box.get('teams', {})
                                        .get(side, {})
@@ -437,6 +441,10 @@ def grade_yesterday(history, yesterday_str):
                                     .get('hits', 0))
                     if name:
                         hit_lookup[name] = max(hit_lookup.get(name, 0), hits)
+            time.sleep(SLEEP_S)
+        except Exception as e:
+            print(f'    WARN box score pk={pk}: {e}')
+            continue
 
     for pred in record.get('predictions', []):
         hits = hit_lookup.get(pred.get('player', ''), 0)

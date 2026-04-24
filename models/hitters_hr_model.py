@@ -611,6 +611,9 @@ def save_history(hist):
 def grade_yesterday(history, yesterday_str):
     """
     Auto-grade yesterday's picks using MLB Stats API box scores.
+    Fetches each game's box score directly via /game/{pk}/boxscore —
+    more reliable than hydrating the schedule endpoint, which doesn't
+    consistently return batting stats in the expected structure.
     Skips if the record doesn't exist or has already been graded.
     """
     record = next((r for r in history['records'] if r['date'] == yesterday_str), None)
@@ -618,30 +621,43 @@ def grade_yesterday(history, yesterday_str):
         return
 
     print(f'  Grading picks for {yesterday_str}...')
+
+    # Step 1: get game PKs for yesterday
     try:
-        sched = mlb_get('/schedule', {
-            'sportId': 1,
-            'date':    yesterday_str,
-            'hydrate': 'boxscore',
-        })
+        sched = mlb_get('/schedule', {'sportId': 1, 'date': yesterday_str})
     except Exception as e:
-        print(f'    WARN: could not fetch yesterday box scores: {e}')
+        print(f'    WARN: could not fetch yesterday schedule: {e}')
         return
 
+    game_pks = [
+        g['gamePk']
+        for d in sched.get('dates', [])
+        for g in d.get('games', [])
+    ]
+    if not game_pks:
+        print(f'    WARN: no games found for {yesterday_str}')
+        return
+
+    # Step 2: fetch each box score directly — avoids hydration inconsistency
     hr_lookup = {}
-    for d in sched.get('dates', []):
-        for g in d.get('games', []):
-            box = g.get('boxscore', {})
+    for pk in game_pks:
+        try:
+            box = mlb_get(f'/game/{pk}/boxscore')
             for side in ['home', 'away']:
-                for _pid, pdata in (box.get('teams', {})
-                                       .get(side, {})
-                                       .get('players', {}).items()):
+                players = (box.get('teams', {})
+                              .get(side, {})
+                              .get('players', {}))
+                for _pid, pdata in players.items():
                     name = pdata.get('person', {}).get('fullName', '')
                     hrs  = int(pdata.get('stats', {})
                                     .get('batting', {})
                                     .get('homeRuns', 0))
                     if name:
                         hr_lookup[name] = max(hr_lookup.get(name, 0), hrs)
+            time.sleep(SLEEP_S)
+        except Exception as e:
+            print(f'    WARN box score pk={pk}: {e}')
+            continue
 
     for pred in record.get('predictions', []):
         hrs = hr_lookup.get(pred.get('player', ''), 0)
