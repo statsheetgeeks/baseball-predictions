@@ -233,7 +233,7 @@
     },
     {
       "date": "2026-04-24",
-      "graded": true,
+      "graded": false,
       "predictions": [
         {
           "rank": 1,
@@ -461,23 +461,9 @@
           "correct": false
         }
       ],
-      "summary": {
-        "total": 25,
-        "hit_count": 0,
-        "hit_rate_pct": 0.0,
-        "hit_players": [],
-        "by_bucket": {
-          "75%+": {
-            "predicted": 25,
-            "hits": 0,
-            "rate_pct": 0.0
-          }
-        }
-      }
-    },
-    {
+       {
       "date": "2026-04-23",
-      "graded": true,
+      "graded": false,
       "predictions": [
         {
           "rank": 1,
@@ -705,24 +691,6 @@
           "correct": false
         }
       ],
-      "summary": {
-        "total": 25,
-        "hit_count": 0,
-        "hit_rate_pct": 0.0,
-        "hit_players": [],
-        "by_bucket": {
-          "75%+": {
-            "predicted": 16,
-            "hits": 0,
-            "rate_pct": 0.0
-          },
-          "65-74%": {
-            "predicted": 9,
-            "hits": 0,
-            "rate_pct": 0.0
-          }
-        }
-      }
     }
   ]
 }
