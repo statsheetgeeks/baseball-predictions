@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-25T21:02:26.663331+00:00",
+  "updated": "2026-04-25T21:35:08.429054+00:00",
   "date": "2026-04-25",
   "predictions": [
     {
@@ -57,33 +57,6 @@
       "correct": null
     },
     {
-      "game_time": "2:15 PM ET",
-      "away_team": "Seattle Mariners",
-      "home_team": "St. Louis Cardinals",
-      "log5": {
-        "pick": "St. Louis Cardinals",
-        "confidence": 0.614
-      },
-      "research": {
-        "pick": "St. Louis Cardinals",
-        "confidence": 0.5318
-      },
-      "xgboost": {
-        "pick": "St. Louis Cardinals",
-        "confidence": 0.5086
-      },
-      "random_forest": {
-        "pick": "St. Louis Cardinals",
-        "confidence": 0.5703
-      },
-      "composite_pick": "St. Louis Cardinals",
-      "composite_confidence": 0.5562,
-      "vote_count": 4,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
       "game_time": "7:10 PM ET",
       "away_team": "New York Yankees",
       "home_team": "Houston Astros",
@@ -133,6 +106,33 @@
       "composite_pick": "Chicago White Sox",
       "composite_confidence": 0.5487,
       "vote_count": 3,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "2:15 PM ET",
+      "away_team": "Seattle Mariners",
+      "home_team": "St. Louis Cardinals",
+      "log5": {
+        "pick": "St. Louis Cardinals",
+        "confidence": 0.5738
+      },
+      "research": {
+        "pick": "St. Louis Cardinals",
+        "confidence": 0.5318
+      },
+      "xgboost": {
+        "pick": "St. Louis Cardinals",
+        "confidence": 0.5086
+      },
+      "random_forest": {
+        "pick": "St. Louis Cardinals",
+        "confidence": 0.5703
+      },
+      "composite_pick": "St. Louis Cardinals",
+      "composite_confidence": 0.5461,
+      "vote_count": 4,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null

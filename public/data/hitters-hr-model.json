@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-25T21:10:49.358619+00:00",
+  "updated": "2026-04-25T21:43:54.257043+00:00",
   "date": "2026-04-25",
   "predictions": [
     {
@@ -25,12 +25,12 @@
       "iso": 0.311,
       "slg": 0.544,
       "ops": 0.969,
-      "temp_f": 77.6,
+      "temp_f": 77.3,
       "wind_mph": 6.4,
       "wind_hr_adj": 1.01,
       "hr_factor": 0.91,
       "recent_form": "8 HR this season, HR/AB 0.089, ISO 0.311, SLG 0.544",
-      "reasoning": "Mike Trout posts ISO 0.311, HR/AB 0.089, OPS 0.969 (batter score 97). Faces Cole Ragans (HR/9 2.57, ERA 6.00; SP vuln 100); bullpen vuln 56. Combined pitcher score 85 (65% SP + 35% bullpen). At Kauffman Stadium: 78\u00b0F, wind 6 mph (park score 27, context 68).",
+      "reasoning": "Mike Trout posts ISO 0.311, HR/AB 0.089, OPS 0.969 (batter score 97). Faces Cole Ragans (HR/9 2.57, ERA 6.00; SP vuln 100); bullpen vuln 56. Combined pitcher score 85 (65% SP + 35% bullpen). At Kauffman Stadium: 77\u00b0F, wind 6 mph (park score 27, context 68).",
       "actual_hr": null,
       "correct": null,
       "rank": 1
@@ -102,39 +102,6 @@
       "rank": 3
     },
     {
-      "player": "Munetaka Murakami",
-      "team": "CWS",
-      "hand": "L",
-      "game": "WSH @ CWS",
-      "game_time": "4:10 PM ET",
-      "park": "Guaranteed Rate Field",
-      "score": 76,
-      "confidence": "high",
-      "batter_score": 100,
-      "pitcher_score": 67,
-      "sp_score": 60,
-      "bullpen_score": 81,
-      "park_score": 39,
-      "context_score": 55,
-      "sp_name": "Jake Irvin",
-      "sp_era": "5.33",
-      "sp_listed": true,
-      "hr": 11,
-      "hr_per_ab": 0.1196,
-      "iso": 0.359,
-      "slg": 0.609,
-      "ops": 1.0,
-      "temp_f": null,
-      "wind_mph": null,
-      "wind_hr_adj": 1.0,
-      "hr_factor": 1.02,
-      "recent_form": "11 HR this season, HR/AB 0.120, ISO 0.359, SLG 0.609",
-      "reasoning": "Munetaka Murakami posts ISO 0.359, HR/AB 0.120, OPS 1.000 (batter score 100). Faces Jake Irvin (HR/9 1.33, ERA 5.33; SP vuln 60); bullpen vuln 81. Combined pitcher score 67 (65% SP + 35% bullpen).",
-      "actual_hr": null,
-      "correct": null,
-      "rank": 4
-    },
-    {
       "player": "Ildemaro Vargas",
       "team": "AZ",
       "hand": "S",
@@ -165,7 +132,7 @@
       "reasoning": "Ildemaro Vargas posts ISO 0.314, HR/AB 0.071, OPS 1.046 (batter score 100). Faces Germ\u00e1n M\u00e1rquez (HR/9 2.41, ERA 3.86; SP vuln 89); bullpen vuln 18. Combined pitcher score 64 (65% SP + 35% bullpen).",
       "actual_hr": null,
       "correct": null,
-      "rank": 5
+      "rank": 4
     },
     {
       "player": "Amed Rosario",
@@ -198,7 +165,7 @@
       "reasoning": "Amed Rosario posts ISO 0.289, HR/AB 0.077, OPS 0.868 (batter score 91). Faces Mike Burrows (HR/9 1.69, ERA 6.75; SP vuln 80); bullpen vuln 70. Combined pitcher score 76 (65% SP + 35% bullpen).",
       "actual_hr": null,
       "correct": null,
-      "rank": 6
+      "rank": 5
     },
     {
       "player": "Mickey Moniak",
@@ -223,7 +190,7 @@
       "iso": 0.397,
       "slg": 0.712,
       "ops": 1.05,
-      "temp_f": 44.1,
+      "temp_f": 43.6,
       "wind_mph": 7.2,
       "wind_hr_adj": 1.006,
       "hr_factor": 0.96,
@@ -231,7 +198,7 @@
       "reasoning": "Mickey Moniak posts ISO 0.397, HR/AB 0.110, OPS 1.050 (batter score 100). Faces Kodai Senga (HR/9 2.08, ERA 8.83; SP vuln 95); bullpen vuln 36. Combined pitcher score 74 (65% SP + 35% bullpen). At Citi Field: 44\u00b0F, wind 7 mph (park score 32, context 32).",
       "actual_hr": null,
       "correct": null,
-      "rank": 7
+      "rank": 6
     },
     {
       "player": "Adley Rutschman",
@@ -262,6 +229,39 @@
       "hr_factor": 1.03,
       "recent_form": "3 HR this season, HR/AB 0.064, ISO 0.320, SLG 0.660",
       "reasoning": "Adley Rutschman posts ISO 0.320, HR/AB 0.064, OPS 1.064 (batter score 99). Faces Garrett Crochet (HR/9 1.50, ERA 6.30; SP vuln 70); bullpen vuln 60. Combined pitcher score 66 (65% SP + 35% bullpen). At Camden Yards: 58\u00b0F, wind 10 mph (park score 34, context 47).",
+      "actual_hr": null,
+      "correct": null,
+      "rank": 7
+    },
+    {
+      "player": "Munetaka Murakami",
+      "team": "CWS",
+      "hand": "L",
+      "game": "WSH @ CWS",
+      "game_time": "4:10 PM ET",
+      "park": "Guaranteed Rate Field",
+      "score": 74,
+      "confidence": "high",
+      "batter_score": 100,
+      "pitcher_score": 63,
+      "sp_score": 54,
+      "bullpen_score": 80,
+      "park_score": 39,
+      "context_score": 55,
+      "sp_name": "Jake Irvin",
+      "sp_era": "4.97",
+      "sp_listed": true,
+      "hr": 11,
+      "hr_per_ab": 0.1183,
+      "iso": 0.355,
+      "slg": 0.602,
+      "ops": 0.99,
+      "temp_f": null,
+      "wind_mph": null,
+      "wind_hr_adj": 1.0,
+      "hr_factor": 1.02,
+      "recent_form": "11 HR this season, HR/AB 0.118, ISO 0.355, SLG 0.602",
+      "reasoning": "Munetaka Murakami posts ISO 0.355, HR/AB 0.118, OPS 0.990 (batter score 100). Faces Jake Irvin (HR/9 1.24, ERA 4.97; SP vuln 54); bullpen vuln 80. Combined pitcher score 63 (65% SP + 35% bullpen).",
       "actual_hr": null,
       "correct": null,
       "rank": 8
@@ -322,48 +322,15 @@
       "iso": 0.228,
       "slg": 0.514,
       "ops": 0.873,
-      "temp_f": 77.6,
+      "temp_f": 77.3,
       "wind_mph": 6.4,
       "wind_hr_adj": 1.01,
       "hr_factor": 0.91,
       "recent_form": "4 HR this season, HR/AB 0.057, ISO 0.228, SLG 0.514",
-      "reasoning": "Oswald Peraza posts ISO 0.228, HR/AB 0.057, OPS 0.873 (batter score 77). Faces Cole Ragans (HR/9 2.57, ERA 6.00; SP vuln 100); bullpen vuln 56. Combined pitcher score 85 (65% SP + 35% bullpen). At Kauffman Stadium: 78\u00b0F, wind 6 mph (park score 27, context 68).",
+      "reasoning": "Oswald Peraza posts ISO 0.228, HR/AB 0.057, OPS 0.873 (batter score 77). Faces Cole Ragans (HR/9 2.57, ERA 6.00; SP vuln 100); bullpen vuln 56. Combined pitcher score 85 (65% SP + 35% bullpen). At Kauffman Stadium: 77\u00b0F, wind 6 mph (park score 27, context 68).",
       "actual_hr": null,
       "correct": null,
       "rank": 10
-    },
-    {
-      "player": "Colson Montgomery",
-      "team": "CWS",
-      "hand": "L",
-      "game": "WSH @ CWS",
-      "game_time": "4:10 PM ET",
-      "park": "Guaranteed Rate Field",
-      "score": 71,
-      "confidence": "high",
-      "batter_score": 89,
-      "pitcher_score": 67,
-      "sp_score": 60,
-      "bullpen_score": 81,
-      "park_score": 39,
-      "context_score": 55,
-      "sp_name": "Jake Irvin",
-      "sp_era": "5.33",
-      "sp_listed": true,
-      "hr": 7,
-      "hr_per_ab": 0.0761,
-      "iso": 0.283,
-      "slg": 0.522,
-      "ops": 0.868,
-      "temp_f": null,
-      "wind_mph": null,
-      "wind_hr_adj": 1.0,
-      "hr_factor": 1.02,
-      "recent_form": "7 HR this season, HR/AB 0.076, ISO 0.283, SLG 0.522",
-      "reasoning": "Colson Montgomery posts ISO 0.283, HR/AB 0.076, OPS 0.868 (batter score 89). Faces Jake Irvin (HR/9 1.33, ERA 5.33; SP vuln 60); bullpen vuln 81. Combined pitcher score 67 (65% SP + 35% bullpen).",
-      "actual_hr": null,
-      "correct": null,
-      "rank": 11
     },
     {
       "player": "Ian Happ",
@@ -396,7 +363,7 @@
       "reasoning": "Ian Happ posts ISO 0.260, HR/AB 0.073, OPS 0.867 (batter score 86). Faces Roki Sasaki (HR/9 2.04, ERA 6.11; SP vuln 94); bullpen vuln 27. Combined pitcher score 71 (65% SP + 35% bullpen).",
       "actual_hr": null,
       "correct": null,
-      "rank": 12
+      "rank": 11
     },
     {
       "player": "Mois\u00e9s Ballesteros",
@@ -429,40 +396,40 @@
       "reasoning": "Mois\u00e9s Ballesteros posts ISO 0.255, HR/AB 0.054, OPS 1.098 (batter score 88). Faces Roki Sasaki (HR/9 2.04, ERA 6.11; SP vuln 94); bullpen vuln 27. Combined pitcher score 71 (65% SP + 35% bullpen).",
       "actual_hr": null,
       "correct": null,
-      "rank": 13
+      "rank": 12
     },
     {
-      "player": "Everson Pereira",
+      "player": "Colson Montgomery",
       "team": "CWS",
-      "hand": "R",
+      "hand": "L",
       "game": "WSH @ CWS",
       "game_time": "4:10 PM ET",
       "park": "Guaranteed Rate Field",
-      "score": 70,
-      "confidence": "high",
-      "batter_score": 85,
-      "pitcher_score": 67,
-      "sp_score": 60,
-      "bullpen_score": 81,
-      "park_score": 41,
+      "score": 69,
+      "confidence": "medium",
+      "batter_score": 88,
+      "pitcher_score": 63,
+      "sp_score": 54,
+      "bullpen_score": 80,
+      "park_score": 39,
       "context_score": 55,
       "sp_name": "Jake Irvin",
-      "sp_era": "5.33",
+      "sp_era": "4.97",
       "sp_listed": true,
-      "hr": 3,
-      "hr_per_ab": 0.06,
-      "iso": 0.26,
-      "slg": 0.54,
-      "ops": 0.891,
+      "hr": 7,
+      "hr_per_ab": 0.0753,
+      "iso": 0.279,
+      "slg": 0.516,
+      "ops": 0.859,
       "temp_f": null,
       "wind_mph": null,
       "wind_hr_adj": 1.0,
-      "hr_factor": 1.04,
-      "recent_form": "3 HR this season, HR/AB 0.060, ISO 0.260, SLG 0.540",
-      "reasoning": "Everson Pereira posts ISO 0.260, HR/AB 0.060, OPS 0.891 (batter score 85). Faces Jake Irvin (HR/9 1.33, ERA 5.33; SP vuln 60); bullpen vuln 81. Combined pitcher score 67 (65% SP + 35% bullpen).",
+      "hr_factor": 1.02,
+      "recent_form": "7 HR this season, HR/AB 0.075, ISO 0.279, SLG 0.516",
+      "reasoning": "Colson Montgomery posts ISO 0.279, HR/AB 0.075, OPS 0.859 (batter score 88). Faces Jake Irvin (HR/9 1.24, ERA 4.97; SP vuln 54); bullpen vuln 80. Combined pitcher score 63 (65% SP + 35% bullpen).",
       "actual_hr": null,
       "correct": null,
-      "rank": 14
+      "rank": 13
     },
     {
       "player": "Jorge Soler",
@@ -487,15 +454,15 @@
       "iso": 0.219,
       "slg": 0.439,
       "ops": 0.772,
-      "temp_f": 77.6,
+      "temp_f": 77.3,
       "wind_mph": 6.4,
       "wind_hr_adj": 1.01,
       "hr_factor": 0.91,
       "recent_form": "5 HR this season, HR/AB 0.061, ISO 0.219, SLG 0.439",
-      "reasoning": "Jorge Soler posts ISO 0.219, HR/AB 0.061, OPS 0.772 (batter score 71). Faces Cole Ragans (HR/9 2.57, ERA 6.00; SP vuln 100); bullpen vuln 56. Combined pitcher score 85 (65% SP + 35% bullpen). At Kauffman Stadium: 78\u00b0F, wind 6 mph (park score 27, context 68).",
+      "reasoning": "Jorge Soler posts ISO 0.219, HR/AB 0.061, OPS 0.772 (batter score 71). Faces Cole Ragans (HR/9 2.57, ERA 6.00; SP vuln 100); bullpen vuln 56. Combined pitcher score 85 (65% SP + 35% bullpen). At Kauffman Stadium: 77\u00b0F, wind 6 mph (park score 27, context 68).",
       "actual_hr": null,
       "correct": null,
-      "rank": 15
+      "rank": 14
     },
     {
       "player": "Hunter Goodman",
@@ -520,7 +487,7 @@
       "iso": 0.263,
       "slg": 0.527,
       "ops": 0.87,
-      "temp_f": 44.1,
+      "temp_f": 43.6,
       "wind_mph": 7.2,
       "wind_hr_adj": 1.006,
       "hr_factor": 0.92,
@@ -528,7 +495,7 @@
       "reasoning": "Hunter Goodman posts ISO 0.263, HR/AB 0.066, OPS 0.870 (batter score 87). Faces Kodai Senga (HR/9 2.08, ERA 8.83; SP vuln 95); bullpen vuln 36. Combined pitcher score 74 (65% SP + 35% bullpen). At Citi Field: 44\u00b0F, wind 7 mph (park score 27, context 32).",
       "actual_hr": null,
       "correct": null,
-      "rank": 16
+      "rank": 15
     },
     {
       "player": "Dansby Swanson",
@@ -561,7 +528,73 @@
       "reasoning": "Dansby Swanson posts ISO 0.244, HR/AB 0.070, OPS 0.802 (batter score 78). Faces Roki Sasaki (HR/9 2.04, ERA 6.11; SP vuln 94); bullpen vuln 27. Combined pitcher score 71 (65% SP + 35% bullpen).",
       "actual_hr": null,
       "correct": null,
+      "rank": 16
+    },
+    {
+      "player": "Matt Olson",
+      "team": "ATL",
+      "hand": "L",
+      "game": "PHI @ ATL",
+      "game_time": "7:15 PM ET",
+      "park": "Truist Park",
+      "score": 68,
+      "confidence": "medium",
+      "batter_score": 96,
+      "pitcher_score": 43,
+      "sp_score": 40,
+      "bullpen_score": 49,
+      "park_score": 45,
+      "context_score": 68,
+      "sp_name": "Zack Wheeler",
+      "sp_era": "2.71",
+      "sp_listed": true,
+      "hr": 7,
+      "hr_per_ab": 0.0648,
+      "iso": 0.296,
+      "slg": 0.583,
+      "ops": 0.944,
+      "temp_f": 69.4,
+      "wind_mph": 5.4,
+      "wind_hr_adj": 1.033,
+      "hr_factor": 1.05,
+      "recent_form": "7 HR this season, HR/AB 0.065, ISO 0.296, SLG 0.583",
+      "reasoning": "Matt Olson posts ISO 0.296, HR/AB 0.065, OPS 0.944 (batter score 96). Faces Zack Wheeler (HR/9 1.14, ERA 2.71; SP vuln 40); bullpen vuln 49. Combined pitcher score 43 (65% SP + 35% bullpen). At Truist Park: 69\u00b0F, wind 5 mph (park score 45, context 68).",
+      "actual_hr": null,
+      "correct": null,
       "rank": 17
+    },
+    {
+      "player": "Everson Pereira",
+      "team": "CWS",
+      "hand": "R",
+      "game": "WSH @ CWS",
+      "game_time": "4:10 PM ET",
+      "park": "Guaranteed Rate Field",
+      "score": 67,
+      "confidence": "medium",
+      "batter_score": 82,
+      "pitcher_score": 63,
+      "sp_score": 54,
+      "bullpen_score": 80,
+      "park_score": 41,
+      "context_score": 55,
+      "sp_name": "Jake Irvin",
+      "sp_era": "4.97",
+      "sp_listed": true,
+      "hr": 3,
+      "hr_per_ab": 0.0588,
+      "iso": 0.254,
+      "slg": 0.529,
+      "ops": 0.874,
+      "temp_f": null,
+      "wind_mph": null,
+      "wind_hr_adj": 1.0,
+      "hr_factor": 1.04,
+      "recent_form": "3 HR this season, HR/AB 0.059, ISO 0.254, SLG 0.529",
+      "reasoning": "Everson Pereira posts ISO 0.254, HR/AB 0.059, OPS 0.874 (batter score 82). Faces Jake Irvin (HR/9 1.24, ERA 4.97; SP vuln 54); bullpen vuln 80. Combined pitcher score 63 (65% SP + 35% bullpen).",
+      "actual_hr": null,
+      "correct": null,
+      "rank": 18
     },
     {
       "player": "Seiya Suzuki",
@@ -594,7 +627,7 @@
       "reasoning": "Seiya Suzuki posts ISO 0.196, HR/AB 0.059, OPS 0.909 (batter score 75). Faces Roki Sasaki (HR/9 2.04, ERA 6.11; SP vuln 94); bullpen vuln 27. Combined pitcher score 71 (65% SP + 35% bullpen).",
       "actual_hr": null,
       "correct": null,
-      "rank": 18
+      "rank": 19
     },
     {
       "player": "Corbin Carroll",
@@ -627,7 +660,7 @@
       "reasoning": "Corbin Carroll posts ISO 0.284, HR/AB 0.037, OPS 0.976 (batter score 79). Faces Germ\u00e1n M\u00e1rquez (HR/9 2.41, ERA 3.86; SP vuln 89); bullpen vuln 18. Combined pitcher score 64 (65% SP + 35% bullpen).",
       "actual_hr": null,
       "correct": null,
-      "rank": 19
+      "rank": 20
     },
     {
       "player": "Yordan Alvarez",
@@ -660,7 +693,7 @@
       "reasoning": "Yordan Alvarez posts ISO 0.419, HR/AB 0.112, OPS 1.247 (batter score 100). Faces Ryan Weathers (HR/9 1.27, ERA 3.18; SP vuln 48); bullpen vuln 25. Combined pitcher score 40 (65% SP + 35% bullpen).",
       "actual_hr": null,
       "correct": null,
-      "rank": 20
+      "rank": 21
     },
     {
       "player": "Brandon Lowe",
@@ -691,39 +724,6 @@
       "hr_factor": 1.08,
       "recent_form": "7 HR this season, HR/AB 0.079, ISO 0.292, SLG 0.539",
       "reasoning": "Brandon Lowe posts ISO 0.292, HR/AB 0.079, OPS 0.882 (batter score 91). Faces Jacob Misiorowski (HR/9 1.35, ERA 3.04; SP vuln 51); bullpen vuln 36. Combined pitcher score 46 (65% SP + 35% bullpen).",
-      "actual_hr": null,
-      "correct": null,
-      "rank": 21
-    },
-    {
-      "player": "Matt Olson",
-      "team": "ATL",
-      "hand": "L",
-      "game": "PHI @ ATL",
-      "game_time": "7:15 PM ET",
-      "park": "Truist Park",
-      "score": 66,
-      "confidence": "medium",
-      "batter_score": 96,
-      "pitcher_score": 43,
-      "sp_score": 40,
-      "bullpen_score": 49,
-      "park_score": 42,
-      "context_score": 55,
-      "sp_name": "Zack Wheeler",
-      "sp_era": "2.71",
-      "sp_listed": true,
-      "hr": 7,
-      "hr_per_ab": 0.0648,
-      "iso": 0.296,
-      "slg": 0.583,
-      "ops": 0.944,
-      "temp_f": null,
-      "wind_mph": null,
-      "wind_hr_adj": 1.0,
-      "hr_factor": 1.05,
-      "recent_form": "7 HR this season, HR/AB 0.065, ISO 0.296, SLG 0.583",
-      "reasoning": "Matt Olson posts ISO 0.296, HR/AB 0.065, OPS 0.944 (batter score 96). Faces Zack Wheeler (HR/9 1.14, ERA 2.71; SP vuln 40); bullpen vuln 49. Combined pitcher score 43 (65% SP + 35% bullpen).",
       "actual_hr": null,
       "correct": null,
       "rank": 22
@@ -817,56 +817,24 @@
       "iso": 0.198,
       "slg": 0.434,
       "ops": 0.791,
-      "temp_f": 77.6,
+      "temp_f": 77.3,
       "wind_mph": 6.4,
       "wind_hr_adj": 1.01,
       "hr_factor": 0.91,
       "recent_form": "5 HR this season, HR/AB 0.047, ISO 0.198, SLG 0.434",
-      "reasoning": "Zach Neto posts ISO 0.198, HR/AB 0.047, OPS 0.791 (batter score 61). Faces Cole Ragans (HR/9 2.57, ERA 6.00; SP vuln 100); bullpen vuln 56. Combined pitcher score 85 (65% SP + 35% bullpen). At Kauffman Stadium: 78\u00b0F, wind 6 mph (park score 27, context 68).",
+      "reasoning": "Zach Neto posts ISO 0.198, HR/AB 0.047, OPS 0.791 (batter score 61). Faces Cole Ragans (HR/9 2.57, ERA 6.00; SP vuln 100); bullpen vuln 56. Combined pitcher score 85 (65% SP + 35% bullpen). At Kauffman Stadium: 77\u00b0F, wind 6 mph (park score 27, context 68).",
       "actual_hr": null,
       "correct": null,
       "rank": 25
     }
   ],
   "yesterday": {
-    "date": "2026-04-24",
-    "total": 25,
-    "hr_count": 4,
-    "hit_rate_pct": 16.0,
-    "hr_players": [
-      "Munetaka Murakami",
-      "Ben Rice",
-      "Daniel Schneemann",
-      "Gunnar Henderson"
-    ],
-    "by_bucket": {
-      "70+": {
-        "predicted": 15,
-        "hr": 2,
-        "rate_pct": 13.3
-      },
-      "60-69": {
-        "predicted": 10,
-        "hr": 2,
-        "rate_pct": 20.0
-      }
-    }
+    "date": "2026-04-24"
   },
   "alltime": {
-    "total": 25,
-    "hr_count": 4,
-    "hit_rate_pct": 16.0,
-    "by_bucket": {
-      "70+": {
-        "predicted": 15,
-        "hr": 2,
-        "rate_pct": 13.3
-      },
-      "60-69": {
-        "predicted": 10,
-        "hr": 2,
-        "rate_pct": 20.0
-      }
-    }
+    "total": 0,
+    "hr_count": 0,
+    "hit_rate_pct": 0.0,
+    "by_bucket": {}
   }
 }
