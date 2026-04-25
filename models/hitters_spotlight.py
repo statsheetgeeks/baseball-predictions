@@ -47,7 +47,7 @@ PRED_FILES = {
 # Four history JSONs (yesterday's graded records)
 HIST_FILES = {
     'Log5 Hit': os.path.join(DATA_DIR, 'hitters-log5-history.json'),
-    'ML Hit':   os.path.join(DATA_DIR, 'hitters-ml-history.json'),
+    'ML Hit':   os.path.join(DATA_DIR, 'hitters-ml-hit-history.json'),
     'HR Model': os.path.join(DATA_DIR, 'hitters-hr-history.json'),
     'ML HR':    os.path.join(DATA_DIR, 'hitters-ml-hr-history.json'),
 }

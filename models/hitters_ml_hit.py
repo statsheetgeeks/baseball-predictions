@@ -71,7 +71,7 @@ DATA_DIR      = os.path.join(BASE_DIR, '..', 'public', 'data')
 CACHE_DIR     = os.path.join(BASE_DIR, '..', 'hit_pred_cache')
 MODEL_DIR     = os.path.join(BASE_DIR, 'mlb_cache_v2')
 MAIN_JSON     = os.path.join(DATA_DIR,  'hitters-ml-hit.json')
-HIST_JSON     = os.path.join(DATA_DIR,  'hitters-ml-history.json')
+HIST_JSON     = os.path.join(DATA_DIR,  'hitters-ml-hit-history.json')
 MODELS_PKL    = os.path.join(MODEL_DIR, 'ml_hit_models.pkl')
 
 for d in [DATA_DIR, CACHE_DIR, MODEL_DIR]:
@@ -622,19 +622,25 @@ def grade_yesterday(history, yesterday_str):
 
     print(f'  Grading picks for {yesterday_str}...')
     try:
-        sched = requests.get(
+        sched_meta = requests.get(
             f'{MLB_API}/schedule',
-            params={'sportId':1,'date':yesterday_str,'hydrate':'boxscore'},
+            params={'sportId':1,'date':yesterday_str},
             timeout=20,
         ).json()
     except Exception as e:
         print(f'    WARN: could not fetch box scores: {e}')
         return
 
+    game_pks = [
+        g['gamePk']
+        for d in sched_meta.get('dates', [])
+        for g in d.get('games', [])
+    ]
+
     hit_lookup = {}
-    for d in sched.get('dates', []):
-        for g in d.get('games', []):
-            box = g.get('boxscore', {})
+    for pk in game_pks:
+        try:
+            box = requests.get(f'{MLB_API}/game/{pk}/boxscore', timeout=20).json()
             for side in ['home', 'away']:
                 for _pid, pdata in (box.get('teams', {})
                                        .get(side, {})
@@ -643,6 +649,10 @@ def grade_yesterday(history, yesterday_str):
                     hits = int(pdata.get('stats', {}).get('batting', {}).get('hits', 0))
                     if name:
                         hit_lookup[name] = max(hit_lookup.get(name, 0), hits)
+            time.sleep(SLEEP_S)
+        except Exception as e:
+            print(f'    WARN box score pk={pk}: {e}')
+            continue
 
     for pred in record.get('predictions', []):
         hits = hit_lookup.get(pred.get('player', ''), 0)
