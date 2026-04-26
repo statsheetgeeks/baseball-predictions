@@ -1,8 +1,239 @@
 {
   "records": [
     {
-      "date": "2026-04-25",
+      "date": "2026-04-26",
       "graded": false,
+      "predictions": [
+        {
+          "rank": 1,
+          "player": "Hunter Goodman",
+          "team": "COL",
+          "lambda_poisson": 0.732729971408844,
+          "prob_binary": 0.9039000272750854,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 2,
+          "player": "Yordan Alvarez",
+          "team": "HOU",
+          "lambda_poisson": 0.7041800022125244,
+          "prob_binary": 0.8633999824523926,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 3,
+          "player": "Matt Olson",
+          "team": "ATL",
+          "lambda_poisson": 0.6915799975395203,
+          "prob_binary": 0.85589998960495,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 4,
+          "player": "Jonathan Aranda",
+          "team": "TB",
+          "lambda_poisson": 0.6383699774742126,
+          "prob_binary": 0.6628000140190125,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 5,
+          "player": "Corey Seager",
+          "team": "TEX",
+          "lambda_poisson": 0.6095600128173828,
+          "prob_binary": 0.847599983215332,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 6,
+          "player": "Colson Montgomery",
+          "team": "CWS",
+          "lambda_poisson": 0.6078799962997437,
+          "prob_binary": 0.8942999839782715,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 7,
+          "player": "Munetaka Murakami",
+          "team": "CWS",
+          "lambda_poisson": 0.6017600297927856,
+          "prob_binary": 0.8317999839782715,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 8,
+          "player": "Jordan Walker",
+          "team": "STL",
+          "lambda_poisson": 0.5591099858283997,
+          "prob_binary": 0.9128000140190125,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 9,
+          "player": "Jackson Merrill",
+          "team": "SD",
+          "lambda_poisson": 0.49709001183509827,
+          "prob_binary": 0.7698000073432922,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 10,
+          "player": "Kyle Schwarber",
+          "team": "PHI",
+          "lambda_poisson": 0.49581998586654663,
+          "prob_binary": 0.817799985408783,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 11,
+          "player": "Christian Walker",
+          "team": "HOU",
+          "lambda_poisson": 0.4914500117301941,
+          "prob_binary": 0.8015000224113464,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 12,
+          "player": "Kazuma Okamoto",
+          "team": "TOR",
+          "lambda_poisson": 0.44839999079704285,
+          "prob_binary": 0.7997999787330627,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 13,
+          "player": "Jake Burger",
+          "team": "TEX",
+          "lambda_poisson": 0.44152000546455383,
+          "prob_binary": 0.7472000122070312,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 14,
+          "player": "Gunnar Henderson",
+          "team": "BAL",
+          "lambda_poisson": 0.4412899911403656,
+          "prob_binary": 0.7732999920845032,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 15,
+          "player": "Brandon Nimmo",
+          "team": "TEX",
+          "lambda_poisson": 0.4327700138092041,
+          "prob_binary": 0.8176000118255615,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 16,
+          "player": "Bryce Harper",
+          "team": "PHI",
+          "lambda_poisson": 0.42785000801086426,
+          "prob_binary": 0.8309999704360962,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 17,
+          "player": "Cal Raleigh",
+          "team": "SEA",
+          "lambda_poisson": 0.4262300133705139,
+          "prob_binary": 0.6459000110626221,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 18,
+          "player": "Andr\u00e9s Gim\u00e9nez",
+          "team": "TOR",
+          "lambda_poisson": 0.4191100001335144,
+          "prob_binary": 0.8353999853134155,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 19,
+          "player": "Andy Pages",
+          "team": "LAD",
+          "lambda_poisson": 0.40397000312805176,
+          "prob_binary": 0.8328999876976013,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 20,
+          "player": "Adolis Garc\u00eda",
+          "team": "PHI",
+          "lambda_poisson": 0.40334001183509827,
+          "prob_binary": 0.6819000244140625,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 21,
+          "player": "Junior Caminero",
+          "team": "TB",
+          "lambda_poisson": 0.39645999670028687,
+          "prob_binary": 0.6589000225067139,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 22,
+          "player": "Jose Altuve",
+          "team": "HOU",
+          "lambda_poisson": 0.3832800090312958,
+          "prob_binary": 0.7851999998092651,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 23,
+          "player": "TJ Rumfield",
+          "team": "COL",
+          "lambda_poisson": 0.3763499855995178,
+          "prob_binary": 0.6802999973297119,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 24,
+          "player": "Drake Baldwin",
+          "team": "ATL",
+          "lambda_poisson": 0.36956000328063965,
+          "prob_binary": 0.6582000255584717,
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 25,
+          "player": "JJ Wetherholt",
+          "team": "STL",
+          "lambda_poisson": 0.36904001235961914,
+          "prob_binary": 0.7383999824523926,
+          "actual_hr": null,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "date": "2026-04-25",
+      "graded": true,
       "predictions": [
         {
           "rank": 1,
@@ -10,8 +241,8 @@
           "team": "PIT",
           "lambda_poisson": 1.0090299844741821,
           "prob_binary": 0.9261999726295471,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 2,
@@ -19,8 +250,8 @@
           "team": "PIT",
           "lambda_poisson": 0.9648600220680237,
           "prob_binary": 0.9373999834060669,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 3,
@@ -28,8 +259,8 @@
           "team": "ATH",
           "lambda_poisson": 0.9039700031280518,
           "prob_binary": 0.9283000230789185,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 4,
@@ -37,8 +268,8 @@
           "team": "ATL",
           "lambda_poisson": 0.8077700138092041,
           "prob_binary": 0.9251000285148621,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 5,
@@ -46,8 +277,8 @@
           "team": "ATH",
           "lambda_poisson": 0.807200014591217,
           "prob_binary": 0.8919000029563904,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 6,
@@ -55,8 +286,8 @@
           "team": "TEX",
           "lambda_poisson": 0.8010799884796143,
           "prob_binary": 0.8360000252723694,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 7,
@@ -64,8 +295,8 @@
           "team": "NYY",
           "lambda_poisson": 0.748170018196106,
           "prob_binary": 0.8155999779701233,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 8,
@@ -73,8 +304,8 @@
           "team": "CWS",
           "lambda_poisson": 0.732420027256012,
           "prob_binary": 0.7193999886512756,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 9,
@@ -82,8 +313,8 @@
           "team": "HOU",
           "lambda_poisson": 0.7010599970817566,
           "prob_binary": 0.9320999979972839,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 1,
+          "correct": true
         },
         {
           "rank": 10,
@@ -91,8 +322,8 @@
           "team": "CWS",
           "lambda_poisson": 0.7008299827575684,
           "prob_binary": 0.8881000280380249,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 11,
@@ -100,8 +331,8 @@
           "team": "NYY",
           "lambda_poisson": 0.6791899800300598,
           "prob_binary": 0.8424000144004822,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 12,
@@ -109,8 +340,8 @@
           "team": "LAA",
           "lambda_poisson": 0.6758099794387817,
           "prob_binary": 0.8427000045776367,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 13,
@@ -118,8 +349,8 @@
           "team": "CHC",
           "lambda_poisson": 0.6602500081062317,
           "prob_binary": 0.920199990272522,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 14,
@@ -127,8 +358,8 @@
           "team": "HOU",
           "lambda_poisson": 0.6474000215530396,
           "prob_binary": 0.8837000131607056,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 15,
@@ -136,8 +367,8 @@
           "team": "TEX",
           "lambda_poisson": 0.6263800263404846,
           "prob_binary": 0.8610000014305115,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 16,
@@ -145,8 +376,8 @@
           "team": "COL",
           "lambda_poisson": 0.6170600056648254,
           "prob_binary": 0.9175000190734863,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 17,
@@ -154,8 +385,8 @@
           "team": "ATH",
           "lambda_poisson": 0.6141499876976013,
           "prob_binary": 0.8801000118255615,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 1,
+          "correct": true
         },
         {
           "rank": 18,
@@ -163,8 +394,8 @@
           "team": "MIA",
           "lambda_poisson": 0.605139970779419,
           "prob_binary": 0.8931999802589417,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 19,
@@ -172,8 +403,8 @@
           "team": "BAL",
           "lambda_poisson": 0.5813800096511841,
           "prob_binary": 0.8626999855041504,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 20,
@@ -181,8 +412,8 @@
           "team": "ATL",
           "lambda_poisson": 0.578719973564148,
           "prob_binary": 0.8888999819755554,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 21,
@@ -190,8 +421,8 @@
           "team": "LAA",
           "lambda_poisson": 0.5651599764823914,
           "prob_binary": 0.8360999822616577,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 22,
@@ -199,8 +430,8 @@
           "team": "PIT",
           "lambda_poisson": 0.5445299744606018,
           "prob_binary": 0.8256999850273132,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 23,
@@ -208,8 +439,8 @@
           "team": "CHC",
           "lambda_poisson": 0.5309799909591675,
           "prob_binary": 0.8389999866485596,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 24,
@@ -217,8 +448,8 @@
           "team": "HOU",
           "lambda_poisson": 0.5170400142669678,
           "prob_binary": 0.8065000176429749,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 25,
@@ -226,10 +457,26 @@
           "team": "AZ",
           "lambda_poisson": 0.5023499727249146,
           "prob_binary": 0.6859999895095825,
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         }
-      ]
+      ],
+      "summary": {
+        "total": 25,
+        "hr_count": 2,
+        "hit_rate_pct": 8.0,
+        "hr_players": [
+          "Christian Walker",
+          "Max Muncy"
+        ],
+        "by_bucket": {
+          "High (\u03bb\u22650.08)": {
+            "predicted": 25,
+            "hrs": 2,
+            "rate_pct": 8.0
+          }
+        }
+      }
     }
   ]
 }
