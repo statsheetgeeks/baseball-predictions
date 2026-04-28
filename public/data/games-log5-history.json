@@ -124,12 +124,12 @@
           "game_time": "7:40 PM ET",
           "away_team": "Los Angeles Angels",
           "home_team": "Chicago White Sox",
-          "away_pct": 0.414,
-          "home_pct": 0.393,
-          "away_prob": 0.5217,
-          "home_prob": 0.4783,
-          "pick": "Los Angeles Angels",
-          "confidence": 0.5217,
+          "away_pct": 0.4,
+          "home_pct": 0.414,
+          "away_prob": 0.4857,
+          "home_prob": 0.5143,
+          "pick": "Chicago White Sox",
+          "confidence": 0.5143,
           "actual_winner": null,
           "correct": null
         },
@@ -189,12 +189,12 @@
           "game_time": "10:10 PM ET",
           "away_team": "Miami Marlins",
           "home_team": "Los Angeles Dodgers",
-          "away_pct": 0.464,
-          "home_pct": 0.679,
-          "away_prob": 0.291,
-          "home_prob": 0.709,
+          "away_pct": 0.448,
+          "home_pct": 0.69,
+          "away_prob": 0.2677,
+          "home_prob": 0.7323,
           "pick": "Los Angeles Dodgers",
-          "confidence": 0.709,
+          "confidence": 0.7323,
           "actual_winner": null,
           "correct": null
         }
@@ -265,8 +265,8 @@
           "home_prob": 0.4783,
           "pick": "Los Angeles Angels",
           "confidence": 0.5217,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Chicago White Sox",
+          "correct": false
         },
         {
           "game_time": "8:05 PM ET",
@@ -304,8 +304,8 @@
           "home_prob": 0.709,
           "pick": "Los Angeles Dodgers",
           "confidence": 0.709,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Los Angeles Dodgers",
+          "correct": true
         }
       ]
     },

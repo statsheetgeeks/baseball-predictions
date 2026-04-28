@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-28T04:58:56.243861+00:00",
+  "updated": "2026-04-28T17:30:57.172050+00:00",
   "date": "2026-04-28",
   "predictions": [
     {
@@ -8,9 +8,9 @@
       "home_team": "Cleveland Guardians",
       "away_prob": 0.4682,
       "home_prob": 0.5318,
-      "base_logr_home": 0.5355,
+      "base_logr_home": 0.536,
       "base_xgb_home": 0.5593,
-      "base_mlp_home": 0.6006,
+      "base_mlp_home": 0.6013,
       "pick": "Cleveland Guardians",
       "confidence": 0.5318,
       "actual_winner": null,
@@ -36,9 +36,9 @@
       "home_team": "Cincinnati Reds",
       "away_prob": 0.4996,
       "home_prob": 0.5004,
-      "base_logr_home": 0.5193,
+      "base_logr_home": 0.5194,
       "base_xgb_home": 0.4489,
-      "base_mlp_home": 0.6879,
+      "base_mlp_home": 0.6946,
       "pick": "Cincinnati Reds",
       "confidence": 0.5004,
       "actual_winner": null,
@@ -76,13 +76,13 @@
       "game_time": "7:07 PM ET",
       "away_team": "Boston Red Sox",
       "home_team": "Toronto Blue Jays",
-      "away_prob": 0.5102,
-      "home_prob": 0.4898,
-      "base_logr_home": 0.503,
+      "away_prob": 0.5076,
+      "home_prob": 0.4924,
+      "base_logr_home": 0.5038,
       "base_xgb_home": 0.4806,
-      "base_mlp_home": 0.6141,
+      "base_mlp_home": 0.6132,
       "pick": "Boston Red Sox",
-      "confidence": 0.5102,
+      "confidence": 0.5076,
       "actual_winner": null,
       "correct": null
     },
@@ -216,22 +216,22 @@
   "yesterday": {
     "date": "2026-04-27",
     "total": {
-      "wins": 3,
+      "wins": 5,
       "losses": 3,
-      "total": 6
+      "total": 8
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 3,
+        "wins": 4,
         "losses": 3,
-        "total": 6
+        "total": 7
       },
       {
         "band": "60-69%",
-        "wins": 0,
+        "wins": 1,
         "losses": 0,
-        "total": 0
+        "total": 1
       },
       {
         "band": "70-79%",
@@ -249,22 +249,22 @@
   },
   "alltime": {
     "total": {
-      "wins": 36,
+      "wins": 38,
       "losses": 38,
-      "total": 74
+      "total": 76
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 29,
+        "wins": 30,
         "losses": 34,
-        "total": 63
+        "total": 64
       },
       {
         "band": "60-69%",
-        "wins": 7,
+        "wins": 8,
         "losses": 4,
-        "total": 11
+        "total": 12
       },
       {
         "band": "70-79%",
