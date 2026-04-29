@@ -1,8 +1,239 @@
 {
   "records": [
     {
-      "date": "2026-04-28",
+      "date": "2026-04-29",
       "graded": false,
+      "predictions": [
+        {
+          "rank": 1,
+          "player": "Jose Altuve",
+          "team": "HOU",
+          "p_mlp": 0.9154,
+          "p_ens": 0.8274,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 2,
+          "player": "Ian Happ",
+          "team": "CHC",
+          "p_mlp": 0.9063,
+          "p_ens": 0.819,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 3,
+          "player": "Isaac Paredes",
+          "team": "HOU",
+          "p_mlp": 0.9038,
+          "p_ens": 0.8177,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 4,
+          "player": "Jung Hoo Lee",
+          "team": "SF",
+          "p_mlp": 0.9027,
+          "p_ens": 0.8275,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 5,
+          "player": "Nico Hoerner",
+          "team": "CHC",
+          "p_mlp": 0.8946,
+          "p_ens": 0.8077,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 6,
+          "player": "Luis Arraez",
+          "team": "SF",
+          "p_mlp": 0.8946,
+          "p_ens": 0.826,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 7,
+          "player": "Alex Bregman",
+          "team": "CHC",
+          "p_mlp": 0.8911,
+          "p_ens": 0.8093,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 8,
+          "player": "Yordan Alvarez",
+          "team": "HOU",
+          "p_mlp": 0.8866,
+          "p_ens": 0.8002,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 9,
+          "player": "Carlos Correa",
+          "team": "HOU",
+          "p_mlp": 0.8843,
+          "p_ens": 0.8053,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 10,
+          "player": "Pete Crow-Armstrong",
+          "team": "CHC",
+          "p_mlp": 0.883,
+          "p_ens": 0.7874,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 11,
+          "player": "Yainer Diaz",
+          "team": "HOU",
+          "p_mlp": 0.8814,
+          "p_ens": 0.8069,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 12,
+          "player": "Aaron Judge",
+          "team": "NYY",
+          "p_mlp": 0.8808,
+          "p_ens": 0.8082,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 13,
+          "player": "Paul Goldschmidt",
+          "team": "NYY",
+          "p_mlp": 0.8795,
+          "p_ens": 0.8059,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 14,
+          "player": "Seiya Suzuki",
+          "team": "CHC",
+          "p_mlp": 0.8716,
+          "p_ens": 0.7916,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 15,
+          "player": "Christian Walker",
+          "team": "HOU",
+          "p_mlp": 0.8699,
+          "p_ens": 0.8055,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 16,
+          "player": "Willy Adames",
+          "team": "SF",
+          "p_mlp": 0.8667,
+          "p_ens": 0.8058,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 17,
+          "player": "Rafael Devers",
+          "team": "SF",
+          "p_mlp": 0.8657,
+          "p_ens": 0.8141,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 18,
+          "player": "Matt Shaw",
+          "team": "CHC",
+          "p_mlp": 0.8604,
+          "p_ens": 0.7741,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 19,
+          "player": "Heliot Ramos",
+          "team": "SF",
+          "p_mlp": 0.8597,
+          "p_ens": 0.8076,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 20,
+          "player": "Michael Busch",
+          "team": "CHC",
+          "p_mlp": 0.8415,
+          "p_ens": 0.7627,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 21,
+          "player": "Cam Smith",
+          "team": "HOU",
+          "p_mlp": 0.8403,
+          "p_ens": 0.7776,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 22,
+          "player": "Dansby Swanson",
+          "team": "CHC",
+          "p_mlp": 0.8401,
+          "p_ens": 0.774,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 23,
+          "player": "CJ Abrams",
+          "team": "WSH",
+          "p_mlp": 0.8375,
+          "p_ens": 0.7793,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 24,
+          "player": "Vladimir Guerrero Jr.",
+          "team": "TOR",
+          "p_mlp": 0.8359,
+          "p_ens": 0.7713,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 25,
+          "player": "Miguel Amaya",
+          "team": "CHC",
+          "p_mlp": 0.8335,
+          "p_ens": 0.7614,
+          "actual_hits": null,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "date": "2026-04-28",
+      "graded": true,
       "predictions": [
         {
           "rank": 1,
@@ -10,8 +241,8 @@
           "team": "NYM",
           "p_mlp": 0.9261,
           "p_ens": 0.8406,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 2,
@@ -19,8 +250,8 @@
           "team": "NYM",
           "p_mlp": 0.9067,
           "p_ens": 0.8216,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 3,
@@ -28,8 +259,8 @@
           "team": "NYM",
           "p_mlp": 0.9014,
           "p_ens": 0.819,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 4,
@@ -37,8 +268,8 @@
           "team": "NYM",
           "p_mlp": 0.8748,
           "p_ens": 0.7933,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 5,
@@ -46,8 +277,8 @@
           "team": "NYM",
           "p_mlp": 0.8703,
           "p_ens": 0.7964,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 6,
@@ -55,8 +286,8 @@
           "team": "HOU",
           "p_mlp": 0.8652,
           "p_ens": 0.7941,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 7,
@@ -64,8 +295,8 @@
           "team": "NYM",
           "p_mlp": 0.8607,
           "p_ens": 0.7886,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 8,
@@ -73,8 +304,8 @@
           "team": "SF",
           "p_mlp": 0.8587,
           "p_ens": 0.791,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 9,
@@ -82,8 +313,8 @@
           "team": "PIT",
           "p_mlp": 0.854,
           "p_ens": 0.7859,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 2,
+          "correct": true
         },
         {
           "rank": 10,
@@ -91,8 +322,8 @@
           "team": "CHC",
           "p_mlp": 0.8516,
           "p_ens": 0.7734,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 11,
@@ -100,8 +331,8 @@
           "team": "CHC",
           "p_mlp": 0.8505,
           "p_ens": 0.7774,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 12,
@@ -109,8 +340,8 @@
           "team": "SF",
           "p_mlp": 0.85,
           "p_ens": 0.7889,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 13,
@@ -118,8 +349,8 @@
           "team": "CHC",
           "p_mlp": 0.8429,
           "p_ens": 0.7673,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 2,
+          "correct": true
         },
         {
           "rank": 14,
@@ -127,8 +358,8 @@
           "team": "MIL",
           "p_mlp": 0.8402,
           "p_ens": 0.7754,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 2,
+          "correct": true
         },
         {
           "rank": 15,
@@ -136,8 +367,8 @@
           "team": "HOU",
           "p_mlp": 0.8364,
           "p_ens": 0.7742,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 16,
@@ -145,8 +376,8 @@
           "team": "MIL",
           "p_mlp": 0.8263,
           "p_ens": 0.7616,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 2,
+          "correct": true
         },
         {
           "rank": 17,
@@ -154,8 +385,8 @@
           "team": "NYM",
           "p_mlp": 0.8212,
           "p_ens": 0.7687,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 18,
@@ -163,8 +394,8 @@
           "team": "TB",
           "p_mlp": 0.8207,
           "p_ens": 0.7673,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 19,
@@ -172,8 +403,8 @@
           "team": "MIL",
           "p_mlp": 0.8191,
           "p_ens": 0.7544,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 2,
+          "correct": true
         },
         {
           "rank": 20,
@@ -181,8 +412,8 @@
           "team": "PIT",
           "p_mlp": 0.8182,
           "p_ens": 0.7637,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 2,
+          "correct": true
         },
         {
           "rank": 21,
@@ -190,8 +421,8 @@
           "team": "SF",
           "p_mlp": 0.8153,
           "p_ens": 0.7643,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 22,
@@ -199,8 +430,8 @@
           "team": "SF",
           "p_mlp": 0.8151,
           "p_ens": 0.7704,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 23,
@@ -208,8 +439,8 @@
           "team": "NYM",
           "p_mlp": 0.8131,
           "p_ens": 0.7693,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 24,
@@ -217,8 +448,8 @@
           "team": "HOU",
           "p_mlp": 0.8061,
           "p_ens": 0.7545,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 25,
@@ -226,10 +457,38 @@
           "team": "PIT",
           "p_mlp": 0.8053,
           "p_ens": 0.7529,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         }
-      ]
+      ],
+      "summary": {
+        "total": 25,
+        "hit_count": 14,
+        "hit_rate_pct": 56.0,
+        "hit_players": [
+          "Bo Bichette",
+          "Juan Soto",
+          "Bryan Reynolds",
+          "Nico Hoerner",
+          "Luis Arraez",
+          "Alex Bregman",
+          "Brice Turang",
+          "Sal Frelick",
+          "Ronny Mauricio",
+          "Yandy D\u00edaz",
+          "William Contreras",
+          "Nick Gonzales",
+          "Yordan Alvarez",
+          "Brandon Lowe"
+        ],
+        "by_bucket": {
+          "75%+": {
+            "predicted": 25,
+            "hits": 14,
+            "rate_pct": 56.0
+          }
+        }
+      }
     },
     {
       "date": "2026-04-27",
