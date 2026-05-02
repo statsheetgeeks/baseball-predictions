@@ -46,7 +46,7 @@ import numpy as np
 import pandas as pd
 import requests
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.calibration import CalibratedClassifierCV
+from sklearn.linear_model import LogisticRegression
 
 warnings.filterwarnings('ignore')
 np.random.seed(42)
@@ -510,16 +510,21 @@ def train_model(X_train, y_train, X_calib, y_calib):
     print(f'  OOB score: {rf.oob_score_:.4f}')
 
     print('  Calibrating with Platt scaling on 2024 hold-out...')
-    calibrated = CalibratedClassifierCV(rf, cv='prefit', method='sigmoid')
-    calibrated.fit(X_calib, y_calib)
+    # Manual Platt scaling: fit a logistic regression on the raw RF probabilities
+    # from the held-out calibration set.  This is exactly what
+    # CalibratedClassifierCV(method='sigmoid') does internally, without
+    # requiring a specific scikit-learn version.
+    raw_calib = rf.predict_proba(X_calib)[:, 1].reshape(-1, 1)
+    platt     = LogisticRegression(C=1.0, solver='lbfgs', max_iter=1000)
+    platt.fit(raw_calib, y_calib)
 
-    # Sanity: sample a few calibrated probabilities
-    sample_probs = calibrated.predict_proba(X_calib[:200])[:, 1]
-    print(f'  Calibrated prob range (sample): '
-          f'{sample_probs.min():.3f} – {sample_probs.max():.3f}  '
-          f'std={sample_probs.std():.3f}')
+    # Sanity check on calibrated output spread
+    calibrated_probs = platt.predict_proba(raw_calib)[:, 1]
+    print(f'  Calibrated prob range: '
+          f'{calibrated_probs.min():.3f} – {calibrated_probs.max():.3f}  '
+          f'std={calibrated_probs.std():.3f}')
 
-    return calibrated
+    return rf, platt
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -719,7 +724,8 @@ def run():
             print('Loaded cached Random Forest model.')
             all_feat  = cache['all_feat']
             stat_cols = cache['stat_cols']
-            calibrated = cache['calibrated']
+            rf        = cache['rf']
+            platt     = cache['platt']
 
     if retrain:
         print('Collecting historical game log data...')
@@ -764,7 +770,7 @@ def run():
         y_calib = calib_df['label'].values
 
         print(f'  Train: {len(X_train):,} rows | Calibration: {len(X_calib):,} rows')
-        calibrated = train_model(X_train, y_train, X_calib, y_calib)
+        rf, platt = train_model(X_train, y_train, X_calib, y_calib)
 
         with open(MODELS_PKL, 'wb') as f:
             pickle.dump({
@@ -772,7 +778,8 @@ def run():
                 'trained_year':  CURRENT_YEAR,
                 'all_feat':      all_feat,
                 'stat_cols':     stat_cols,
-                'calibrated':    calibrated,
+                'rf':            rf,
+                'platt':         platt,
             }, f)
         print('✓ Random Forest model trained and cached.')
 
@@ -808,8 +815,9 @@ def run():
         if vec is None:
             continue
 
-        # Calibrated RF probability (Platt scaling applied)
-        home_prob_raw = float(calibrated.predict_proba(vec.reshape(1, -1))[0, 1])
+        # Two-step prediction: raw RF → Platt calibration
+        raw_prob      = rf.predict_proba(vec.reshape(1, -1))[0, 1]
+        home_prob_raw = float(platt.predict_proba([[raw_prob]])[0, 1])
 
         # Starting pitcher adjustment (post-calibration blend)
         sp_adj    = starter_prob_adjustment(g.get('home_sp_id'), g.get('away_sp_id'))
