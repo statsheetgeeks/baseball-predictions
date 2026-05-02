@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Chalk Line Labs brand palette ─────────────────────────────────────────────
+   Pulled directly from the navy/silver logo:
+   - Navy dark  : page background
+   - Navy mid   : sidebar background
+   - Navy       : header / card background
+   - Navy border: all dividers and borders
+   - Silver     : secondary text, muted labels
+   - White      : primary text
+   - Accent     : electric blue call-to-action / active states
+   ─────────────────────────────────────────────────────────────────────────── */
+:root {
+  --navy-dark:    #0c1520;   /* deepest — page bg            */
+  --navy-mid:     #111e30;   /* sidebar bg                   */
+  --navy:         #162033;   /* header + card bg             */
+  --navy-border:  #243350;   /* borders / dividers           */
+  --navy-hover:   #1e2f48;   /* hover state bg               */
+
+  --silver:       #b8c5d3;   /* secondary text               */
+  --silver-dim:   #6b7f96;   /* muted / placeholder text     */
+  --white:        #eef3f9;   /* primary text                 */
+
+  --accent:       #4a90d9;   /* blue accent — active / CTAs  */
+  --accent-glow:  rgba(74, 144, 217, 0.15);
+
+  --green:        #3fbf6e;   /* probability high             */
+  --red:          #e05454;   /* probability low / DOG        */
+  --yellow:       #d4a843;   /* probability mid              */
+
+  --sidebar-w:    240px;
+  --topbar-h:     56px;
+}
+
+/* ── Reset ────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background:  var(--navy-dark);
+  color:       var(--white);
+  font-family: 'Barlow', sans-serif;
+  font-size:   15px;
+  line-height: 1.5;
+  min-height:  100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ── Scrollbar ────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar              { width: 6px; height: 6px; }
+::-webkit-scrollbar-track        { background: var(--navy-dark); }
+::-webkit-scrollbar-thumb        { background: var(--navy-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover  { background: var(--silver-dim); }

@@ -1,0 +1,36 @@
+# Node
+node_modules/
+.next/
+out/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+venv/
+*.pkl
+*.joblib
+
+# ML hit model — box score + player stat cache
+# Restored between runs via GitHub Actions cache (actions/cache)
+hit_pred_cache/
+
+# ML HR model — box score, Statcast, weather, and handedness cache
+# Restored between runs via GitHub Actions cache (actions/cache)
+hr_pred_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
+
+# Local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
