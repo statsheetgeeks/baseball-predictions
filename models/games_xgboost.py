@@ -1,15 +1,23 @@
 """
-models/games_xgboost.py
+games_xgboost.py — Standalone XGBoost MLB Game Predictor
 ──────────────────────────────────────────────────────────────────────────────
-Standalone XGBoost Game Model — Chalk Line Labs
-
 Architecture:
-  Single XGBoost classifier with Platt scaling (sigmoid calibration)
-  trained on the full 2015–2024 historical seasons.
+  A standalone XGBoost gradient-boosted classifier trained on all historical
+  MLB game logs (2015–present). Unlike the research ensemble, there is no
+  meta-learner — XGBoost is the sole predictor. This makes the model faster,
+  more interpretable, and independently tuned for solo performance.
 
-  Unlike the research ensemble, there is no meta-learner — XGBoost is
-  the sole predictor. This makes the model faster, more interpretable,
-  and independently tuned for solo performance.
+  Starting pitcher adjustment:
+  After the XGBoost base probability is computed, a logit-space adjustment is
+  applied using the ERA differential between today's probable starting pitchers
+  (fetched live from the MLB Schedule API). This is an inference-time overlay
+  and does not require retraining — the XGBoost model captures team-level form,
+  the SP adjustment captures the game-specific pitching matchup.
+
+  Live feature vector fix:
+  team_live_features() now uses .iloc[-1] to read the most recent game's
+  pre-computed rolling/expanding feature state, rather than .mean() which was
+  double-averaging already-averaged features across the window.
 
 Data:
   Shares the mlb_cache_v2/ game log cache with games_research.py.
@@ -19,7 +27,7 @@ Data:
 Caching:
   models/mlb_cache_v2/
     {TEAM}_{YEAR}_{h|p}.json   ← shared with research model
-    xgb_standalone_v1.pkl      ← this model's scaler + classifier
+    xgb_standalone_v3.pkl      ← this model's scaler + classifier
                                   rebuilt only if missing or new season
 ──────────────────────────────────────────────────────────────────────────────
 """
@@ -42,7 +50,7 @@ DATA_DIR   = os.path.join(BASE_DIR, '..', 'public', 'data')
 CACHE_DIR  = os.path.join(BASE_DIR, 'mlb_cache_v2')   # shared with research
 MAIN_JSON  = os.path.join(DATA_DIR, 'games-xgboost.json')
 HIST_JSON  = os.path.join(DATA_DIR, 'games-xgboost-history.json')
-MODELS_PKL = os.path.join(CACHE_DIR, 'xgb_standalone_v2.pkl')
+MODELS_PKL = os.path.join(CACHE_DIR, 'xgb_standalone_v3.pkl')
 
 os.makedirs(DATA_DIR,  exist_ok=True)
 os.makedirs(CACHE_DIR, exist_ok=True)
@@ -56,6 +64,12 @@ ALL_SEASONS     = TRAIN_SEASONS + [s for s in PREDICT_SEASONS if s not in TRAIN_
 ROLL7  = 7
 ROLL15 = 15
 MLB_API = 'https://statsapi.mlb.com/api/v1'
+
+# ── Starting pitcher adjustment config ────────────────────────────────────────
+LEAGUE_AVG_ERA = 4.20   # used as fallback when no SP data is available
+SP_ERA_WEIGHT  = 0.07   # logit shift per 1-run ERA differential
+                        # e.g. a 3-run ERA gap shifts logit by 0.21 (~5% at midpoint)
+SP_MIN_STARTS  = 2      # minimum recent starts required to use SP stats
 
 MLB_TEAMS = [
     'ARI','ATL','BAL','BOS','CHC','CHW','CIN','CLE',
@@ -117,6 +131,13 @@ def _ip(v):
         p = str(v).split('.')
         return int(p[0]) + (int(p[1]) / 3 if len(p) > 1 else 0)
     except: return np.nan
+
+def _logit(p):
+    p = float(np.clip(p, 0.001, 0.999))
+    return np.log(p / (1.0 - p))
+
+def _expit(x):
+    return 1.0 / (1.0 + np.exp(-float(x)))
 
 def resolve_name(name):
     if name in NAME2ABBR:
@@ -241,7 +262,7 @@ def collect_seasons(teams, seasons, team_ids):
         print('done')
     return pd.DataFrame(bat_rows), pd.DataFrame(pit_rows)
 
-# ── Feature engineering (identical to research model) ─────────────────────────
+# ── Feature engineering ───────────────────────────────────────────────────────
 def engineer_team(games, stat_cols):
     rows = []
     MK = ['team', 'season', 'date', 'is_home', 'won', 'opp_id']
@@ -340,8 +361,154 @@ def train_model(X_train, y_train):
     model.fit(X_train, y_train)
     return model
 
+# ── Starting pitcher features ─────────────────────────────────────────────────
+def fetch_pitcher_recent_stats(pitcher_id, n_games=5):
+    """
+    Fetch the last n qualifying starts for a pitcher from the current season
+    game log. Returns a dict with ERA, WHIP, and K/9 over those starts, or
+    None if insufficient data is available.
+
+    A qualifying start is defined as >= 3 innings pitched, which filters out
+    bulk/opener appearances that would distort ERA and WHIP.
+    """
+    try:
+        url = (f'{MLB_API}/people/{pitcher_id}/stats'
+               f'?stats=gameLog&group=pitching&season={CURRENT_YEAR}')
+        r = requests.get(url, timeout=10)
+        r.raise_for_status()
+        splits = r.json().get('stats', [{}])[0].get('splits', [])
+
+        # Filter to true starts (>= 3 IP) to exclude opener/bulk appearances
+        starts = [
+            s for s in splits
+            if _ip(s.get('stat', {}).get('inningsPitched', 0)) >= 3
+        ]
+
+        # Try current season; if too few starts, include prior season
+        if len(starts) < SP_MIN_STARTS:
+            url_prev = (f'{MLB_API}/people/{pitcher_id}/stats'
+                        f'?stats=gameLog&group=pitching&season={CURRENT_YEAR - 1}')
+            try:
+                r2 = requests.get(url_prev, timeout=10)
+                r2.raise_for_status()
+                prev_splits = r2.json().get('stats', [{}])[0].get('splits', [])
+                prev_starts = [
+                    s for s in prev_splits
+                    if _ip(s.get('stat', {}).get('inningsPitched', 0)) >= 3
+                ]
+                starts = prev_starts + starts   # older first, then recent
+            except Exception:
+                pass
+
+        recent = starts[-n_games:] if len(starts) >= SP_MIN_STARTS else []
+        if not recent:
+            return None
+
+        total_ip = sum(_ip(s['stat'].get('inningsPitched', 0)) for s in recent)
+        total_er = sum(int(s['stat'].get('earnedRuns', 0) or 0) for s in recent)
+        total_h  = sum(int(s['stat'].get('hits', 0)        or 0) for s in recent)
+        total_bb = sum(int(s['stat'].get('baseOnBalls', 0) or 0) for s in recent)
+        total_k  = sum(int(s['stat'].get('strikeOuts', 0)  or 0) for s in recent)
+
+        if total_ip < 1:
+            return None
+
+        return {
+            'era':  round((total_er * 9) / total_ip, 2),
+            'whip': round((total_h + total_bb) / total_ip, 3),
+            'k9':   round((total_k * 9) / total_ip, 2),
+            'ip':   round(total_ip, 1),
+            'starts': len(recent),
+        }
+    except Exception as e:
+        print(f'    WARN SP stats {pitcher_id}: {e}')
+        return None
+
+
+def get_probable_pitchers(game_date):
+    """
+    Fetch today's probable starting pitchers from the MLB Schedule API
+    and look up their recent game-log stats.
+
+    Returns a dict keyed by (home_team_name, away_team_name) with:
+        {
+            'home_sp': {'name': ..., 'era': ..., 'whip': ..., 'k9': ...} or None,
+            'away_sp': {'name': ..., 'era': ..., 'whip': ..., 'k9': ...} or None,
+        }
+
+    Falls back to None for each side when the pitcher is not yet announced
+    or when the API call fails. The prediction loop handles these gracefully
+    by substituting LEAGUE_AVG_ERA.
+    """
+    url = (f'{MLB_API}/schedule?sportId=1&date={game_date}'
+           f'&hydrate=probablePitcher,team')
+    try:
+        r = requests.get(url, timeout=15)
+        r.raise_for_status()
+        result = {}
+        for entry in r.json().get('dates', []):
+            for g in entry.get('games', []):
+                home_name    = g['teams']['home']['team']['name']
+                away_name    = g['teams']['away']['team']['name']
+                home_sp_raw  = g['teams']['home'].get('probablePitcher')
+                away_sp_raw  = g['teams']['away'].get('probablePitcher')
+
+                def _resolve_sp(sp_raw):
+                    if not sp_raw:
+                        return None
+                    pid   = sp_raw['id']
+                    stats = fetch_pitcher_recent_stats(pid)
+                    return {
+                        'id':   pid,
+                        'name': sp_raw.get('fullName', 'Unknown'),
+                        **(stats or {}),
+                    }
+
+                result[(home_name, away_name)] = {
+                    'home_sp': _resolve_sp(home_sp_raw),
+                    'away_sp': _resolve_sp(away_sp_raw),
+                }
+        return result
+    except Exception as e:
+        print(f'  WARN probable pitchers: {e}')
+        return {}
+
+
+def apply_sp_adjustment(base_prob, home_sp, away_sp):
+    """
+    Adjust the XGBoost base win probability using the ERA differential between
+    the two probable starting pitchers.
+
+    Method: logit-space shift so the adjustment is symmetric and bounded.
+      adjusted_prob = expit(logit(base_prob) - era_diff * SP_ERA_WEIGHT)
+
+    A positive era_diff means the home SP has a higher (worse) ERA than the
+    away SP, which reduces the home win probability. When SP data is missing
+    for either side, LEAGUE_AVG_ERA is substituted, which effectively makes
+    the missing side neutral.
+
+    Returns: (adjusted_prob, home_era, away_era)
+    """
+    home_era = (home_sp or {}).get('era', LEAGUE_AVG_ERA) or LEAGUE_AVG_ERA
+    away_era = (away_sp or {}).get('era', LEAGUE_AVG_ERA) or LEAGUE_AVG_ERA
+
+    era_diff     = home_era - away_era          # positive → home SP is worse
+    logit_shift  = era_diff * SP_ERA_WEIGHT
+    adjusted     = _expit(_logit(base_prob) - logit_shift)
+
+    return float(adjusted), float(home_era), float(away_era)
+
 # ── Live feature vector ───────────────────────────────────────────────────────
 def team_live_features(team_abbr, is_home, features, window=15):
+    """
+    Build the feature row for a team going into today's game.
+
+    FIX: Uses .iloc[-1] to read the single most recent pre-game feature state,
+    which is the correctly computed rolling/expanding value as of that game.
+    The previous implementation used .mean() across the last `window` rows,
+    which double-averaged already-averaged features and biased values toward
+    older games within the window.
+    """
     CURR = CURRENT_YEAR
     PREV = CURRENT_YEAR - 1
 
@@ -349,23 +516,27 @@ def team_live_features(team_abbr, is_home, features, window=15):
     prev = features[(features['team'] == team_abbr) & (features['season'] == PREV)]
 
     if len(cur) >= 5:
-        src = cur.sort_values('date').tail(window)
+        src = cur.sort_values('date')
     elif len(prev) > 0:
         print(f'    {team_abbr}: {len(cur)} {CURR} games → using {PREV} fallback')
-        src = prev.sort_values('date').tail(window)
+        src = prev.sort_values('date')
     else:
         print(f'    No data for {team_abbr}')
         return None
 
     prefix = 'H_' if is_home else 'A_'
-    row = {}
+    row    = {}
     eng_cols = [c for c in src.columns if any(
         c.endswith(s) for s in ['_std', '_exp', '_r7', '_r15']
     ) or c in ['win_pct', 'cum_wins']]
 
+    # Use the most recent row's pre-computed feature values rather than
+    # averaging across the window — the rolling/expanding values already
+    # encode the correct historical window by construction.
+    latest = src.iloc[-1]
     for c in eng_cols:
         if c in src.columns:
-            row[f'{prefix}{c}'] = pd.to_numeric(src[c], errors='coerce').mean()
+            row[f'{prefix}{c}'] = pd.to_numeric(latest[c], errors='coerce')
 
     return row
 
@@ -571,7 +742,16 @@ def run():
     live_features = engineer_team(live_games, stat_cols)
     live_features = add_pythag(live_features, stat_cols)
 
-    # ── 3. Today's predictions ────────────────────────────────────────────────
+    # ── 3. Fetch probable starting pitchers ───────────────────────────────────
+    print('Fetching probable starting pitchers...')
+    probable_pitchers = get_probable_pitchers(today)
+    sp_found = sum(
+        1 for v in probable_pitchers.values()
+        if v.get('home_sp') or v.get('away_sp')
+    )
+    print(f'  → SP data found for {sp_found}/{len(probable_pitchers)} games')
+
+    # ── 4. Today's predictions ────────────────────────────────────────────────
     print("Fetching today's schedule...")
     schedule    = get_today_schedule()
     today_preds = []
@@ -588,26 +768,41 @@ def run():
             continue
 
         vec_sc    = scaler.transform(vec.reshape(1, -1))
-        home_prob = float(model.predict_proba(vec_sc)[0, 1])
-        away_prob = 1.0 - home_prob
-        pick      = g['home'] if home_prob >= 0.5 else g['away']
+        base_prob = float(model.predict_proba(vec_sc)[0, 1])
+
+        # Apply starting pitcher ERA adjustment in logit space
+        sp_key  = (g['home'], g['away'])
+        sp_data = probable_pitchers.get(sp_key, {})
+        home_sp = sp_data.get('home_sp')
+        away_sp = sp_data.get('away_sp')
+
+        home_prob, home_sp_era, away_sp_era = apply_sp_adjustment(
+            base_prob, home_sp, away_sp
+        )
+        away_prob  = 1.0 - home_prob
+        pick       = g['home'] if home_prob >= 0.5 else g['away']
         confidence = max(home_prob, away_prob)
 
         today_preds.append({
-            'game_time':     g['game_time'],
-            'away_team':     g['away'],
-            'home_team':     g['home'],
-            'away_prob':     round(away_prob, 4),
-            'home_prob':     round(home_prob, 4),
-            'pick':          pick,
-            'confidence':    round(confidence, 4),
-            'actual_winner': None,
-            'correct':       None,
+            'game_time':      g['game_time'],
+            'away_team':      g['away'],
+            'home_team':      g['home'],
+            'away_prob':      round(away_prob, 4),
+            'home_prob':      round(home_prob, 4),
+            'base_prob_home': round(base_prob, 4),
+            'home_sp':        home_sp.get('name', 'TBD') if home_sp else 'TBD',
+            'home_sp_era':    home_sp_era if home_sp else None,
+            'away_sp':        away_sp.get('name', 'TBD') if away_sp else 'TBD',
+            'away_sp_era':    away_sp_era if away_sp else None,
+            'pick':           pick,
+            'confidence':     round(confidence, 4),
+            'actual_winner':  None,
+            'correct':        None,
         })
 
     print(f'  → {len(today_preds)} predictions generated')
 
-    # ── 4. History & grading ──────────────────────────────────────────────────
+    # ── 5. History & grading ──────────────────────────────────────────────────
     print("Grading yesterday's picks...")
     history = load_history()
     grade_yesterday(history)
@@ -621,7 +816,7 @@ def run():
     history['records'].sort(key=lambda r: r['date'], reverse=True)
     save_history(history)
 
-    # ── 5. Stats ──────────────────────────────────────────────────────────────
+    # ── 6. Stats ──────────────────────────────────────────────────────────────
     all_graded = [
         g for r in history['records']
         for g in r['games']
@@ -632,7 +827,7 @@ def run():
     yday_record = next((r for r in history['records'] if r['date'] == yesterday), None)
     yday_stats  = compute_stats(yday_record['games'] if yday_record else [])
 
-    # ── 6. Write output JSON ──────────────────────────────────────────────────
+    # ── 7. Write output JSON ──────────────────────────────────────────────────
     output = {
         'updated':     datetime.now(timezone.utc).isoformat(),
         'date':        today,
