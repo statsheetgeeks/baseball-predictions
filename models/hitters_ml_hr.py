@@ -102,9 +102,9 @@ SAVANT_BASE    = 'https://baseballsavant.mlb.com'
 METEO_ARCHIVE  = 'https://archive-api.open-meteo.com/v1/archive'
 METEO_FORECAST = 'https://api.open-meteo.com/v1/forecast'
 
-TRAIN_SEASONS  = list(range(2017, 2024))   # 2017–2023
-TEST_SEASON    = 2024
-CURRENT_YEAR   = date.today().year
+CURRENT_YEAR   = date.today().year                      # moved above — used by the lines below
+TRAIN_SEASONS  = list(range(2017, CURRENT_YEAR - 1))    # 2017–(CURRENT_YEAR-2)
+TEST_SEASON    = CURRENT_YEAR - 1                        # most recent complete season
 TODAY          = date.today().strftime('%Y-%m-%d')
 
 MIN_PA         = 100

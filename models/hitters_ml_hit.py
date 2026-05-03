@@ -103,8 +103,8 @@ for d in [DATA_DIR, CACHE_DIR, MODEL_DIR]:
 MLB_API       = 'https://statsapi.mlb.com/api/v1'
 SAVANT_BASE   = 'https://baseballsavant.mlb.com'
 CURRENT_YEAR  = date.today().year
-TRAIN_SEASONS = [2022, 2023, 2024]
-TEST_SEASON   = 2025
+TRAIN_SEASONS = list(range(2022, CURRENT_YEAR))   # all complete seasons from 2022 onward
+TEST_SEASON   = CURRENT_YEAR                       # current season is the live test set
 TOP_N         = 25
 MIN_PA        = 50
 ROLL_SHORT    = 7

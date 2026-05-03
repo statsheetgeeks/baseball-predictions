@@ -66,9 +66,9 @@ os.makedirs(CACHE_DIR, exist_ok=True)
 
 # ── Season config ─────────────────────────────────────────────────────────────
 CURRENT_YEAR    = date.today().year
-TRAIN_SEASONS   = list(range(2015, 2024))   # 2015–2023: train RF
-CALIB_SEASON    = [2024]                    # 2024 held-out: Platt calibration
-PREDICT_SEASONS = [2025, CURRENT_YEAR] if CURRENT_YEAR > 2025 else [2025]
+CALIB_SEASON    = [CURRENT_YEAR - 1]                    # most recent complete season: Platt calibration
+TRAIN_SEASONS   = list(range(2015, CURRENT_YEAR - 1))   # 2015–(CURRENT_YEAR-2): train RF
+PREDICT_SEASONS = [CURRENT_YEAR - 1, CURRENT_YEAR] if CURRENT_YEAR > 2025 else [2025]
 ALL_SEASONS     = TRAIN_SEASONS + CALIB_SEASON + [
     s for s in PREDICT_SEASONS if s not in TRAIN_SEASONS + CALIB_SEASON
 ]
