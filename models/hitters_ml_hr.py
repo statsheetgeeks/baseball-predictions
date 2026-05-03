@@ -992,8 +992,8 @@ def run():
 
     # Join handedness (batter bat side)
     feat_df['bat_side'] = feat_df['player_id'].apply(
-            lambda pid: hand_cache.get(str(int(pid)), {}).get('bat_side', 'R') if pd.notna(pid) else 'R'
-        )
+        lambda pid: hand_cache.get(str(int(pid)), {}).get('bat_side', 'R') if pd.notna(pid) else 'R'
+    )
     feat_df['bat_L'] = (feat_df['bat_side'] == 'L').astype(int)
     feat_df['bat_R'] = (feat_df['bat_side'] == 'R').astype(int)
 
@@ -1032,11 +1032,21 @@ def run():
             return {'weather_temp_f': 72.0, 'weather_wind_mph': 5.0,
                     'weather_wind_out': 0.0, 'weather_is_dome': 0.0}
 
-    wx_rows       = feat_df[['park_abbr', 'game_date']].drop_duplicates()
-    wx_rows_dicts = [_wx(r) for _, r in wx_rows.iterrows()]
-    wx_df         = pd.DataFrame(wx_rows_dicts, index=wx_rows.index)
-    for col in ['weather_temp_f', 'weather_wind_mph', 'weather_wind_out', 'weather_is_dome']:
-        feat_df[col] = wx_df[col]
+    wx_keys = feat_df[['park_abbr', 'game_date']].drop_duplicates().reset_index(drop=True)
+    wx_dicts = [_wx(r) for _, r in wx_keys.iterrows()]
+    wx_lookup = pd.DataFrame(wx_dicts)
+    wx_lookup['park_abbr'] = wx_keys['park_abbr'].values
+    wx_lookup['game_date'] = wx_keys['game_date'].values
+    feat_df = feat_df.merge(
+        wx_lookup[['park_abbr', 'game_date', 'weather_temp_f', 'weather_wind_mph',
+                   'weather_wind_out', 'weather_is_dome']],
+        on=['park_abbr', 'game_date'], how='left'
+    )
+
+    # Convert player_id to nullable integer for reliable Statcast index matching.
+    # player_id can be float64 when NaN rows are present after concat; using
+    # Int64 (nullable) lets us isin() and map() against the int64 Statcast index.
+    feat_df['_pid_int'] = pd.to_numeric(feat_df['player_id'], errors='coerce').astype('Int64')
 
     # Join Statcast (batter)
     for yr in TRAIN_SEASONS + [TEST_SEASON]:
@@ -1046,25 +1056,40 @@ def run():
         mask = feat_df['season'] == yr
         for col in bsc.columns:
             if col not in feat_df.columns:
-                feat_df.loc[mask, col] = np.nan
-            feat_df.loc[mask & feat_df['player_id'].isin(bsc.index), col] = \
-                feat_df.loc[mask & feat_df['player_id'].isin(bsc.index), 'player_id'].map(bsc[col])
+                feat_df[col] = np.nan
+            valid_mask = mask & feat_df['_pid_int'].isin(bsc.index)
+            feat_df.loc[valid_mask, col] = (
+                feat_df.loc[valid_mask, '_pid_int']
+                .astype(int)
+                .map(bsc[col])
+            )
 
     # Join Statcast (pitcher, via sp_id)
     if 'sp_id' in feat_df.columns:
+        feat_df['_sp_int'] = pd.to_numeric(feat_df['sp_id'], errors='coerce').astype('Int64')
         for yr in TRAIN_SEASONS + [TEST_SEASON]:
             psc = sc_pit.get(yr, pd.DataFrame())
             if psc.empty:
                 continue
-            mask   = feat_df['season'] == yr
+            mask = feat_df['season'] == yr
             for col in psc.columns:
                 if col not in feat_df.columns:
-                    feat_df.loc[mask, col] = np.nan
-                sp_map = feat_df.loc[mask, 'sp_id'].dropna().astype(int)
-                feat_df.loc[
-                    mask & sp_map.isin(psc.index).reindex(feat_df.index, fill_value=False),
-                    col
-                ] = sp_map[sp_map.isin(psc.index)].map(psc[col])
+                    feat_df[col] = np.nan
+                valid_mask = mask & feat_df['_sp_int'].isin(psc.index)
+                feat_df.loc[valid_mask, col] = (
+                    feat_df.loc[valid_mask, '_sp_int']
+                    .astype(int)
+                    .map(psc[col])
+                )
+        feat_df.drop(columns=['_sp_int'], inplace=True)
+
+    # Drop the helper column used for Statcast joins before building feature list
+    if '_pid_int' in feat_df.columns:
+        feat_df.drop(columns=['_pid_int'], inplace=True)
+
+    # Ensure all column names are strings (mixed-type columns from pandas joins
+    # can introduce integer column names that crash str.startswith checks)
+    feat_df.columns = [str(c) for c in feat_df.columns]
 
     # Determine final feature list (only include cols that exist)
     batter_statcast  = [c for c in feat_df.columns if c.startswith('sc_')]
