@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-03T08:04:01.125354+00:00",
+  "updated": "2026-05-03T16:39:30.687146+00:00",
   "date": "2026-05-03",
   "league_avg_xba": 0.2455,
   "predictions": [
@@ -38,10 +38,10 @@
       "sp_xbaa_source": "sp",
       "batter_xba": 0.356,
       "sp_xbaa": 0.258,
-      "bullpen_xbaa": 0.2521,
+      "bullpen_xbaa": 0.2488,
       "vs_sp_log5": 0.3714,
-      "vs_bullpen_log5": 0.3641,
-      "hit_probability": 0.8343,
+      "vs_bullpen_log5": 0.3601,
+      "hit_probability": 0.8323,
       "games_played": 25,
       "team_games": 32,
       "at_bats": 98,
@@ -79,31 +79,6 @@
       "rank": 3
     },
     {
-      "player": "William Contreras",
-      "team": "MIL",
-      "game": "MIL @ WSH",
-      "game_time": "1:35 PM ET",
-      "opposing_team": "WSH",
-      "opposing_sp_name": "Zack Littell",
-      "sp_xbaa_source": "sp",
-      "batter_xba": 0.288,
-      "sp_xbaa": 0.319,
-      "bullpen_xbaa": 0.2642,
-      "vs_sp_log5": 0.368,
-      "vs_bullpen_log5": 0.3086,
-      "hit_probability": 0.8091,
-      "games_played": 30,
-      "team_games": 32,
-      "at_bats": 120,
-      "ab_per_game": 4.0,
-      "sp_abs": 2.0,
-      "bp_abs": 2.0,
-      "league_avg_xba": 0.2455,
-      "actual_hits": null,
-      "correct": null,
-      "rank": 4
-    },
-    {
       "player": "Yordan Alvarez",
       "team": "HOU",
       "game": "HOU @ BOS",
@@ -126,7 +101,7 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 5
+      "rank": 4
     },
     {
       "player": "Seiya Suzuki",
@@ -151,7 +126,7 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 6
+      "rank": 5
     },
     {
       "player": "Bobby Witt Jr.",
@@ -176,7 +151,7 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 7
+      "rank": 6
     },
     {
       "player": "Brandon Nimmo",
@@ -201,7 +176,7 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 8
+      "rank": 7
     },
     {
       "player": "Freddie Freeman",
@@ -226,32 +201,7 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 9
-    },
-    {
-      "player": "Brice Turang",
-      "team": "MIL",
-      "game": "MIL @ WSH",
-      "game_time": "1:35 PM ET",
-      "opposing_team": "WSH",
-      "opposing_sp_name": "Zack Littell",
-      "sp_xbaa_source": "sp",
-      "batter_xba": 0.289,
-      "sp_xbaa": 0.319,
-      "bullpen_xbaa": 0.2642,
-      "vs_sp_log5": 0.3692,
-      "vs_bullpen_log5": 0.3097,
-      "hit_probability": 0.7855,
-      "games_played": 30,
-      "team_games": 32,
-      "at_bats": 110,
-      "ab_per_game": 3.667,
-      "sp_abs": 2.0,
-      "bp_abs": 1.667,
-      "league_avg_xba": 0.2455,
-      "actual_hits": null,
-      "correct": null,
-      "rank": 10
+      "rank": 8
     },
     {
       "player": "Luis Arraez",
@@ -276,7 +226,32 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 11
+      "rank": 9
+    },
+    {
+      "player": "William Contreras",
+      "team": "MIL",
+      "game": "MIL @ WSH",
+      "game_time": "1:35 PM ET",
+      "opposing_team": "WSH",
+      "opposing_sp_name": "PJ Poulin",
+      "sp_xbaa_source": "sp",
+      "batter_xba": 0.288,
+      "sp_xbaa": 0.272,
+      "bullpen_xbaa": 0.2642,
+      "vs_sp_log5": 0.3172,
+      "vs_bullpen_log5": 0.3086,
+      "hit_probability": 0.7771,
+      "games_played": 30,
+      "team_games": 32,
+      "at_bats": 120,
+      "ab_per_game": 4.0,
+      "sp_abs": 2.0,
+      "bp_abs": 2.0,
+      "league_avg_xba": 0.2455,
+      "actual_hits": null,
+      "correct": null,
+      "rank": 10
     },
     {
       "player": "Alex Bregman",
@@ -301,32 +276,7 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 12
-    },
-    {
-      "player": "Ketel Marte",
-      "team": "AZ",
-      "game": "AZ @ CHC",
-      "game_time": "2:20 PM ET",
-      "opposing_team": "CHC",
-      "opposing_sp_name": "Matthew Boyd",
-      "sp_xbaa_source": "sp",
-      "batter_xba": 0.302,
-      "sp_xbaa": 0.258,
-      "bullpen_xbaa": 0.2521,
-      "vs_sp_log5": 0.3162,
-      "vs_bullpen_log5": 0.3095,
-      "hit_probability": 0.7689,
-      "games_played": 31,
-      "team_games": 32,
-      "at_bats": 121,
-      "ab_per_game": 3.903,
-      "sp_abs": 2.0,
-      "bp_abs": 1.903,
-      "league_avg_xba": 0.2455,
-      "actual_hits": null,
-      "correct": null,
-      "rank": 13
+      "rank": 11
     },
     {
       "player": "Drake Baldwin",
@@ -351,7 +301,32 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 14
+      "rank": 12
+    },
+    {
+      "player": "Ketel Marte",
+      "team": "AZ",
+      "game": "AZ @ CHC",
+      "game_time": "2:20 PM ET",
+      "opposing_team": "CHC",
+      "opposing_sp_name": "Matthew Boyd",
+      "sp_xbaa_source": "sp",
+      "batter_xba": 0.302,
+      "sp_xbaa": 0.258,
+      "bullpen_xbaa": 0.2488,
+      "vs_sp_log5": 0.3162,
+      "vs_bullpen_log5": 0.3058,
+      "hit_probability": 0.7665,
+      "games_played": 31,
+      "team_games": 32,
+      "at_bats": 121,
+      "ab_per_game": 3.903,
+      "sp_abs": 2.0,
+      "bp_abs": 1.903,
+      "league_avg_xba": 0.2455,
+      "actual_hits": null,
+      "correct": null,
+      "rank": 13
     },
     {
       "player": "Fernando Tatis Jr.",
@@ -376,7 +351,7 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 15
+      "rank": 14
     },
     {
       "player": "Maikel Garcia",
@@ -401,7 +376,7 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 16
+      "rank": 15
     },
     {
       "player": "Carson Kelly",
@@ -426,7 +401,7 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 17
+      "rank": 16
     },
     {
       "player": "Xander Bogaerts",
@@ -451,7 +426,7 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 18
+      "rank": 17
     },
     {
       "player": "Shea Langeliers",
@@ -476,7 +451,7 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 19
+      "rank": 18
     },
     {
       "player": "Michael Harris II",
@@ -501,7 +476,7 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 20
+      "rank": 19
     },
     {
       "player": "Yandy D\u00edaz",
@@ -526,7 +501,7 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 21
+      "rank": 20
     },
     {
       "player": "Max Muncy",
@@ -551,7 +526,7 @@
       "league_avg_xba": 0.2455,
       "actual_hits": null,
       "correct": null,
-      "rank": 22
+      "rank": 21
     },
     {
       "player": "Vladimir Guerrero Jr.",
@@ -570,6 +545,31 @@
       "games_played": 33,
       "team_games": 33,
       "at_bats": 121,
+      "ab_per_game": 3.667,
+      "sp_abs": 2.0,
+      "bp_abs": 1.667,
+      "league_avg_xba": 0.2455,
+      "actual_hits": null,
+      "correct": null,
+      "rank": 22
+    },
+    {
+      "player": "Brice Turang",
+      "team": "MIL",
+      "game": "MIL @ WSH",
+      "game_time": "1:35 PM ET",
+      "opposing_team": "WSH",
+      "opposing_sp_name": "PJ Poulin",
+      "sp_xbaa_source": "sp",
+      "batter_xba": 0.289,
+      "sp_xbaa": 0.272,
+      "bullpen_xbaa": 0.2642,
+      "vs_sp_log5": 0.3182,
+      "vs_bullpen_log5": 0.3097,
+      "hit_probability": 0.7494,
+      "games_played": 30,
+      "team_games": 32,
+      "at_bats": 110,
       "ab_per_game": 3.667,
       "sp_abs": 2.0,
       "bp_abs": 1.667,

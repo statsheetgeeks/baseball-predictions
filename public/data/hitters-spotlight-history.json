@@ -5,23 +5,6 @@
       "graded": false,
       "players": [
         {
-          "player": "Brice Turang",
-          "team": "MIL",
-          "appearances": 3,
-          "models": [
-            "HR Model",
-            "Log5 Hit",
-            "ML HR"
-          ],
-          "ranks": {
-            "Log5 Hit": 10,
-            "HR Model": 15,
-            "ML HR": 6
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Yordan Alvarez",
           "team": "HOU",
           "appearances": 3,
@@ -31,9 +14,9 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 5,
+            "Log5 Hit": 4,
             "ML Hit": 13,
-            "HR Model": 24
+            "HR Model": 20
           },
           "actual_hit": null,
           "actual_hr": null
@@ -47,7 +30,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 12,
+            "Log5 Hit": 11,
             "ML Hit": 2
           },
           "actual_hit": null,
@@ -62,7 +45,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 7,
+            "Log5 Hit": 6,
             "ML Hit": 16
           },
           "actual_hit": null,
@@ -77,8 +60,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 22,
-            "ML HR": 3
+            "HR Model": 19,
+            "ML HR": 10
           },
           "actual_hit": null,
           "actual_hr": null
@@ -92,23 +75,23 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 23,
-            "ML HR": 15
+            "HR Model": 21,
+            "ML HR": 19
           },
           "actual_hit": null,
           "actual_hr": null
         },
         {
-          "player": "Dansby Swanson",
-          "team": "CHC",
+          "player": "Drake Baldwin",
+          "team": "ATL",
           "appearances": 2,
           "models": [
             "HR Model",
-            "ML HR"
+            "Log5 Hit"
           ],
           "ranks": {
-            "HR Model": 14,
-            "ML HR": 23
+            "Log5 Hit": 12,
+            "HR Model": 23
           },
           "actual_hit": null,
           "actual_hr": null
@@ -122,7 +105,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 9,
+            "Log5 Hit": 8,
             "ML Hit": 8
           },
           "actual_hit": null,
@@ -137,8 +120,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 6,
-            "ML HR": 10
+            "HR Model": 5,
+            "ML HR": 11
           },
           "actual_hit": null,
           "actual_hr": null
@@ -152,8 +135,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 3,
-            "ML HR": 11
+            "HR Model": 2,
+            "ML HR": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -167,23 +150,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 20,
-            "ML HR": 2
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Jose Altuve",
-          "team": "HOU",
-          "appearances": 2,
-          "models": [
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 25,
-            "ML HR": 16
+            "HR Model": 17,
+            "ML HR": 1
           },
           "actual_hit": null,
           "actual_hr": null
@@ -198,7 +166,7 @@
           ],
           "ranks": {
             "HR Model": 11,
-            "ML HR": 14
+            "ML HR": 12
           },
           "actual_hit": null,
           "actual_hr": null
@@ -212,8 +180,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 18,
-            "ML HR": 24
+            "HR Model": 14,
+            "ML HR": 14
           },
           "actual_hit": null,
           "actual_hr": null
@@ -228,7 +196,7 @@
           ],
           "ranks": {
             "Log5 Hit": 13,
-            "ML Hit": 20
+            "ML Hit": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -243,7 +211,7 @@
           ],
           "ranks": {
             "HR Model": 10,
-            "ML HR": 13
+            "ML HR": 9
           },
           "actual_hit": null,
           "actual_hr": null
@@ -257,23 +225,8 @@
             "Log5 Hit"
           ],
           "ranks": {
-            "Log5 Hit": 22,
-            "HR Model": 13
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Michael Harris II",
-          "team": "ATL",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "Log5 Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 20,
-            "HR Model": 17
+            "Log5 Hit": 21,
+            "HR Model": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -287,8 +240,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 4,
-            "ML HR": 1
+            "HR Model": 3,
+            "ML HR": 6
           },
           "actual_hit": null,
           "actual_hr": null
@@ -309,6 +262,21 @@
           "actual_hr": null
         },
         {
+          "player": "Ozzie Albies",
+          "team": "ATL",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 10,
+            "HR Model": 22
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
           "player": "Seiya Suzuki",
           "team": "CHC",
           "appearances": 2,
@@ -317,8 +285,8 @@
             "Log5 Hit"
           ],
           "ranks": {
-            "Log5 Hit": 6,
-            "HR Model": 5
+            "Log5 Hit": 5,
+            "HR Model": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -332,8 +300,23 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 23,
+            "Log5 Hit": 22,
             "ML Hit": 19
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Xander Bogaerts",
+          "team": "SD",
+          "appearances": 2,
+          "models": [
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 17,
+            "ML HR": 22
           },
           "actual_hit": null,
           "actual_hr": null
