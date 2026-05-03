@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-03T00:53:21.387827+00:00",
+  "updated": "2026-05-03T06:39:19.260909+00:00",
   "date": "2026-05-03",
   "predictions": [
     {
@@ -162,9 +162,9 @@
       "home_team": "Los Angeles Angels",
       "away_prob": 0.4345,
       "home_prob": 0.5655,
-      "base_logr_home": 0.586,
-      "base_xgb_home": 0.562,
-      "base_mlp_home": 0.5655,
+      "base_logr_home": 0.5862,
+      "base_xgb_home": 0.5521,
+      "base_mlp_home": 0.6174,
       "pick": "Los Angeles Angels",
       "confidence": 0.5655,
       "actual_winner": null,
@@ -174,13 +174,13 @@
       "game_time": "4:10 PM ET",
       "away_team": "Kansas City Royals",
       "home_team": "Seattle Mariners",
-      "away_prob": 0.4565,
-      "home_prob": 0.5435,
-      "base_logr_home": 0.5562,
-      "base_xgb_home": 0.5769,
-      "base_mlp_home": 0.6345,
+      "away_prob": 0.4665,
+      "home_prob": 0.5335,
+      "base_logr_home": 0.5514,
+      "base_xgb_home": 0.5698,
+      "base_mlp_home": 0.6382,
       "pick": "Seattle Mariners",
-      "confidence": 0.5435,
+      "confidence": 0.5335,
       "actual_winner": null,
       "correct": null
     },
@@ -216,22 +216,22 @@
   "yesterday": {
     "date": "2026-05-02",
     "total": {
-      "wins": 7,
-      "losses": 2,
-      "total": 9
+      "wins": 0,
+      "losses": 0,
+      "total": 0
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 6,
-        "losses": 2,
-        "total": 8
+        "wins": 0,
+        "losses": 0,
+        "total": 0
       },
       {
         "band": "60-69%",
-        "wins": 1,
+        "wins": 0,
         "losses": 0,
-        "total": 1
+        "total": 0
       },
       {
         "band": "70-79%",
@@ -249,22 +249,22 @@
   },
   "alltime": {
     "total": {
-      "wins": 66,
-      "losses": 73,
-      "total": 139
+      "wins": 0,
+      "losses": 0,
+      "total": 0
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 56,
-        "losses": 67,
-        "total": 123
+        "wins": 0,
+        "losses": 0,
+        "total": 0
       },
       {
         "band": "60-69%",
-        "wins": 10,
-        "losses": 6,
-        "total": 16
+        "wins": 0,
+        "losses": 0,
+        "total": 0
       },
       {
         "band": "70-79%",
