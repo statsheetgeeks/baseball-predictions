@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 // ── Navigation structure ───────────────────────────────────────────────────────
-// Add new pages here — they appear in the sidebar automatically.
 const NAV = [
   {
     section: 'Games',
@@ -31,8 +30,8 @@ const NAV = [
   {
     section: 'Pitchers',
     items: [
-      { label: 'Overview',        href: '/pitchers' },
-      { label: 'Strikeout Model', href: '/pitchers/strikeout' },
+      { label: 'Overview', href: '/pitchers' },
+      // Models coming soon — links will be added when pitcher models are built
     ],
   },
 ];
@@ -40,7 +39,6 @@ const NAV = [
 export default function Layout({ children, title = 'Dashboard' }) {
   const router = useRouter();
 
-  // Build page title for <head>
   const pageTitle = title === 'Dashboard'
     ? 'Chalk Line Labs — MLB Predictions'
     : `${title} · Chalk Line Labs`;

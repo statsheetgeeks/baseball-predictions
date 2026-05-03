@@ -1,14 +1,5 @@
 import Layout from '../../components/Layout'
-import { ModelCard, PageHeader } from '../../components/PredictionTable'
-
-const MODELS = [
-  {
-    title: 'Strikeout Model',
-    description: 'Projects strikeout totals for starting pitchers using chase rate, whiff rate, and batter handedness splits from the MLB API.',
-    href: '/pitchers/strikeout',
-    tag: 'Pitcher Performance',
-  },
-]
+import { PageHeader } from '../../components/PredictionTable'
 
 export default function PitchersHub() {
   return (
@@ -16,10 +7,37 @@ export default function PitchersHub() {
       <PageHeader
         tag="Pitchers"
         title="PITCHER PREDICTIONS"
-        subtitle="Projection models for starting pitcher performance in today's games."
+        subtitle="Projection models for starting pitcher performance. Coming soon."
       />
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
-        {MODELS.map(m => <ModelCard key={m.href} {...m} />)}
+
+      <div style={{
+        background:   'var(--navy-mid)',
+        border:       '1px solid var(--navy-border)',
+        borderRadius: 8,
+        padding:      '40px 32px',
+        textAlign:    'center',
+        maxWidth:     560,
+      }}>
+        <div style={{
+          fontFamily:    "'Barlow Condensed', sans-serif",
+          fontWeight:    700,
+          fontSize:      13,
+          letterSpacing: 2,
+          textTransform: 'uppercase',
+          color:         'var(--silver-dim)',
+          marginBottom:  16,
+        }}>
+          Under Development
+        </div>
+        <p style={{ fontSize: 14, color: 'var(--silver)', lineHeight: 1.7, marginBottom: 12 }}>
+          Pitcher models are in active development. Planned features include
+          strikeout projections, ERA estimators, and pitching matchup analysis
+          using Statcast whiff rate, chase rate, and batter handedness splits.
+        </p>
+        <p style={{ fontSize: 13, color: 'var(--silver-dim)', lineHeight: 1.6 }}>
+          Check back soon — this section will be enabled once the models are
+          validated and ready for daily production runs.
+        </p>
       </div>
     </Layout>
   )

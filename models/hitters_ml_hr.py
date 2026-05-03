@@ -1311,14 +1311,19 @@ def run():
     alltime = compute_alltime_stats(history, today_str)
 
     with open(HIST_JSON, 'w') as f:
-        json.dump(history, f)
+        json.dump(history, f, indent=2)
 
     # ── 12. Write main output ─────────────────────────────────────────────────
     yesterday_record = next(
         (r for r in history['records'] if r['date'] == yesterday_str), {}
     )
+    all_lambdas = [p.get('lambda_poisson', 0) for p in top_n if p.get('lambda_poisson') is not None]
+    avg_lambda  = round(float(sum(all_lambdas) / max(len(all_lambdas), 1)), 5)
+
     output = {
-        'generated'  : today_str,
+        'updated'    : datetime.now(timezone.utc).isoformat(),
+        'date'       : today_str,
+        'avg_lambda' : avg_lambda,
         'predictions': top_n,
         'yesterday'  : {
             'date'        : yesterday_str,

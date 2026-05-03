@@ -869,7 +869,6 @@ def grade_yesterday(history, yesterday_str):
             for k, v in buckets.items() if v
         },
     }
-    save_history(history)
     print(f'    ✓ {len(hit)}/{len(played)} got a hit')
 
 

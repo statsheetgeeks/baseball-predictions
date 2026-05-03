@@ -45,26 +45,29 @@ PRED_FILES = {
 }
 
 # Four history JSONs (yesterday's graded records)
+# FIX: HR Model writes to hitters-hr-model-history.json, not hitters-hr-history.json
 HIST_FILES = {
     'Log5 Hit': os.path.join(DATA_DIR, 'hitters-log5-history.json'),
     'ML Hit':   os.path.join(DATA_DIR, 'hitters-ml-hit-history.json'),
-    'HR Model': os.path.join(DATA_DIR, 'hitters-hr-history.json'),
+    'HR Model': os.path.join(DATA_DIR, 'hitters-hr-model-history.json'),
     'ML HR':    os.path.join(DATA_DIR, 'hitters-ml-hr-history.json'),
 }
 
-# Which field means "got a hit" and "got a HR" in each history file
+# Which field to read per model history file
 HIT_FIELD = {
     'Log5 Hit': 'actual_hits',
     'ML Hit':   'actual_hits',
     'HR Model': 'actual_hr',
     'ML HR':    'actual_hr',
 }
-# Models that track hits (not HRs as their primary event)
+
 HIT_MODELS = {'Log5 Hit', 'ML Hit'}
 HR_MODELS  = {'HR Model', 'ML HR'}
 
 MIN_APPEARANCES = 2   # must appear in this many lists to be a spotlight hitter
 
+
+# ── Helpers ───────────────────────────────────────────────────────────────────
 
 def _load_json(path):
     """Load a JSON file safely, return None if missing or malformed."""
@@ -98,14 +101,12 @@ def compute_todays_spotlight(today_str):
     Read each model's top-25 predictions and find players in 2+ lists.
     Returns a sorted list of spotlight player dicts.
     """
-    # name → {models: [list], team: str, ranks: {model: rank}}
     player_map = defaultdict(lambda: {'models': [], 'team': '', 'ranks': {}})
 
     for model_name, path in PRED_FILES.items():
         data = _load_json(path)
         if not data:
             continue
-        # Check that this JSON is for today (may be stale if a model failed)
         if data.get('date') != today_str:
             print(f'  WARN: {model_name} JSON is for {data.get("date")}, '
                   f'not today ({today_str}) — still including')
@@ -117,7 +118,6 @@ def compute_todays_spotlight(today_str):
             player_map[name]['team']  = pred.get('team', '')
             player_map[name]['ranks'][model_name] = pred.get('rank', 99)
 
-    # Filter to 2+ appearances
     spotlight = []
     for name, info in player_map.items():
         n = len(info['models'])
@@ -132,7 +132,6 @@ def compute_todays_spotlight(today_str):
                 'actual_hr':   None,
             })
 
-    # Sort: most appearances first, then alphabetically
     spotlight.sort(key=lambda x: (-x['appearances'], x['player']))
     return spotlight
 
@@ -150,7 +149,6 @@ def grade_yesterday_spotlight(history, yesterday_str):
 
     print(f'  Grading spotlight for {yesterday_str}...')
 
-    # Build name → {actual_hits, actual_hr} from all four history files
     hit_lookup = {}   # name → bool (got ≥1 hit)
     hr_lookup  = {}   # name → bool (got ≥1 HR)
 
@@ -173,12 +171,9 @@ def grade_yesterday_spotlight(history, yesterday_str):
             if val is None:
                 continue
             if model_name in HIT_MODELS:
-                # actual_hits: int — got a hit if > 0
                 hit_lookup[name] = hit_lookup.get(name, False) or (val > 0)
             else:
-                # actual_hr: int — got a HR if > 0
                 hr_lookup[name] = hr_lookup.get(name, False) or (val > 0)
-                # HR players also got a hit if they homered
                 if val > 0:
                     hit_lookup[name] = True
 
@@ -239,7 +234,7 @@ def grade_yesterday_spotlight(history, yesterday_str):
 
 def compute_alltime(history, today_str):
     total = hit_total = hr_total = 0
-    by_apps = {}   # '2 models', '3 models', '4 models'
+    by_apps = {}
 
     for rec in history['records']:
         if rec['date'] == today_str or not rec.get('graded'):
