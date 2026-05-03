@@ -15,9 +15,9 @@ const CARDS = [
     href:    '/hitters',
     tag:     'Batter Performance',
     title:   'Hitter Predictions',
-    desc:    'Per-player hit probability and home run projections for everyone in today\'s lineups.',
-    models:  ['Log5 Hit', 'ML Hit Model', 'HR Model'],
-    count:   3,
+    desc:    'Five models projecting hit probability, home run likelihood, and Spotlight hitters for everyone in today\'s lineups.',
+    models:  ['Log5 Hit', 'ML Hit Model', 'HR Model', 'ML HR Model', 'Composite'],
+    count:   5,
   },
   {
     href:    '/pitchers',
@@ -30,7 +30,7 @@ const CARDS = [
 ];
 
 const STATS = [
-  { value: '9',     label: 'Prediction Models' },
+  { value: '11',    label: 'Prediction Models' },
   { value: '3',     label: 'Categories' },
   { value: 'MLB',   label: 'Official StatsAPI' },
   { value: 'Daily', label: 'Via GitHub Actions' },
