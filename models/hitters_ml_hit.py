@@ -972,9 +972,16 @@ def run():
         model_df['platoon_adv'] = 0
 
     # Park hit factor
-    model_df['park_hit_factor'] = model_df['home_team_name'].map(
-        lambda t: PARK_HIT_FACTORS.get(t, 1.00)
-    )
+    # 'home_team_name' was added in v2. Cached pkl files built by the old
+    # parse_boxscore won't have the column — default those rows to 1.00 so
+    # the model still trains; new box scores fetched going forward will carry
+    # the column and get real values.
+    if 'home_team_name' in model_df.columns:
+        model_df['park_hit_factor'] = model_df['home_team_name'].map(
+            lambda t: PARK_HIT_FACTORS.get(t, 1.00)
+        )
+    else:
+        model_df['park_hit_factor'] = 1.00
 
     # Statcast — batter: join by player_id + season
     for yr in TRAIN_SEASONS + [TEST_SEASON]:
