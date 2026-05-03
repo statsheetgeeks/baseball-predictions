@@ -127,7 +127,7 @@ function BandTable({ bands }) {
 
 // ── Results card ──────────────────────────────────────────────────────────────
 function ResultsCard({ title, subtitle, stats }) {
-  if (!stats) return null
+  if (!stats || !stats.total) return null
   const { total, by_confidence } = stats
   return (
     <div style={{
@@ -177,7 +177,6 @@ function PredTable({ predictions, date: dateStr, onDownload }) {
       background: 'var(--navy-mid)', border: '1px solid var(--navy-border)',
       borderRadius: 8, overflow: 'hidden',
     }}>
-      {/* Header bar */}
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '14px 18px', borderBottom: '1px solid var(--navy-border)',
@@ -213,7 +212,6 @@ function PredTable({ predictions, date: dateStr, onDownload }) {
               <th style={thStyle}>Home Team</th>
               <th style={{ ...thStyle, textAlign: 'center' }}>Away %</th>
               <th style={{ ...thStyle, textAlign: 'center' }}>Home %</th>
-              {/* Base model sub-header spans 3 cols */}
               <th style={{ ...thStyle, textAlign: 'center' }}>LogR</th>
               <th style={{ ...thStyle, textAlign: 'center' }}>XGB</th>
               <th style={{ ...thStyle, textAlign: 'center' }}>MLP</th>
@@ -221,13 +219,11 @@ function PredTable({ predictions, date: dateStr, onDownload }) {
               <th style={{ ...thStyle, textAlign: 'center' }}>Confidence</th>
             </tr>
             <tr>
-              {/* Secondary label row: marks LogR/XGB/MLP as home-team probabilities */}
               {['','','','','','home','home','home','',''].map((lbl, i) => (
                 <th key={i} style={{
                   fontSize: 9, color: 'var(--silver)', textAlign: 'center',
                   paddingBottom: 4, fontStyle: 'italic', opacity: 0.6,
-                  borderBottom: '1px solid var(--navy-border)',
-                  fontWeight: 400,
+                  borderBottom: '1px solid var(--navy-border)', fontWeight: 400,
                 }}>
                   {lbl}
                 </th>
@@ -240,26 +236,21 @@ function PredTable({ predictions, date: dateStr, onDownload }) {
               return (
                 <tr key={i} style={{ background: i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)' }}>
                   <td style={{ ...tdStyle, color: 'var(--silver)', whiteSpace: 'nowrap' }}>{p.game_time}</td>
-
                   <td style={{ ...tdStyle, color: isAway ? 'var(--white)' : 'var(--silver)', fontWeight: isAway ? 700 : 400 }}>
                     {p.away_team}
                   </td>
                   <td style={{ ...tdStyle, color: !isAway ? 'var(--white)' : 'var(--silver)', fontWeight: !isAway ? 700 : 400 }}>
                     {p.home_team}
                   </td>
-
                   <td style={{ ...tdStyle, textAlign: 'center', color: isAway ? 'var(--white)' : 'var(--silver)', fontFamily: 'monospace' }}>
                     {p.away_prob != null ? (p.away_prob * 100).toFixed(1) + '%' : '—'}
                   </td>
                   <td style={{ ...tdStyle, textAlign: 'center', color: !isAway ? 'var(--white)' : 'var(--silver)', fontFamily: 'monospace' }}>
                     {p.home_prob != null ? (p.home_prob * 100).toFixed(1) + '%' : '—'}
                   </td>
-
-                  {/* Base model probs — smaller, lighter */}
                   <td style={{ ...tdStyle, textAlign: 'center' }}><BaseProb value={p.base_logr_home} /></td>
                   <td style={{ ...tdStyle, textAlign: 'center' }}><BaseProb value={p.base_xgb_home}  /></td>
                   <td style={{ ...tdStyle, textAlign: 'center' }}><BaseProb value={p.base_mlp_home}  /></td>
-
                   <td style={{ ...tdStyle, color: 'var(--white)', fontWeight: 700 }}>{p.pick}</td>
                   <td style={{ ...tdStyle, textAlign: 'center' }}><ConfText confidence={p.confidence} /></td>
                 </tr>
@@ -269,7 +260,6 @@ function PredTable({ predictions, date: dateStr, onDownload }) {
         </table>
       </div>
 
-      {/* Column legend */}
       <div style={{
         padding: '8px 18px', borderTop: '1px solid var(--navy-border)',
         fontSize: 11, color: 'var(--silver)', opacity: 0.7,
@@ -351,7 +341,6 @@ export default function ResearchGame() {
             />
           </div>
 
-          {/* Architecture explainer */}
           <div style={{
             marginTop: 28, background: 'var(--navy-mid)', border: '1px solid var(--navy-border)',
             borderRadius: 8, padding: '16px 20px', fontSize: 12, color: 'var(--silver)', lineHeight: 1.7,
@@ -362,7 +351,6 @@ export default function ResearchGame() {
             which learns the optimal blend. Isotonic regression then maps predictions to true win frequencies.
             Features include season-to-date averages, exponentially-decayed recency weights,
             and 7- and 15-game rolling windows for both hitting and pitching stats.
-            The model was validated on a hold-out test set of 2023–2024 seasons.
           </div>
         </>
       )}

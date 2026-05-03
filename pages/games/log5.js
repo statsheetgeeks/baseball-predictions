@@ -51,11 +51,10 @@ function ConfBadge({ confidence }) {
   if (confidence == null) return null
   const pct = confidence * 100
   let color
-  if      (pct >= 80) { color = '#4ade80' }  // bright green
-  else if (pct >= 70) { color = '#60a5fa' }  // bright blue
-  else if (pct >= 60) { color = '#fbbf24' }  // bright amber
-  else                { color = '#fb923c' }  // bright orange
-
+  if      (pct >= 80) { color = '#4ade80' }
+  else if (pct >= 70) { color = '#60a5fa' }
+  else if (pct >= 60) { color = '#fbbf24' }
+  else                { color = '#fb923c' }
   return (
     <span style={{
       color,
@@ -70,7 +69,7 @@ function ConfBadge({ confidence }) {
   )
 }
 
-// ── Record display (e.g. "8-4 (66.7%)") ──────────────────────────────────────
+// ── Record display ────────────────────────────────────────────────────────────
 function Record({ wins, losses, total, size = 'normal' }) {
   if (total === 0) return <span style={{ color: 'var(--silver)', fontSize: 12 }}>—</span>
   const pct = (wins / total * 100).toFixed(1)
@@ -98,14 +97,14 @@ function BandTable({ bands }) {
         <tr>
           {['Confidence', 'W', 'L', 'Win%'].map(h => (
             <th key={h} style={{
-              textAlign: h === 'Confidence' ? 'left' : 'right',
-              fontSize: 11,
-              fontWeight: 600,
+              textAlign:     h === 'Confidence' ? 'left' : 'right',
+              fontSize:      11,
+              fontWeight:    600,
               letterSpacing: 1,
               textTransform: 'uppercase',
-              color: 'var(--silver)',
+              color:         'var(--silver)',
               paddingBottom: 6,
-              borderBottom: '1px solid var(--navy-border)',
+              borderBottom:  '1px solid var(--navy-border)',
             }}>{h}</th>
           ))}
         </tr>
@@ -131,7 +130,7 @@ function BandTable({ bands }) {
 
 // ── Results card ──────────────────────────────────────────────────────────────
 function ResultsCard({ title, subtitle, stats }) {
-  if (!stats) return null
+  if (!stats || !stats.total) return null
   const { total, by_confidence } = stats
   return (
     <div style={{
@@ -181,21 +180,21 @@ function PredTable({ predictions, date: dateStr, onDownload }) {
   }
 
   const thStyle = {
-    textAlign:    'left',
-    fontSize:     11,
-    fontWeight:   600,
-    letterSpacing:1,
-    textTransform:'uppercase',
-    color:        'var(--silver)',
-    padding:      '8px 10px',
-    borderBottom: '2px solid var(--navy-border)',
-    whiteSpace:   'nowrap',
+    textAlign:     'left',
+    fontSize:      11,
+    fontWeight:    600,
+    letterSpacing: 1,
+    textTransform: 'uppercase',
+    color:         'var(--silver)',
+    padding:       '8px 10px',
+    borderBottom:  '2px solid var(--navy-border)',
+    whiteSpace:    'nowrap',
   }
   const tdStyle = {
-    padding:    '10px 10px',
-    borderBottom:'1px solid var(--navy-border)',
-    fontSize:   13,
-    verticalAlign:'middle',
+    padding:       '10px 10px',
+    borderBottom:  '1px solid var(--navy-border)',
+    fontSize:      13,
+    verticalAlign: 'middle',
   }
 
   return (
@@ -205,7 +204,6 @@ function PredTable({ predictions, date: dateStr, onDownload }) {
       borderRadius: 8,
       overflow:     'hidden',
     }}>
-      {/* Table header row with download button */}
       <div style={{
         display:        'flex',
         alignItems:     'center',
@@ -270,37 +268,27 @@ function PredTable({ predictions, date: dateStr, onDownload }) {
               return (
                 <tr key={i} style={{ background: i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)' }}>
                   <td style={{ ...tdStyle, color: 'var(--silver)', whiteSpace: 'nowrap' }}>{p.game_time}</td>
-
-                  {/* Away team — bold if pick */}
                   <td style={{ ...tdStyle, color: isAway ? 'var(--white)' : 'var(--silver)', fontWeight: isAway ? 700 : 400 }}>
                     {p.away_team}
                   </td>
                   <td style={{ ...tdStyle, textAlign: 'center', color: 'var(--silver)', fontFamily: 'monospace' }}>
                     {p.away_pct?.toFixed(3) ?? '—'}
                   </td>
-
-                  {/* Home team — bold if pick */}
                   <td style={{ ...tdStyle, color: !isAway ? 'var(--white)' : 'var(--silver)', fontWeight: !isAway ? 700 : 400 }}>
                     {p.home_team}
                   </td>
                   <td style={{ ...tdStyle, textAlign: 'center', color: 'var(--silver)', fontFamily: 'monospace' }}>
                     {p.home_pct?.toFixed(3) ?? '—'}
                   </td>
-
-                  {/* Probabilities */}
                   <td style={{ ...tdStyle, textAlign: 'center', color: isAway ? 'var(--white)' : 'var(--silver)', fontFamily: 'monospace' }}>
                     {p.away_prob != null ? (p.away_prob * 100).toFixed(1) + '%' : '—'}
                   </td>
                   <td style={{ ...tdStyle, textAlign: 'center', color: !isAway ? 'var(--white)' : 'var(--silver)', fontFamily: 'monospace' }}>
                     {p.home_prob != null ? (p.home_prob * 100).toFixed(1) + '%' : '—'}
                   </td>
-
-                  {/* Pick */}
                   <td style={{ ...tdStyle, color: 'var(--white)', fontWeight: 700 }}>
                     {p.pick}
                   </td>
-
-                  {/* Confidence badge */}
                   <td style={{ ...tdStyle, textAlign: 'center' }}>
                     <ConfBadge confidence={p.confidence} />
                   </td>
@@ -322,7 +310,6 @@ export default function Log5Game() {
     if (data?.predictions) downloadCSV(data.predictions, data.date ?? 'today')
   }
 
-  // Format the last-updated timestamp
   const updatedLabel = data?.updated
     ? new Date(data.updated).toLocaleString('en-US', {
         month: 'short', day: 'numeric', year: 'numeric',
@@ -338,14 +325,12 @@ export default function Log5Game() {
         subtitle="Win probability derived from each team's season winning percentage using Bill James' Log5 formula: P(A beats B) = (A − A·B) / (A + B − 2A·B)"
       />
 
-      {/* Updated timestamp */}
       {updatedLabel && (
         <div style={{ color: 'var(--silver)', fontSize: 12, marginBottom: 20 }}>
           Last updated: {updatedLabel}
         </div>
       )}
 
-      {/* Loading / Error states */}
       {loading && (
         <div style={{
           background: 'var(--navy-mid)', border: '1px solid var(--navy-border)',
@@ -366,24 +351,18 @@ export default function Log5Game() {
 
       {data && (
         <>
-          {/* ── Today's Picks Table ── */}
           <PredTable
             predictions={data.predictions}
             date={data.date}
             onDownload={handleDownload}
           />
 
-          {/* ── Results Row ── */}
-          <div style={{
-            display:   'flex',
-            gap:       20,
-            marginTop: 28,
-            flexWrap:  'wrap',
-          }}>
+          <div style={{ display: 'flex', gap: 20, marginTop: 28, flexWrap: 'wrap' }}>
             <ResultsCard
               title="Yesterday's Results"
               subtitle={data.yesterday?.date
-                ? new Date(data.yesterday.date + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })
+                ? new Date(data.yesterday.date + 'T12:00:00').toLocaleDateString('en-US',
+                    { weekday: 'long', month: 'long', day: 'numeric' })
                 : null}
               stats={data.yesterday}
             />
@@ -394,7 +373,6 @@ export default function Log5Game() {
             />
           </div>
 
-          {/* ── Formula explainer ── */}
           <div style={{
             marginTop:    28,
             background:   'var(--navy-mid)',

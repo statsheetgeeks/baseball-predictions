@@ -108,7 +108,7 @@ function BandTable({ bands }) {
 
 // ── Results card ──────────────────────────────────────────────────────────────
 function ResultsCard({ title, subtitle, stats }) {
-  if (!stats) return null
+  if (!stats || !stats.total) return null
   const { total, by_confidence } = stats
   return (
     <div style={{
@@ -248,7 +248,7 @@ export default function RandomForestGame() {
       <PageHeader
         tag="Games → Random Forest"
         title="RANDOM FOREST MODEL"
-        subtitle="Random Forest classifier of 500 decision trees trained on 2015–2024 MLB game logs — season-to-date, exponentially-decayed, and rolling-window hitting and pitching features with native probability estimation."
+        subtitle="Random Forest classifier of 300 decision trees trained on 2015–2024 MLB game logs — season-to-date, exponentially-decayed, and rolling-window hitting and pitching features with Platt scaling calibration."
       />
 
       {updatedLabel && (
@@ -304,13 +304,12 @@ export default function RandomForestGame() {
             borderRadius: 8, padding: '16px 20px', fontSize: 12, color: 'var(--silver)', lineHeight: 1.7,
           }}>
             <span style={{ fontWeight: 700, color: 'var(--white)' }}>About this model — </span>
-            A Random Forest of 500 decision trees trained on 2015–2023 MLB game logs.
+            A Random Forest of 300 decision trees trained on 2015–2024 MLB game logs.
             Random Forest averages votes across all trees which naturally compresses win
-            probabilities toward 50% — isotonic regression fitted on the 2024 season
-            corrects this, mapping raw outputs to true win frequencies without over-squashing.
-            Features include season-to-date, exponentially-decayed recency-weighted,
-            and 7- and 15-game rolling averages of hitting and pitching stats,
-            plus Pythagorean expectation and Log5 as context features.
+            probabilities toward 50% — Platt scaling calibration corrects this,
+            mapping raw outputs to true win frequencies. Features include season-to-date,
+            exponentially-decayed recency-weighted, and 7- and 15-game rolling averages
+            of hitting and pitching stats, plus Pythagorean expectation and Log5 as context features.
           </div>
         </>
       )}

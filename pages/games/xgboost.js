@@ -108,7 +108,7 @@ function BandTable({ bands }) {
 
 // ── Results card ──────────────────────────────────────────────────────────────
 function ResultsCard({ title, subtitle, stats }) {
-  if (!stats) return null
+  if (!stats || !stats.total) return null
   const { total, by_confidence } = stats
   return (
     <div style={{

@@ -78,16 +78,14 @@ function ConfText({ confidence, size = 'sm' }) {
 // ── Top 3 picks cards ─────────────────────────────────────────────────────────
 function TopPicksRow({ predictions }) {
   if (!predictions?.length) return null
-  const top3 = predictions.slice(0, 3)
+  const top3   = predictions.slice(0, 3)
+  const labels = ['TOP PICK', '2ND PICK', '3RD PICK']
 
   return (
     <div style={{ display: 'flex', gap: 16, marginBottom: 28, flexWrap: 'wrap' }}>
       {top3.map((p, i) => {
         const pct     = p.composite_confidence * 100
-        const isAway  = p.composite_pick === p.away_team
         const matchup = `${p.away_team} @ ${p.home_team}`
-        const labels  = ['TOP PICK', '2ND PICK', '3RD PICK']
-
         return (
           <div key={i} style={{
             background:   'var(--navy-mid)',
@@ -98,49 +96,29 @@ function TopPicksRow({ predictions }) {
             flex:         1,
             minWidth:     200,
           }}>
-            {/* Rank label */}
             <div style={{
               fontFamily:    "'Barlow Condensed', sans-serif",
-              fontSize:      11,
-              fontWeight:    700,
-              letterSpacing: 2,
-              textTransform: 'uppercase',
-              color:         confColor(pct),
-              marginBottom:  8,
+              fontSize:      11, fontWeight: 700, letterSpacing: 2,
+              textTransform: 'uppercase', color: confColor(pct), marginBottom: 8,
             }}>
               {labels[i]}
             </div>
-
-            {/* Pick */}
             <div style={{
-              fontFamily:    "'Barlow Condensed', sans-serif",
-              fontSize:      20,
-              fontWeight:    900,
-              color:         'var(--white)',
-              lineHeight:    1.1,
-              marginBottom:  6,
+              fontFamily: "'Barlow Condensed', sans-serif",
+              fontSize: 20, fontWeight: 900, color: 'var(--white)', lineHeight: 1.1, marginBottom: 6,
             }}>
               {p.composite_pick}
             </div>
-
-            {/* Confidence */}
             <div style={{ marginBottom: 8 }}>
               <ConfText confidence={p.composite_confidence} size="lg" />
             </div>
-
-            {/* Matchup + time */}
             <div style={{ fontSize: 11, color: 'var(--silver)', lineHeight: 1.5 }}>
               <div>{matchup}</div>
               <div>{p.game_time}</div>
             </div>
-
-            {/* Vote count */}
             <div style={{
-              marginTop:  8,
-              fontSize:   10,
-              color:      'var(--silver)',
-              fontFamily: "'Barlow Condensed', sans-serif",
-              letterSpacing: 0.5,
+              marginTop: 8, fontSize: 10, color: 'var(--silver)',
+              fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: 0.5,
             }}>
               {p.vote_count}/{p.total_votes} models agree
             </div>
@@ -154,29 +132,17 @@ function TopPicksRow({ predictions }) {
 // ── Small model cell for the table ────────────────────────────────────────────
 function ModelCell({ modelData, away }) {
   const tdBase = {
-    padding:      '8px 6px',
-    borderBottom: '1px solid var(--navy-border)',
-    textAlign:    'center',
-    verticalAlign:'middle',
+    padding: '8px 6px', borderBottom: '1px solid var(--navy-border)',
+    textAlign: 'center', verticalAlign: 'middle',
   }
-
   if (!modelData) {
     return <td style={{ ...tdBase, color: 'var(--silver)', fontSize: 11 }}>—</td>
   }
-
-  const isAway    = modelData.pick === away
-  const lastName  = modelData.pick.split(' ').slice(-1)[0]
-  const pct       = modelData.confidence * 100
-
+  const isAway   = modelData.pick === away
+  const lastName = modelData.pick.split(' ').slice(-1)[0]
   return (
     <td style={tdBase}>
-      <div style={{
-        fontSize:   11,
-        fontWeight: 700,
-        color:      'var(--white)',
-        marginBottom: 2,
-        whiteSpace: 'nowrap',
-      }}>
+      <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--white)', marginBottom: 2, whiteSpace: 'nowrap' }}>
         {isAway ? '↑' : '↓'} {lastName}
       </div>
       <ConfText confidence={modelData.confidence} size="sm" />
@@ -235,7 +201,7 @@ function BandTable({ bands }) {
 
 // ── Results card ──────────────────────────────────────────────────────────────
 function ResultsCard({ title, subtitle, stats }) {
-  if (!stats) return null
+  if (!stats || !stats.total) return null
   const { total, by_confidence } = stats
   return (
     <div style={{
@@ -331,7 +297,6 @@ function PredTable({ predictions, date: dateStr, onDownload }) {
       background: 'var(--navy-mid)', border: '1px solid var(--navy-border)',
       borderRadius: 8, overflow: 'hidden',
     }}>
-      {/* Header bar */}
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '14px 18px', borderBottom: '1px solid var(--navy-border)',
@@ -387,12 +352,10 @@ function PredTable({ predictions, date: dateStr, onDownload }) {
                   <td style={{ ...tdStyle, color: !isAway ? 'var(--white)' : 'var(--silver)', fontWeight: !isAway ? 700 : 400 }}>
                     {p.home_team}
                   </td>
-
                   <ModelCell modelData={p.log5}          away={p.away_team} />
                   <ModelCell modelData={p.research}      away={p.away_team} />
                   <ModelCell modelData={p.xgboost}       away={p.away_team} />
                   <ModelCell modelData={p.random_forest} away={p.away_team} />
-
                   <td style={{ ...tdStyle, color: 'var(--white)', fontWeight: 700 }}>
                     {p.composite_pick}
                   </td>
@@ -469,17 +432,14 @@ export default function CompositePage() {
 
       {data && (
         <>
-          {/* Top 3 highest-confidence picks */}
           <TopPicksRow predictions={data.predictions} />
 
-          {/* Full game table */}
           <PredTable
             predictions={data.predictions}
             date={data.date}
             onDownload={handleDownload}
           />
 
-          {/* Results + model standings */}
           <div style={{ display: 'flex', gap: 20, marginTop: 28, flexWrap: 'wrap' }}>
             <ResultsCard
               title="Yesterday's Results"
