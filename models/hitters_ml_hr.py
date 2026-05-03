@@ -991,9 +991,9 @@ def run():
     feat_df = build_rolling_features(raw_df)
 
     # Join handedness (batter bat side)
-	feat_df['bat_side'] = feat_df['player_id'].apply(
-		lambda pid: hand_cache.get(str(int(pid)), {}).get('bat_side', 'R') if pd.notna(pid) else 'R'
-    )
+    feat_df['bat_side'] = feat_df['player_id'].apply(
+            lambda pid: hand_cache.get(str(int(pid)), {}).get('bat_side', 'R') if pd.notna(pid) else 'R'
+        )
     feat_df['bat_L'] = (feat_df['bat_side'] == 'L').astype(int)
     feat_df['bat_R'] = (feat_df['bat_side'] == 'R').astype(int)
 
