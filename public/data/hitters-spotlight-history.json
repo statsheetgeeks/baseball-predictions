@@ -17,8 +17,8 @@
           "ranks": {
             "Log5 Hit": 2,
             "ML Hit": 1,
-            "HR Model": 25,
-            "ML HR": 17
+            "HR Model": 24,
+            "ML HR": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -33,9 +33,9 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 18,
+            "Log5 Hit": 19,
             "ML Hit": 2,
-            "ML HR": 22
+            "ML HR": 7
           },
           "actual_hit": null,
           "actual_hr": null
@@ -50,9 +50,9 @@
             "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 7,
-            "HR Model": 20,
-            "ML HR": 3
+            "Log5 Hit": 6,
+            "HR Model": 19,
+            "ML HR": 9
           },
           "actual_hit": null,
           "actual_hr": null
@@ -68,8 +68,8 @@
           ],
           "ranks": {
             "ML Hit": 5,
-            "HR Model": 12,
-            "ML HR": 9
+            "HR Model": 10,
+            "ML HR": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -85,23 +85,38 @@
           ],
           "ranks": {
             "Log5 Hit": 1,
-            "ML Hit": 22,
+            "ML Hit": 23,
             "HR Model": 13
           },
           "actual_hit": null,
           "actual_hr": null
         },
         {
-          "player": "Ben Rice",
+          "player": "Aaron Judge",
           "team": "NYY",
           "appearances": 2,
           "models": [
             "HR Model",
-            "Log5 Hit"
+            "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 14,
-            "HR Model": 8
+            "HR Model": 9,
+            "ML HR": 19
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Chase DeLauter",
+          "team": "CLE",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML HR"
+          ],
+          "ranks": {
+            "HR Model": 25,
+            "ML HR": 22
           },
           "actual_hit": null,
           "actual_hr": null
@@ -115,8 +130,23 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 21,
-            "ML HR": 13
+            "HR Model": 20,
+            "ML HR": 18
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Drake Baldwin",
+          "team": "ATL",
+          "appearances": 2,
+          "models": [
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 4,
+            "ML HR": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -130,7 +160,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 16,
+            "Log5 Hit": 17,
             "ML Hit": 10
           },
           "actual_hit": null,
@@ -145,8 +175,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 2,
-            "ML HR": 1
+            "HR Model": 3,
+            "ML HR": 2
           },
           "actual_hit": null,
           "actual_hr": null
@@ -160,8 +190,23 @@
             "Log5 Hit"
           ],
           "ranks": {
-            "Log5 Hit": 11,
-            "HR Model": 18
+            "Log5 Hit": 12,
+            "HR Model": 12
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Junior Caminero",
+          "team": "TB",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML HR"
+          ],
+          "ranks": {
+            "HR Model": 23,
+            "ML HR": 1
           },
           "actual_hit": null,
           "actual_hr": null
@@ -176,7 +221,7 @@
           ],
           "ranks": {
             "HR Model": 7,
-            "ML HR": 6
+            "ML HR": 8
           },
           "actual_hit": null,
           "actual_hr": null
@@ -190,7 +235,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 12,
+            "Log5 Hit": 13,
             "ML Hit": 8
           },
           "actual_hit": null,
@@ -206,7 +251,7 @@
           ],
           "ranks": {
             "HR Model": 15,
-            "ML HR": 7
+            "ML HR": 6
           },
           "actual_hit": null,
           "actual_hr": null
@@ -221,7 +266,7 @@
           ],
           "ranks": {
             "ML Hit": 3,
-            "ML HR": 21
+            "ML HR": 16
           },
           "actual_hit": null,
           "actual_hr": null
@@ -250,8 +295,23 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 19,
+            "Log5 Hit": 20,
             "ML Hit": 13
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Pete Crow-Armstrong",
+          "team": "CHC",
+          "appearances": 2,
+          "models": [
+            "ML HR",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 4,
+            "ML HR": 20
           },
           "actual_hit": null,
           "actual_hr": null
@@ -265,8 +325,8 @@
             "Log5 Hit"
           ],
           "ranks": {
-            "Log5 Hit": 5,
-            "HR Model": 3
+            "Log5 Hit": 7,
+            "HR Model": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -280,8 +340,23 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 9,
+            "Log5 Hit": 10,
             "ML Hit": 17
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Willson Contreras",
+          "team": "BOS",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "Log5 Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 22,
+            "HR Model": 22
           },
           "actual_hit": null,
           "actual_hr": null

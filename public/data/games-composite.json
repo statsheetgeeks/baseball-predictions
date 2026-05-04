@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-04T14:25:40.489953+00:00",
+  "updated": "2026-05-04T19:08:06.226955+00:00",
   "date": "2026-05-04",
   "predictions": [
     {
@@ -57,7 +57,7 @@
       "correct": null
     },
     {
-      "game_time": "7:40 PM ET",
+      "game_time": "7:10 PM ET",
       "away_team": "Cincinnati Reds",
       "home_team": "Chicago Cubs",
       "log5": {
@@ -139,33 +139,6 @@
     },
     {
       "game_time": "6:40 PM ET",
-      "away_team": "Boston Red Sox",
-      "home_team": "Detroit Tigers",
-      "log5": {
-        "pick": "Detroit Tigers",
-        "confidence": 0.6311
-      },
-      "research": {
-        "pick": "Detroit Tigers",
-        "confidence": 0.5335
-      },
-      "xgboost": {
-        "pick": "Boston Red Sox",
-        "confidence": 0.5078
-      },
-      "random_forest": {
-        "pick": "Detroit Tigers",
-        "confidence": 0.5391
-      },
-      "composite_pick": "Detroit Tigers",
-      "composite_confidence": 0.549,
-      "vote_count": 3,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
-      "game_time": "6:40 PM ET",
       "away_team": "Philadelphia Phillies",
       "home_team": "Miami Marlins",
       "log5": {
@@ -219,6 +192,33 @@
       "correct": null
     },
     {
+      "game_time": "6:10 PM ET",
+      "away_team": "Boston Red Sox",
+      "home_team": "Detroit Tigers",
+      "log5": {
+        "pick": "Detroit Tigers",
+        "confidence": 0.6311
+      },
+      "research": {
+        "pick": "Detroit Tigers",
+        "confidence": 0.5335
+      },
+      "xgboost": {
+        "pick": "Boston Red Sox",
+        "confidence": 0.519
+      },
+      "random_forest": {
+        "pick": "Detroit Tigers",
+        "confidence": 0.5005
+      },
+      "composite_pick": "Detroit Tigers",
+      "composite_confidence": 0.5365,
+      "vote_count": 3,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
       "game_time": "6:40 PM ET",
       "away_team": "Toronto Blue Jays",
       "home_team": "Tampa Bay Rays",
@@ -262,12 +262,12 @@
         "confidence": 0.5603
       },
       "random_forest": {
-        "pick": "Colorado Rockies",
-        "confidence": 0.5101
+        "pick": "New York Mets",
+        "confidence": 0.5357
       },
       "composite_pick": "New York Mets",
-      "composite_confidence": 0.5156,
-      "vote_count": 2,
+      "composite_confidence": 0.5271,
+      "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
