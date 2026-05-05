@@ -5,23 +5,6 @@
       "graded": false,
       "players": [
         {
-          "player": "Jordan Walker",
-          "team": "STL",
-          "appearances": 3,
-          "models": [
-            "HR Model",
-            "Log5 Hit",
-            "ML HR"
-          ],
-          "ranks": {
-            "Log5 Hit": 21,
-            "HR Model": 5,
-            "ML HR": 18
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Sal Stewart",
           "team": "CIN",
           "appearances": 3,
@@ -32,8 +15,8 @@
           ],
           "ranks": {
             "ML Hit": 18,
-            "HR Model": 8,
-            "ML HR": 11
+            "HR Model": 6,
+            "ML HR": 16
           },
           "actual_hit": null,
           "actual_hr": null
@@ -47,8 +30,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 10,
-            "ML HR": 13
+            "HR Model": 14,
+            "ML HR": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -62,8 +45,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 7,
-            "ML HR": 17
+            "HR Model": 12,
+            "ML HR": 10
           },
           "actual_hit": null,
           "actual_hr": null
@@ -77,7 +60,7 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 20,
+            "HR Model": 19,
             "ML HR": 2
           },
           "actual_hit": null,
@@ -108,22 +91,7 @@
           ],
           "ranks": {
             "HR Model": 4,
-            "ML HR": 7
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Hunter Goodman",
-          "team": "COL",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "ML HR"
-          ],
-          "ranks": {
-            "HR Model": 22,
-            "ML HR": 21
+            "ML HR": 9
           },
           "actual_hit": null,
           "actual_hr": null
@@ -144,6 +112,21 @@
           "actual_hr": null
         },
         {
+          "player": "Jordan Walker",
+          "team": "STL",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "Log5 Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 21,
+            "HR Model": 5
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
           "player": "Juan Soto",
           "team": "NYM",
           "appearances": 2,
@@ -153,7 +136,7 @@
           ],
           "ranks": {
             "Log5 Hit": 6,
-            "HR Model": 18
+            "HR Model": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -167,7 +150,7 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 9,
+            "HR Model": 8,
             "ML HR": 1
           },
           "actual_hit": null,
@@ -189,6 +172,21 @@
           "actual_hr": null
         },
         {
+          "player": "Matt Olson",
+          "team": "ATL",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML HR"
+          ],
+          "ranks": {
+            "HR Model": 24,
+            "ML HR": 6
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
           "player": "Mickey Moniak",
           "team": "COL",
           "appearances": 2,
@@ -197,23 +195,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 12,
-            "ML HR": 9
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Munetaka Murakami",
-          "team": "CWS",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "ML HR"
-          ],
-          "ranks": {
-            "HR Model": 3,
-            "ML HR": 25
+            "HR Model": 15,
+            "ML HR": 15
           },
           "actual_hit": null,
           "actual_hr": null
@@ -258,7 +241,7 @@
           ],
           "ranks": {
             "Log5 Hit": 18,
-            "HR Model": 15
+            "HR Model": 13
           },
           "actual_hit": null,
           "actual_hr": null
