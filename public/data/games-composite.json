@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-06T16:42:14.778962+00:00",
+  "updated": "2026-05-06T19:14:01.591039+00:00",
   "date": "2026-05-06",
   "predictions": [
     {
@@ -43,14 +43,14 @@
       },
       "xgboost": {
         "pick": "Los Angeles Dodgers",
-        "confidence": 0.5785
+        "confidence": 0.6367
       },
       "random_forest": {
         "pick": "Los Angeles Dodgers",
-        "confidence": 0.5865
+        "confidence": 0.6067
       },
       "composite_pick": "Los Angeles Dodgers",
-      "composite_confidence": 0.5827,
+      "composite_confidence": 0.6022,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
@@ -165,33 +165,6 @@
       "correct": null
     },
     {
-      "game_time": "1:15 PM ET",
-      "away_team": "Milwaukee Brewers",
-      "home_team": "St. Louis Cardinals",
-      "log5": {
-        "pick": "St. Louis Cardinals",
-        "confidence": 0.5714
-      },
-      "research": {
-        "pick": "St. Louis Cardinals",
-        "confidence": 0.5335
-      },
-      "xgboost": {
-        "pick": "St. Louis Cardinals",
-        "confidence": 0.5496
-      },
-      "random_forest": {
-        "pick": "St. Louis Cardinals",
-        "confidence": 0.5692
-      },
-      "composite_pick": "St. Louis Cardinals",
-      "composite_confidence": 0.5559,
-      "vote_count": 4,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
       "game_time": "9:20 PM ET",
       "away_team": "New York Mets",
       "home_team": "Colorado Rockies",
@@ -219,6 +192,33 @@
       "correct": null
     },
     {
+      "game_time": "1:15 PM ET",
+      "away_team": "Milwaukee Brewers",
+      "home_team": "St. Louis Cardinals",
+      "log5": {
+        "pick": "St. Louis Cardinals",
+        "confidence": 0.5714
+      },
+      "research": {
+        "pick": "St. Louis Cardinals",
+        "confidence": 0.5335
+      },
+      "xgboost": {
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.5031
+      },
+      "random_forest": {
+        "pick": "St. Louis Cardinals",
+        "confidence": 0.5737
+      },
+      "composite_pick": "St. Louis Cardinals",
+      "composite_confidence": 0.5439,
+      "vote_count": 3,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
       "game_time": "1:10 PM ET",
       "away_team": "Toronto Blue Jays",
       "home_team": "Tampa Bay Rays",
@@ -232,14 +232,14 @@
       },
       "xgboost": {
         "pick": "Toronto Blue Jays",
-        "confidence": 0.5836
+        "confidence": 0.6077
       },
       "random_forest": {
         "pick": "Tampa Bay Rays",
-        "confidence": 0.5309
+        "confidence": 0.5502
       },
       "composite_pick": "Tampa Bay Rays",
-      "composite_confidence": 0.5383,
+      "composite_confidence": 0.5371,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
