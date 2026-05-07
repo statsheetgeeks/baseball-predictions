@@ -6,51 +6,24 @@
       "predictions": [
         {
           "rank": 1,
-          "player": "MJ Melendez",
-          "team": "NYM",
-          "score": 79,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 2,
           "player": "CJ Abrams",
           "team": "WSH",
-          "score": 75,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 3,
-          "player": "Mickey Moniak",
-          "team": "COL",
-          "score": 75,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 4,
-          "player": "James Wood",
-          "team": "WSH",
-          "score": 74,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 5,
-          "player": "Juan Soto",
-          "team": "NYM",
           "score": 72,
           "confidence": "high",
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 6,
+          "rank": 2,
+          "player": "Mickey Moniak",
+          "team": "COL",
+          "score": 72,
+          "confidence": "high",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 3,
           "player": "Luis Campusano",
           "team": "SD",
           "score": 72,
@@ -59,20 +32,47 @@
           "correct": null
         },
         {
-          "rank": 7,
-          "player": "Aaron Judge",
-          "team": "NYY",
+          "rank": 4,
+          "player": "James Wood",
+          "team": "WSH",
+          "score": 71,
+          "confidence": "high",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 5,
+          "player": "Juan Soto",
+          "team": "NYM",
           "score": 70,
           "confidence": "high",
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 8,
+          "rank": 6,
           "player": "Liam Hicks",
           "team": "MIA",
           "score": 70,
           "confidence": "high",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 7,
+          "player": "Aaron Judge",
+          "team": "NYY",
+          "score": 69,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 8,
+          "player": "Kyle Schwarber",
+          "team": "PHI",
+          "score": 69,
+          "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
@@ -87,27 +87,27 @@
         },
         {
           "rank": 10,
-          "player": "Kyle Schwarber",
-          "team": "PHI",
-          "score": 69,
+          "player": "Ty France",
+          "team": "SD",
+          "score": 68,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 11,
-          "player": "Willson Contreras",
-          "team": "BOS",
-          "score": 68,
+          "player": "Shea Langeliers",
+          "team": "ATH",
+          "score": 67,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 12,
-          "player": "Ty France",
-          "team": "SD",
-          "score": 68,
+          "player": "Willson Contreras",
+          "team": "BOS",
+          "score": 67,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
@@ -123,33 +123,6 @@
         },
         {
           "rank": 14,
-          "player": "Curtis Mead",
-          "team": "WSH",
-          "score": 64,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 15,
-          "player": "Mark Vientos",
-          "team": "NYM",
-          "score": 64,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 16,
-          "player": "Amed Rosario",
-          "team": "NYY",
-          "score": 63,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 17,
           "player": "Byron Buxton",
           "team": "MIN",
           "score": 63,
@@ -158,26 +131,8 @@
           "correct": null
         },
         {
-          "rank": 18,
-          "player": "Carter Jensen",
-          "team": "KC",
-          "score": 62,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 19,
-          "player": "JJ Bleday",
-          "team": "CIN",
-          "score": 62,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 20,
-          "player": "Francisco Alvarez",
+          "rank": 15,
+          "player": "Mark Vientos",
           "team": "NYM",
           "score": 62,
           "confidence": "medium",
@@ -185,25 +140,34 @@
           "correct": null
         },
         {
-          "rank": 21,
+          "rank": 16,
           "player": "Carlos Cortes",
           "team": "ATH",
+          "score": 62,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 17,
+          "player": "Ryan Jeffers",
+          "team": "MIN",
           "score": 61,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 22,
-          "player": "Jonathan Aranda",
-          "team": "TB",
+          "rank": 18,
+          "player": "JJ Bleday",
+          "team": "CIN",
           "score": 61,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 23,
+          "rank": 19,
           "player": "Gavin Sheets",
           "team": "SD",
           "score": 61,
@@ -212,10 +176,46 @@
           "correct": null
         },
         {
+          "rank": 20,
+          "player": "Amed Rosario",
+          "team": "NYY",
+          "score": 60,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 21,
+          "player": "Curtis Mead",
+          "team": "WSH",
+          "score": 60,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 22,
+          "player": "Carter Jensen",
+          "team": "KC",
+          "score": 60,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 23,
+          "player": "Michael Conforto",
+          "team": "CHC",
+          "score": 60,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
           "rank": 24,
-          "player": "Xander Bogaerts",
-          "team": "SD",
-          "score": 61,
+          "player": "Francisco Alvarez",
+          "team": "NYM",
+          "score": 60,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null

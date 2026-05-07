@@ -5,6 +5,23 @@
       "graded": false,
       "players": [
         {
+          "player": "Brandon Lowe",
+          "team": "PIT",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "ML HR",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 25,
+            "HR Model": 25,
+            "ML HR": 24
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
           "player": "Byron Buxton",
           "team": "MIN",
           "appearances": 3,
@@ -15,8 +32,8 @@
           ],
           "ranks": {
             "ML Hit": 23,
-            "HR Model": 17,
-            "ML HR": 8
+            "HR Model": 14,
+            "ML HR": 15
           },
           "actual_hit": null,
           "actual_hr": null
@@ -31,26 +48,9 @@
             "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 22,
-            "HR Model": 2,
-            "ML HR": 5
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "James Wood",
-          "team": "WSH",
-          "appearances": 3,
-          "models": [
-            "HR Model",
-            "Log5 Hit",
-            "ML HR"
-          ],
-          "ranks": {
             "Log5 Hit": 24,
-            "HR Model": 4,
-            "ML HR": 6
+            "HR Model": 1,
+            "ML HR": 12
           },
           "actual_hit": null,
           "actual_hr": null
@@ -65,26 +65,9 @@
             "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 19,
-            "HR Model": 8,
-            "ML HR": 22
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Xander Bogaerts",
-          "team": "SD",
-          "appearances": 3,
-          "models": [
-            "HR Model",
-            "Log5 Hit",
-            "ML HR"
-          ],
-          "ranks": {
-            "Log5 Hit": 17,
-            "HR Model": 24,
-            "ML HR": 14
+            "Log5 Hit": 20,
+            "HR Model": 6,
+            "ML HR": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -99,37 +82,7 @@
           ],
           "ranks": {
             "HR Model": 7,
-            "ML HR": 4
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Bobby Witt Jr.",
-          "team": "KC",
-          "appearances": 2,
-          "models": [
-            "Log5 Hit",
-            "ML HR"
-          ],
-          "ranks": {
-            "Log5 Hit": 7,
-            "ML HR": 18
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Brandon Lowe",
-          "team": "PIT",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 25,
-            "HR Model": 25
+            "ML HR": 2
           },
           "actual_hit": null,
           "actual_hr": null
@@ -143,7 +96,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 20,
+            "Log5 Hit": 21,
             "ML Hit": 16
           },
           "actual_hit": null,
@@ -159,7 +112,7 @@
           ],
           "ranks": {
             "HR Model": 9,
-            "ML HR": 2
+            "ML HR": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -173,8 +126,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 18,
-            "ML HR": 15
+            "HR Model": 22,
+            "ML HR": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -188,7 +141,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 10,
+            "Log5 Hit": 16,
             "ML Hit": 18
           },
           "actual_hit": null,
@@ -210,16 +163,16 @@
           "actual_hr": null
         },
         {
-          "player": "Jonathan Aranda",
-          "team": "TB",
+          "player": "James Wood",
+          "team": "WSH",
           "appearances": 2,
           "models": [
             "HR Model",
-            "Log5 Hit"
+            "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 12,
-            "HR Model": 22
+            "HR Model": 4,
+            "ML HR": 5
           },
           "actual_hit": null,
           "actual_hr": null
@@ -233,7 +186,7 @@
             "Log5 Hit"
           ],
           "ranks": {
-            "Log5 Hit": 8,
+            "Log5 Hit": 14,
             "HR Model": 5
           },
           "actual_hit": null,
@@ -278,23 +231,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 10,
+            "HR Model": 8,
             "ML HR": 1
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Maikel Garcia",
-          "team": "KC",
-          "appearances": 2,
-          "models": [
-            "Log5 Hit",
-            "ML HR"
-          ],
-          "ranks": {
-            "Log5 Hit": 25,
-            "ML HR": 20
           },
           "actual_hit": null,
           "actual_hr": null
@@ -308,7 +246,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 14,
+            "Log5 Hit": 11,
             "ML Hit": 2
           },
           "actual_hit": null,
@@ -323,7 +261,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 11,
+            "Log5 Hit": 13,
             "ML Hit": 1
           },
           "actual_hit": null,
@@ -338,7 +276,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 21,
+            "Log5 Hit": 22,
             "ML Hit": 21
           },
           "actual_hit": null,
@@ -354,7 +292,37 @@
           ],
           "ranks": {
             "ML Hit": 3,
-            "ML HR": 10
+            "ML HR": 9
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Shea Langeliers",
+          "team": "ATH",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "Log5 Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 5,
+            "HR Model": 11
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Xander Bogaerts",
+          "team": "SD",
+          "appearances": 2,
+          "models": [
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 18,
+            "ML HR": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -368,7 +336,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 18,
+            "Log5 Hit": 19,
             "ML Hit": 22
           },
           "actual_hit": null,
