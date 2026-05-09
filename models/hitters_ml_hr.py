@@ -8,58 +8,42 @@ with Statcast, weather, park, and handedness features. Evaluated on the
 2024 hold-out season. Ranks today's qualified batters (≥100 PA) by their
 expected HR rate (Poisson λ).
 
-WHY POISSON:
-  HRs occur in only ~4–6% of batter-games. Binary classification fights
-  this extreme imbalance and loses signal. Poisson regression treats HR
-  count as a rare count outcome (0, 1, occasionally 2), which is
-  statistically principled and sidesteps resampling entirely.
+BUG FIXES in this version
+──────────────────────────────────────────────────────────────────────────────
+FIX A — Grading: grade_yesterday() no longer uses the forever-cached season
+         schedule pkl. It now calls the MLB schedule API directly for
+         yesterday's date only, matching the reliable pattern used by every
+         other hitter model. The stale pkl caused grading to silently find
+         zero games for any date after the initial cache was written.
 
-FEATURE GROUPS:
-  Rolling batter    — 15G and 60G HR/PA, SLG, ISO + 60G HR count
-  Batter Statcast   — barrel%, exit velo, launch angle, hard hit%, xSLG
-  Pitcher counting  — ERA, WHIP, HR, SO, BB, IP, BF (season-to-date)
-  Pitcher Statcast  — barrel% allowed, exit velo allowed, hard hit% allowed
-  Park              — HR factor, altitude (ft), roof type
-  Weather           — temp (°F), wind speed, wind-out component toward CF
-  Context           — is_home, bat_L, bat_R, sp_throws_L, platoon_adv
+FIX B — Grading: save_history() is now called immediately after grade_yesterday()
+         so graded results are persisted even if the rest of the pipeline
+         fails. Previously a crash anywhere in run() after grading but before
+         the final json.dump() lost all graded results.
 
-PITCHER ASSIGNMENT:
-  Home batters face the AWAY starter + AWAY team stats.
-  Away batters face the HOME starter + HOME team stats.
-  A batter is never scored against their own team's pitcher.
+FIX C — Rolling features: model_df is extended with recent games (last 90 days,
+         daily-refreshed cache) before calling get_batter_roll_today(). The
+         original code searched model_df for [CURRENT_YEAR, CURRENT_YEAR-1]
+         but model_df only contained 2017–2024. Zero players matched, so
+         100% of predictions hit the API season-total fallback, giving
+         roll15_hr_pa == roll60_hr_pa for every player.
 
-CACHING:
-  hr_pred_cache/          — gitignored, restored via GitHub Actions cache
-    sched_{yr}.pkl        — season schedule (game_pk, date, home team)
-    box_{pk}.json         — box score JSON — checks hit_pred_cache/ first
-    hr_records_{yr}.pkl   — assembled batter-game rows
-    statcast_batter_{yr}.pkl  — Savant batter CSV features
-    statcast_pitcher_{yr}.pkl — Savant pitcher CSV features
-    player_hands.json     — bat side + pitch hand (grows over time)
-    weather_{park}_{yr}.pkl   — full-year hourly archive per park
-    player_{id}_{today}_hitting.json — daily refresh
-    roster_{teamId}_{today}.json     — daily refresh
+FIX D — Statcast: fetch_statcast_csv() now uses min=10 PA (not min=q) so
+         early-season batters appear. Column names are validated against
+         actual Savant output — both old and current names are tried (e.g.
+         'barrel_batted_rate' vs 'brl_percent'). Debug counts are logged
+         after the join so missing coverage is visible in CI logs.
 
-  models/mlb_cache_v2/ml_hr_models.pkl
-    Poisson XGBoost, Binary XGBoost, imputer, FITTED_FEATURES.
-    Rebuilt only when missing or new season detected.
+FIX E — Lambda sanity check: a warning is now printed if mean lambda exceeds
+         0.15, flagging any future regression in model calibration.
 
-OUTPUTS:
-  public/data/hitters-ml-hr.json
-  public/data/hitters-ml-hr-history.json
-
-BUG FIXES (vs. previous version):
-  FIX 1 — Feature truncation: replaced silent column-drop with a ValueError
-           that forces a model rebuild when train/inference features mismatch.
-  FIX 2 — Dead code: removed unused TimeSeriesSplit import and object.
-  FIX 3 — Current-season Statcast: live predictions now check CURRENT_YEAR
-           Statcast first (batter + pitcher), falling back to prior years.
-  FIX 4 — sp_bf feature: added to PITCHER_COUNTING so it enters fitted_features;
-           previously computed and stored in DEFAULT_SP but silently ignored.
-  FIX 5 — Park fallback: unknown home teams now map to 'NEUTRAL' (league-avg)
-           with a logged warning instead of silently using Yankee Stadium (NYY).
-  FIX 6 — eval_metric: moved from XGBClassifier __init__ to .fit() to avoid
-           XGBoost ≥1.6 deprecation warning and ensure correct behaviour.
+Previously applied fixes retained:
+  FIX 1 — Feature truncation raises ValueError instead of silent column-drop.
+  FIX 2 — Dead TimeSeriesSplit code removed.
+  FIX 3 — Current-season Statcast checked first for live batters + pitchers.
+  FIX 4 — sp_bf added to PITCHER_COUNTING.
+  FIX 5 — Unknown park maps to NEUTRAL instead of NYY.
+  FIX 6 — eval_metric moved to .fit() per XGBoost ≥1.6 contract.
 ──────────────────────────────────────────────────────────────────────────────
 """
 
@@ -70,7 +54,7 @@ import os
 import pickle
 import time
 import warnings
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, timedelta
 
 import numpy as np
 import pandas as pd
@@ -86,7 +70,7 @@ np.random.seed(42)
 BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR   = os.path.join(BASE_DIR, '..', 'public', 'data')
 CACHE_DIR  = os.path.join(BASE_DIR, '..', 'hr_pred_cache')
-HIT_CACHE  = os.path.join(BASE_DIR, '..', 'hit_pred_cache')   # shared box files
+HIT_CACHE  = os.path.join(BASE_DIR, '..', 'hit_pred_cache')
 MODEL_DIR  = os.path.join(BASE_DIR, 'mlb_cache_v2')
 MAIN_JSON  = os.path.join(DATA_DIR,  'hitters-ml-hr.json')
 HIST_JSON  = os.path.join(DATA_DIR,  'hitters-ml-hr-history.json')
@@ -102,14 +86,15 @@ SAVANT_BASE    = 'https://baseballsavant.mlb.com'
 METEO_ARCHIVE  = 'https://archive-api.open-meteo.com/v1/archive'
 METEO_FORECAST = 'https://api.open-meteo.com/v1/forecast'
 
-CURRENT_YEAR   = date.today().year                      # moved above — used by the lines below
-TRAIN_SEASONS  = list(range(2017, CURRENT_YEAR - 1))    # 2017–(CURRENT_YEAR-2)
-TEST_SEASON    = CURRENT_YEAR - 1                        # most recent complete season
+TRAIN_SEASONS  = list(range(2017, 2024))   # 2017–2023
+TEST_SEASON    = 2024
+CURRENT_YEAR   = date.today().year
 TODAY          = date.today().strftime('%Y-%m-%d')
 
 MIN_PA         = 100
 ROLL_SHORT     = 15
 ROLL_LONG      = 60
+RECENT_DAYS    = 90    # FIX C: days of recent game history for live rolling windows
 TOP_N          = 25
 SLEEP_S        = 0.05
 
@@ -147,9 +132,7 @@ PARKS = {
     'TEX': ('Globe Life Field',         1.10,  551, 1, 32.7512,  -97.0832, 15),
     'TOR': ('Rogers Centre',            1.08,  249, 1, 43.6414,  -79.3894,  5),
     'WSH': ('Nationals Park',           1.02,   25, 0, 38.8730,  -77.0074, 20),
-    # FIX 5: League-average neutral park for unknown/unmapped home teams.
-    #        Previously the code defaulted silently to 'NYY' (HR factor 1.20),
-    #        which would inflate predictions for any unrecognized team.
+    # FIX 5: league-average neutral park for unmapped home teams
     'NEUTRAL': ('League Average',       1.00,  200, 0, 39.5,    -98.0,     0),
 }
 
@@ -179,14 +162,28 @@ DEFAULT_SP = {
 
 ROLL_FEATURES    = ['roll15_hr_pa', 'roll60_hr_pa', 'roll15_slg', 'roll60_slg',
                      'roll15_iso',   'roll60_iso',   'roll60_hr_count']
-# FIX 4: Added 'sp_bf' to PITCHER_COUNTING. It was computed in get_pitcher_features()
-#         and stored in DEFAULT_SP, but was absent here so it never entered
-#         fitted_features and was silently dropped from every prediction.
+# FIX 4: sp_bf was computed everywhere but absent from this list
 PITCHER_COUNTING = ['sp_era', 'sp_whip', 'sp_hr', 'sp_so', 'sp_bb', 'sp_ip', 'sp_bf']
 PARK_FEATURES    = ['park_hr_factor', 'park_altitude_ft', 'park_roof']
 WEATHER_FEATURES = ['weather_temp_f', 'weather_wind_mph',
                      'weather_wind_out', 'weather_is_dome']
 CONTEXT_FEATURES = ['is_home', 'bat_L', 'bat_R', 'sp_throws_L', 'platoon_adv']
+
+# FIX D: Savant column names change across versions.
+# Each entry maps (old_name, current_name) → our internal column name.
+# fetch_statcast_csv() will try both the old and current name.
+SAVANT_BATTER_COLS = {
+    ('barrel_batted_rate', 'brl_percent')   : 'sc_barrel_pct',
+    ('avg_hit_speed',      'avg_hit_speed') : 'sc_exit_velo',
+    ('avg_launch_angle',   'avg_launch_angle'): 'sc_launch_angle',
+    ('hard_hit_percent',   'hard_hit_percent'): 'sc_hard_hit_pct',
+    ('xslg',               'xslg')          : 'sc_xslg',
+}
+SAVANT_PITCHER_COLS = {
+    ('barrel_batted_rate', 'brl_percent')   : 'sp_sc_barrel_pct',
+    ('avg_hit_speed',      'avg_hit_speed') : 'sp_sc_exit_velo',
+    ('hard_hit_percent',   'hard_hit_percent'): 'sp_sc_hard_hit_pct',
+}
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -207,10 +204,7 @@ def _get(url, timeout=20):
     return r.json()
 
 def wind_out_component(wind_speed_mph, wind_from_deg, park_abbr):
-    """
-    Signed wind component toward CF (positive = HR boost, negative = suppressor).
-    wind_from_deg is the meteorological direction the wind is coming FROM.
-    """
+    """Signed wind component toward CF (+ve = HR boost, -ve = suppressor)."""
     if park_abbr not in PARKS:
         return 0.0
     cf_bearing = PARKS[park_abbr][6]
@@ -224,8 +218,8 @@ def wind_out_component(wind_speed_mph, wind_from_deg, park_abbr):
 
 def get_season_schedule(season):
     """
-    Return DataFrame with [game_pk, game_date, home_team_name] for a season.
-    Cached as pkl forever.
+    Return DataFrame [game_pk, game_date, home_team_name] for a full past season.
+    Cached as pkl forever. ONLY use for training data (2017–2024), NOT for grading.
     """
     cache = os.path.join(CACHE_DIR, f'sched_{season}.pkl')
     if os.path.exists(cache):
@@ -261,23 +255,18 @@ def parse_boxscore(game_pk, season):
             with open(path) as f:
                 return json.load(f)
     try:
-        url  = f'{MLB_API}/game/{game_pk}/boxscore'
-        data = _get(url)
+        data = _get(f'{MLB_API}/game/{game_pk}/boxscore')
         rows = []
         for side in ['away', 'home']:
             team_data = data.get('teams', {}).get(side, {})
-            batters   = team_data.get('batters', [])
             players   = team_data.get('players', {})
-            for pid in batters:
-                key   = f'ID{pid}'
-                p     = players.get(key, {})
+            for pid in team_data.get('batters', []):
+                p     = players.get(f'ID{pid}', {})
                 stats = p.get('stats', {}).get('batting', {})
-                name  = p.get('person', {}).get('fullName', '')
-                pos   = p.get('position', {}).get('abbreviation', 'UNK')
                 rows.append({
                     'player_id'  : pid,
-                    'player_name': name,
-                    'position'   : pos,
+                    'player_name': p.get('person', {}).get('fullName', ''),
+                    'position'   : p.get('position', {}).get('abbreviation', 'UNK'),
                     'season'     : season,
                     'game_pk'    : game_pk,
                     'B_pa'       : _to_int(stats.get('plateAppearances', 0)),
@@ -298,7 +287,7 @@ def parse_boxscore(game_pk, season):
 
 
 def collect_season(season):
-    """Collect all batter-game rows for a season. Cached as pkl."""
+    """Collect all batter-game rows for a training/test season. Cached forever."""
     cache = os.path.join(CACHE_DIR, f'hr_records_{season}.pkl')
     if os.path.exists(cache):
         return pd.read_pickle(cache)
@@ -315,16 +304,84 @@ def collect_season(season):
     return df
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# FIX C: collect_recent_games
+# ─────────────────────────────────────────────────────────────────────────────
+def collect_recent_games(days=RECENT_DAYS):
+    """
+    Fetch batter-game rows for the last `days` calendar days.
+    Cached per-run-date (refreshed daily) so yesterday's games are always
+    included. Individual box score JSONs are cached forever per game_pk.
+
+    This is the root fix for roll15_hr_pa == roll60_hr_pa: training model_df
+    only contains 2017–2024, so get_batter_roll_today() found zero rows for
+    current-season players and fell through to the season-total API fallback,
+    which set both rolling windows to the same season average.
+    """
+    end_dt   = date.today() - timedelta(days=1)
+    start_dt = end_dt - timedelta(days=days)
+    cache    = os.path.join(CACHE_DIR, f'recent_games_{TODAY}.pkl')
+
+    if os.path.exists(cache):
+        df = pd.read_pickle(cache)
+        print(f'  Loaded recent games from cache ({len(df):,} rows).')
+        return df
+
+    print(f'  Collecting recent games ({start_dt} → {end_dt})...')
+    url = (f'{MLB_API}/schedule?sportId=1&gameType=R'
+           f'&startDate={start_dt}&endDate={end_dt}'
+           f'&fields=dates,date,games,gamePk,status,codedGameState,'
+           f'teams,home,team,name')
+    rows = []
+    try:
+        for d in _get(url, timeout=30).get('dates', []):
+            game_date = d['date']
+            for g in d.get('games', []):
+                if g.get('status', {}).get('codedGameState') != 'F':
+                    continue
+                pk             = g['gamePk']
+                home_team_name = g['teams']['home']['team']['name']
+                box_rows       = parse_boxscore(pk, CURRENT_YEAR)
+                for row in box_rows:
+                    row['game_date']      = game_date
+                    row['home_team_name'] = home_team_name
+                    row['season']         = CURRENT_YEAR
+                rows.extend(box_rows)
+    except Exception as e:
+        print(f'  WARN recent games fetch: {e}')
+
+    if rows:
+        df = pd.DataFrame(rows)
+        df.to_pickle(cache)
+        print(f'  Recent games: {len(df):,} batter-game rows')
+    else:
+        df = pd.DataFrame()
+        print('  WARN: No recent games found — rolling features will use API fallback.')
+    return df
+
+
 # ═══════════════════════════════════════════════════════════════════════════════
 #  STATCAST
 # ═══════════════════════════════════════════════════════════════════════════════
 
+def _apply_savant_col_map(df, col_map):
+    """
+    FIX D: Rename Savant CSV columns, trying both old and current column names.
+    """
+    rename = {}
+    for (old, new), target in col_map.items():
+        if old in df.columns:
+            rename[old] = target
+        elif new in df.columns and new != old:
+            rename[new] = target
+    return df.rename(columns=rename)
+
+
 def fetch_statcast_csv(year, kind):
     """
-    Fetch season-level Statcast leaderboard CSV from Baseball Savant.
-    kind: 'batter' or 'pitcher'
-    Returns DataFrame indexed by player_id with sc_* or sp_sc_* columns.
-    Cached per year — re-fetched if the cache file is missing.
+    Fetch season-level Statcast leaderboard from Baseball Savant.
+    FIX D: Uses min=10 PA (was min=q which excluded early-season batters).
+    Logs coverage counts so missing data is visible in CI.
     """
     cache = os.path.join(CACHE_DIR, f'statcast_{kind}_{year}.pkl')
     if os.path.exists(cache):
@@ -333,27 +390,30 @@ def fetch_statcast_csv(year, kind):
     player_type = 'batter' if kind == 'batter' else 'pitcher'
     url = (f'{SAVANT_BASE}/leaderboard/custom?year={year}&type={player_type}'
            f'&filter=&groupBy=name&sort=player_id&sortDir=asc'
-           f'&min=q&csv=true')
+           f'&min=10&csv=true')
     try:
         r = requests.get(url, timeout=30)
         r.raise_for_status()
         df = pd.read_csv(io.StringIO(r.text))
         if 'player_id' not in df.columns:
+            print(f'  WARN Statcast {kind} {year}: player_id missing. '
+                  f'Columns available: {list(df.columns[:8])}')
             return pd.DataFrame()
-        df = df.set_index('player_id')
-        prefix  = 'sc_' if kind == 'batter' else 'sp_sc_'
-        col_map = {
-            'barrel_batted_rate': f'{prefix}barrel_pct',
-            'avg_hit_speed'     : f'{prefix}exit_velo',
-            'avg_launch_angle'  : f'{prefix}launch_angle',
-            'hard_hit_percent'  : f'{prefix}hard_hit_pct',
-            'xslg'              : f'{prefix}xslg',
-        }
-        rename = {old: new for old, new in col_map.items() if old in df.columns}
-        df = df.rename(columns=rename)[[v for v in col_map.values()
-                                        if v in df.rename(columns=rename).columns]]
-        df = df.apply(pd.to_numeric, errors='coerce')
+
+        df      = df.set_index('player_id')
+        col_map = SAVANT_BATTER_COLS if kind == 'batter' else SAVANT_PITCHER_COLS
+        df      = _apply_savant_col_map(df, col_map)
+
+        target_cols = list({v for v in col_map.values()})
+        keep        = [c for c in target_cols if c in df.columns]
+        if not keep:
+            print(f'  WARN Statcast {kind} {year}: no target columns matched. '
+                  f'Available: {list(df.columns[:10])}')
+            return pd.DataFrame()
+
+        df = df[keep].apply(pd.to_numeric, errors='coerce')
         df.to_pickle(cache)
+        print(f'  Statcast {kind} {year}: {len(df):,} players  cols={keep}')
         time.sleep(0.5)
         return df
     except Exception as e:
@@ -381,10 +441,8 @@ def get_player_hand(player_id, hand_cache):
         return hand_cache[key]
     try:
         p    = _get(f'{MLB_API}/people/{player_id}').get('people', [{}])[0]
-        info = {
-            'bat_side'  : p.get('batSide',   {}).get('code', 'R'),
-            'pitch_hand': p.get('pitchHand', {}).get('code', 'R'),
-        }
+        info = {'bat_side'  : p.get('batSide',   {}).get('code', 'R'),
+                'pitch_hand': p.get('pitchHand', {}).get('code', 'R')}
         hand_cache[key] = info
         time.sleep(0.03)
         return info
@@ -393,44 +451,32 @@ def get_player_hand(player_id, hand_cache):
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-#  HISTORICAL WEATHER (for training data)
+#  WEATHER
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def fetch_park_weather_archive(park_abbr, year):
-    """
-    Full year of hourly weather for a park from Open-Meteo archive.
-    Cached per park × year. Used to join weather to historical box scores.
-    Uses 18:30 local-time approximation for game time.
-    """
     cache = os.path.join(CACHE_DIR, f'weather_{park_abbr}_{year}.pkl')
     if os.path.exists(cache):
         return pd.read_pickle(cache)
     if park_abbr not in PARKS:
         return pd.DataFrame()
-
     _, _, _, roof, lat, lon, _ = PARKS[park_abbr]
-    if roof == 2:  # dome
+    if roof == 2:
         return pd.DataFrame()
-
     try:
         r = requests.get(METEO_ARCHIVE, params={
-            'latitude'         : lat,
-            'longitude'        : lon,
-            'start_date'       : f'{year}-01-01',
-            'end_date'         : f'{year}-12-31',
-            'hourly'           : 'temperature_2m,windspeed_10m,winddirection_10m',
-            'windspeed_unit'   : 'mph',
-            'temperature_unit' : 'fahrenheit',
-            'timezone'         : 'auto',
+            'latitude': lat, 'longitude': lon,
+            'start_date': f'{year}-01-01', 'end_date': f'{year}-12-31',
+            'hourly': 'temperature_2m,windspeed_10m,winddirection_10m',
+            'windspeed_unit': 'mph', 'temperature_unit': 'fahrenheit',
+            'timezone': 'auto',
         }, timeout=30)
         r.raise_for_status()
         h  = r.json().get('hourly', {})
-        df = pd.DataFrame({
-            'dt': pd.to_datetime(h['time']),
-            'tf': h['temperature_2m'],
-            'ws': h['windspeed_10m'],
-            'wd': h['winddirection_10m'],
-        })
+        df = pd.DataFrame({'dt': pd.to_datetime(h['time']),
+                           'tf': h['temperature_2m'],
+                           'ws': h['windspeed_10m'],
+                           'wd': h['winddirection_10m']})
         df.to_pickle(cache)
         time.sleep(0.2)
         return df
@@ -440,11 +486,10 @@ def fetch_park_weather_archive(park_abbr, year):
 
 
 def lookup_game_weather(park_abbr, game_date_str, weather_df):
-    """Look up 18:30 local approximate weather for a historical game."""
     if park_abbr not in PARKS:
         return {'weather_temp_f': 72.0, 'weather_wind_mph': 5.0,
                 'weather_wind_out': 0.0, 'weather_is_dome': 0.0}
-    _, _, _, roof, lat, lon, _ = PARKS[park_abbr]
+    _, _, _, roof, _, _, _ = PARKS[park_abbr]
     if roof == 2:
         return {'weather_temp_f': 72.0, 'weather_wind_mph': 0.0,
                 'weather_wind_out': 0.0, 'weather_is_dome': 1.0}
@@ -455,24 +500,17 @@ def lookup_game_weather(park_abbr, game_date_str, weather_df):
         target_dt = pd.Timestamp(f'{game_date_str} 18:30')
         diffs     = (weather_df['dt'] - target_dt).abs()
         row       = weather_df.iloc[diffs.argmin()]
-        ws        = float(row['ws'])
-        wd        = float(row['wd'])
-        return {
-            'weather_temp_f'  : round(float(row['tf']), 1),
-            'weather_wind_mph': round(ws, 1),
-            'weather_wind_out': wind_out_component(ws, wd, park_abbr),
-            'weather_is_dome' : 0.0,
-        }
+        ws, wd    = float(row['ws']), float(row['wd'])
+        return {'weather_temp_f'  : round(float(row['tf']), 1),
+                'weather_wind_mph': round(ws, 1),
+                'weather_wind_out': wind_out_component(ws, wd, park_abbr),
+                'weather_is_dome' : 0.0}
     except:
         return {'weather_temp_f': 72.0, 'weather_wind_mph': 5.0,
                 'weather_wind_out': 0.0, 'weather_is_dome': 0.0}
 
 
 def get_today_weather(park_abbr, game_date_utc_str):
-    """
-    Fetch actual game-time weather from Open-Meteo forecast API.
-    Uses the game's UTC start time for precision.
-    """
     if park_abbr not in PARKS:
         return {'weather_temp_f': 72.0, 'weather_wind_mph': 5.0,
                 'weather_wind_out': 0.0, 'weather_is_dome': 0.0}
@@ -484,14 +522,10 @@ def get_today_weather(park_abbr, game_date_utc_str):
         dt      = datetime.strptime(game_date_utc_str[:16], '%Y-%m-%dT%H:%M')
         day_str = dt.strftime('%Y-%m-%d')
         r = requests.get(METEO_FORECAST, params={
-            'latitude'         : lat,
-            'longitude'        : lon,
-            'hourly'           : 'temperature_2m,windspeed_10m,winddirection_10m',
-            'windspeed_unit'   : 'mph',
-            'temperature_unit' : 'fahrenheit',
-            'timezone'         : 'UTC',
-            'start_date'       : day_str,
-            'end_date'         : day_str,
+            'latitude': lat, 'longitude': lon,
+            'hourly': 'temperature_2m,windspeed_10m,winddirection_10m',
+            'windspeed_unit': 'mph', 'temperature_unit': 'fahrenheit',
+            'timezone': 'UTC', 'start_date': day_str, 'end_date': day_str,
         }, timeout=15)
         r.raise_for_status()
         h      = r.json().get('hourly', {})
@@ -500,13 +534,10 @@ def get_today_weather(park_abbr, game_date_utc_str):
         idx    = times.index(target) if target in times else 0
         ws     = float(h['windspeed_10m'][idx])
         wd     = float(h['winddirection_10m'][idx])
-        wo     = wind_out_component(ws, wd, park_abbr)
-        return {
-            'weather_temp_f'  : round(float(h['temperature_2m'][idx]), 1),
-            'weather_wind_mph': round(ws, 1),
-            'weather_wind_out': round(wo, 2),
-            'weather_is_dome' : float(roof >= 1),
-        }
+        return {'weather_temp_f'  : round(float(h['temperature_2m'][idx]), 1),
+                'weather_wind_mph': round(ws, 1),
+                'weather_wind_out': round(wind_out_component(ws, wd, park_abbr), 2),
+                'weather_is_dome' : float(roof >= 1)}
     except Exception as e:
         print(f'  WARN forecast {park_abbr}: {e}')
         return {'weather_temp_f': 72.0, 'weather_wind_mph': 5.0,
@@ -518,21 +549,18 @@ def get_today_weather(park_abbr, game_date_utc_str):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def build_rolling_features(df):
-    """Compute lagged rolling HR/power stats per batter. Shift(1) = no leakage."""
+    """Compute lagged rolling HR/power stats per batter. shift(1) = no leakage."""
     df = df.sort_values(['player_id', 'game_pk']).copy()
     grp = df.groupby('player_id')
-
     for col in ['B_hr', 'B_pa', 'B_ab', 'B_tb', 'B_h']:
         df[f'r15_{col}'] = grp[col].transform(
             lambda s: s.shift(1).rolling(ROLL_SHORT, min_periods=3).sum())
         df[f'r60_{col}'] = grp[col].transform(
             lambda s: s.shift(1).rolling(ROLL_LONG,  min_periods=5).sum())
-
     pa15 = df['r15_B_pa'].replace(0, np.nan)
     ab15 = df['r15_B_ab'].replace(0, np.nan)
     pa60 = df['r60_B_pa'].replace(0, np.nan)
     ab60 = df['r60_B_ab'].replace(0, np.nan)
-
     df['roll15_hr_pa']    = df['r15_B_hr'] / pa15
     df['roll15_slg']      = df['r15_B_tb'] / ab15
     df['roll15_iso']      = (df['r15_B_tb'] - df['r15_B_h']) / ab15
@@ -540,7 +568,6 @@ def build_rolling_features(df):
     df['roll60_slg']      = df['r60_B_tb'] / ab60
     df['roll60_iso']      = (df['r60_B_tb'] - df['r60_B_h']) / ab60
     df['roll60_hr_count'] = df['r60_B_hr']
-
     return df
 
 
@@ -549,11 +576,7 @@ def build_rolling_features(df):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def train_models(model_df, fitted_features):
-    """Train Poisson XGBoost and Binary XGBoost on training seasons."""
-    # FIX 2: Removed the unused TimeSeriesSplit import and object that was
-    #         previously created here but never applied to training. This was
-    #         dead code. Proper CV will be added as a future improvement.
-
+    # FIX 2: TimeSeriesSplit dead code removed.
     train_mask = model_df['season'].isin(TRAIN_SEASONS)
     test_mask  = model_df['season'] == TEST_SEASON
 
@@ -567,7 +590,7 @@ def train_models(model_df, fitted_features):
     X_test  = imputer.transform(X_test_raw)
 
     print(f'  Train: {X_train.shape[0]:,}  Test: {X_test.shape[0]:,}')
-    print(f'  HR rate train: {(y_train>0).mean():.3f}  test: {(y_test>0).mean():.3f}')
+    print(f'  HR rate — train: {(y_train>0).mean():.3f}  test: {(y_test>0).mean():.3f}')
 
     print('  Training Poisson XGBoost...')
     xgb_poisson = XGBRegressor(
@@ -586,9 +609,7 @@ def train_models(model_df, fitted_features):
     print('  Training Binary XGBoost...')
     y_train_bin = (y_train > 0).astype(int)
     spw = (y_train_bin == 0).sum() / max((y_train_bin == 1).sum(), 1)
-    # FIX 6: eval_metric moved from __init__ to .fit(). Passing it at __init__
-    #         without a corresponding eval_set in .fit() triggers a deprecation
-    #         warning in XGBoost ≥1.6 and has no effect on training.
+    # FIX 6: eval_metric in .fit(), not __init__
     xgb_binary = XGBClassifier(
         objective='binary:logistic', n_estimators=600, learning_rate=0.05,
         max_depth=5, min_child_weight=10, subsample=0.8, colsample_bytree=0.8,
@@ -596,12 +617,10 @@ def train_models(model_df, fitted_features):
         random_state=42, n_jobs=-1, verbosity=0,
     )
     xgb_binary.fit(X_train, y_train_bin, verbose=False, eval_metric='aucpr')
-
     return xgb_poisson, xgb_binary, imputer
 
 
 def load_or_train_models(model_df, fitted_features):
-    """Load cached models or train from scratch if missing or new season detected."""
     if os.path.exists(MODELS_PKL):
         with open(MODELS_PKL, 'rb') as f:
             cache = pickle.load(f)
@@ -609,17 +628,12 @@ def load_or_train_models(model_df, fitted_features):
             print('  Loaded cached ML HR models.')
             return (cache['xgb_poisson'], cache['xgb_binary'],
                     cache['imputer'], cache['fitted_features'])
-
     print('  Training ML HR models (new season or first run)...')
     xgb_poisson, xgb_binary, imputer = train_models(model_df, fitted_features)
     with open(MODELS_PKL, 'wb') as f:
-        pickle.dump({
-            'trained_year'   : CURRENT_YEAR,
-            'xgb_poisson'    : xgb_poisson,
-            'xgb_binary'     : xgb_binary,
-            'imputer'        : imputer,
-            'fitted_features': fitted_features,
-        }, f)
+        pickle.dump({'trained_year': CURRENT_YEAR, 'xgb_poisson': xgb_poisson,
+                     'xgb_binary': xgb_binary, 'imputer': imputer,
+                     'fitted_features': fitted_features}, f)
     print('  ✓ Models saved.')
     return xgb_poisson, xgb_binary, imputer, fitted_features
 
@@ -635,25 +649,63 @@ def load_history():
     return {'records': []}
 
 
+def save_history(history):
+    """FIX B: Standalone save so grading persists even if run() crashes later."""
+    with open(HIST_JSON, 'w') as f:
+        json.dump(history, f, indent=2)
+
+
 def grade_yesterday(history, yesterday_str):
-    """Grade yesterday's predictions against actual box scores."""
-    record = next(
-        (r for r in history['records'] if r['date'] == yesterday_str), None
-    )
+    """
+    Grade yesterday's predictions against actual box scores.
+
+    FIX A: Uses a direct MLB API call for yesterday's date instead of the
+    get_season_schedule() pkl, which is cached 'forever' and goes stale
+    mid-season. Any games played after the cache was written are missing,
+    causing grade_yesterday() to silently find zero games.
+
+    FIX B: Calls save_history() immediately after grading so results are
+    persisted before any further processing in run().
+    """
+    record = next((r for r in history['records'] if r['date'] == yesterday_str), None)
     if record is None or record.get('graded'):
         return
 
-    sched            = get_season_schedule(CURRENT_YEAR)
-    yesterday_games  = sched[sched['game_date'] == yesterday_str]['game_pk'].tolist()
+    print(f'  Grading picks for {yesterday_str}...')
+
+    # FIX A: Direct API call for yesterday — never touches the stale season pkl
+    try:
+        sched_data = _get(f'{MLB_API}/schedule?sportId=1&date={yesterday_str}'
+                          f'&gameType=R', timeout=20)
+        game_pks = [
+            g['gamePk']
+            for d in sched_data.get('dates', [])
+            for g in d.get('games', [])
+            if g.get('status', {}).get('abstractGameState') in ('Final', 'Game Over')
+        ]
+    except Exception as e:
+        print(f'    WARN: could not fetch yesterday schedule: {e}')
+        return
+
+    if not game_pks:
+        print(f'    No completed games found for {yesterday_str}')
+        return
 
     hr_lookup = {}
-    for pk in yesterday_games:
+    for pk in game_pks:
         try:
-            rows = parse_boxscore(pk, CURRENT_YEAR)
-            for row in rows:
-                name = row.get('player_name', '')
-                if name:
-                    hr_lookup[name] = hr_lookup.get(name, 0) + row.get('B_hr', 0)
+            box = _get(f'{MLB_API}/game/{pk}/boxscore')
+            for side in ['home', 'away']:
+                for _pid, pdata in (box.get('teams', {})
+                                       .get(side, {})
+                                       .get('players', {}).items()):
+                    name = pdata.get('person', {}).get('fullName', '')
+                    hrs  = _to_int(pdata.get('stats', {})
+                                        .get('batting', {})
+                                        .get('homeRuns', 0))
+                    if name:
+                        hr_lookup[name] = max(hr_lookup.get(name, 0), hrs)
+            time.sleep(SLEEP_S)
         except Exception as e:
             print(f'    WARN box score pk={pk}: {e}')
             continue
@@ -673,21 +725,23 @@ def grade_yesterday(history, yesterday_str):
         b   = ('High (λ≥0.08)' if lam >= 0.08 else
                'Mid (λ≥0.05)'  if lam >= 0.05 else 'Low (λ<0.05)')
         buckets[b].append(p['correct'])
+
     record['summary'] = {
         'total'       : len(played),
         'hr_count'    : len(hit),
         'hit_rate_pct': round(len(hit) / max(len(played), 1) * 100, 1),
         'hr_players'  : [p['player'] for p in hit],
         'by_bucket'   : {
-            k: {
-                'predicted': len(v),
+            k: {'predicted': len(v),
                 'hr'       : sum(v),
-                'rate_pct' : round(sum(v) / max(len(v), 1) * 100, 1),
-            }
+                'rate_pct' : round(sum(v) / max(len(v), 1) * 100, 1)}
             for k, v in buckets.items() if v
         },
     }
-    print(f'    ✓ {len(hit)}/{len(played)} hit HRs')
+    print(f'    ✓ {len(hit)}/{len(played)} hit HRs  ({len(game_pks)} games graded)')
+
+    # FIX B: Persist immediately — don't wait for end of run()
+    save_history(history)
 
 
 def compute_alltime_stats(history, today_str):
@@ -712,11 +766,9 @@ def compute_alltime_stats(history, today_str):
         'hr_count'    : hr_total,
         'hit_rate_pct': round(hr_total / max(total, 1) * 100, 1),
         'by_bucket'   : {
-            k: {
-                'predicted': buckets[k][0],
+            k: {'predicted': buckets[k][0],
                 'hrs'      : buckets[k][1],
-                'rate_pct' : round(buckets[k][1] / max(buckets[k][0], 1) * 100, 1),
-            }
+                'rate_pct' : round(buckets[k][1] / max(buckets[k][0], 1) * 100, 1)}
             for k in buckets if buckets[k][0] > 0
         },
     }
@@ -727,14 +779,12 @@ def compute_alltime_stats(history, today_str):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def get_todays_games():
-    """Fetch today's schedule with probable pitchers."""
     url = (f'{MLB_API}/schedule?sportId=1&date={TODAY}&gameType=R'
            f'&hydrate=probablePitcher,team')
     games = []
     for d in _get(url).get('dates', []):
         for g in d.get('games', []):
-            status = g.get('status', {}).get('abstractGameState', '')
-            if status in ('Final', 'Live', 'Preview'):
+            if g.get('status', {}).get('abstractGameState') in ('Final', 'Live', 'Preview'):
                 info = {
                     'game_date'     : g.get('gameDate', ''),
                     'home_team'     : g['teams']['home']['team']['name'],
@@ -742,13 +792,12 @@ def get_todays_games():
                     'home_team_abbr': g['teams']['home']['team'].get('abbreviation', '?'),
                     'away_team_id'  : g['teams']['away']['team']['id'],
                     'away_team_abbr': g['teams']['away']['team'].get('abbreviation', '?'),
-                    'away_sp'       : None,
-                    'home_sp'       : None,
+                    'away_sp': None, 'home_sp': None,
                 }
                 for side in ['away', 'home']:
                     sp = g['teams'][side].get('probablePitcher')
                     if sp:
-                        info[f'{side}_sp'] = {'id'  : sp['id'],
+                        info[f'{side}_sp'] = {'id': sp['id'],
                                               'name': sp.get('fullName', 'TBD')}
                 games.append(info)
     return games
@@ -773,15 +822,14 @@ def get_active_roster(team_id):
         with open(cache) as f:
             return json.load(f)
     try:
-        r       = _get(f'{MLB_API}/teams/{team_id}/roster'
-                       f'?rosterType=active&season={CURRENT_YEAR}')
-        players = []
-        for p in r.get('roster', []):
-            pos = p.get('position', {}).get('abbreviation', 'UNK')
-            if pos not in ('P', 'SP', 'RP', 'TWP'):
-                players.append({'id'      : p['person']['id'],
-                                'name'    : p['person']['fullName'],
-                                'position': pos})
+        r = _get(f'{MLB_API}/teams/{team_id}/roster'
+                 f'?rosterType=active&season={CURRENT_YEAR}')
+        players = [{'id'      : p['person']['id'],
+                    'name'    : p['person']['fullName'],
+                    'position': p.get('position', {}).get('abbreviation', 'UNK')}
+                   for p in r.get('roster', [])
+                   if p.get('position', {}).get('abbreviation', '') not in
+                      ('P', 'SP', 'RP', 'TWP')]
         with open(cache, 'w') as f:
             json.dump(players, f)
         return players
@@ -791,7 +839,6 @@ def get_active_roster(team_id):
 
 
 def get_season_stats(player_id, season, group='hitting'):
-    """Cached player season stats — daily refresh for hitting, yearly for pitching."""
     suffix = TODAY if group == 'hitting' else season
     cache  = os.path.join(CACHE_DIR, f'player_{player_id}_{suffix}_{group}.json')
     if os.path.exists(cache):
@@ -811,7 +858,6 @@ def get_season_stats(player_id, season, group='hitting'):
 
 
 def get_pitcher_features(pitcher_id, sc_pit):
-    """Build pitcher feature dict from season stats + Statcast."""
     s = get_season_stats(pitcher_id, CURRENT_YEAR, 'pitching')
     if not s:
         s = get_season_stats(pitcher_id, CURRENT_YEAR - 1, 'pitching')
@@ -838,15 +884,9 @@ def get_pitcher_features(pitcher_id, sc_pit):
     feats = {
         'sp_era' : era  if era  == era  else 4.50,
         'sp_whip': whip if whip == whip else 1.30,
-        'sp_hr'  : hr,
-        'sp_so'  : so,
-        'sp_bb'  : bb,
-        'sp_ip'  : ip_val,
-        'sp_bf'  : bf,
+        'sp_hr': hr, 'sp_so': so, 'sp_bb': bb, 'sp_ip': ip_val, 'sp_bf': bf,
     }
-    # FIX 3 (pitcher): Check current season Statcast first, then fall back.
-    #                  Previously only CURRENT_YEAR-1 and CURRENT_YEAR-2 were
-    #                  checked, so in-season pitcher Statcast was never used.
+    # FIX 3: Check current-season Statcast first
     for yr in [CURRENT_YEAR, CURRENT_YEAR - 1, CURRENT_YEAR - 2]:
         pit_sc = sc_pit.get(yr, pd.DataFrame())
         if not pit_sc.empty and pitcher_id in pit_sc.index:
@@ -856,11 +896,16 @@ def get_pitcher_features(pitcher_id, sc_pit):
     return feats
 
 
-def get_batter_roll_today(player_id, model_df):
-    """Build rolling HR features for a batter from historical data or API fallback."""
-    player_games = model_df[
-        (model_df['player_id'] == player_id) &
-        (model_df['season'].isin([CURRENT_YEAR, CURRENT_YEAR - 1]))
+def get_batter_roll_today(player_id, lookup_df):
+    """
+    Build rolling HR features from lookup_df (training data + recent games).
+    FIX C: called with feat_df (which now includes recent game rows) instead
+    of model_df (which only has 2017–2024). This ensures real per-game rolling
+    windows are computed for current-season players.
+    """
+    player_games = lookup_df[
+        (lookup_df['player_id'] == player_id) &
+        (lookup_df['season'].isin([CURRENT_YEAR, CURRENT_YEAR - 1]))
     ].sort_values('game_pk')
 
     if len(player_games) >= 5:
@@ -889,18 +934,17 @@ def get_batter_roll_today(player_id, model_df):
             'roll60_hr_count': float(player_games.tail(ROLL_LONG)['B_hr'].sum()),
         }
 
-    # API fallback
+    # API season-total fallback (used only when < 5 historical games found)
     for yr in [CURRENT_YEAR, CURRENT_YEAR - 1]:
         s  = get_season_stats(player_id, yr, 'hitting')
         pa = _to_int(s.get('plateAppearances', 0))
         if pa >= MIN_PA:
-            ab   = max(_to_int(s.get('atBats', 1)), 1)
-            pa   = max(pa, 1)
-            hr   = _to_int(s.get('homeRuns', 0))
-            h    = _to_int(s.get('hits', 0))
-            tb   = _to_int(s.get('totalBases', 0))
-            slg  = tb / ab
-            iso  = (tb - h) / ab
+            ab    = max(_to_int(s.get('atBats', 1)), 1)
+            hr    = _to_int(s.get('homeRuns', 0))
+            h     = _to_int(s.get('hits', 0))
+            tb    = _to_int(s.get('totalBases', 0))
+            slg   = tb / ab
+            iso   = (tb - h) / ab
             hr_pa = hr / pa
             return {
                 'roll15_hr_pa'   : hr_pa,
@@ -927,9 +971,9 @@ def run():
 
     # ── 1. History + grade yesterday ──────────────────────────────────────────
     history = load_history()
-    grade_yesterday(history, yesterday_str)
+    grade_yesterday(history, yesterday_str)   # FIX A: direct API  FIX B: immediate save
 
-    # ── 2. Collect box score data ─────────────────────────────────────────────
+    # ── 2. Collect training/test box score data ───────────────────────────────
     print('\nLoading historical box scores...')
     all_dfs    = []
     all_scheds = []
@@ -944,22 +988,29 @@ def run():
         on='game_pk', how='left',
     )
     raw_df['park_abbr'] = raw_df['home_team_name'].map(TEAM_TO_PARK)
-    print(f'  Total records: {len(raw_df):,}  HR events: {(raw_df["B_hr"]>0).sum():,}')
+    print(f'  Historical records: {len(raw_df):,}  HR events: {(raw_df["B_hr"]>0).sum():,}')
+
+    # ── FIX C: Append recent games so rolling windows work for current players ─
+    print('\nCollecting recent games for live rolling features...')
+    recent_df = collect_recent_games(days=RECENT_DAYS)
+    if not recent_df.empty:
+        recent_df['park_abbr'] = recent_df['home_team_name'].map(TEAM_TO_PARK)
+        if 'game_pk' not in recent_df.columns:
+            recent_df['game_pk'] = 0
+        raw_df = pd.concat([raw_df, recent_df], ignore_index=True)
+        raw_df = raw_df.drop_duplicates(subset=['player_id', 'game_pk'], keep='first')
+        print(f'  Extended dataset: {len(raw_df):,} records')
 
     # ── 3. Statcast ───────────────────────────────────────────────────────────
     print('\nFetching Statcast CSVs...')
-    sc_bat = {}
-    sc_pit = {}
+    sc_bat, sc_pit = {}, {}
     for yr in TRAIN_SEASONS + [TEST_SEASON]:
         sc_bat[yr] = fetch_statcast_csv(yr, 'batter')
         sc_pit[yr] = fetch_statcast_csv(yr, 'pitcher')
 
-    # FIX 3 (part 1): Always ensure current-season Statcast is fetched so it
-    #                  is available for live batter and pitcher lookups below.
-    #                  CURRENT_YEAR may equal TEST_SEASON early in the year;
-    #                  the dict assignment is harmless in that case.
+    # FIX 3 + FIX D: Always include current year; min=10 PA for coverage
     if CURRENT_YEAR not in sc_bat:
-        print(f'  Fetching current-year ({CURRENT_YEAR}) Statcast for live predictions...')
+        print(f'  Fetching current-year ({CURRENT_YEAR}) Statcast...')
         sc_bat[CURRENT_YEAR] = fetch_statcast_csv(CURRENT_YEAR, 'batter')
         sc_pit[CURRENT_YEAR] = fetch_statcast_csv(CURRENT_YEAR, 'pitcher')
 
@@ -978,41 +1029,31 @@ def run():
             print(f'    Handedness: {i+1}/{len(missing_ids)} fetched...')
     save_hand_cache(hand_cache)
 
-    # ── 5. Historical weather ─────────────────────────────────────────────────
-    # Skipped for training data — the Open-Meteo archive requires ~200 HTTP
-    # requests (25 outdoor parks × 8 seasons) and times out frequently in CI.
-    # Training rows use neutral defaults; XGBoost still learns the feature
-    # structure and actual weather is applied to today's predictions below.
+    # ── 5. Historical weather (neutral defaults for training rows) ─────────────
     print('\nSkipping historical weather archive (neutral defaults for training rows)...')
-    wx_cache = {}   # empty — _wx() will return defaults for all training rows
+    wx_cache = {}
 
     # ── 6. Build full feature dataframe ───────────────────────────────────────
     print('\nEngineering features...')
     feat_df = build_rolling_features(raw_df)
 
-    # Join handedness (batter bat side)
     feat_df['bat_side'] = feat_df['player_id'].apply(
-        lambda pid: hand_cache.get(str(int(pid)), {}).get('bat_side', 'R') if pd.notna(pid) else 'R'
-    )
+        lambda pid: hand_cache.get(str(int(pid)), {}).get('bat_side', 'R'))
     feat_df['bat_L'] = (feat_df['bat_side'] == 'L').astype(int)
     feat_df['bat_R'] = (feat_df['bat_side'] == 'R').astype(int)
 
-    # SP pitch hand + platoon
     if 'sp_id' in feat_df.columns:
         feat_df['sp_hand'] = feat_df['sp_id'].apply(
             lambda pid: hand_cache.get(str(int(pid)), {}).get('pitch_hand', 'R')
-            if not pd.isna(pid) else 'R'
-        )
+            if not pd.isna(pid) else 'R')
         feat_df['sp_throws_L'] = (feat_df['sp_hand'] == 'L').astype(int)
         feat_df['platoon_adv'] = (
             (feat_df['bat_side'] != feat_df['sp_hand']) &
-            (feat_df['bat_side'] != 'S')
-        ).astype(int)
+            (feat_df['bat_side'] != 'S')).astype(int)
     else:
         feat_df['sp_throws_L'] = 0
         feat_df['platoon_adv'] = 0
 
-    # Park features
     feat_df['park_hr_factor']   = feat_df['park_abbr'].map(
         lambda a: PARKS.get(a, (None, 1.0, 0, 0))[1])
     feat_df['park_altitude_ft'] = feat_df['park_abbr'].map(
@@ -1020,7 +1061,6 @@ def run():
     feat_df['park_roof']        = feat_df['park_abbr'].map(
         lambda a: PARKS.get(a, (None, None, None, 0))[3])
 
-    # Weather join (using 18:30 approximation for training)
     def _wx(row):
         park     = row.get('park_abbr')
         date_str = str(row.get('game_date', ''))[:10]
@@ -1032,23 +1072,14 @@ def run():
             return {'weather_temp_f': 72.0, 'weather_wind_mph': 5.0,
                     'weather_wind_out': 0.0, 'weather_is_dome': 0.0}
 
-    wx_keys = feat_df[['park_abbr', 'game_date']].drop_duplicates().reset_index(drop=True)
-    wx_dicts = [_wx(r) for _, r in wx_keys.iterrows()]
-    wx_lookup = pd.DataFrame(wx_dicts)
-    wx_lookup['park_abbr'] = wx_keys['park_abbr'].values
-    wx_lookup['game_date'] = wx_keys['game_date'].values
-    feat_df = feat_df.merge(
-        wx_lookup[['park_abbr', 'game_date', 'weather_temp_f', 'weather_wind_mph',
-                   'weather_wind_out', 'weather_is_dome']],
-        on=['park_abbr', 'game_date'], how='left'
-    )
+    wx_rows       = feat_df[['park_abbr', 'game_date']].drop_duplicates()
+    wx_rows_dicts = [_wx(r) for _, r in wx_rows.iterrows()]
+    wx_df         = pd.DataFrame(wx_rows_dicts, index=wx_rows.index)
+    for col in ['weather_temp_f', 'weather_wind_mph', 'weather_wind_out', 'weather_is_dome']:
+        feat_df[col] = wx_df[col]
 
-    # Convert player_id to nullable integer for reliable Statcast index matching.
-    # player_id can be float64 when NaN rows are present after concat; using
-    # Int64 (nullable) lets us isin() and map() against the int64 Statcast index.
-    feat_df['_pid_int'] = pd.to_numeric(feat_df['player_id'], errors='coerce').astype('Int64')
-
-    # Join Statcast (batter)
+    # Join Statcast (batter) — FIX D: counts logged for CI visibility
+    sc_matched_b = 0
     for yr in TRAIN_SEASONS + [TEST_SEASON]:
         bsc = sc_bat.get(yr, pd.DataFrame())
         if bsc.empty:
@@ -1056,49 +1087,37 @@ def run():
         mask = feat_df['season'] == yr
         for col in bsc.columns:
             if col not in feat_df.columns:
-                feat_df[col] = np.nan
-            valid_mask = mask & feat_df['_pid_int'].isin(bsc.index)
-            feat_df.loc[valid_mask, col] = (
-                feat_df.loc[valid_mask, '_pid_int']
-                .astype(int)
-                .map(bsc[col])
-            )
+                feat_df.loc[mask, col] = np.nan
+            matched = mask & feat_df['player_id'].isin(bsc.index)
+            feat_df.loc[matched, col] = feat_df.loc[matched, 'player_id'].map(bsc[col])
+            sc_matched_b += matched.sum()
+    print(f'  Batter Statcast join: {sc_matched_b:,} row-matches')
 
-    # Join Statcast (pitcher, via sp_id)
     if 'sp_id' in feat_df.columns:
-        feat_df['_sp_int'] = pd.to_numeric(feat_df['sp_id'], errors='coerce').astype('Int64')
+        sc_matched_p = 0
         for yr in TRAIN_SEASONS + [TEST_SEASON]:
             psc = sc_pit.get(yr, pd.DataFrame())
             if psc.empty:
                 continue
-            mask = feat_df['season'] == yr
+            mask   = feat_df['season'] == yr
             for col in psc.columns:
                 if col not in feat_df.columns:
-                    feat_df[col] = np.nan
-                valid_mask = mask & feat_df['_sp_int'].isin(psc.index)
-                feat_df.loc[valid_mask, col] = (
-                    feat_df.loc[valid_mask, '_sp_int']
-                    .astype(int)
-                    .map(psc[col])
-                )
-        feat_df.drop(columns=['_sp_int'], inplace=True)
+                    feat_df.loc[mask, col] = np.nan
+                sp_map = feat_df.loc[mask, 'sp_id'].dropna().astype(int)
+                valid  = sp_map.isin(psc.index).reindex(feat_df.index, fill_value=False)
+                feat_df.loc[mask & valid, col] = sp_map[sp_map.isin(psc.index)].map(psc[col])
+                sc_matched_p += (mask & valid).sum()
+        print(f'  Pitcher Statcast join: {sc_matched_p:,} row-matches')
 
-    # Drop the helper column used for Statcast joins before building feature list
-    if '_pid_int' in feat_df.columns:
-        feat_df.drop(columns=['_pid_int'], inplace=True)
-
-    # Ensure all column names are strings (mixed-type columns from pandas joins
-    # can introduce integer column names that crash str.startswith checks)
-    feat_df.columns = [str(c) for c in feat_df.columns]
-
-    # Determine final feature list (only include cols that exist)
     batter_statcast  = [c for c in feat_df.columns if c.startswith('sc_')]
     pitcher_statcast = [c for c in feat_df.columns if c.startswith('sp_sc_')]
     all_features     = (ROLL_FEATURES + batter_statcast + pitcher_statcast +
                         PITCHER_COUNTING + PARK_FEATURES + WEATHER_FEATURES + CONTEXT_FEATURES)
     fitted_features  = [f for f in dict.fromkeys(all_features) if f in feat_df.columns]
 
-    model_df = feat_df.dropna(subset=['roll15_hr_pa', 'roll60_hr_pa']).copy()
+    # model_df uses only training/test seasons (not recent-game rows)
+    model_df = feat_df[feat_df['season'].isin(TRAIN_SEASONS + [TEST_SEASON])].copy()
+    model_df = model_df.dropna(subset=['roll15_hr_pa', 'roll60_hr_pa'])
     for col in PITCHER_COUNTING + PARK_FEATURES + WEATHER_FEATURES:
         if col in model_df.columns:
             model_df[col] = model_df[col].fillna(model_df[col].median())
@@ -1128,28 +1147,20 @@ def run():
         matchup   = f'{away_abbr} @ {home_abbr}'
         game_time = get_game_time_et(game.get('game_date', ''))
 
-        # FIX 5: Unknown team names now map to a NEUTRAL park with a warning.
-        #         Previously the code silently defaulted to 'NYY' (Yankee
-        #         Stadium, HR factor 1.20), which would inflate every batter's
-        #         prediction for any team whose name changed or wasn't in the map.
+        # FIX 5: unknown home teams → NEUTRAL with a warning
         park_abbr = TEAM_TO_PARK.get(home_team)
         if park_abbr is None:
             print(f'  WARN: Unknown home team "{home_team}" — using NEUTRAL park factors')
             park_abbr = 'NEUTRAL'
 
-        # Park features
         park_row   = PARKS.get(park_abbr, PARKS['NEUTRAL'])
-        park_feats = {
-            'park_hr_factor'  : park_row[1],
-            'park_altitude_ft': park_row[2],
-            'park_roof'       : park_row[3],
-        }
+        park_feats = {'park_hr_factor'  : park_row[1],
+                      'park_altitude_ft': park_row[2],
+                      'park_roof'       : park_row[3]}
 
-        # Weather at actual game time
         wx = get_today_weather(park_abbr, game.get('game_date', ''))
         time.sleep(0.3)
 
-        # SP features (home SP faces AWAY batters, away SP faces HOME batters)
         away_sp      = game.get('away_sp')
         home_sp      = game.get('home_sp')
         away_sp_feat = get_pitcher_features(away_sp['id'], sc_pit) if away_sp else DEFAULT_SP.copy()
@@ -1164,13 +1175,11 @@ def run():
             {'team_id': game['home_team_id'], 'team_abbr': home_abbr,
              'opp_abbr': away_abbr, 'opp_sp_feat': away_sp_feat,
              'opp_sp_name': away_sp_name,
-             'opp_sp_id': away_sp['id'] if away_sp else None,
-             'is_home': 1},
+             'opp_sp_id': away_sp['id'] if away_sp else None, 'is_home': 1},
             {'team_id': game['away_team_id'], 'team_abbr': away_abbr,
              'opp_abbr': home_abbr, 'opp_sp_feat': home_sp_feat,
              'opp_sp_name': home_sp_name,
-             'opp_sp_id': home_sp['id'] if home_sp else None,
-             'is_home': 0},
+             'opp_sp_id': home_sp['id'] if home_sp else None, 'is_home': 0},
         ]
 
         for side in sides:
@@ -1180,15 +1189,13 @@ def run():
                 name = player['name']
                 pos  = player['position']
 
-                roll = get_batter_roll_today(pid, model_df)
+                # FIX C: pass feat_df (includes recent games) not model_df
+                roll = get_batter_roll_today(pid, feat_df)
                 if roll is None:
                     skipped_no_qual += 1
                     continue
 
-                # FIX 3 (batter): Check current-season Statcast first, then
-                #                  fall back to prior years. Previously only
-                #                  CURRENT_YEAR-1 and CURRENT_YEAR-2 were
-                #                  checked, so mid-season Statcast was ignored.
+                # FIX 3: current-season Statcast first
                 bat_sc = {}
                 for yr in [CURRENT_YEAR, CURRENT_YEAR - 1, CURRENT_YEAR - 2]:
                     bsc = sc_bat.get(yr, pd.DataFrame())
@@ -1197,7 +1204,6 @@ def run():
                             bat_sc[col] = float(bsc.loc[pid, col])
                         break
 
-                # Handedness
                 bh  = hand_cache.get(str(pid), {}).get('bat_side', 'R')
                 sph = (hand_cache.get(str(side['opp_sp_id']), {}).get('pitch_hand', 'R')
                        if side['opp_sp_id'] else 'R')
@@ -1240,19 +1246,12 @@ def run():
     X_raw = today_df[fitted_features].values.astype(float)
     X_imp = imputer.transform(X_raw)
 
-    # FIX 1: Replace the previous silent feature-count truncation with an
-    #         explicit ValueError. The old code did:
-    #             if X_imp.shape[1] != n_feats: X_imp = X_imp[:, :n_feats]
-    #         which silently dropped rightmost feature columns, corrupting
-    #         predictions whenever the cached model had a different feature
-    #         set than the current pipeline. The correct resolution is to
-    #         delete the stale model cache and let it rebuild cleanly.
+    # FIX 1: Raise ValueError instead of silently truncating
     n_feats = xgb_poisson.n_features_in_
     if X_imp.shape[1] != n_feats:
         raise ValueError(
-            f'Feature mismatch: cached model expects {n_feats} features '
-            f'but the current pipeline produced {X_imp.shape[1]}. '
-            f'Delete {MODELS_PKL} to force a clean model rebuild.'
+            f'Feature mismatch: cached model expects {n_feats} features but '
+            f'pipeline produced {X_imp.shape[1]}. Delete {MODELS_PKL} to rebuild.'
         )
 
     # ── 9. Predict ────────────────────────────────────────────────────────────
@@ -1260,7 +1259,15 @@ def run():
     today_df['prob_binary']    = np.round(xgb_binary.predict_proba(X_imp)[:, 1], 4)
     today_df = today_df.sort_values('lambda_poisson', ascending=False).reset_index(drop=True)
 
-    # ── 10. Build top-25 output ───────────────────────────────────────────────
+    # FIX E: Sanity check — warn if lambda is implausibly high
+    avg_lambda = float(today_df['lambda_poisson'].mean())
+    if avg_lambda > 0.15:
+        print(f'  !! WARN: avg lambda = {avg_lambda:.4f} (expected ~0.05–0.10). '
+              f'Check Statcast coverage and whether roll15 == roll60 for most players.')
+    else:
+        print(f'  Avg lambda: {avg_lambda:.4f}  ✓')
+
+    # ── 10. Build top-N output ────────────────────────────────────────────────
     top_n = []
     for i, (_, row) in enumerate(today_df.head(TOP_N).iterrows()):
         park_name = PARKS.get(row['park_abbr'], ('?',))[0]
@@ -1296,7 +1303,7 @@ def run():
 
     print(f'\n✓ Top {len(top_n)} predictions generated')
 
-    # ── 11. Save today's record to history ────────────────────────────────────
+    # ── 11. Update history and save ───────────────────────────────────────────
     existing = next((r for r in history['records'] if r['date'] == today_str), None)
     if existing:
         existing['predictions'] = top_n
@@ -1307,23 +1314,17 @@ def run():
             'predictions': top_n,
             'graded'     : False,
         })
-
     alltime = compute_alltime_stats(history, today_str)
+    save_history(history)
 
-    with open(HIST_JSON, 'w') as f:
-        json.dump(history, f, indent=2)
-
-    # ── 12. Write main output ─────────────────────────────────────────────────
+    # ── 12. Write main output JSON ────────────────────────────────────────────
     yesterday_record = next(
         (r for r in history['records'] if r['date'] == yesterday_str), {}
     )
-    all_lambdas = [p.get('lambda_poisson', 0) for p in top_n if p.get('lambda_poisson') is not None]
-    avg_lambda  = round(float(sum(all_lambdas) / max(len(all_lambdas), 1)), 5)
-
     output = {
-        'updated'    : datetime.now(timezone.utc).isoformat(),
+        'generated'  : today_str,
         'date'       : today_str,
-        'avg_lambda' : avg_lambda,
+        'avg_lambda' : round(avg_lambda, 5),
         'predictions': top_n,
         'yesterday'  : {
             'date'        : yesterday_str,
