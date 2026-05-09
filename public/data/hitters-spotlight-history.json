@@ -16,7 +16,7 @@
           "ranks": {
             "Log5 Hit": 5,
             "ML Hit": 1,
-            "HR Model": 12
+            "HR Model": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -32,8 +32,8 @@
           ],
           "ranks": {
             "Log5 Hit": 19,
-            "HR Model": 5,
-            "ML HR": 22
+            "HR Model": 3,
+            "ML HR": 20
           },
           "actual_hit": null,
           "actual_hr": null
@@ -50,7 +50,7 @@
           "ranks": {
             "Log5 Hit": 2,
             "ML Hit": 14,
-            "HR Model": 13
+            "HR Model": 14
           },
           "actual_hit": null,
           "actual_hr": null
@@ -66,8 +66,8 @@
           ],
           "ranks": {
             "Log5 Hit": 6,
-            "HR Model": 9,
-            "ML HR": 3
+            "HR Model": 10,
+            "ML HR": 2
           },
           "actual_hit": null,
           "actual_hr": null
@@ -81,8 +81,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 8,
-            "ML HR": 2
+            "HR Model": 4,
+            "ML HR": 9
           },
           "actual_hit": null,
           "actual_hr": null
@@ -103,21 +103,6 @@
           "actual_hr": null
         },
         {
-          "player": "Bryce Harper",
-          "team": "PHI",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "Log5 Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 24,
-            "HR Model": 6
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Byron Buxton",
           "team": "MIN",
           "appearances": 2,
@@ -126,8 +111,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 18,
-            "ML HR": 7
+            "HR Model": 12,
+            "ML HR": 6
           },
           "actual_hit": null,
           "actual_hr": null
@@ -142,7 +127,7 @@
           ],
           "ranks": {
             "ML Hit": 13,
-            "ML HR": 14
+            "ML HR": 5
           },
           "actual_hit": null,
           "actual_hr": null
@@ -157,7 +142,7 @@
           ],
           "ranks": {
             "HR Model": 21,
-            "ML HR": 6
+            "ML HR": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -171,8 +156,8 @@
             "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 25,
-            "ML HR": 9
+            "Log5 Hit": 23,
+            "ML HR": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -187,7 +172,22 @@
           ],
           "ranks": {
             "ML Hit": 16,
-            "ML HR": 13
+            "ML HR": 15
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Hunter Goodman",
+          "team": "COL",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML HR"
+          ],
+          "ranks": {
+            "HR Model": 9,
+            "ML HR": 10
           },
           "actual_hit": null,
           "actual_hr": null
@@ -201,8 +201,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 16,
-            "ML HR": 18
+            "HR Model": 15,
+            "ML HR": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -216,7 +216,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 11,
+            "Log5 Hit": 16,
             "ML Hit": 4
           },
           "actual_hit": null,
@@ -247,7 +247,7 @@
           ],
           "ranks": {
             "Log5 Hit": 17,
-            "ML HR": 17
+            "ML HR": 8
           },
           "actual_hit": null,
           "actual_hr": null
@@ -261,8 +261,8 @@
             "Log5 Hit"
           ],
           "ranks": {
-            "Log5 Hit": 16,
-            "HR Model": 19
+            "Log5 Hit": 15,
+            "HR Model": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -277,7 +277,7 @@
           ],
           "ranks": {
             "HR Model": 2,
-            "ML HR": 1
+            "ML HR": 7
           },
           "actual_hit": null,
           "actual_hr": null
@@ -291,8 +291,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 3,
-            "ML HR": 4
+            "HR Model": 1,
+            "ML HR": 1
           },
           "actual_hit": null,
           "actual_hr": null
@@ -306,8 +306,23 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 12,
+            "Log5 Hit": 11,
             "ML Hit": 5
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Randy Arozarena",
+          "team": "SEA",
+          "appearances": 2,
+          "models": [
+            "ML HR",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 24,
+            "ML HR": 11
           },
           "actual_hit": null,
           "actual_hr": null

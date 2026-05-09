@@ -1,7 +1,34 @@
 {
-  "updated": "2026-05-09T22:13:14.035940+00:00",
+  "updated": "2026-05-09T22:59:16.132171+00:00",
   "date": "2026-05-09",
   "predictions": [
+    {
+      "game_time": "4:05 PM ET",
+      "away_team": "Athletics",
+      "home_team": "Baltimore Orioles",
+      "log5": {
+        "pick": "Athletics",
+        "confidence": 0.5922
+      },
+      "research": {
+        "pick": "Baltimore Orioles",
+        "confidence": 0.5004
+      },
+      "xgboost": {
+        "pick": "Athletics",
+        "confidence": 0.6945
+      },
+      "random_forest": {
+        "pick": "Athletics",
+        "confidence": 0.5674
+      },
+      "composite_pick": "Athletics",
+      "composite_confidence": 0.5884,
+      "vote_count": 3,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
     {
       "game_time": "9:10 PM ET",
       "away_team": "Atlanta Braves",
@@ -24,33 +51,6 @@
       },
       "composite_pick": "Los Angeles Dodgers",
       "composite_confidence": 0.5849,
-      "vote_count": 3,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
-      "game_time": "4:05 PM ET",
-      "away_team": "Athletics",
-      "home_team": "Baltimore Orioles",
-      "log5": {
-        "pick": "Athletics",
-        "confidence": 0.5698
-      },
-      "research": {
-        "pick": "Baltimore Orioles",
-        "confidence": 0.5004
-      },
-      "xgboost": {
-        "pick": "Athletics",
-        "confidence": 0.6945
-      },
-      "random_forest": {
-        "pick": "Athletics",
-        "confidence": 0.5674
-      },
-      "composite_pick": "Athletics",
-      "composite_confidence": 0.5828,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
@@ -170,7 +170,7 @@
       "home_team": "Cincinnati Reds",
       "log5": {
         "pick": "Cincinnati Reds",
-        "confidence": 0.6221
+        "confidence": 0.6438
       },
       "research": {
         "pick": "Cincinnati Reds",
@@ -185,7 +185,34 @@
         "confidence": 0.5108
       },
       "composite_pick": "Cincinnati Reds",
-      "composite_confidence": 0.5384,
+      "composite_confidence": 0.5438,
+      "vote_count": 3,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "6:05 PM ET",
+      "away_team": "Colorado Rockies",
+      "home_team": "Philadelphia Phillies",
+      "log5": {
+        "pick": "Philadelphia Phillies",
+        "confidence": 0.5462
+      },
+      "research": {
+        "pick": "Colorado Rockies",
+        "confidence": 0.5622
+      },
+      "xgboost": {
+        "pick": "Colorado Rockies",
+        "confidence": 0.5765
+      },
+      "random_forest": {
+        "pick": "Colorado Rockies",
+        "confidence": 0.5197
+      },
+      "composite_pick": "Colorado Rockies",
+      "composite_confidence": 0.5281,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
@@ -241,33 +268,6 @@
       "composite_pick": "Toronto Blue Jays",
       "composite_confidence": 0.5232,
       "vote_count": 2,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
-      "game_time": "6:05 PM ET",
-      "away_team": "Colorado Rockies",
-      "home_team": "Philadelphia Phillies",
-      "log5": {
-        "pick": "Philadelphia Phillies",
-        "confidence": 0.5462
-      },
-      "research": {
-        "pick": "Colorado Rockies",
-        "confidence": 0.5622
-      },
-      "xgboost": {
-        "pick": "Colorado Rockies",
-        "confidence": 0.5212
-      },
-      "random_forest": {
-        "pick": "Colorado Rockies",
-        "confidence": 0.5241
-      },
-      "composite_pick": "Colorado Rockies",
-      "composite_confidence": 0.5153,
-      "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
