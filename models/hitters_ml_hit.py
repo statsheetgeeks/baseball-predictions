@@ -690,7 +690,7 @@ class PlattCalibratedXGB:
         return (self.predict_proba(X)[:, 1] >= 0.5).astype(int)
 
 
-
+def train_models(model_df, fitted_features):
     """
     v4 training pipeline:
       1. CV-tune XGBoost on FIT_SEASONS data (temporal cross-validation).
