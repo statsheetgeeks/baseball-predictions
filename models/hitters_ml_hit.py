@@ -105,7 +105,6 @@ from datetime import date, timedelta, timezone, datetime
 import numpy as np
 import pandas as pd
 import requests
-from sklearn.calibration import CalibratedClassifierCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
@@ -657,7 +656,41 @@ def _tune_xgb_params(X_fit, y_fit, spw):
     return best, best_score
 
 
-def train_models(model_df, fitted_features):
+class PlattCalibratedXGB:
+    """
+    Manual Platt scaling wrapper for XGBClassifier.
+
+    sklearn's CalibratedClassifierCV dropped cv='prefit' support in v1.2.
+    This class replicates the same math without any sklearn version dependency:
+      1. Get raw XGBoost probabilities on the held-out CAL set.
+      2. Fit a single LogisticRegression on those probabilities vs y_cal.
+      3. At inference, transform XGBoost raw proba through the LR.
+
+    The result is a drop-in replacement — predict() and predict_proba() have
+    the same signatures as any sklearn estimator.
+    """
+
+    def __init__(self, xgb_base):
+        self.xgb_base  = xgb_base
+        self.platt_lr  = LogisticRegression(C=1.0, solver='lbfgs',
+                                            max_iter=1000, random_state=42)
+
+    def fit_calibration(self, X_cal, y_cal):
+        """Fit the Platt scaler on held-out calibration data."""
+        raw_proba = self.xgb_base.predict_proba(X_cal)[:, 1].reshape(-1, 1)
+        self.platt_lr.fit(raw_proba, y_cal)
+        return self
+
+    def predict_proba(self, X):
+        raw_proba = self.xgb_base.predict_proba(X)[:, 1].reshape(-1, 1)
+        cal_pos   = self.platt_lr.predict_proba(raw_proba)[:, 1]
+        return np.column_stack([1 - cal_pos, cal_pos])
+
+    def predict(self, X):
+        return (self.predict_proba(X)[:, 1] >= 0.5).astype(int)
+
+
+
     """
     v4 training pipeline:
       1. CV-tune XGBoost on FIT_SEASONS data (temporal cross-validation).
@@ -727,9 +760,9 @@ def train_models(model_df, fitted_features):
                  verbose=False)
 
     # ── Step 3: Platt-scale calibration on CAL_SEASON ────────────────────────
+    # Manual implementation — sklearn's cv='prefit' was removed in v1.2.
     print(f'  Calibrating on {CAL_SEASON} (Platt scaling)...')
-    xgb_cal = CalibratedClassifierCV(xgb_base, cv='prefit', method='sigmoid')
-    xgb_cal.fit(X_cal_imp, y_cal)
+    xgb_cal = PlattCalibratedXGB(xgb_base).fit_calibration(X_cal_imp, y_cal)
 
     # ── Step 4: LR and RF on all TRAIN_SEASONS ────────────────────────────────
     n_pos_all = y_train.sum()
