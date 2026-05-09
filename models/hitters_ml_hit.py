@@ -268,8 +268,19 @@ def _get(url, timeout=20):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def get_season_game_pks(season):
-    """All completed regular-season game PKs for a season (cached forever)."""
-    cache = os.path.join(CACHE_DIR, f'schedule_{season}.json')
+    """
+    All completed regular-season game PKs for a season.
+
+    Past seasons: cached forever (schedule is final).
+    CURRENT_YEAR:  cached daily — new games complete every day so we
+                   re-fetch the full list each morning to pick them up.
+                   Old daily cache files are not cleaned up but are tiny.
+    """
+    if season == CURRENT_YEAR:
+        cache = os.path.join(CACHE_DIR, f'schedule_{season}_{TODAY}.json')
+    else:
+        cache = os.path.join(CACHE_DIR, f'schedule_{season}.json')
+
     if os.path.exists(cache):
         with open(cache) as f:
             return json.load(f)
@@ -402,19 +413,20 @@ def collect_season(season):
     """
     Load or fetch all batter-game records for one season.
 
-    Cache invalidation: if the PKL exists but lacks required columns
-    (home_team_name, sp_id), it is deleted and rebuilt from box_{pk}.json files.
+    Past seasons (< CURRENT_YEAR): PKL cached forever after first build.
+      Cache invalidation: PKL missing required columns is deleted and rebuilt.
+      v4 bug fix: empty DataFrame guard avoids infinite rebuild loop.
 
-    v4 bug fix: if the assembled rows list is empty (early season, no box scores
-    cached yet), save and return the empty DataFrame without entering an infinite
-    rebuild loop.
+    CURRENT_YEAR: never uses the PKL cache. The box_{pk}.json files accumulate
+      daily (each game cached forever once fetched), so rebuilding from them
+      each morning is fast (~35–162 files early-to-late in the season) and
+      guarantees today's rolling features reflect actual 2026 game history.
     """
     cache_pkl = os.path.join(CACHE_DIR, f'records_{season}.pkl')
 
-    if os.path.exists(cache_pkl):
+    if season != CURRENT_YEAR and os.path.exists(cache_pkl):
         df = pd.read_pickle(cache_pkl)
         if len(df) == 0:
-            # Cached empty — accept it for now (will be rebuilt next run when games exist)
             print(f'  {season}: cached empty dataset (early season)')
             return df
         missing = REQUIRED_PKL_COLS - set(df.columns)
@@ -425,7 +437,8 @@ def collect_season(season):
             print(f'  {season}: loaded {len(df):,} records from cache')
             return df
 
-    print(f'  {season}: assembling records from box score JSONs...')
+    tag = 'live — no PKL' if season == CURRENT_YEAR else 'assembling from box JSONs'
+    print(f'  {season}: {tag}...')
     pks  = get_season_game_pks(season)
     rows = []
     for i, pk in enumerate(pks):
@@ -433,8 +446,11 @@ def collect_season(season):
         if (i + 1) % 100 == 0:
             print(f'    {i+1}/{len(pks)} games processed...')
     df = pd.DataFrame(rows)
-    df.to_pickle(cache_pkl)
-    print(f'  {season}: saved {len(df):,} records')
+    if season != CURRENT_YEAR:
+        df.to_pickle(cache_pkl)
+        print(f'  {season}: saved {len(df):,} records')
+    else:
+        print(f'  {season}: {len(df):,} live records (not cached)')
     return df
 
 
@@ -443,8 +459,15 @@ def collect_season(season):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def fetch_statcast_csv(year, player_type='batter'):
-    """Download Baseball Savant expected-stats leaderboard CSV. Cached forever."""
-    cache = os.path.join(CACHE_DIR, f'statcast_{player_type}_{year}.pkl')
+    """
+    Download Baseball Savant expected-stats leaderboard CSV. Cached forever
+    for past seasons. For CURRENT_YEAR, cached daily — Savant updates xBA
+    and other expected stats throughout the season.
+    """
+    if year == CURRENT_YEAR:
+        cache = os.path.join(CACHE_DIR, f'statcast_{player_type}_{year}_{TODAY}.pkl')
+    else:
+        cache = os.path.join(CACHE_DIR, f'statcast_{player_type}_{year}.pkl')
     if os.path.exists(cache):
         return pd.read_pickle(cache)
 
@@ -1189,10 +1212,15 @@ def run():
     history = load_history()
     grade_yesterday(history, yesterday_str)
 
-    # ── 2. Load box scores (stale PKLs auto-deleted in collect_season) ────────
+    # ── 2. Load box scores ────────────────────────────────────────────────────
+    # TRAIN_SEASONS + TEST_SEASON: permanently cached PKLs (complete seasons).
+    # CURRENT_YEAR: rebuilt daily from accumulated box JSONs — this is what
+    # gives batter rolling features their current-season form rather than
+    # stale end-of-last-season stats.
     print('\nLoading historical box scores...')
+    _load_seasons = list(dict.fromkeys(TRAIN_SEASONS + [TEST_SEASON, CURRENT_YEAR]))
     all_dfs = []
-    for season in TRAIN_SEASONS + [TEST_SEASON]:
+    for season in _load_seasons:
         all_dfs.append(collect_season(season))
     raw_df = pd.concat([d for d in all_dfs if len(d) > 0], ignore_index=True)
 
@@ -1200,7 +1228,7 @@ def run():
     print('\nFetching Statcast CSVs...')
     sc_bat = {}
     sc_pit = {}
-    for yr in TRAIN_SEASONS + [TEST_SEASON]:
+    for yr in list(dict.fromkeys(TRAIN_SEASONS + [TEST_SEASON, CURRENT_YEAR])):
         sc_bat[yr] = fetch_statcast_csv(yr, 'batter')
         sc_pit[yr] = fetch_statcast_csv(yr, 'pitcher')
 
@@ -1266,7 +1294,7 @@ def run():
             model_df['P_hit_rate'] = DEFAULT_SP['P_hit_rate']
 
     # Statcast — batter: join by player_id + season
-    for yr in TRAIN_SEASONS + [TEST_SEASON]:
+    for yr in list(dict.fromkeys(TRAIN_SEASONS + [TEST_SEASON, CURRENT_YEAR])):
         bsc = sc_bat.get(yr, pd.DataFrame())
         if bsc.empty:
             continue
@@ -1279,7 +1307,7 @@ def run():
 
     # Statcast — pitcher: join by sp_id + season
     if 'sp_id' in model_df.columns:
-        for yr in TRAIN_SEASONS + [TEST_SEASON]:
+        for yr in list(dict.fromkeys(TRAIN_SEASONS + [TEST_SEASON, CURRENT_YEAR])):
             psc = sc_pit.get(yr, pd.DataFrame())
             if psc.empty:
                 continue
