@@ -33,6 +33,9 @@ CONFIDENCE_BANDS = [
     ('80%+',   0.80, 1.01),
 ]
 
+# ── Home field advantage ───────────────────────────────────────────────────────
+HFA_ADJUSTMENT = 0.02  # +2% to home / -2% from away (54% historical MLB home win rate)
+
 # ── Log5 formula ──────────────────────────────────────────────────────────────
 def log5(pct_a, pct_b):
     """P(A beats B) given each team's season win percentage."""
@@ -188,8 +191,11 @@ def build_today_predictions(pct_lookup):
         away_pct = pct_lookup.get(away, 0.500)
         home_pct = pct_lookup.get(home, 0.500)
 
-        away_prob = log5(away_pct, home_pct)
-        home_prob = log5(home_pct, away_pct)
+        # Apply Log5 then adjust for home field advantage:
+        # -2% from away (road disadvantage), +2% to home.
+        # Using 1.0 - away_prob for home guarantees the two always sum to 100%.
+        away_prob = log5(away_pct, home_pct) - HFA_ADJUSTMENT
+        home_prob = 1.0 - away_prob
 
         if away_prob >= home_prob:
             pick       = away

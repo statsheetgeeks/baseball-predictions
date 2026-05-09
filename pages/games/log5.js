@@ -186,12 +186,13 @@ function PredTable({ predictions, date: dateStr, onDownload }) {
     letterSpacing: 1,
     textTransform: 'uppercase',
     color:         'var(--silver)',
-    padding:       '8px 10px',
+    padding:       '10px 12px',
     borderBottom:  '2px solid var(--navy-border)',
     whiteSpace:    'nowrap',
   }
+
   const tdStyle = {
-    padding:       '10px 10px',
+    padding:       '10px 12px',
     borderBottom:  '1px solid var(--navy-border)',
     fontSize:      13,
     verticalAlign: 'middle',
@@ -219,26 +220,26 @@ function PredTable({ predictions, date: dateStr, onDownload }) {
           textTransform: 'uppercase',
           color:         'var(--accent)',
         }}>
-          Today's Picks — {dateStr}
+          All Games — {dateStr}
         </div>
         <button
           onClick={onDownload}
           style={{
-            background:    'transparent',
-            border:        '1px solid var(--accent)',
-            borderRadius:  4,
-            color:         'var(--accent)',
-            fontSize:      11,
-            fontWeight:    700,
-            fontFamily:    "'Barlow Condensed', sans-serif",
+            background:  'transparent',
+            border:      '1px solid var(--accent)',
+            borderRadius: 4,
+            color:       'var(--accent)',
+            fontSize:    11,
+            fontWeight:  700,
+            fontFamily:  "'Barlow Condensed', sans-serif",
             letterSpacing: 1,
             textTransform: 'uppercase',
-            padding:       '5px 12px',
-            cursor:        'pointer',
-            display:       'flex',
-            alignItems:    'center',
-            gap:           6,
-            transition:    'background 0.15s, color 0.15s',
+            padding:     '5px 12px',
+            cursor:      'pointer',
+            display:     'flex',
+            alignItems:  'center',
+            gap:         6,
+            transition:  'background 0.15s, color 0.15s',
           }}
           onMouseEnter={e => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = '#000' }}
           onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--accent)' }}
@@ -322,7 +323,7 @@ export default function Log5Game() {
       <PageHeader
         tag="Games → Log5"
         title="LOG5 GAME MODEL"
-        subtitle="Win probability derived from each team's season winning percentage using Bill James' Log5 formula: P(A beats B) = (A − A·B) / (A + B − 2A·B)"
+        subtitle="Baseline model. Win probability from season winning percentage using Bill James' Log5 formula, adjusted for home field advantage (+2% home / −2% away), reflecting MLB's historical 54% home win rate."
       />
 
       {updatedLabel && (
@@ -383,10 +384,11 @@ export default function Log5Game() {
             color:        'var(--silver)',
             lineHeight:   1.7,
           }}>
-            <span style={{ fontWeight: 700, color: 'var(--white)' }}>About Log5 — </span>
-            Developed by Bill James, Log5 estimates the probability that Team A beats Team B given only their season win percentages.
-            The formula isolates matchup probability from overall quality: a .700 team playing a .300 team has a ~84% win probability.
-            Win percentages are pulled live from the MLB StatsAPI standings each morning.
+            <span style={{ fontWeight: 700, color: 'var(--white)' }}>About Log5 (Baseline) — </span>
+            The simplest benchmark against which all other models are compared. Developed by Bill James, Log5 estimates
+            win probability from season win percentages alone. Final probabilities are adjusted for home field advantage:
+            +2% to the home team and −2% from the away team, reflecting MLB's historical 54% home win rate.
+            Win percentages are pulled live from MLB StatsAPI standings each morning.
           </div>
         </>
       )}
