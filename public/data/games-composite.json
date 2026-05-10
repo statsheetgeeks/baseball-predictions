@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-10T15:25:44.579837+00:00",
+  "updated": "2026-05-10T16:38:54.073597+00:00",
   "date": "2026-05-10",
   "predictions": [
     {
@@ -138,6 +138,33 @@
       "correct": null
     },
     {
+      "game_time": "12:15 PM ET",
+      "away_team": "Washington Nationals",
+      "home_team": "Miami Marlins",
+      "log5": {
+        "pick": "Washington Nationals",
+        "confidence": 0.5051
+      },
+      "research": {
+        "pick": "Miami Marlins",
+        "confidence": 0.5004
+      },
+      "xgboost": {
+        "pick": "Washington Nationals",
+        "confidence": 0.6633
+      },
+      "random_forest": {
+        "pick": "Miami Marlins",
+        "confidence": 0.5064
+      },
+      "composite_pick": "Washington Nationals",
+      "composite_confidence": 0.5404,
+      "vote_count": 2,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
       "game_time": "4:10 PM ET",
       "away_team": "St. Louis Cardinals",
       "home_team": "San Diego Padres",
@@ -240,33 +267,6 @@
       },
       "composite_pick": "Cincinnati Reds",
       "composite_confidence": 0.5242,
-      "vote_count": 3,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
-      "game_time": "12:15 PM ET",
-      "away_team": "Washington Nationals",
-      "home_team": "Miami Marlins",
-      "log5": {
-        "pick": "Washington Nationals",
-        "confidence": 0.5051
-      },
-      "research": {
-        "pick": "Miami Marlins",
-        "confidence": 0.5244
-      },
-      "xgboost": {
-        "pick": "Washington Nationals",
-        "confidence": 0.562
-      },
-      "random_forest": {
-        "pick": "Washington Nationals",
-        "confidence": 0.5034
-      },
-      "composite_pick": "Washington Nationals",
-      "composite_confidence": 0.5115,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
