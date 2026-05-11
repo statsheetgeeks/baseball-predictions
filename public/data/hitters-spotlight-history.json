@@ -17,8 +17,8 @@
           "ranks": {
             "Log5 Hit": 2,
             "ML Hit": 24,
-            "HR Model": 3,
-            "ML HR": 19
+            "HR Model": 5,
+            "ML HR": 24
           },
           "actual_hit": null,
           "actual_hr": null
@@ -37,7 +37,7 @@
             "Log5 Hit": 1,
             "ML Hit": 25,
             "HR Model": 16,
-            "ML HR": 1
+            "ML HR": 7
           },
           "actual_hit": null,
           "actual_hr": null
@@ -53,8 +53,25 @@
           ],
           "ranks": {
             "Log5 Hit": 15,
-            "HR Model": 7,
-            "ML HR": 5
+            "HR Model": 8,
+            "ML HR": 3
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Casey Schmitt",
+          "team": "SF",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 16,
+            "HR Model": 4,
+            "ML HR": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -71,7 +88,7 @@
           "ranks": {
             "Log5 Hit": 13,
             "HR Model": 22,
-            "ML HR": 25
+            "ML HR": 22
           },
           "actual_hit": null,
           "actual_hr": null
@@ -88,7 +105,7 @@
           "ranks": {
             "Log5 Hit": 20,
             "ML Hit": 2,
-            "ML HR": 13
+            "ML HR": 15
           },
           "actual_hit": null,
           "actual_hr": null
@@ -122,7 +139,7 @@
           "ranks": {
             "Log5 Hit": 5,
             "ML Hit": 4,
-            "ML HR": 11
+            "ML HR": 19
           },
           "actual_hit": null,
           "actual_hr": null
@@ -156,7 +173,7 @@
           "ranks": {
             "ML Hit": 15,
             "HR Model": 17,
-            "ML HR": 14
+            "ML HR": 20
           },
           "actual_hit": null,
           "actual_hr": null
@@ -186,7 +203,7 @@
           ],
           "ranks": {
             "Log5 Hit": 19,
-            "HR Model": 10
+            "HR Model": 7
           },
           "actual_hit": null,
           "actual_hr": null
@@ -222,21 +239,6 @@
           "actual_hr": null
         },
         {
-          "player": "Casey Schmitt",
-          "team": "SF",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "Log5 Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 16,
-            "HR Model": 5
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Chandler Simpson",
           "team": "TB",
           "appearances": 2,
@@ -261,7 +263,7 @@
           ],
           "ranks": {
             "HR Model": 24,
-            "ML HR": 4
+            "ML HR": 9
           },
           "actual_hit": null,
           "actual_hr": null
@@ -291,7 +293,7 @@
           ],
           "ranks": {
             "HR Model": 14,
-            "ML HR": 3
+            "ML HR": 5
           },
           "actual_hit": null,
           "actual_hr": null
@@ -306,22 +308,7 @@
           ],
           "ranks": {
             "ML Hit": 20,
-            "ML HR": 7
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Jose Altuve",
-          "team": "HOU",
-          "appearances": 2,
-          "models": [
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 23,
-            "ML HR": 24
+            "ML HR": 8
           },
           "actual_hit": null,
           "actual_hr": null
@@ -365,8 +352,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 9,
-            "ML HR": 9
+            "HR Model": 10,
+            "ML HR": 2
           },
           "actual_hit": null,
           "actual_hr": null
@@ -387,21 +374,6 @@
           "actual_hr": null
         },
         {
-          "player": "Pete Alonso",
-          "team": "BAL",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "ML HR"
-          ],
-          "ranks": {
-            "HR Model": 25,
-            "ML HR": 2
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Rafael Devers",
           "team": "SF",
           "appearances": 2,
@@ -411,7 +383,7 @@
           ],
           "ranks": {
             "ML Hit": 3,
-            "ML HR": 16
+            "ML HR": 13
           },
           "actual_hit": null,
           "actual_hr": null
