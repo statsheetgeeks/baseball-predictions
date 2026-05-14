@@ -7,8 +7,9 @@
         {
           "player": "Bobby Witt Jr.",
           "team": "KC",
-          "appearances": 3,
+          "appearances": 4,
           "models": [
+            "HR Model",
             "Log5 Hit",
             "ML HR",
             "ML Hit"
@@ -16,7 +17,8 @@
           "ranks": {
             "Log5 Hit": 3,
             "ML Hit": 14,
-            "ML HR": 12
+            "HR Model": 24,
+            "ML HR": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -50,7 +52,7 @@
           "ranks": {
             "Log5 Hit": 10,
             "HR Model": 16,
-            "ML HR": 18
+            "ML HR": 20
           },
           "actual_hit": null,
           "actual_hr": null
@@ -67,7 +69,7 @@
           "ranks": {
             "ML Hit": 25,
             "HR Model": 2,
-            "ML HR": 4
+            "ML HR": 7
           },
           "actual_hit": null,
           "actual_hr": null
@@ -84,7 +86,7 @@
           "ranks": {
             "Log5 Hit": 17,
             "HR Model": 9,
-            "ML HR": 17
+            "ML HR": 2
           },
           "actual_hit": null,
           "actual_hr": null
@@ -101,7 +103,7 @@
           "ranks": {
             "Log5 Hit": 23,
             "HR Model": 19,
-            "ML HR": 20
+            "ML HR": 23
           },
           "actual_hit": null,
           "actual_hr": null
@@ -133,7 +135,7 @@
           ],
           "ranks": {
             "HR Model": 10,
-            "ML HR": 1
+            "ML HR": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -147,23 +149,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 11,
-            "ML HR": 5
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Casey Schmitt",
-          "team": "SF",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "Log5 Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 24,
-            "HR Model": 25
+            "HR Model": 12,
+            "ML HR": 10
           },
           "actual_hit": null,
           "actual_hr": null
@@ -178,7 +165,7 @@
           ],
           "ranks": {
             "ML Hit": 9,
-            "ML HR": 21
+            "ML HR": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -193,7 +180,7 @@
           ],
           "ranks": {
             "HR Model": 8,
-            "ML HR": 9
+            "ML HR": 6
           },
           "actual_hit": null,
           "actual_hr": null
@@ -268,7 +255,7 @@
           ],
           "ranks": {
             "HR Model": 1,
-            "ML HR": 11
+            "ML HR": 14
           },
           "actual_hit": null,
           "actual_hr": null
@@ -289,6 +276,21 @@
           "actual_hr": null
         },
         {
+          "player": "Otto Lopez",
+          "team": "MIA",
+          "appearances": 2,
+          "models": [
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 4,
+            "ML HR": 22
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
           "player": "Seiya Suzuki",
           "team": "CHC",
           "appearances": 2,
@@ -298,7 +300,7 @@
           ],
           "ranks": {
             "HR Model": 22,
-            "ML HR": 7
+            "ML HR": 9
           },
           "actual_hit": null,
           "actual_hr": null
@@ -313,7 +315,7 @@
           ],
           "ranks": {
             "Log5 Hit": 2,
-            "HR Model": 13
+            "HR Model": 11
           },
           "actual_hit": null,
           "actual_hr": null
