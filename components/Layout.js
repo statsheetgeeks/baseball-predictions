@@ -1,19 +1,26 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-// ── Navigation structure ───────────────────────────────────────────────────────
+// ── Navigation structure — Research · Games · Hitters · Pitchers ──────────────
 const NAV = [
+  {
+    section: 'Research',
+    items: [
+      { label: 'Elo Ratings',    href: '/research/elo' },
+      { label: 'Team Metrics',   href: '/research/team-metrics' },
+      { label: 'Player Metrics', href: '/research/player-metrics' },
+    ],
+  },
   {
     section: 'Games',
     items: [
-      { label: 'Overview',      href: '/games' },
-      { label: 'Log5',          href: '/games/log5' },
-      { label: 'Research-Based',href: '/games/research' },
-      { label: 'XGBoost',       href: '/games/xgboost' },
-      { label: 'Random Forest', href: '/games/random-forest' },
-      { label: 'Composite',     href: '/games/composite' },
+      { label: 'Overview',       href: '/games' },
+      { label: 'Log5',           href: '/games/log5' },
+      { label: 'Research-Based', href: '/games/research' },
+      { label: 'XGBoost',        href: '/games/xgboost' },
+      { label: 'Random Forest',  href: '/games/random-forest' },
+      { label: 'Composite',      href: '/games/composite' },
     ],
   },
   {
@@ -31,13 +38,6 @@ const NAV = [
     section: 'Pitchers',
     items: [
       { label: 'Overview', href: '/pitchers' },
-      // Models coming soon — links will be added when pitcher models are built
-    ],
-  },
-  {
-    section: 'Research',
-    items: [
-      { label: 'Elo Ratings', href: '/research/elo' },
     ],
   },
 ];
@@ -49,6 +49,12 @@ export default function Layout({ children, title = 'Dashboard' }) {
     ? 'Chalk Line Labs — MLB Predictions'
     : `${title} · Chalk Line Labs`;
 
+  const currentTime = new Date().toLocaleTimeString('en-US', {
+    hour:   '2-digit',
+    minute: '2-digit',
+    hour12: true,
+  });
+
   return (
     <>
       <Head>
@@ -59,78 +65,95 @@ export default function Layout({ children, title = 'Dashboard' }) {
 
       <div style={{ display: 'flex', minHeight: '100vh' }}>
 
-        {/* ── Sidebar ────────────────────────────────────────────────────────── */}
+        {/* ── Sidebar ──────────────────────────────────────────────────────── */}
         <aside style={{
-          width:        'var(--sidebar-w)',
-          background:   'var(--navy-mid)',
-          borderRight:  '1px solid var(--navy-border)',
-          position:     'fixed',
+          width:         'var(--sidebar-w)',
+          background:    'var(--navy-mid)',
+          borderRight:   '1px solid var(--navy-border)',
+          position:      'fixed',
           top: 0, left: 0, bottom: 0,
-          display:      'flex',
-          flexDirection:'column',
-          overflowY:    'auto',
-          zIndex:       100,
+          display:       'flex',
+          flexDirection: 'column',
+          overflowY:     'auto',
+          zIndex:        100,
         }}>
 
           {/* ── Logo / wordmark ── */}
           <Link href="/">
-            <div style={{
-              padding:       '18px 16px',
-              borderBottom:  '1px solid var(--navy-border)',
-              cursor:        'pointer',
-              display:       'flex',
-              alignItems:    'center',
-              gap:           12,
-              transition:    'background 0.15s',
-            }}
-            onMouseEnter={e => e.currentTarget.style.background = 'var(--navy-hover)'}
-            onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+            <a
+              style={{
+                padding:     '20px 16px',
+                borderBottom:'1px solid var(--navy-border)',
+                display:     'flex',
+                alignItems:  'center',
+                gap:         12,
+                textDecoration: 'none',
+                transition:  'background 0.15s',
+              }}
+              onMouseEnter={e => e.currentTarget.style.background = 'var(--accent-glow)'}
+              onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
             >
-              <Image
-                src="/images/logo-blue.png"
-                alt="Chalk Line Labs"
-                width={44}
-                height={44}
-                style={{ objectFit: 'contain', flexShrink: 0 }}
-              />
+              {/* Gradient CL icon box */}
+              <div style={{
+                width:          40,
+                height:         40,
+                borderRadius:   8,
+                background:     'linear-gradient(135deg, #00D9FF, #0066FF)',
+                display:        'flex',
+                alignItems:     'center',
+                justifyContent: 'center',
+                flexShrink:     0,
+              }}>
+                <span style={{
+                  fontFamily: "'Sora', sans-serif",
+                  fontWeight: 700,
+                  fontSize:   14,
+                  color:      '#0F1419',
+                  letterSpacing: 0.5,
+                }}>
+                  CL
+                </span>
+              </div>
+
+              {/* Wordmark */}
               <div>
                 <div style={{
-                  fontFamily:  "'Barlow Condensed', sans-serif",
-                  fontWeight:  800,
-                  fontSize:    16,
+                  fontFamily:    "'Sora', sans-serif",
+                  fontWeight:    700,
+                  fontSize:      13,
+                  color:         'var(--white)',
                   letterSpacing: 0.5,
-                  color:       'var(--white)',
-                  lineHeight:  1.15,
+                  lineHeight:    1.2,
                 }}>
                   CHALK LINE
                 </div>
                 <div style={{
-                  fontFamily:  "'Barlow Condensed', sans-serif",
-                  fontWeight:  600,
-                  fontSize:    13,
-                  letterSpacing: 2,
-                  color:       'var(--accent)',
+                  fontFamily:    "'Sora', sans-serif",
+                  fontWeight:    700,
+                  fontSize:      11,
+                  color:         'var(--accent)',
+                  letterSpacing: 1.5,
                 }}>
                   LABS
                 </div>
               </div>
-            </div>
+            </a>
           </Link>
 
-          {/* ── Nav sections ── */}
+          {/* ── Navigation ── */}
           <nav style={{ flex: 1, padding: '12px 0' }}>
             {NAV.map(({ section, items }) => (
-              <div key={section} style={{ marginBottom: 8 }}>
+              <div key={section} style={{ marginBottom: 4 }}>
 
                 {/* Section label */}
                 <div style={{
-                  padding:       '6px 18px 4px',
+                  padding:       '8px 18px 4px',
                   fontSize:      10,
                   fontWeight:    600,
                   letterSpacing: 2,
                   color:         'var(--silver-dim)',
                   textTransform: 'uppercase',
-                  fontFamily:    "'DM Mono', monospace",
+                  fontFamily:    "'Inter', sans-serif",
                 }}>
                   {section}
                 </div>
@@ -140,33 +163,50 @@ export default function Layout({ children, title = 'Dashboard' }) {
                   const active = router.pathname === href;
                   return (
                     <Link key={href} href={href}>
-                      <div style={{
-                        padding:    '8px 18px',
-                        fontSize:   13.5,
-                        fontWeight: active ? 600 : 400,
-                        color:      active ? 'var(--white)' : 'var(--silver)',
-                        background: active ? 'var(--accent-glow)' : 'transparent',
-                        borderLeft: active
-                          ? '3px solid var(--accent)'
-                          : '3px solid transparent',
-                        cursor:     'pointer',
-                        transition: 'all 0.12s',
-                      }}
-                      onMouseEnter={e => {
-                        if (!active) {
-                          e.currentTarget.style.color      = 'var(--white)';
-                          e.currentTarget.style.background = 'rgba(255,255,255,0.04)';
-                        }
-                      }}
-                      onMouseLeave={e => {
-                        if (!active) {
-                          e.currentTarget.style.color      = 'var(--silver)';
-                          e.currentTarget.style.background = 'transparent';
-                        }
-                      }}
+                      <a
+                        style={{
+                          display:        'flex',
+                          alignItems:     'center',
+                          justifyContent: 'space-between',
+                          padding:        '9px 18px',
+                          fontSize:       13.5,
+                          fontWeight:     active ? 600 : 400,
+                          color:          active ? 'var(--white)' : 'var(--silver)',
+                          background:     active ? 'var(--accent-glow)' : 'transparent',
+                          textDecoration: 'none',
+                          transition:     'all 0.12s',
+                          position:       'relative',
+                          fontFamily:     "'Inter', sans-serif",
+                        }}
+                        onMouseEnter={e => {
+                          if (!active) {
+                            e.currentTarget.style.color      = 'var(--white)';
+                            e.currentTarget.style.background = 'rgba(255,255,255,0.04)';
+                          }
+                        }}
+                        onMouseLeave={e => {
+                          if (!active) {
+                            e.currentTarget.style.color      = 'var(--silver)';
+                            e.currentTarget.style.background = 'transparent';
+                          }
+                        }}
                       >
-                        {label}
-                      </div>
+                        <span>{label}</span>
+
+                        {/* Active indicator — right-side cyan bar */}
+                        {active && (
+                          <div style={{
+                            position:     'absolute',
+                            right:        0,
+                            top:          '20%',
+                            height:       '60%',
+                            width:        3,
+                            background:   'var(--accent)',
+                            borderRadius: '3px 0 0 3px',
+                            boxShadow:    '0 0 8px var(--accent)',
+                          }} />
+                        )}
+                      </a>
                     </Link>
                   );
                 })}
@@ -176,19 +216,30 @@ export default function Layout({ children, title = 'Dashboard' }) {
 
           {/* ── Sidebar footer ── */}
           <div style={{
-            padding:     '14px 18px',
-            borderTop:   '1px solid var(--navy-border)',
-            fontSize:    11,
-            color:       'var(--silver-dim)',
-            fontFamily:  "'DM Mono', monospace",
-            lineHeight:  1.6,
+            padding:    '14px 18px',
+            borderTop:  '1px solid var(--navy-border)',
+            fontSize:   11,
+            color:      'var(--silver-dim)',
+            fontFamily: "'Inter', sans-serif",
+            lineHeight: 1.6,
           }}>
-            Updated daily · 10 AM ET<br />
-            <span style={{ color: 'var(--navy-border)' }}>via GitHub Actions</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 2 }}>
+              <div style={{
+                width:        6,
+                height:       6,
+                borderRadius: '50%',
+                background:   'var(--accent)',
+                boxShadow:    '0 0 4px var(--accent)',
+              }} />
+              <span>Updated daily</span>
+            </div>
+            <span style={{ paddingLeft: 12, color: 'var(--navy-border)', fontSize: 10 }}>
+              10:00 AM ET · via GitHub Actions
+            </span>
           </div>
         </aside>
 
-        {/* ── Main content area ──────────────────────────────────────────────── */}
+        {/* ── Main content area ─────────────────────────────────────────────── */}
         <main style={{
           marginLeft:    'var(--sidebar-w)',
           flex:          1,
@@ -201,39 +252,91 @@ export default function Layout({ children, title = 'Dashboard' }) {
           <header style={{
             height:       'var(--topbar-h)',
             padding:      '0 32px',
-            background:   'var(--navy)',
+            background:   'var(--navy-mid)',
             borderBottom: '1px solid var(--navy-border)',
+            display:      'flex',
+            alignItems:   'center',
+            justifyContent: 'space-between',
             position:     'sticky',
             top:          0,
             zIndex:       50,
-            display:      'flex',
-            alignItems:   'center',
-            gap:          10,
           }}>
-            <span style={{
-              fontSize:   12,
-              color:      'var(--silver-dim)',
-              fontFamily: "'Barlow Condensed', sans-serif",
-              fontWeight: 600,
-              letterSpacing: 0.5,
-            }}>
-              Chalk Line Labs
-            </span>
-            <span style={{ color: 'var(--navy-border)' }}>·</span>
-            <span style={{
-              fontSize:   12,
-              color:      'var(--silver)',
-              fontFamily: "'Barlow Condensed', sans-serif",
-            }}>
-              {title}
-            </span>
+
+            {/* Status indicator */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <div
+                className="pulse-dot"
+                style={{
+                  width:        8,
+                  height:       8,
+                  borderRadius: '50%',
+                  background:   'var(--accent)',
+                  flexShrink:   0,
+                }}
+              />
+              <span style={{
+                fontSize:   12,
+                color:      'var(--silver-dim)',
+                fontFamily: "'Inter', sans-serif",
+              }}>
+                Data updated
+              </span>
+              <span style={{
+                fontSize:   12,
+                color:      'var(--accent)',
+                fontWeight: 600,
+                fontFamily: "'Inter', sans-serif",
+              }}>
+                {currentTime} ET
+              </span>
+            </div>
+
+            {/* Refresh button */}
+            <button
+              onClick={() => window.location.reload()}
+              title="Refresh page"
+              style={{
+                padding:    '6px 8px',
+                background: 'transparent',
+                border:     'none',
+                cursor:     'pointer',
+                color:      'var(--silver)',
+                borderRadius: 6,
+                display:    'flex',
+                alignItems: 'center',
+                transition: 'color 0.15s, background 0.15s',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.color      = 'var(--accent)';
+                e.currentTarget.style.background = 'var(--accent-glow)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.color      = 'var(--silver)';
+                e.currentTarget.style.background = 'transparent';
+              }}
+            >
+              {/* Refresh SVG icon */}
+              <svg
+                width="18" height="18" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor"
+                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+              >
+                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                <path d="M21 3v5h-5" />
+                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                <path d="M8 16H3v5" />
+              </svg>
+            </button>
           </header>
 
           {/* ── Page content ── */}
-          <div style={{ flex: 1, padding: '32px' }}>
+          <div style={{
+            flex:       1,
+            padding:    '32px',
+            background: 'var(--navy-dark)',
+          }}>
             {children}
           </div>
-
         </main>
       </div>
     </>

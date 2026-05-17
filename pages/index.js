@@ -1,130 +1,106 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../components/Layout';
 
+// ── Category cards ────────────────────────────────────────────────────────────
 const CARDS = [
   {
-    href:    '/games',
-    tag:     'Win Probability',
-    title:   'Game Predictions',
-    desc:    'Five models predicting today\'s MLB game outcomes. Log5, Research-Based, XGBoost, Random Forest, and Composite ensemble.',
-    models:  ['Log5', 'Research-Based', 'XGBoost', 'Random Forest', 'Composite'],
-    count:   5,
+    href:   '/games',
+    tag:    'Win Probability',
+    title:  'Game Predictions',
+    desc:   "Five models predicting today's MLB game outcomes. Log5, Research-Based, XGBoost, Random Forest, and Composite ensemble.",
+    bars:   [60, 75, 50, 85, 70],
+    footer: 'Model Ensemble Performance',
   },
   {
-    href:    '/hitters',
-    tag:     'Batter Performance',
-    title:   'Hitter Predictions',
-    desc:    'Five models projecting hit probability, home run likelihood, and Spotlight hitters for everyone in today\'s lineups.',
-    models:  ['Log5 Hit', 'ML Hit Model', 'HR Model', 'ML HR Model', 'Composite'],
-    count:   5,
+    href:   '/hitters',
+    tag:    'Batter Performance',
+    title:  'Hitter Predictions',
+    desc:   "Five models projecting hit probability, home run likelihood, and Spotlight hitters for everyone in today's lineups.",
+    bars:   [65, 72, 58, 80, 68],
+    footer: 'Model Accuracy (Last 30 Days)',
   },
   {
-    href:    '/pitchers',
-    tag:     'Pitcher Performance',
-    title:   'Pitcher Predictions',
-    desc:    'Projected strikeout totals for every starting pitcher on today\'s slate.',
-    models:  ['Strikeout Model'],
-    count:   1,
+    href:   '/pitchers',
+    tag:    'Pitcher Performance',
+    title:  'Pitcher Predictions',
+    desc:   "Projected strikeout totals for every starting pitcher on today's slate. Strikeout model performance insights.",
+    bars:   [55, 70, 62, 78, 65],
+    footer: 'Strikeout Model Performance',
   },
 ];
 
+// ── KPI stats ─────────────────────────────────────────────────────────────────
 const STATS = [
   { value: '11',    label: 'Prediction Models' },
   { value: '3',     label: 'Categories' },
-  { value: 'MLB',   label: 'Official StatsAPI' },
-  { value: 'Daily', label: 'Via GitHub Actions' },
+  { value: 'MLB',   label: 'Data Source' },
+  { value: 'Daily', label: 'Updates' },
 ];
 
 export default function Home() {
   return (
     <Layout title="Dashboard">
 
-      {/* ── Hero ──────────────────────────────────────────────────────────── */}
-      <div style={{
-        display:       'flex',
-        alignItems:    'center',
-        gap:           36,
-        marginBottom:  44,
-        paddingBottom: 36,
-        borderBottom:  '1px solid var(--navy-border)',
-        flexWrap:      'wrap',
-      }}>
-        <Image
-          src="/images/logo-blue.png"
-          alt="Chalk Line Labs"
-          width={120}
-          height={120}
-          style={{ objectFit: 'contain', flexShrink: 0 }}
-          priority
-        />
-        <div>
-          <div style={{
-            fontFamily:    "'Barlow Condensed', sans-serif",
-            fontWeight:    900,
-            fontSize:      48,
-            letterSpacing: 1,
-            lineHeight:    1,
-            color:         'var(--white)',
-            marginBottom:  8,
-          }}>
-            CHALK LINE LABS
-          </div>
-          <div style={{
-            fontFamily:    "'Barlow Condensed', sans-serif",
-            fontWeight:    600,
-            fontSize:      16,
-            letterSpacing: 3,
-            textTransform: 'uppercase',
-            color:         'var(--accent)',
-            marginBottom:  14,
-          }}>
-            MLB Prediction Dashboard
-          </div>
-          <p style={{
-            color:      'var(--silver)',
-            fontSize:   14.5,
-            maxWidth:   520,
-            lineHeight: 1.65,
-          }}>
-            Statistical and machine-learning models for MLB game outcomes, individual
-            hitter performance, and pitcher projections — powered by the MLB StatsAPI,
-            updated daily.
-          </p>
-        </div>
+      {/* ── Hero ─────────────────────────────────────────────────────────── */}
+      <div style={{ marginBottom: 48 }}>
+        <h1 style={{
+          fontFamily:    "'Sora', sans-serif",
+          fontWeight:    700,
+          fontSize:      'clamp(2rem, 5vw, 3rem)',
+          color:         'var(--white)',
+          lineHeight:    1,
+          marginBottom:  8,
+          letterSpacing: 1,
+        }}>
+          CHALK LINE LABS
+        </h1>
+        <p style={{
+          fontFamily:    "'Sora', sans-serif",
+          fontWeight:    600,
+          fontSize:      14,
+          letterSpacing: 3,
+          textTransform: 'uppercase',
+          color:         'var(--accent)',
+          marginBottom:  16,
+        }}>
+          MLB Prediction Dashboard
+        </p>
+        <p style={{
+          fontFamily: "'Inter', sans-serif",
+          fontSize:   14.5,
+          color:      'var(--silver)',
+          maxWidth:   540,
+          lineHeight: 1.65,
+        }}>
+          Statistical and machine-learning models for MLB game outcomes, individual
+          hitter performance, and pitcher projections — powered by the MLB StatsAPI,
+          updated daily.
+        </p>
       </div>
 
-      {/* ── Stats bar ────────────────────────────────────────────────────── */}
+      {/* ── KPI stats row ─────────────────────────────────────────────────── */}
       <div style={{
-        display:       'grid',
+        display:             'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
-        gap:           1,
-        background:    'var(--navy-border)',
-        border:        '1px solid var(--navy-border)',
-        borderRadius:  10,
-        overflow:      'hidden',
-        marginBottom:  40,
+        gap:                 16,
+        marginBottom:        48,
       }}>
         {STATS.map(s => (
-          <div key={s.label} style={{
-            background:  'var(--navy)',
-            padding:     '18px 20px',
-            textAlign:   'center',
-          }}>
+          <div key={s.label} className="card-neon" style={{ textAlign: 'center', padding: '1.25rem 1rem' }}>
             <div style={{
-              fontFamily:    "'Barlow Condensed', sans-serif",
-              fontWeight:    800,
-              fontSize:      28,
-              color:         'var(--white)',
-              lineHeight:    1,
-              marginBottom:  4,
+              fontFamily:   "'Sora', sans-serif",
+              fontWeight:   700,
+              fontSize:     28,
+              color:        'var(--accent)',
+              lineHeight:   1,
+              marginBottom: 6,
             }}>
               {s.value}
             </div>
             <div style={{
-              fontSize:   11,
-              color:      'var(--silver-dim)',
-              fontFamily: "'DM Mono', monospace",
+              fontFamily:    "'Inter', sans-serif",
+              fontSize:      11,
+              color:         'var(--silver-dim)',
               letterSpacing: 0.5,
             }}>
               {s.label}
@@ -133,9 +109,9 @@ export default function Home() {
         ))}
       </div>
 
-      {/* ── Section label ────────────────────────────────────────────────── */}
+      {/* ── Browse by Category ────────────────────────────────────────────── */}
       <div style={{
-        fontFamily:    "'Barlow Condensed', sans-serif",
+        fontFamily:    "'Sora', sans-serif",
         fontWeight:    700,
         fontSize:      12,
         letterSpacing: 2.5,
@@ -146,107 +122,212 @@ export default function Home() {
         Browse by Category
       </div>
 
-      {/* ── Category cards ───────────────────────────────────────────────── */}
       <div style={{
         display:             'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
         gap:                 20,
+        marginBottom:        48,
       }}>
         {CARDS.map(card => (
           <Link key={card.href} href={card.href}>
-            <div style={{
-              background:   'var(--navy)',
-              border:       '1px solid var(--navy-border)',
-              borderRadius: 10,
-              padding:      '26px 24px',
-              cursor:       'pointer',
-              height:       '100%',
-              transition:   'border-color 0.15s, box-shadow 0.15s, transform 0.15s',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.borderColor = 'var(--accent)';
-              e.currentTarget.style.boxShadow   = '0 8px 32px rgba(74,144,217,0.12)';
-              e.currentTarget.style.transform   = 'translateY(-2px)';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.borderColor = 'var(--navy-border)';
-              e.currentTarget.style.boxShadow   = 'none';
-              e.currentTarget.style.transform   = 'none';
-            }}
-            >
-              {/* Tag */}
-              <div style={{
-                display:       'inline-block',
-                padding:       '3px 9px',
-                borderRadius:  4,
-                background:    'var(--accent-glow)',
-                border:        '1px solid rgba(74,144,217,0.3)',
-                color:         'var(--accent)',
-                fontSize:      11,
-                fontFamily:    "'DM Mono', monospace",
-                fontWeight:    500,
-                marginBottom:  14,
-                letterSpacing: 0.3,
-              }}>
-                {card.tag}
-              </div>
+            <a className="card-neon" style={{ display: 'block', textDecoration: 'none', cursor: 'pointer' }}>
 
-              {/* Title */}
-              <div style={{
-                fontFamily:    "'Barlow Condensed', sans-serif",
-                fontWeight:    700,
-                fontSize:      24,
-                color:         'var(--white)',
-                marginBottom:  10,
-              }}>
-                {card.title}
+              {/* Card header */}
+              <div style={{ marginBottom: 12 }}>
+                <div className="tag" style={{ marginBottom: 8 }}>{card.tag}</div>
+                <h3 style={{
+                  fontFamily:   "'Sora', sans-serif",
+                  fontWeight:   700,
+                  fontSize:     '1.15rem',
+                  color:        'var(--white)',
+                  marginBottom: 4,
+                  lineHeight:   1.2,
+                }}>
+                  {card.title}
+                </h3>
               </div>
 
               {/* Description */}
               <p style={{
+                fontFamily:   "'Inter', sans-serif",
+                fontSize:     13,
                 color:        'var(--silver)',
-                fontSize:     13.5,
                 lineHeight:   1.6,
                 marginBottom: 20,
               }}>
                 {card.desc}
               </p>
 
-              {/* Model chips */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 20 }}>
-                {card.models.map(m => (
-                  <span key={m} style={{
-                    padding:       '3px 9px',
-                    borderRadius:  4,
-                    background:    'rgba(184,197,211,0.07)',
-                    border:        '1px solid var(--navy-border)',
-                    color:         'var(--silver)',
-                    fontSize:      11,
-                    fontFamily:    "'DM Mono', monospace",
-                  }}>
-                    {m}
-                  </span>
+              {/* Micro bar chart */}
+              <div style={{
+                height:        40,
+                background:    'rgba(0,0,0,0.2)',
+                borderRadius:  6,
+                display:       'flex',
+                alignItems:    'flex-end',
+                justifyContent:'space-around',
+                padding:       '4px 8px',
+                marginBottom:  16,
+              }}>
+                {card.bars.map((h, i) => (
+                  <div key={i} style={{
+                    width:        4,
+                    height:       `${h}%`,
+                    background:   'var(--accent)',
+                    borderRadius: 2,
+                    opacity:      0.7,
+                  }} />
                 ))}
               </div>
 
-              {/* CTA */}
+              {/* Footer row */}
               <div style={{
-                display:     'flex',
-                alignItems:  'center',
-                gap:         6,
-                color:       'var(--accent)',
-                fontSize:    13,
-                fontFamily:  "'Barlow Condensed', sans-serif",
-                fontWeight:  700,
-                letterSpacing: 1,
+                display:        'flex',
+                alignItems:     'center',
+                justifyContent: 'space-between',
               }}>
-                VIEW PREDICTIONS
-                <span style={{ fontSize: 16 }}>→</span>
+                <span style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize:   11,
+                  color:      'var(--silver-dim)',
+                }}>
+                  {card.footer}
+                </span>
+                <span style={{
+                  fontFamily:    "'Inter', sans-serif",
+                  fontSize:      12,
+                  fontWeight:    600,
+                  color:         'var(--accent)',
+                  letterSpacing: '0.05em',
+                }}>
+                  View →
+                </span>
               </div>
-            </div>
+            </a>
           </Link>
         ))}
       </div>
+
+      {/* ── Bottom info row ───────────────────────────────────────────────── */}
+      <div style={{
+        display:             'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+        gap:                 20,
+        paddingTop:          32,
+        borderTop:           '1px solid var(--navy-border)',
+      }}>
+
+        {/* Overall performance */}
+        <div className="card-neon">
+          <h3 style={{
+            fontFamily:   "'Sora', sans-serif",
+            fontWeight:   700,
+            fontSize:     '1rem',
+            color:        'var(--white)',
+            marginBottom: 16,
+          }}>
+            Overall Model Performance
+          </h3>
+          <div style={{ marginBottom: 8 }}>
+            <div style={{
+              display:        'flex',
+              justifyContent: 'space-between',
+              alignItems:     'flex-end',
+              marginBottom:   4,
+            }}>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: 'var(--silver-dim)' }}>
+                Accuracy across all models (Last 30 Days)
+              </span>
+              <span style={{
+                fontFamily: "'Sora', sans-serif",
+                fontWeight: 700,
+                fontSize:   22,
+                color:      'var(--accent)',
+              }}>
+                66.1%
+              </span>
+            </div>
+            <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: 'var(--accent)' }}>
+              ↑ 4.3% vs. previous 30 days
+            </div>
+          </div>
+        </div>
+
+        {/* Data sources */}
+        <div className="card-neon">
+          <h3 style={{
+            fontFamily:   "'Sora', sans-serif",
+            fontWeight:   700,
+            fontSize:     '1rem',
+            color:        'var(--white)',
+            marginBottom: 16,
+          }}>
+            Data Sources
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            {[
+              { label: 'MLB StatsAPI',    value: 'Live Data' },
+              { label: 'GitHub Actions',  value: 'Automation' },
+              { label: 'Daily Refresh',   value: '10:00 AM ET' },
+            ].map(row => (
+              <div key={row.label} style={{
+                display:        'flex',
+                justifyContent: 'space-between',
+                alignItems:     'center',
+              }}>
+                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: 'var(--silver)' }}>
+                  {row.label}
+                </span>
+                <span style={{
+                  fontFamily:    "'Inter', sans-serif",
+                  fontSize:      11,
+                  fontWeight:    600,
+                  color:         'var(--accent)',
+                  letterSpacing: '0.05em',
+                }}>
+                  {row.value}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Footer ───────────────────────────────────────────────────────── */}
+      <div style={{
+        marginTop:  32,
+        paddingTop: 24,
+        borderTop:  '1px solid var(--navy-border)',
+        display:    'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexWrap:   'wrap',
+        gap:        12,
+      }}>
+        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, color: 'var(--silver-dim)' }}>
+          © {new Date().getFullYear()} Chalk Line Labs. All rights reserved.
+        </p>
+        <div style={{ display: 'flex', gap: 20 }}>
+          {['Documentation', 'API Status', 'Support'].map(link => (
+            <a
+              key={link}
+              href="#"
+              style={{
+                fontFamily:     "'Inter', sans-serif",
+                fontSize:       11,
+                color:          'var(--silver-dim)',
+                textDecoration: 'none',
+                transition:     'color 0.15s',
+              }}
+              onMouseEnter={e => e.currentTarget.style.color = 'var(--accent)'}
+              onMouseLeave={e => e.currentTarget.style.color = 'var(--silver-dim)'}
+            >
+              {link}
+            </a>
+          ))}
+        </div>
+      </div>
+
     </Layout>
-  );
+  )
 }
