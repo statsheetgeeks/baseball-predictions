@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-17T02:55:38Z",
+  "updated": "2026-05-17T07:44:42Z",
   "params": {
     "k": 4,
     "home_adv": 24,
@@ -15,9 +15,9 @@
   },
   "accuracy": {
     "season": 2026,
-    "games": 682,
-    "correct": 378,
-    "pct": 0.5543
+    "games": 684,
+    "correct": 379,
+    "pct": 0.5541
   },
   "standings": [
     {
@@ -43,10 +43,10 @@
     {
       "team": "Los Angeles Dodgers",
       "abbr": "LAD",
-      "rating": 1537.4,
-      "delta": 37.4,
-      "implied_wp": 0.5536,
-      "wins": 27,
+      "rating": 1539.0,
+      "delta": 39.0,
+      "implied_wp": 0.5559,
+      "wins": 28,
       "losses": 18,
       "rank": 3
     },
@@ -163,11 +163,11 @@
     {
       "team": "Athletics",
       "abbr": "OAK",
-      "rating": 1502.3,
-      "delta": 2.3,
-      "implied_wp": 0.5033,
+      "rating": 1500.0,
+      "delta": 0.0,
+      "implied_wp": 0.5,
       "wins": 23,
-      "losses": 21,
+      "losses": 22,
       "rank": 15
     },
     {
@@ -261,22 +261,22 @@
       "rank": 24
     },
     {
+      "team": "San Francisco Giants",
+      "abbr": "SF",
+      "rating": 1486.8,
+      "delta": -13.2,
+      "implied_wp": 0.481,
+      "wins": 19,
+      "losses": 27,
+      "rank": 25
+    },
+    {
       "team": "Kansas City Royals",
       "abbr": "KC",
       "rating": 1485.7,
       "delta": -14.3,
       "implied_wp": 0.4794,
       "wins": 19,
-      "losses": 27,
-      "rank": 25
-    },
-    {
-      "team": "San Francisco Giants",
-      "abbr": "SF",
-      "rating": 1484.6,
-      "delta": -15.4,
-      "implied_wp": 0.4778,
-      "wins": 18,
       "losses": 27,
       "rank": 26
     },
@@ -323,11 +323,11 @@
     {
       "team": "Los Angeles Angels",
       "abbr": "LAA",
-      "rating": 1453.6,
-      "delta": -46.4,
-      "implied_wp": 0.4337,
+      "rating": 1452.0,
+      "delta": -48.0,
+      "implied_wp": 0.4313,
       "wins": 16,
-      "losses": 29,
+      "losses": 30,
       "rank": 31
     },
     {
@@ -342,6 +342,22 @@
     }
   ],
   "recent_games": [
+    {
+      "date": "2026-05-16",
+      "game_pk": 825007,
+      "home_team": "Athletics",
+      "away_team": "San Francisco Giants",
+      "home_abbr": "OAK",
+      "away_abbr": "SF",
+      "home_elo_pre": 1502.3,
+      "away_elo_pre": 1484.6,
+      "home_prob": 0.5597,
+      "away_prob": 0.4403,
+      "home_score": 4,
+      "away_score": 6,
+      "home_win": 0,
+      "model_correct": false
+    },
     {
       "date": "2026-05-16",
       "game_pk": 824924,
@@ -436,6 +452,22 @@
       "home_score": 4,
       "away_score": 1,
       "home_win": 1,
+      "model_correct": true
+    },
+    {
+      "date": "2026-05-16",
+      "game_pk": 824038,
+      "home_team": "Los Angeles Angels",
+      "away_team": "Los Angeles Dodgers",
+      "home_abbr": "LAA",
+      "away_abbr": "LAD",
+      "home_elo_pre": 1453.6,
+      "away_elo_pre": 1537.4,
+      "home_prob": 0.4149,
+      "away_prob": 0.5851,
+      "home_score": 2,
+      "away_score": 15,
+      "home_win": 0,
       "model_correct": true
     },
     {
@@ -789,38 +821,6 @@
       "away_score": 2,
       "home_win": 1,
       "model_correct": true
-    },
-    {
-      "date": "2026-05-14",
-      "game_pk": 825008,
-      "home_team": "Athletics",
-      "away_team": "St. Louis Cardinals",
-      "home_abbr": "OAK",
-      "away_abbr": "STL",
-      "home_elo_pre": 1502.6,
-      "away_elo_pre": 1507.1,
-      "home_prob": 0.528,
-      "away_prob": 0.472,
-      "home_score": 4,
-      "away_score": 5,
-      "home_win": 0,
-      "model_correct": false
-    },
-    {
-      "date": "2026-05-14",
-      "game_pk": 824926,
-      "home_team": "Atlanta Braves",
-      "away_team": "Chicago Cubs",
-      "home_abbr": "ATL",
-      "away_abbr": "CHC",
-      "home_elo_pre": 1533.0,
-      "away_elo_pre": 1535.5,
-      "home_prob": 0.5309,
-      "away_prob": 0.4691,
-      "home_score": 0,
-      "away_score": 2,
-      "home_win": 0,
-      "model_correct": false
     }
   ]
 }

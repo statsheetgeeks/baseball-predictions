@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-17T02:43:20.718790+00:00",
+  "updated": "2026-05-17T07:33:34.763508+00:00",
   "date": "2026-05-17",
   "predictions": [
     {
@@ -143,7 +143,7 @@
       "home_team": "Los Angeles Angels",
       "log5": {
         "pick": "Los Angeles Dodgers",
-        "confidence": 0.7111
+        "confidence": 0.7247
       },
       "research": {
         "pick": "Los Angeles Angels",
@@ -158,7 +158,7 @@
         "confidence": 0.52
       },
       "composite_pick": "Los Angeles Dodgers",
-      "composite_confidence": 0.5558,
+      "composite_confidence": 0.5592,
       "vote_count": 2,
       "total_votes": 4,
       "actual_winner": null,
@@ -197,7 +197,7 @@
       "home_team": "Athletics",
       "log5": {
         "pick": "Athletics",
-        "confidence": 0.6416
+        "confidence": 0.6177
       },
       "research": {
         "pick": "Athletics",
@@ -212,7 +212,7 @@
         "confidence": 0.5221
       },
       "composite_pick": "Athletics",
-      "composite_confidence": 0.5481,
+      "composite_confidence": 0.5421,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
@@ -410,47 +410,47 @@
   ],
   "model_standings": [
     {
-      "model": "Research",
+      "model": "Log5",
       "wins": 57,
-      "losses": 47,
-      "total": 104,
-      "pct": 0.5481
+      "losses": 49,
+      "total": 106,
+      "pct": 0.5377
     },
     {
-      "model": "Log5",
-      "wins": 56,
-      "losses": 48,
-      "total": 104,
-      "pct": 0.5385
+      "model": "Research",
+      "wins": 57,
+      "losses": 49,
+      "total": 106,
+      "pct": 0.5377
     },
     {
       "model": "XGBoost",
-      "wins": 55,
-      "losses": 49,
-      "total": 104,
-      "pct": 0.5288
+      "wins": 56,
+      "losses": 50,
+      "total": 106,
+      "pct": 0.5283
     },
     {
       "model": "Random Forest",
       "wins": 53,
-      "losses": 51,
-      "total": 104,
-      "pct": 0.5096
+      "losses": 53,
+      "total": 106,
+      "pct": 0.5
     }
   ],
   "yesterday": {
     "date": "2026-05-16",
     "total": {
-      "wins": 5,
-      "losses": 8,
-      "total": 13
+      "wins": 6,
+      "losses": 9,
+      "total": 15
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 5,
-        "losses": 6,
-        "total": 11
+        "wins": 6,
+        "losses": 7,
+        "total": 13
       },
       {
         "band": "60-69%",
@@ -474,16 +474,16 @@
   },
   "alltime": {
     "total": {
-      "wins": 59,
-      "losses": 45,
-      "total": 104
+      "wins": 60,
+      "losses": 46,
+      "total": 106
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 53,
-        "losses": 35,
-        "total": 88
+        "wins": 54,
+        "losses": 36,
+        "total": 90
       },
       {
         "band": "60-69%",

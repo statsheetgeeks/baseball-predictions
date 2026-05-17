@@ -163,12 +163,12 @@
           "game_time": "4:05 PM ET",
           "away_team": "San Francisco Giants",
           "home_team": "Athletics",
-          "away_pct": 0.4,
-          "home_pct": 0.523,
-          "away_prob": 0.3584,
-          "home_prob": 0.6416,
+          "away_pct": 0.413,
+          "home_pct": 0.511,
+          "away_prob": 0.3823,
+          "home_prob": 0.6177,
           "pick": "Athletics",
-          "confidence": 0.6416,
+          "confidence": 0.6177,
           "actual_winner": null,
           "correct": null
         },
@@ -176,12 +176,12 @@
           "game_time": "4:07 PM ET",
           "away_team": "Los Angeles Dodgers",
           "home_team": "Los Angeles Angels",
-          "away_pct": 0.6,
-          "home_pct": 0.356,
-          "away_prob": 0.7111,
-          "home_prob": 0.2889,
+          "away_pct": 0.609,
+          "home_pct": 0.348,
+          "away_prob": 0.7247,
+          "home_prob": 0.2753,
           "pick": "Los Angeles Dodgers",
-          "confidence": 0.7111,
+          "confidence": 0.7247,
           "actual_winner": null,
           "correct": null
         },
@@ -382,8 +382,8 @@
           "home_prob": 0.2889,
           "pick": "Los Angeles Dodgers",
           "confidence": 0.7111,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Los Angeles Dodgers",
+          "correct": true
         },
         {
           "game_time": "9:40 PM ET",
@@ -395,8 +395,8 @@
           "home_prob": 0.6416,
           "pick": "Athletics",
           "confidence": 0.6416,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "San Francisco Giants",
+          "correct": false
         }
       ]
     },
