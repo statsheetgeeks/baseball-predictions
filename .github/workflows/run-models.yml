@@ -90,9 +90,12 @@ jobs:
 
       - name: Run Hitters — ML HR Model
         run: python models/hitters_ml_hr.py
-        
+
       - name: Run Hitters — Spotlight
         run: python models/hitters_spotlight.py
+
+      - name: Run Research — Elo Ratings
+        run: python models/research_elo.py
 
       # - name: Run Pitchers — Strikeout
       #   run: python models/pitchers_strikeout.py

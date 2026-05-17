@@ -34,6 +34,12 @@ const NAV = [
       // Models coming soon — links will be added when pitcher models are built
     ],
   },
+  {
+    section: 'Research',
+    items: [
+      { label: 'Elo Ratings', href: '/research/elo' },
+    ],
+  },
 ];
 
 export default function Layout({ children, title = 'Dashboard' }) {
@@ -213,40 +219,21 @@ export default function Layout({ children, title = 'Dashboard' }) {
             }}>
               Chalk Line Labs
             </span>
-            <span style={{ color: 'var(--navy-border)', fontSize: 16 }}>›</span>
-            <h1 style={{
-              fontFamily:    "'Barlow Condensed', sans-serif",
-              fontWeight:    700,
-              fontSize:      19,
-              letterSpacing: 0.3,
-              color:         'var(--white)',
+            <span style={{ color: 'var(--navy-border)' }}>·</span>
+            <span style={{
+              fontSize:   12,
+              color:      'var(--silver)',
+              fontFamily: "'Barlow Condensed', sans-serif",
             }}>
               {title}
-            </h1>
+            </span>
           </header>
 
           {/* ── Page content ── */}
-          <div style={{ padding: '32px 36px', flex: 1 }}>
+          <div style={{ flex: 1, padding: '32px' }}>
             {children}
           </div>
 
-          {/* ── Page footer ── */}
-          <footer style={{
-            padding:     '18px 36px',
-            borderTop:   '1px solid var(--navy-border)',
-            fontSize:    12,
-            color:       'var(--silver-dim)',
-            fontFamily:  "'DM Mono', monospace",
-            display:     'flex',
-            gap:         16,
-            flexWrap:    'wrap',
-          }}>
-            <span>Chalk Line Labs</span>
-            <span style={{ color: 'var(--navy-border)' }}>·</span>
-            <span>Data via MLB StatsAPI</span>
-            <span style={{ color: 'var(--navy-border)' }}>·</span>
-            <span>Predictions updated daily via GitHub Actions</span>
-          </footer>
         </main>
       </div>
     </>
