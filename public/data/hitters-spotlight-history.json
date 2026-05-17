@@ -35,7 +35,7 @@
           "ranks": {
             "Log5 Hit": 1,
             "ML Hit": 25,
-            "HR Model": 17
+            "HR Model": 16
           },
           "actual_hit": null,
           "actual_hr": null
@@ -51,8 +51,25 @@
           ],
           "ranks": {
             "Log5 Hit": 12,
+            "HR Model": 1,
+            "ML HR": 3
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Matt Olson",
+          "team": "ATL",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 15,
             "HR Model": 2,
-            "ML HR": 4
+            "ML HR": 24
           },
           "actual_hit": null,
           "actual_hr": null
@@ -67,7 +84,7 @@
           ],
           "ranks": {
             "HR Model": 5,
-            "ML HR": 3
+            "ML HR": 10
           },
           "actual_hit": null,
           "actual_hr": null
@@ -112,7 +129,7 @@
           ],
           "ranks": {
             "HR Model": 9,
-            "ML HR": 5
+            "ML HR": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -127,7 +144,7 @@
           ],
           "ranks": {
             "ML Hit": 19,
-            "ML HR": 14
+            "ML HR": 15
           },
           "actual_hit": null,
           "actual_hr": null
@@ -142,7 +159,7 @@
           ],
           "ranks": {
             "Log5 Hit": 4,
-            "HR Model": 4
+            "HR Model": 6
           },
           "actual_hit": null,
           "actual_hr": null
@@ -163,21 +180,6 @@
           "actual_hr": null
         },
         {
-          "player": "Ian Happ",
-          "team": "CHC",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "ML HR"
-          ],
-          "ranks": {
-            "HR Model": 21,
-            "ML HR": 20
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Jose Altuve",
           "team": "HOU",
           "appearances": 2,
@@ -187,7 +189,7 @@
           ],
           "ranks": {
             "ML Hit": 18,
-            "ML HR": 22
+            "ML HR": 20
           },
           "actual_hit": null,
           "actual_hr": null
@@ -208,21 +210,6 @@
           "actual_hr": null
         },
         {
-          "player": "Matt Olson",
-          "team": "ATL",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "Log5 Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 15,
-            "HR Model": 1
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Michael Harris II",
           "team": "ATL",
           "appearances": 2,
@@ -232,7 +219,7 @@
           ],
           "ranks": {
             "Log5 Hit": 7,
-            "HR Model": 23
+            "HR Model": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -277,7 +264,7 @@
           ],
           "ranks": {
             "Log5 Hit": 2,
-            "HR Model": 6
+            "HR Model": 4
           },
           "actual_hit": null,
           "actual_hr": null
