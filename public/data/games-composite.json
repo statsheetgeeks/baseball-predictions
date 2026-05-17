@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-17T14:19:28.120479+00:00",
+  "updated": "2026-05-17T14:55:56.646351+00:00",
   "date": "2026-05-17",
   "predictions": [
     {
@@ -192,6 +192,33 @@
       "correct": null
     },
     {
+      "game_time": "1:35 PM ET",
+      "away_team": "Baltimore Orioles",
+      "home_team": "Washington Nationals",
+      "log5": {
+        "pick": "Washington Nationals",
+        "confidence": 0.5852
+      },
+      "research": {
+        "pick": "Washington Nationals",
+        "confidence": 0.5004
+      },
+      "xgboost": {
+        "pick": "Washington Nationals",
+        "confidence": 0.547
+      },
+      "random_forest": {
+        "pick": "Washington Nationals",
+        "confidence": 0.5588
+      },
+      "composite_pick": "Washington Nationals",
+      "composite_confidence": 0.5478,
+      "vote_count": 4,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
       "game_time": "4:05 PM ET",
       "away_team": "San Francisco Giants",
       "home_team": "Athletics",
@@ -295,33 +322,6 @@
       "composite_pick": "New York Yankees",
       "composite_confidence": 0.5357,
       "vote_count": 2,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
-      "game_time": "1:35 PM ET",
-      "away_team": "Baltimore Orioles",
-      "home_team": "Washington Nationals",
-      "log5": {
-        "pick": "Washington Nationals",
-        "confidence": 0.5852
-      },
-      "research": {
-        "pick": "Washington Nationals",
-        "confidence": 0.5004
-      },
-      "xgboost": {
-        "pick": "Washington Nationals",
-        "confidence": 0.5585
-      },
-      "random_forest": {
-        "pick": "Baltimore Orioles",
-        "confidence": 0.5168
-      },
-      "composite_pick": "Washington Nationals",
-      "composite_confidence": 0.5318,
-      "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
