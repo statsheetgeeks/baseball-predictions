@@ -5,6 +5,23 @@
       "graded": false,
       "players": [
         {
+          "player": "Aaron Judge",
+          "team": "NYY",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 19,
+            "ML Hit": 22,
+            "HR Model": 17
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
           "player": "Bryce Harper",
           "team": "PHI",
           "appearances": 3,
@@ -16,7 +33,7 @@
           "ranks": {
             "Log5 Hit": 5,
             "HR Model": 2,
-            "ML HR": 2
+            "ML HR": 6
           },
           "actual_hit": null,
           "actual_hr": null
@@ -32,23 +49,8 @@
           ],
           "ranks": {
             "ML Hit": 11,
-            "HR Model": 22,
+            "HR Model": 23,
             "ML HR": 5
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Aaron Judge",
-          "team": "NYY",
-          "appearances": 2,
-          "models": [
-            "Log5 Hit",
-            "ML Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 19,
-            "ML Hit": 22
           },
           "actual_hit": null,
           "actual_hr": null
@@ -63,7 +65,7 @@
           ],
           "ranks": {
             "Log5 Hit": 9,
-            "HR Model": 17
+            "HR Model": 14
           },
           "actual_hit": null,
           "actual_hr": null
@@ -93,7 +95,7 @@
           ],
           "ranks": {
             "Log5 Hit": 20,
-            "HR Model": 20
+            "HR Model": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -137,8 +139,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 12,
-            "ML HR": 3
+            "HR Model": 19,
+            "ML HR": 2
           },
           "actual_hit": null,
           "actual_hr": null
@@ -152,8 +154,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 14,
-            "ML HR": 6
+            "HR Model": 13,
+            "ML HR": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -168,7 +170,7 @@
           ],
           "ranks": {
             "Log5 Hit": 13,
-            "HR Model": 24
+            "HR Model": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -258,7 +260,7 @@
           ],
           "ranks": {
             "ML Hit": 4,
-            "ML HR": 25
+            "ML HR": 22
           },
           "actual_hit": null,
           "actual_hr": null
@@ -303,7 +305,7 @@
           ],
           "ranks": {
             "ML Hit": 17,
-            "ML HR": 22
+            "ML HR": 16
           },
           "actual_hit": null,
           "actual_hr": null
@@ -317,8 +319,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 23,
-            "ML HR": 20
+            "HR Model": 24,
+            "ML HR": 23
           },
           "actual_hit": null,
           "actual_hr": null
@@ -333,7 +335,7 @@
           ],
           "ranks": {
             "Log5 Hit": 25,
-            "ML HR": 15
+            "ML HR": 18
           },
           "actual_hit": null,
           "actual_hr": null
