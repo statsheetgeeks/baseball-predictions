@@ -49,12 +49,6 @@ export default function Layout({ children, title = 'Dashboard' }) {
     ? 'Chalk Line Labs — MLB Predictions'
     : `${title} · Chalk Line Labs`;
 
-  const currentTime = new Date().toLocaleTimeString('en-US', {
-    hour:   '2-digit',
-    minute: '2-digit',
-    hour12: true,
-  });
-
   return (
     <>
       <Head>
@@ -148,10 +142,10 @@ export default function Layout({ children, title = 'Dashboard' }) {
                 {/* Section label */}
                 <div style={{
                   padding:       '8px 18px 4px',
-                  fontSize:      10,
-                  fontWeight:    600,
+                  fontSize:      11,
+                  fontWeight:    700,
                   letterSpacing: 2,
-                  color:         'var(--silver-dim)',
+                  color:         'var(--yellow)',
                   textTransform: 'uppercase',
                   fontFamily:    "'Inter', sans-serif",
                 }}>
@@ -262,34 +256,7 @@ export default function Layout({ children, title = 'Dashboard' }) {
             zIndex:       50,
           }}>
 
-            {/* Status indicator */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <div
-                className="pulse-dot"
-                style={{
-                  width:        8,
-                  height:       8,
-                  borderRadius: '50%',
-                  background:   'var(--accent)',
-                  flexShrink:   0,
-                }}
-              />
-              <span style={{
-                fontSize:   12,
-                color:      'var(--silver-dim)',
-                fontFamily: "'Inter', sans-serif",
-              }}>
-                Data updated
-              </span>
-              <span style={{
-                fontSize:   12,
-                color:      'var(--accent)',
-                fontWeight: 600,
-                fontFamily: "'Inter', sans-serif",
-              }}>
-                {currentTime} ET
-              </span>
-            </div>
+            <div />
 
             {/* Refresh button */}
             <button
