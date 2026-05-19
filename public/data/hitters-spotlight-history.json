@@ -16,7 +16,7 @@
           "ranks": {
             "ML Hit": 8,
             "HR Model": 3,
-            "ML HR": 1
+            "ML HR": 6
           },
           "actual_hit": null,
           "actual_hr": null
@@ -33,7 +33,24 @@
           "ranks": {
             "Log5 Hit": 9,
             "ML Hit": 17,
-            "ML HR": 6
+            "ML HR": 1
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Zach Neto",
+          "team": "LAA",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "ML HR",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 24,
+            "HR Model": 25,
+            "ML HR": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -48,7 +65,7 @@
           ],
           "ranks": {
             "Log5 Hit": 13,
-            "HR Model": 4
+            "HR Model": 5
           },
           "actual_hit": null,
           "actual_hr": null
@@ -77,8 +94,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 11,
-            "ML HR": 5
+            "HR Model": 10,
+            "ML HR": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -92,8 +109,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 16,
-            "ML HR": 8
+            "HR Model": 15,
+            "ML HR": 9
           },
           "actual_hit": null,
           "actual_hr": null
@@ -107,8 +124,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 24,
-            "ML HR": 17
+            "HR Model": 22,
+            "ML HR": 22
           },
           "actual_hit": null,
           "actual_hr": null
@@ -122,23 +139,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 19,
-            "ML HR": 3
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Jo Adell",
-          "team": "LAA",
-          "appearances": 2,
-          "models": [
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 11,
-            "ML HR": 19
+            "HR Model": 16,
+            "ML HR": 5
           },
           "actual_hit": null,
           "actual_hr": null
@@ -152,8 +154,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 18,
-            "ML HR": 9
+            "HR Model": 17,
+            "ML HR": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -174,21 +176,6 @@
           "actual_hr": null
         },
         {
-          "player": "Juan Soto",
-          "team": "NYM",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "ML HR"
-          ],
-          "ranks": {
-            "HR Model": 22,
-            "ML HR": 18
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Kyle Schwarber",
           "team": "PHI",
           "appearances": 2,
@@ -198,7 +185,7 @@
           ],
           "ranks": {
             "HR Model": 6,
-            "ML HR": 4
+            "ML HR": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -227,8 +214,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 20,
-            "ML HR": 20
+            "HR Model": 18,
+            "ML HR": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -243,7 +230,7 @@
           ],
           "ranks": {
             "HR Model": 8,
-            "ML HR": 12
+            "ML HR": 10
           },
           "actual_hit": null,
           "actual_hr": null
@@ -259,21 +246,6 @@
           "ranks": {
             "Log5 Hit": 1,
             "ML Hit": 21
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Rafael Devers",
-          "team": "SF",
-          "appearances": 2,
-          "models": [
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 25,
-            "ML HR": 24
           },
           "actual_hit": null,
           "actual_hr": null
@@ -303,7 +275,7 @@
           ],
           "ranks": {
             "ML Hit": 12,
-            "HR Model": 21
+            "HR Model": 20
           },
           "actual_hit": null,
           "actual_hr": null
@@ -319,21 +291,6 @@
           "ranks": {
             "Log5 Hit": 15,
             "ML Hit": 13
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Zach Neto",
-          "team": "LAA",
-          "appearances": 2,
-          "models": [
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 24,
-            "ML HR": 14
           },
           "actual_hit": null,
           "actual_hr": null
