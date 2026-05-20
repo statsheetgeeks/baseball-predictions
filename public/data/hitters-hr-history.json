@@ -1,11 +1,65 @@
 {
   "records": [
     {
-      "date": "2026-05-19",
+      "date": "2026-05-20",
       "graded": false,
       "predictions": [
         {
           "rank": 1,
+          "player": "Justin Foscue",
+          "team": "TEX",
+          "score": 82,
+          "confidence": "high",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 2,
+          "player": "JJ Bleday",
+          "team": "CIN",
+          "score": 80,
+          "confidence": "high",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 3,
+          "player": "Ryan Kreidler",
+          "team": "MIN",
+          "score": 77,
+          "confidence": "high",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 4,
+          "player": "Byron Buxton",
+          "team": "MIN",
+          "score": 76,
+          "confidence": "high",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 5,
+          "player": "Mickey Moniak",
+          "team": "COL",
+          "score": 75,
+          "confidence": "high",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 6,
+          "player": "Juan Soto",
+          "team": "NYM",
+          "score": 75,
+          "confidence": "high",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 7,
           "player": "Eric Haase",
           "team": "SF",
           "score": 74,
@@ -14,53 +68,53 @@
           "correct": null
         },
         {
-          "rank": 2,
-          "player": "Ryan Kreidler",
-          "team": "MIN",
-          "score": 73,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 3,
-          "player": "Mike Trout",
-          "team": "LAA",
-          "score": 73,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 4,
-          "player": "Brandon Lowe",
-          "team": "PIT",
+          "rank": 8,
+          "player": "Elly De La Cruz",
+          "team": "CIN",
           "score": 72,
           "confidence": "high",
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 5,
-          "player": "Byron Buxton",
-          "team": "MIN",
+          "rank": 9,
+          "player": "A.J. Ewing",
+          "team": "NYM",
+          "score": 72,
+          "confidence": "high",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 10,
+          "player": "Nathaniel Lowe",
+          "team": "CIN",
           "score": 71,
           "confidence": "high",
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 6,
-          "player": "Munetaka Murakami",
-          "team": "CWS",
-          "score": 70,
-          "confidence": "high",
+          "rank": 11,
+          "player": "Sal Stewart",
+          "team": "CIN",
+          "score": 69,
+          "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 7,
-          "player": "Kyle Schwarber",
+          "rank": 12,
+          "player": "Michael Helman",
+          "team": "TEX",
+          "score": 69,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 13,
+          "player": "Bryce Harper",
           "team": "PHI",
           "score": 68,
           "confidence": "medium",
@@ -68,26 +122,35 @@
           "correct": null
         },
         {
-          "rank": 8,
-          "player": "JJ Bleday",
-          "team": "CIN",
+          "rank": 14,
+          "player": "Corbin Carroll",
+          "team": "AZ",
           "score": 68,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 9,
+          "rank": 15,
+          "player": "Hunter Goodman",
+          "team": "COL",
+          "score": 67,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 16,
           "player": "Casey Schmitt",
           "team": "SF",
-          "score": 68,
+          "score": 67,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 10,
-          "player": "Drew Romo",
+          "rank": 17,
+          "player": "Munetaka Murakami",
           "team": "CWS",
           "score": 67,
           "confidence": "medium",
@@ -95,13 +158,181 @@
           "correct": null
         },
         {
+          "rank": 18,
+          "player": "Alex Jackson",
+          "team": "MIN",
+          "score": 66,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 19,
+          "player": "Blake Dunn",
+          "team": "CIN",
+          "score": 65,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 20,
+          "player": "Jake Burger",
+          "team": "TEX",
+          "score": 64,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 21,
+          "player": "Matt Olson",
+          "team": "ATL",
+          "score": 64,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 22,
+          "player": "MJ Melendez",
+          "team": "NYM",
+          "score": 64,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 23,
+          "player": "Josh Jung",
+          "team": "TEX",
+          "score": 63,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 24,
+          "player": "Ildemaro Vargas",
+          "team": "AZ",
+          "score": 63,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 25,
+          "player": "Drew Romo",
+          "team": "CWS",
+          "score": 63,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19",
+      "graded": true,
+      "predictions": [
+        {
+          "rank": 1,
+          "player": "Eric Haase",
+          "team": "SF",
+          "score": 74,
+          "confidence": "high",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 2,
+          "player": "Ryan Kreidler",
+          "team": "MIN",
+          "score": 73,
+          "confidence": "high",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 3,
+          "player": "Mike Trout",
+          "team": "LAA",
+          "score": 73,
+          "confidence": "high",
+          "actual_hr": 1,
+          "correct": true
+        },
+        {
+          "rank": 4,
+          "player": "Brandon Lowe",
+          "team": "PIT",
+          "score": 72,
+          "confidence": "high",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 5,
+          "player": "Byron Buxton",
+          "team": "MIN",
+          "score": 71,
+          "confidence": "high",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 6,
+          "player": "Munetaka Murakami",
+          "team": "CWS",
+          "score": 70,
+          "confidence": "high",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 7,
+          "player": "Kyle Schwarber",
+          "team": "PHI",
+          "score": 68,
+          "confidence": "medium",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 8,
+          "player": "JJ Bleday",
+          "team": "CIN",
+          "score": 68,
+          "confidence": "medium",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 9,
+          "player": "Casey Schmitt",
+          "team": "SF",
+          "score": 68,
+          "confidence": "medium",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 10,
+          "player": "Drew Romo",
+          "team": "CWS",
+          "score": 67,
+          "confidence": "medium",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
           "rank": 11,
           "player": "Justin Foscue",
           "team": "TEX",
           "score": 66,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 12,
@@ -109,8 +340,8 @@
           "team": "SEA",
           "score": 66,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 13,
@@ -118,8 +349,8 @@
           "team": "CWS",
           "score": 66,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 14,
@@ -127,8 +358,8 @@
           "team": "PHI",
           "score": 65,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 15,
@@ -136,8 +367,8 @@
           "team": "LAA",
           "score": 64,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 16,
@@ -145,8 +376,8 @@
           "team": "SD",
           "score": 64,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 17,
@@ -154,8 +385,8 @@
           "team": "CWS",
           "score": 64,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 18,
@@ -163,8 +394,8 @@
           "team": "NYM",
           "score": 63,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 19,
@@ -172,8 +403,8 @@
           "team": "BOS",
           "score": 62,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 20,
@@ -181,8 +412,8 @@
           "team": "MIN",
           "score": 62,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 21,
@@ -190,8 +421,8 @@
           "team": "LAA",
           "score": 62,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 22,
@@ -199,8 +430,8 @@
           "team": "LAA",
           "score": 62,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 23,
@@ -208,8 +439,8 @@
           "team": "NYY",
           "score": 61,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 1,
+          "correct": true
         },
         {
           "rank": 24,
@@ -217,8 +448,8 @@
           "team": "PIT",
           "score": 61,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 25,
@@ -226,10 +457,31 @@
           "team": "COL",
           "score": 61,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         }
-      ]
+      ],
+      "summary": {
+        "total": 25,
+        "hr_count": 2,
+        "hit_rate_pct": 8.0,
+        "hr_players": [
+          "Mike Trout",
+          "Ben Rice"
+        ],
+        "by_bucket": {
+          "70+": {
+            "predicted": 6,
+            "hr": 1,
+            "rate_pct": 16.7
+          },
+          "60-69": {
+            "predicted": 19,
+            "hr": 1,
+            "rate_pct": 5.3
+          }
+        }
+      }
     },
     {
       "date": "2026-05-18",
