@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-21T16:44:00Z",
+  "updated": "2026-05-22T14:23:43Z",
   "params": {
     "k": 4,
     "home_adv": 24,
@@ -15,9 +15,9 @@
   },
   "accuracy": {
     "season": 2026,
-    "games": 743,
-    "correct": 411,
-    "pct": 0.5532
+    "games": 750,
+    "correct": 415,
+    "pct": 0.5533
   },
   "standings": [
     {
@@ -43,20 +43,20 @@
     {
       "team": "New York Yankees",
       "abbr": "NYY",
-      "rating": 1540.0,
-      "delta": 40.0,
-      "implied_wp": 0.5573,
+      "rating": 1537.7,
+      "delta": 37.7,
+      "implied_wp": 0.554,
       "wins": 30,
-      "losses": 20,
+      "losses": 21,
       "rank": 3
     },
     {
       "team": "Atlanta Braves",
       "abbr": "ATL",
-      "rating": 1533.6,
-      "delta": 33.6,
-      "implied_wp": 0.5482,
-      "wins": 34,
+      "rating": 1535.5,
+      "delta": 35.5,
+      "implied_wp": 0.5509,
+      "wins": 35,
       "losses": 16,
       "rank": 4
     },
@@ -93,10 +93,10 @@
     {
       "team": "Cleveland Guardians",
       "abbr": "CLE",
-      "rating": 1525.6,
-      "delta": 25.6,
-      "implied_wp": 0.5368,
-      "wins": 29,
+      "rating": 1527.5,
+      "delta": 27.5,
+      "implied_wp": 0.5396,
+      "wins": 30,
       "losses": 22,
       "rank": 8
     },
@@ -111,13 +111,13 @@
       "rank": 9
     },
     {
-      "team": "St. Louis Cardinals",
-      "abbr": "STL",
-      "rating": 1509.8,
-      "delta": 9.8,
-      "implied_wp": 0.5141,
-      "wins": 28,
-      "losses": 20,
+      "team": "Toronto Blue Jays",
+      "abbr": "TOR",
+      "rating": 1510.9,
+      "delta": 10.9,
+      "implied_wp": 0.5157,
+      "wins": 23,
+      "losses": 27,
       "rank": 10
     },
     {
@@ -141,22 +141,22 @@
       "rank": 12
     },
     {
-      "team": "Toronto Blue Jays",
-      "abbr": "TOR",
-      "rating": 1508.6,
-      "delta": 8.6,
-      "implied_wp": 0.5124,
-      "wins": 22,
-      "losses": 27,
+      "team": "St. Louis Cardinals",
+      "abbr": "STL",
+      "rating": 1507.6,
+      "delta": 7.6,
+      "implied_wp": 0.5109,
+      "wins": 28,
+      "losses": 21,
       "rank": 13
     },
     {
       "team": "Arizona Diamondbacks",
       "abbr": "ARI",
-      "rating": 1505.8,
-      "delta": 5.8,
-      "implied_wp": 0.5083,
-      "wins": 25,
+      "rating": 1507.2,
+      "delta": 7.2,
+      "implied_wp": 0.5104,
+      "wins": 26,
       "losses": 23,
       "rank": 14
     },
@@ -171,6 +171,16 @@
       "rank": 15
     },
     {
+      "team": "Athletics",
+      "abbr": "OAK",
+      "rating": 1501.3,
+      "delta": 1.3,
+      "implied_wp": 0.5018,
+      "wins": 26,
+      "losses": 24,
+      "rank": 16
+    },
+    {
       "team": "Texas Rangers",
       "abbr": "TEX",
       "rating": 1500.1,
@@ -178,16 +188,6 @@
       "implied_wp": 0.5002,
       "wins": 24,
       "losses": 25,
-      "rank": 16
-    },
-    {
-      "team": "Athletics",
-      "abbr": "OAK",
-      "rating": 1499.4,
-      "delta": -0.6,
-      "implied_wp": 0.4992,
-      "wins": 25,
-      "losses": 24,
       "rank": 17
     },
     {
@@ -201,6 +201,26 @@
       "rank": 18
     },
     {
+      "team": "Pittsburgh Pirates",
+      "abbr": "PIT",
+      "rating": 1490.8,
+      "delta": -9.2,
+      "implied_wp": 0.4868,
+      "wins": 26,
+      "losses": 24,
+      "rank": 19
+    },
+    {
+      "team": "New York Mets",
+      "abbr": "NYM",
+      "rating": 1490.2,
+      "delta": -9.8,
+      "implied_wp": 0.4859,
+      "wins": 22,
+      "losses": 28,
+      "rank": 20
+    },
+    {
       "team": "Houston Astros",
       "abbr": "HOU",
       "rating": 1489.6,
@@ -208,26 +228,6 @@
       "implied_wp": 0.485,
       "wins": 20,
       "losses": 31,
-      "rank": 19
-    },
-    {
-      "team": "Pittsburgh Pirates",
-      "abbr": "PIT",
-      "rating": 1488.5,
-      "delta": -11.5,
-      "implied_wp": 0.4835,
-      "wins": 25,
-      "losses": 24,
-      "rank": 20
-    },
-    {
-      "team": "New York Mets",
-      "abbr": "NYM",
-      "rating": 1488.1,
-      "delta": -11.9,
-      "implied_wp": 0.4829,
-      "wins": 21,
-      "losses": 28,
       "rank": 21
     },
     {
@@ -241,26 +241,6 @@
       "rank": 22
     },
     {
-      "team": "Detroit Tigers",
-      "abbr": "DET",
-      "rating": 1484.8,
-      "delta": -15.2,
-      "implied_wp": 0.4781,
-      "wins": 20,
-      "losses": 30,
-      "rank": 23
-    },
-    {
-      "team": "Miami Marlins",
-      "abbr": "MIA",
-      "rating": 1484.2,
-      "delta": -15.8,
-      "implied_wp": 0.4772,
-      "wins": 22,
-      "losses": 28,
-      "rank": 24
-    },
-    {
       "team": "San Francisco Giants",
       "abbr": "SF",
       "rating": 1483.7,
@@ -268,6 +248,26 @@
       "implied_wp": 0.4766,
       "wins": 20,
       "losses": 30,
+      "rank": 23
+    },
+    {
+      "team": "Detroit Tigers",
+      "abbr": "DET",
+      "rating": 1482.9,
+      "delta": -17.1,
+      "implied_wp": 0.4754,
+      "wins": 20,
+      "losses": 31,
+      "rank": 24
+    },
+    {
+      "team": "Miami Marlins",
+      "abbr": "MIA",
+      "rating": 1482.3,
+      "delta": -17.7,
+      "implied_wp": 0.4746,
+      "wins": 22,
+      "losses": 29,
       "rank": 25
     },
     {
@@ -281,16 +281,6 @@
       "rank": 26
     },
     {
-      "team": "Washington Nationals",
-      "abbr": "WSH",
-      "rating": 1477.1,
-      "delta": -22.9,
-      "implied_wp": 0.4671,
-      "wins": 25,
-      "losses": 25,
-      "rank": 27
-    },
-    {
       "team": "Oakland Athletics",
       "abbr": "OAK",
       "rating": 1477.0,
@@ -298,6 +288,16 @@
       "implied_wp": 0.4669,
       "wins": 0,
       "losses": 0,
+      "rank": 27
+    },
+    {
+      "team": "Washington Nationals",
+      "abbr": "WSH",
+      "rating": 1475.0,
+      "delta": -25.0,
+      "implied_wp": 0.4641,
+      "wins": 25,
+      "losses": 26,
       "rank": 28
     },
     {
@@ -323,25 +323,137 @@
     {
       "team": "Los Angeles Angels",
       "abbr": "LAA",
-      "rating": 1448.7,
-      "delta": -51.3,
-      "implied_wp": 0.4267,
+      "rating": 1446.9,
+      "delta": -53.1,
+      "implied_wp": 0.4241,
       "wins": 17,
-      "losses": 33,
+      "losses": 34,
       "rank": 31
     },
     {
       "team": "Colorado Rockies",
       "abbr": "COL",
-      "rating": 1426.9,
-      "delta": -73.1,
-      "implied_wp": 0.3963,
+      "rating": 1425.5,
+      "delta": -74.5,
+      "implied_wp": 0.3944,
       "wins": 19,
-      "losses": 31,
+      "losses": 32,
       "rank": 32
     }
   ],
   "recent_games": [
+    {
+      "date": "2026-05-21",
+      "game_pk": 825083,
+      "home_team": "Arizona Diamondbacks",
+      "away_team": "Colorado Rockies",
+      "home_abbr": "ARI",
+      "away_abbr": "COL",
+      "home_elo_pre": 1505.8,
+      "away_elo_pre": 1426.9,
+      "home_prob": 0.6439,
+      "away_prob": 0.3561,
+      "home_score": 2,
+      "away_score": 1,
+      "home_win": 1,
+      "model_correct": true
+    },
+    {
+      "date": "2026-05-21",
+      "game_pk": 824274,
+      "home_team": "Detroit Tigers",
+      "away_team": "Cleveland Guardians",
+      "home_abbr": "DET",
+      "away_abbr": "CLE",
+      "home_elo_pre": 1484.8,
+      "away_elo_pre": 1525.6,
+      "home_prob": 0.4758,
+      "away_prob": 0.5242,
+      "home_score": 1,
+      "away_score": 3,
+      "home_win": 0,
+      "model_correct": true
+    },
+    {
+      "date": "2026-05-21",
+      "game_pk": 824031,
+      "home_team": "Los Angeles Angels",
+      "away_team": "Athletics",
+      "home_abbr": "LAA",
+      "away_abbr": "OAK",
+      "home_elo_pre": 1448.7,
+      "away_elo_pre": 1499.4,
+      "home_prob": 0.4616,
+      "away_prob": 0.5384,
+      "home_score": 2,
+      "away_score": 3,
+      "home_win": 0,
+      "model_correct": true
+    },
+    {
+      "date": "2026-05-21",
+      "game_pk": 823864,
+      "home_team": "Miami Marlins",
+      "away_team": "Atlanta Braves",
+      "home_abbr": "MIA",
+      "away_abbr": "ATL",
+      "home_elo_pre": 1484.2,
+      "away_elo_pre": 1533.6,
+      "home_prob": 0.4634,
+      "away_prob": 0.5366,
+      "home_score": 3,
+      "away_score": 9,
+      "home_win": 0,
+      "model_correct": true
+    },
+    {
+      "date": "2026-05-21",
+      "game_pk": 823545,
+      "home_team": "New York Yankees",
+      "away_team": "Toronto Blue Jays",
+      "home_abbr": "NYY",
+      "away_abbr": "TOR",
+      "home_elo_pre": 1540.0,
+      "away_elo_pre": 1508.6,
+      "home_prob": 0.579,
+      "away_prob": 0.421,
+      "home_score": 0,
+      "away_score": 2,
+      "home_win": 0,
+      "model_correct": false
+    },
+    {
+      "date": "2026-05-21",
+      "game_pk": 823056,
+      "home_team": "St. Louis Cardinals",
+      "away_team": "Pittsburgh Pirates",
+      "home_abbr": "STL",
+      "away_abbr": "PIT",
+      "home_elo_pre": 1509.8,
+      "away_elo_pre": 1488.5,
+      "home_prob": 0.5648,
+      "away_prob": 0.4352,
+      "home_score": 2,
+      "away_score": 6,
+      "home_win": 0,
+      "model_correct": false
+    },
+    {
+      "date": "2026-05-21",
+      "game_pk": 822733,
+      "home_team": "Washington Nationals",
+      "away_team": "New York Mets",
+      "home_abbr": "WSH",
+      "away_abbr": "NYM",
+      "home_elo_pre": 1477.1,
+      "away_elo_pre": 1488.1,
+      "home_prob": 0.5187,
+      "away_prob": 0.4813,
+      "home_score": 1,
+      "away_score": 2,
+      "home_win": 0,
+      "model_correct": false
+    },
     {
       "date": "2026-05-20",
       "game_pk": 825084,
@@ -709,118 +821,6 @@
       "away_score": 2,
       "home_win": 0,
       "model_correct": false
-    },
-    {
-      "date": "2026-05-19",
-      "game_pk": 823548,
-      "home_team": "New York Yankees",
-      "away_team": "Toronto Blue Jays",
-      "home_abbr": "NYY",
-      "away_abbr": "TOR",
-      "home_elo_pre": 1540.6,
-      "away_elo_pre": 1507.9,
-      "home_prob": 0.5809,
-      "away_prob": 0.4191,
-      "home_score": 5,
-      "away_score": 4,
-      "home_win": 1,
-      "model_correct": true
-    },
-    {
-      "date": "2026-05-19",
-      "game_pk": 823464,
-      "home_team": "Philadelphia Phillies",
-      "away_team": "Cincinnati Reds",
-      "home_abbr": "PHI",
-      "away_abbr": "CIN",
-      "home_elo_pre": 1529.8,
-      "away_elo_pre": 1499.2,
-      "home_prob": 0.5779,
-      "away_prob": 0.4221,
-      "home_score": 1,
-      "away_score": 4,
-      "home_win": 0,
-      "model_correct": false
-    },
-    {
-      "date": "2026-05-19",
-      "game_pk": 823302,
-      "home_team": "San Diego Padres",
-      "away_team": "Los Angeles Dodgers",
-      "home_abbr": "SD",
-      "away_abbr": "LAD",
-      "home_elo_pre": 1534.5,
-      "away_elo_pre": 1538.8,
-      "home_prob": 0.5284,
-      "away_prob": 0.4716,
-      "home_score": 4,
-      "away_score": 5,
-      "home_win": 0,
-      "model_correct": false
-    },
-    {
-      "date": "2026-05-19",
-      "game_pk": 823136,
-      "home_team": "Seattle Mariners",
-      "away_team": "Chicago White Sox",
-      "home_abbr": "SEA",
-      "away_abbr": "CWS",
-      "home_elo_pre": 1510.1,
-      "away_elo_pre": 1461.9,
-      "home_prob": 0.6024,
-      "away_prob": 0.3976,
-      "home_score": 1,
-      "away_score": 2,
-      "home_win": 0,
-      "model_correct": false
-    },
-    {
-      "date": "2026-05-19",
-      "game_pk": 823059,
-      "home_team": "St. Louis Cardinals",
-      "away_team": "Pittsburgh Pirates",
-      "home_abbr": "STL",
-      "away_abbr": "PIT",
-      "home_elo_pre": 1510.4,
-      "away_elo_pre": 1488.0,
-      "home_prob": 0.5664,
-      "away_prob": 0.4336,
-      "home_score": 9,
-      "away_score": 6,
-      "home_win": 1,
-      "model_correct": true
-    },
-    {
-      "date": "2026-05-19",
-      "game_pk": 822979,
-      "home_team": "Tampa Bay Rays",
-      "away_team": "Baltimore Orioles",
-      "home_abbr": "TB",
-      "away_abbr": "BAL",
-      "home_elo_pre": 1524.7,
-      "away_elo_pre": 1488.8,
-      "home_prob": 0.5854,
-      "away_prob": 0.4146,
-      "home_score": 4,
-      "away_score": 1,
-      "home_win": 1,
-      "model_correct": true
-    },
-    {
-      "date": "2026-05-19",
-      "game_pk": 822736,
-      "home_team": "Washington Nationals",
-      "away_team": "New York Mets",
-      "home_abbr": "WSH",
-      "away_abbr": "NYM",
-      "home_elo_pre": 1473.2,
-      "away_elo_pre": 1492.0,
-      "home_prob": 0.5074,
-      "away_prob": 0.4926,
-      "home_score": 9,
-      "away_score": 6,
-      "home_win": 1,
-      "model_correct": true
     }
   ]
 }
