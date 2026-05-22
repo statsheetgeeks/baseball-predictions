@@ -5,23 +5,6 @@
       "graded": false,
       "players": [
         {
-          "player": "Elly De La Cruz",
-          "team": "CIN",
-          "appearances": 3,
-          "models": [
-            "HR Model",
-            "Log5 Hit",
-            "ML HR"
-          ],
-          "ranks": {
-            "Log5 Hit": 7,
-            "HR Model": 23,
-            "ML HR": 20
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Juan Soto",
           "team": "NYM",
           "appearances": 3,
@@ -33,7 +16,7 @@
           "ranks": {
             "ML Hit": 11,
             "HR Model": 10,
-            "ML HR": 10
+            "ML HR": 8
           },
           "actual_hit": null,
           "actual_hr": null
@@ -50,7 +33,7 @@
           "ranks": {
             "Log5 Hit": 16,
             "HR Model": 3,
-            "ML HR": 9
+            "ML HR": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -66,8 +49,8 @@
           ],
           "ranks": {
             "Log5 Hit": 11,
-            "HR Model": 18,
-            "ML HR": 19
+            "HR Model": 24,
+            "ML HR": 17
           },
           "actual_hit": null,
           "actual_hr": null
@@ -83,8 +66,8 @@
           ],
           "ranks": {
             "Log5 Hit": 5,
-            "HR Model": 1,
-            "ML HR": 2
+            "HR Model": 2,
+            "ML HR": 1
           },
           "actual_hit": null,
           "actual_hr": null
@@ -105,6 +88,21 @@
           "actual_hr": null
         },
         {
+          "player": "Austin Riley",
+          "team": "ATL",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 22,
+            "HR Model": 20
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
           "player": "Bryce Harper",
           "team": "PHI",
           "appearances": 2,
@@ -114,7 +112,7 @@
           ],
           "ranks": {
             "HR Model": 14,
-            "ML HR": 3
+            "ML HR": 11
           },
           "actual_hit": null,
           "actual_hr": null
@@ -128,8 +126,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 9,
-            "ML HR": 16
+            "HR Model": 7,
+            "ML HR": 5
           },
           "actual_hit": null,
           "actual_hr": null
@@ -144,7 +142,37 @@
           ],
           "ranks": {
             "HR Model": 11,
-            "ML HR": 14
+            "ML HR": 12
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Dominic Smith",
+          "team": "ATL",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML HR"
+          ],
+          "ranks": {
+            "HR Model": 5,
+            "ML HR": 25
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Elly De La Cruz",
+          "team": "CIN",
+          "appearances": 2,
+          "models": [
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 7,
+            "ML HR": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -188,8 +216,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 7,
-            "ML HR": 1
+            "HR Model": 6,
+            "ML HR": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -218,8 +246,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 16,
-            "ML HR": 12
+            "HR Model": 21,
+            "ML HR": 6
           },
           "actual_hit": null,
           "actual_hr": null
@@ -233,8 +261,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 2,
-            "ML HR": 4
+            "HR Model": 1,
+            "ML HR": 2
           },
           "actual_hit": null,
           "actual_hr": null
@@ -248,23 +276,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 15,
-            "ML HR": 5
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Nathaniel Lowe",
-          "team": "CIN",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "ML HR"
-          ],
-          "ranks": {
-            "HR Model": 24,
-            "ML HR": 11
+            "HR Model": 16,
+            "ML HR": 14
           },
           "actual_hit": null,
           "actual_hr": null
