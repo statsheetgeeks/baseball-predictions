@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-27T14:31:19.209738+00:00",
+  "updated": "2026-05-27T17:18:45.841687+00:00",
   "date": "2026-05-27",
   "predictions": [
     {
@@ -43,14 +43,14 @@
       },
       "xgboost": {
         "pick": "Milwaukee Brewers",
-        "confidence": 0.7134
+        "confidence": 0.7068
       },
       "random_forest": {
         "pick": "Milwaukee Brewers",
-        "confidence": 0.576
+        "confidence": 0.5995
       },
       "composite_pick": "Milwaukee Brewers",
-      "composite_confidence": 0.6231,
+      "composite_confidence": 0.6273,
       "vote_count": 4,
       "total_votes": 4,
       "actual_winner": null,
@@ -165,6 +165,33 @@
       "correct": null
     },
     {
+      "game_time": "1:07 PM ET",
+      "away_team": "Miami Marlins",
+      "home_team": "Toronto Blue Jays",
+      "log5": {
+        "pick": "Toronto Blue Jays",
+        "confidence": 0.5285
+      },
+      "research": {
+        "pick": "Toronto Blue Jays",
+        "confidence": 0.5244
+      },
+      "xgboost": {
+        "pick": "Toronto Blue Jays",
+        "confidence": 0.5917
+      },
+      "random_forest": {
+        "pick": "Toronto Blue Jays",
+        "confidence": 0.5443
+      },
+      "composite_pick": "Toronto Blue Jays",
+      "composite_confidence": 0.5472,
+      "vote_count": 4,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
       "game_time": "1:10 PM ET",
       "away_team": "Washington Nationals",
       "home_team": "Cleveland Guardians",
@@ -174,18 +201,18 @@
       },
       "research": {
         "pick": "Cleveland Guardians",
-        "confidence": 0.5335
+        "confidence": 0.5501
       },
       "xgboost": {
         "pick": "Cleveland Guardians",
-        "confidence": 0.5661
+        "confidence": 0.5528
       },
       "random_forest": {
         "pick": "Cleveland Guardians",
-        "confidence": 0.5287
+        "confidence": 0.5133
       },
       "composite_pick": "Cleveland Guardians",
-      "composite_confidence": 0.548,
+      "composite_confidence": 0.545,
       "vote_count": 4,
       "total_votes": 4,
       "actual_winner": null,
@@ -214,33 +241,6 @@
       "composite_pick": "Cincinnati Reds",
       "composite_confidence": 0.5423,
       "vote_count": 2,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
-      "game_time": "1:07 PM ET",
-      "away_team": "Miami Marlins",
-      "home_team": "Toronto Blue Jays",
-      "log5": {
-        "pick": "Toronto Blue Jays",
-        "confidence": 0.5285
-      },
-      "research": {
-        "pick": "Toronto Blue Jays",
-        "confidence": 0.5244
-      },
-      "xgboost": {
-        "pick": "Toronto Blue Jays",
-        "confidence": 0.578
-      },
-      "random_forest": {
-        "pick": "Toronto Blue Jays",
-        "confidence": 0.5302
-      },
-      "composite_pick": "Toronto Blue Jays",
-      "composite_confidence": 0.5403,
-      "vote_count": 4,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
