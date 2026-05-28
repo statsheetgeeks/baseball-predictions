@@ -5,8 +5,8 @@
       "graded": false,
       "players": [
         {
-          "player": "Oneil Cruz",
-          "team": "PIT",
+          "player": "Miguel Vargas",
+          "team": "CWS",
           "appearances": 4,
           "models": [
             "HR Model",
@@ -15,10 +15,10 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 12,
-            "ML Hit": 22,
-            "HR Model": 8,
-            "ML HR": 20
+            "Log5 Hit": 21,
+            "ML Hit": 19,
+            "HR Model": 5,
+            "ML HR": 8
           },
           "actual_hit": null,
           "actual_hr": null
@@ -35,9 +35,26 @@
           ],
           "ranks": {
             "Log5 Hit": 1,
-            "ML Hit": 9,
-            "HR Model": 1,
-            "ML HR": 2
+            "ML Hit": 10,
+            "HR Model": 2,
+            "ML HR": 1
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Adley Rutschman",
+          "team": "BAL",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 8,
+            "HR Model": 20,
+            "ML HR": 22
           },
           "actual_hit": null,
           "actual_hr": null
@@ -53,8 +70,8 @@
           ],
           "ranks": {
             "Log5 Hit": 7,
-            "HR Model": 2,
-            "ML HR": 10
+            "HR Model": 3,
+            "ML HR": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -69,9 +86,9 @@
             "ML Hit"
           ],
           "ranks": {
-            "ML Hit": 10,
-            "HR Model": 3,
-            "ML HR": 3
+            "ML Hit": 11,
+            "HR Model": 7,
+            "ML HR": 5
           },
           "actual_hit": null,
           "actual_hr": null
@@ -86,26 +103,9 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 14,
-            "ML Hit": 8,
-            "ML HR": 12
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Ernie Clement",
-          "team": "TOR",
-          "appearances": 3,
-          "models": [
-            "Log5 Hit",
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 10,
-            "ML Hit": 4,
-            "ML HR": 22
+            "Log5 Hit": 15,
+            "ML Hit": 9,
+            "ML HR": 14
           },
           "actual_hit": null,
           "actual_hr": null
@@ -120,9 +120,9 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 18,
-            "ML Hit": 15,
-            "ML HR": 18
+            "Log5 Hit": 17,
+            "ML Hit": 16,
+            "ML HR": 16
           },
           "actual_hit": null,
           "actual_hr": null
@@ -137,24 +137,60 @@
             "ML Hit"
           ],
           "ranks": {
-            "ML Hit": 5,
-            "HR Model": 20,
+            "ML Hit": 6,
+            "HR Model": 23,
             "ML HR": 11
           },
           "actual_hit": null,
           "actual_hr": null
         },
         {
-          "player": "Adley Rutschman",
-          "team": "BAL",
-          "appearances": 2,
+          "player": "Munetaka Murakami",
+          "team": "CWS",
+          "appearances": 3,
           "models": [
             "HR Model",
-            "Log5 Hit"
+            "ML HR",
+            "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 8,
-            "HR Model": 19
+            "ML Hit": 25,
+            "HR Model": 1,
+            "ML HR": 3
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Oneil Cruz",
+          "team": "PIT",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 13,
+            "ML Hit": 23,
+            "HR Model": 10
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Samuel Basallo",
+          "team": "BAL",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 25,
+            "HR Model": 21,
+            "ML HR": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -168,8 +204,8 @@
             "ML Hit"
           ],
           "ranks": {
-            "ML Hit": 3,
-            "ML HR": 6
+            "ML Hit": 4,
+            "ML HR": 10
           },
           "actual_hit": null,
           "actual_hr": null
@@ -183,38 +219,38 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 7,
-            "ML HR": 14
+            "HR Model": 12,
+            "ML HR": 17
           },
           "actual_hit": null,
           "actual_hr": null
         },
         {
-          "player": "Cam Smith",
-          "team": "HOU",
+          "player": "Chase Meidroth",
+          "team": "CWS",
           "appearances": 2,
           "models": [
-            "ML HR",
+            "Log5 Hit",
             "ML Hit"
           ],
           "ranks": {
-            "ML Hit": 24,
-            "ML HR": 15
+            "Log5 Hit": 24,
+            "ML Hit": 7
           },
           "actual_hit": null,
           "actual_hr": null
         },
         {
-          "player": "Christian V\u00e1zquez",
-          "team": "HOU",
+          "player": "Colson Montgomery",
+          "team": "CWS",
           "appearances": 2,
           "models": [
             "HR Model",
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 21,
-            "ML HR": 17
+            "HR Model": 6,
+            "ML HR": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -229,7 +265,22 @@
           ],
           "ranks": {
             "Log5 Hit": 2,
-            "HR Model": 13
+            "HR Model": 18
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Ernie Clement",
+          "team": "TOR",
+          "appearances": 2,
+          "models": [
+            "Log5 Hit",
+            "ML Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 11,
+            "ML Hit": 5
           },
           "actual_hit": null,
           "actual_hr": null
@@ -244,7 +295,7 @@
           ],
           "ranks": {
             "ML Hit": 1,
-            "ML HR": 7
+            "ML HR": 12
           },
           "actual_hit": null,
           "actual_hr": null
@@ -254,27 +305,12 @@
           "team": "BAL",
           "appearances": 2,
           "models": [
-            "HR Model",
-            "Log5 Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 21,
-            "HR Model": 22
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Ian Happ",
-          "team": "CHC",
-          "appearances": 2,
-          "models": [
-            "HR Model",
+            "Log5 Hit",
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 24,
-            "ML HR": 13
+            "Log5 Hit": 22,
+            "ML HR": 23
           },
           "actual_hit": null,
           "actual_hr": null
@@ -289,22 +325,7 @@
           ],
           "ranks": {
             "ML Hit": 2,
-            "ML HR": 9
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Jo Adell",
-          "team": "LAA",
-          "appearances": 2,
-          "models": [
-            "Log5 Hit",
-            "ML Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 15,
-            "ML Hit": 25
+            "ML HR": 20
           },
           "actual_hit": null,
           "actual_hr": null
@@ -318,23 +339,8 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 3,
-            "ML Hit": 14
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Matt Olson",
-          "team": "ATL",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "ML HR"
-          ],
-          "ranks": {
-            "HR Model": 5,
-            "ML HR": 24
+            "Log5 Hit": 5,
+            "ML Hit": 15
           },
           "actual_hit": null,
           "actual_hr": null
@@ -348,23 +354,8 @@
             "ML Hit"
           ],
           "ranks": {
-            "ML Hit": 13,
-            "ML HR": 16
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Michael Harris II",
-          "team": "ATL",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "Log5 Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 25,
-            "HR Model": 17
+            "ML Hit": 14,
+            "ML HR": 19
           },
           "actual_hit": null,
           "actual_hr": null
@@ -378,8 +369,8 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 5,
-            "ML Hit": 18
+            "Log5 Hit": 4,
+            "ML Hit": 20
           },
           "actual_hit": null,
           "actual_hr": null
@@ -393,38 +384,38 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 20,
-            "ML Hit": 12
+            "Log5 Hit": 23,
+            "ML Hit": 13
           },
           "actual_hit": null,
           "actual_hr": null
         },
         {
-          "player": "Samuel Basallo",
+          "player": "Pete Alonso",
           "team": "BAL",
           "appearances": 2,
           "models": [
-            "HR Model",
-            "Log5 Hit"
+            "Log5 Hit",
+            "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 22,
-            "HR Model": 18
+            "Log5 Hit": 14,
+            "ML HR": 24
           },
           "actual_hit": null,
           "actual_hr": null
         },
         {
-          "player": "Taylor Ward",
-          "team": "BAL",
+          "player": "Sam Antonacci",
+          "team": "CWS",
           "appearances": 2,
           "models": [
             "Log5 Hit",
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 24,
-            "ML Hit": 16
+            "Log5 Hit": 6,
+            "ML Hit": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -438,8 +429,8 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 4,
-            "ML Hit": 7
+            "Log5 Hit": 3,
+            "ML Hit": 8
           },
           "actual_hit": null,
           "actual_hr": null
@@ -453,8 +444,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 12,
-            "ML HR": 1
+            "HR Model": 13,
+            "ML HR": 2
           },
           "actual_hit": null,
           "actual_hr": null
