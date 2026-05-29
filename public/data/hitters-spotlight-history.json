@@ -5,6 +5,23 @@
       "graded": false,
       "players": [
         {
+          "player": "Matt Olson",
+          "team": "ATL",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 21,
+            "HR Model": 3,
+            "ML HR": 14
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
           "player": "Michael Harris II",
           "team": "ATL",
           "appearances": 3,
@@ -14,9 +31,9 @@
             "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 13,
+            "Log5 Hit": 9,
             "HR Model": 6,
-            "ML HR": 19
+            "ML HR": 12
           },
           "actual_hit": null,
           "actual_hr": null
@@ -31,7 +48,7 @@
           ],
           "ranks": {
             "HR Model": 10,
-            "ML HR": 10
+            "ML HR": 7
           },
           "actual_hit": null,
           "actual_hr": null
@@ -46,7 +63,7 @@
           ],
           "ranks": {
             "HR Model": 9,
-            "ML HR": 23
+            "ML HR": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -61,22 +78,7 @@
           ],
           "ranks": {
             "Log5 Hit": 8,
-            "ML HR": 7
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Brandon Nimmo",
-          "team": "TEX",
-          "appearances": 2,
-          "models": [
-            "Log5 Hit",
-            "ML HR"
-          ],
-          "ranks": {
-            "Log5 Hit": 7,
-            "ML HR": 21
+            "ML HR": 15
           },
           "actual_hit": null,
           "actual_hr": null
@@ -106,7 +108,7 @@
           ],
           "ranks": {
             "ML Hit": 5,
-            "ML HR": 25
+            "ML HR": 24
           },
           "actual_hit": null,
           "actual_hr": null
@@ -121,7 +123,7 @@
           ],
           "ranks": {
             "ML Hit": 11,
-            "HR Model": 16
+            "HR Model": 14
           },
           "actual_hit": null,
           "actual_hr": null
@@ -135,7 +137,7 @@
             "Log5 Hit"
           ],
           "ranks": {
-            "Log5 Hit": 21,
+            "Log5 Hit": 23,
             "HR Model": 7
           },
           "actual_hit": null,
@@ -157,21 +159,6 @@
           "actual_hr": null
         },
         {
-          "player": "Matt Olson",
-          "team": "ATL",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "ML HR"
-          ],
-          "ranks": {
-            "HR Model": 3,
-            "ML HR": 18
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Nico Hoerner",
           "team": "CHC",
           "appearances": 2,
@@ -187,21 +174,6 @@
           "actual_hr": null
         },
         {
-          "player": "Rafael Devers",
-          "team": "SF",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 2,
-            "HR Model": 25
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Vladimir Guerrero Jr.",
           "team": "TOR",
           "appearances": 2,
@@ -210,23 +182,8 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 9,
+            "Log5 Hit": 10,
             "ML Hit": 17
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Willy Adames",
-          "team": "SF",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "Log5 Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 25,
-            "HR Model": 23
           },
           "actual_hit": null,
           "actual_hr": null
