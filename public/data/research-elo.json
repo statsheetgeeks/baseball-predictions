@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-28T17:41:06Z",
+  "updated": "2026-05-29T14:56:19Z",
   "params": {
     "k": 4,
     "home_adv": 24,
@@ -15,9 +15,9 @@
   },
   "accuracy": {
     "season": 2026,
-    "games": 836,
-    "correct": 453,
-    "pct": 0.5419
+    "games": 842,
+    "correct": 456,
+    "pct": 0.5416
   },
   "standings": [
     {
@@ -53,10 +53,10 @@
     {
       "team": "Atlanta Braves",
       "abbr": "ATL",
-      "rating": 1531.9,
-      "delta": 31.9,
-      "implied_wp": 0.5458,
-      "wins": 37,
+      "rating": 1533.9,
+      "delta": 33.9,
+      "implied_wp": 0.5486,
+      "wins": 38,
       "losses": 19,
       "rank": 4
     },
@@ -103,19 +103,19 @@
     {
       "team": "Chicago Cubs",
       "abbr": "CHC",
-      "rating": 1519.4,
-      "delta": 19.4,
-      "implied_wp": 0.5279,
-      "wins": 30,
+      "rating": 1521.4,
+      "delta": 21.4,
+      "implied_wp": 0.5307,
+      "wins": 31,
       "losses": 26,
       "rank": 9
     },
     {
-      "team": "Seattle Mariners",
-      "abbr": "SEA",
-      "rating": 1513.4,
-      "delta": 13.4,
-      "implied_wp": 0.5193,
+      "team": "Toronto Blue Jays",
+      "abbr": "TOR",
+      "rating": 1515.3,
+      "delta": 15.3,
+      "implied_wp": 0.522,
       "wins": 28,
       "losses": 29,
       "rank": 10
@@ -131,12 +131,12 @@
       "rank": 11
     },
     {
-      "team": "Toronto Blue Jays",
-      "abbr": "TOR",
-      "rating": 1513.3,
-      "delta": 13.3,
-      "implied_wp": 0.5191,
-      "wins": 27,
+      "team": "Seattle Mariners",
+      "abbr": "SEA",
+      "rating": 1513.4,
+      "delta": 13.4,
+      "implied_wp": 0.5193,
+      "wins": 28,
       "losses": 29,
       "rank": 12
     },
@@ -161,14 +161,24 @@
       "rank": 14
     },
     {
+      "team": "Houston Astros",
+      "abbr": "HOU",
+      "rating": 1501.0,
+      "delta": 1.0,
+      "implied_wp": 0.5015,
+      "wins": 26,
+      "losses": 32,
+      "rank": 15
+    },
+    {
       "team": "Boston Red Sox",
       "abbr": "BOS",
-      "rating": 1502.3,
-      "delta": 2.3,
-      "implied_wp": 0.5033,
+      "rating": 1500.3,
+      "delta": 0.3,
+      "implied_wp": 0.5004,
       "wins": 23,
-      "losses": 31,
-      "rank": 15
+      "losses": 32,
+      "rank": 16
     },
     {
       "team": "Cleveland Indians",
@@ -178,16 +188,6 @@
       "implied_wp": 0.4988,
       "wins": 0,
       "losses": 0,
-      "rank": 16
-    },
-    {
-      "team": "Houston Astros",
-      "abbr": "HOU",
-      "rating": 1498.9,
-      "delta": -1.1,
-      "implied_wp": 0.4985,
-      "wins": 25,
-      "losses": 32,
       "rank": 17
     },
     {
@@ -203,31 +203,31 @@
     {
       "team": "Baltimore Orioles",
       "abbr": "BAL",
-      "rating": 1493.2,
-      "delta": -6.8,
-      "implied_wp": 0.4902,
+      "rating": 1491.1,
+      "delta": -8.9,
+      "implied_wp": 0.4873,
       "wins": 26,
-      "losses": 30,
+      "losses": 31,
       "rank": 19
     },
     {
       "team": "Pittsburgh Pirates",
       "abbr": "PIT",
-      "rating": 1491.7,
-      "delta": -8.3,
-      "implied_wp": 0.488,
+      "rating": 1489.7,
+      "delta": -10.3,
+      "implied_wp": 0.4852,
       "wins": 29,
-      "losses": 27,
+      "losses": 28,
       "rank": 20
     },
     {
       "team": "Texas Rangers",
       "abbr": "TEX",
-      "rating": 1491.4,
-      "delta": -8.6,
-      "implied_wp": 0.4876,
+      "rating": 1489.3,
+      "delta": -10.7,
+      "implied_wp": 0.4846,
       "wins": 25,
-      "losses": 30,
+      "losses": 31,
       "rank": 21
     },
     {
@@ -261,26 +261,6 @@
       "rank": 24
     },
     {
-      "team": "Detroit Tigers",
-      "abbr": "DET",
-      "rating": 1480.8,
-      "delta": -19.2,
-      "implied_wp": 0.4724,
-      "wins": 22,
-      "losses": 34,
-      "rank": 25
-    },
-    {
-      "team": "Minnesota Twins",
-      "abbr": "MIN",
-      "rating": 1479.4,
-      "delta": -20.6,
-      "implied_wp": 0.4704,
-      "wins": 27,
-      "losses": 29,
-      "rank": 26
-    },
-    {
       "team": "San Francisco Giants",
       "abbr": "SF",
       "rating": 1479.0,
@@ -288,7 +268,17 @@
       "implied_wp": 0.4698,
       "wins": 22,
       "losses": 34,
-      "rank": 27
+      "rank": 25
+    },
+    {
+      "team": "Detroit Tigers",
+      "abbr": "DET",
+      "rating": 1478.5,
+      "delta": -21.5,
+      "implied_wp": 0.4692,
+      "wins": 22,
+      "losses": 35,
+      "rank": 26
     },
     {
       "team": "Kansas City Royals",
@@ -298,6 +288,16 @@
       "implied_wp": 0.4691,
       "wins": 22,
       "losses": 34,
+      "rank": 27
+    },
+    {
+      "team": "Minnesota Twins",
+      "abbr": "MIN",
+      "rating": 1477.5,
+      "delta": -22.5,
+      "implied_wp": 0.4676,
+      "wins": 27,
+      "losses": 30,
       "rank": 28
     },
     {
@@ -313,20 +313,20 @@
     {
       "team": "Chicago White Sox",
       "abbr": "CWS",
-      "rating": 1463.4,
-      "delta": -36.6,
-      "implied_wp": 0.4475,
-      "wins": 28,
+      "rating": 1465.3,
+      "delta": -34.7,
+      "implied_wp": 0.4503,
+      "wins": 29,
       "losses": 27,
       "rank": 30
     },
     {
       "team": "Los Angeles Angels",
       "abbr": "LAA",
-      "rating": 1453.9,
-      "delta": -46.1,
-      "implied_wp": 0.434,
-      "wins": 21,
+      "rating": 1456.1,
+      "delta": -43.9,
+      "implied_wp": 0.4372,
+      "wins": 22,
       "losses": 35,
       "rank": 31
     },
@@ -342,6 +342,102 @@
     }
   ],
   "recent_games": [
+    {
+      "date": "2026-05-28",
+      "game_pk": 824834,
+      "home_team": "Baltimore Orioles",
+      "away_team": "Toronto Blue Jays",
+      "home_abbr": "BAL",
+      "away_abbr": "TOR",
+      "home_elo_pre": 1493.2,
+      "away_elo_pre": 1513.3,
+      "home_prob": 0.5056,
+      "away_prob": 0.4944,
+      "home_score": 1,
+      "away_score": 2,
+      "home_win": 0,
+      "model_correct": false
+    },
+    {
+      "date": "2026-05-28",
+      "game_pk": 824757,
+      "home_team": "Boston Red Sox",
+      "away_team": "Atlanta Braves",
+      "home_abbr": "BOS",
+      "away_abbr": "ATL",
+      "home_elo_pre": 1502.3,
+      "away_elo_pre": 1531.9,
+      "home_prob": 0.4918,
+      "away_prob": 0.5082,
+      "home_score": 2,
+      "away_score": 10,
+      "home_win": 0,
+      "model_correct": true
+    },
+    {
+      "date": "2026-05-28",
+      "game_pk": 824595,
+      "home_team": "Chicago White Sox",
+      "away_team": "Minnesota Twins",
+      "home_abbr": "CWS",
+      "away_abbr": "MIN",
+      "home_elo_pre": 1463.4,
+      "away_elo_pre": 1479.4,
+      "home_prob": 0.5114,
+      "away_prob": 0.4886,
+      "home_score": 6,
+      "away_score": 2,
+      "home_win": 1,
+      "model_correct": true
+    },
+    {
+      "date": "2026-05-28",
+      "game_pk": 824272,
+      "home_team": "Detroit Tigers",
+      "away_team": "Los Angeles Angels",
+      "home_abbr": "DET",
+      "away_abbr": "LAA",
+      "home_elo_pre": 1480.8,
+      "away_elo_pre": 1453.9,
+      "home_prob": 0.5728,
+      "away_prob": 0.4272,
+      "home_score": 1,
+      "away_score": 7,
+      "home_win": 0,
+      "model_correct": false
+    },
+    {
+      "date": "2026-05-28",
+      "game_pk": 823378,
+      "home_team": "Pittsburgh Pirates",
+      "away_team": "Chicago Cubs",
+      "home_abbr": "PIT",
+      "away_abbr": "CHC",
+      "home_elo_pre": 1491.7,
+      "away_elo_pre": 1519.4,
+      "home_prob": 0.4947,
+      "away_prob": 0.5053,
+      "home_score": 2,
+      "away_score": 7,
+      "home_win": 0,
+      "model_correct": true
+    },
+    {
+      "date": "2026-05-28",
+      "game_pk": 822896,
+      "home_team": "Texas Rangers",
+      "away_team": "Houston Astros",
+      "home_abbr": "TEX",
+      "away_abbr": "HOU",
+      "home_elo_pre": 1491.4,
+      "away_elo_pre": 1498.9,
+      "home_prob": 0.5236,
+      "away_prob": 0.4764,
+      "home_score": 1,
+      "away_score": 5,
+      "home_win": 0,
+      "model_correct": false
+    },
     {
       "date": "2026-05-27",
       "game_pk": 825003,
@@ -723,102 +819,6 @@
       "away_prob": 0.4081,
       "home_score": 6,
       "away_score": 0,
-      "home_win": 1,
-      "model_correct": true
-    },
-    {
-      "date": "2026-05-26",
-      "game_pk": 823624,
-      "home_team": "New York Mets",
-      "away_team": "Cincinnati Reds",
-      "home_abbr": "NYM",
-      "away_abbr": "CIN",
-      "home_elo_pre": 1482.5,
-      "away_elo_pre": 1505.6,
-      "home_prob": 0.5013,
-      "away_prob": 0.4987,
-      "home_score": 2,
-      "away_score": 7,
-      "home_win": 0,
-      "model_correct": false
-    },
-    {
-      "date": "2026-05-26",
-      "game_pk": 823379,
-      "home_team": "Pittsburgh Pirates",
-      "away_team": "Chicago Cubs",
-      "home_abbr": "PIT",
-      "away_abbr": "CHC",
-      "home_elo_pre": 1491.7,
-      "away_elo_pre": 1519.4,
-      "home_prob": 0.4946,
-      "away_prob": 0.5054,
-      "home_score": 12,
-      "away_score": 1,
-      "home_win": 1,
-      "model_correct": false
-    },
-    {
-      "date": "2026-05-26",
-      "game_pk": 823294,
-      "home_team": "San Diego Padres",
-      "away_team": "Philadelphia Phillies",
-      "home_abbr": "SD",
-      "away_abbr": "PHI",
-      "home_elo_pre": 1529.1,
-      "away_elo_pre": 1525.0,
-      "home_prob": 0.5404,
-      "away_prob": 0.4596,
-      "home_score": 3,
-      "away_score": 4,
-      "home_win": 0,
-      "model_correct": false
-    },
-    {
-      "date": "2026-05-26",
-      "game_pk": 823216,
-      "home_team": "San Francisco Giants",
-      "away_team": "Arizona Diamondbacks",
-      "home_abbr": "SF",
-      "away_abbr": "ARI",
-      "home_elo_pre": 1482.9,
-      "away_elo_pre": 1509.5,
-      "home_prob": 0.4963,
-      "away_prob": 0.5037,
-      "home_score": 5,
-      "away_score": 7,
-      "home_win": 0,
-      "model_correct": true
-    },
-    {
-      "date": "2026-05-26",
-      "game_pk": 822898,
-      "home_team": "Texas Rangers",
-      "away_team": "Houston Astros",
-      "home_abbr": "TEX",
-      "away_abbr": "HOU",
-      "home_elo_pre": 1491.6,
-      "away_elo_pre": 1498.7,
-      "home_prob": 0.5243,
-      "away_prob": 0.4757,
-      "home_score": 10,
-      "away_score": 7,
-      "home_win": 1,
-      "model_correct": true
-    },
-    {
-      "date": "2026-05-26",
-      "game_pk": 822811,
-      "home_team": "Toronto Blue Jays",
-      "away_team": "Miami Marlins",
-      "home_abbr": "TOR",
-      "away_abbr": "MIA",
-      "home_elo_pre": 1509.8,
-      "away_elo_pre": 1490.2,
-      "home_prob": 0.5624,
-      "away_prob": 0.4376,
-      "home_score": 8,
-      "away_score": 1,
       "home_win": 1,
       "model_correct": true
     }
