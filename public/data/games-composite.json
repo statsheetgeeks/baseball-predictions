@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-01T14:24:30.231659+00:00",
+  "updated": "2026-06-01T19:20:23.301158+00:00",
   "date": "2026-06-01",
   "predictions": [
     {
@@ -165,33 +165,6 @@
       "correct": null
     },
     {
-      "game_time": "7:10 PM ET",
-      "away_team": "Kansas City Royals",
-      "home_team": "Cincinnati Reds",
-      "log5": {
-        "pick": "Cincinnati Reds",
-        "confidence": 0.6631
-      },
-      "research": {
-        "pick": "Cincinnati Reds",
-        "confidence": 0.5004
-      },
-      "xgboost": {
-        "pick": "Cincinnati Reds",
-        "confidence": 0.5079
-      },
-      "random_forest": {
-        "pick": "Cincinnati Reds",
-        "confidence": 0.5048
-      },
-      "composite_pick": "Cincinnati Reds",
-      "composite_confidence": 0.5441,
-      "vote_count": 4,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
       "game_time": "9:38 PM ET",
       "away_team": "Colorado Rockies",
       "home_team": "Los Angeles Angels",
@@ -214,6 +187,33 @@
       "composite_pick": "Los Angeles Angels",
       "composite_confidence": 0.5371,
       "vote_count": 3,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "7:10 PM ET",
+      "away_team": "Kansas City Royals",
+      "home_team": "Cincinnati Reds",
+      "log5": {
+        "pick": "Cincinnati Reds",
+        "confidence": 0.6631
+      },
+      "research": {
+        "pick": "Cincinnati Reds",
+        "confidence": 0.5004
+      },
+      "xgboost": {
+        "pick": "Kansas City Royals",
+        "confidence": 0.5447
+      },
+      "random_forest": {
+        "pick": "Kansas City Royals",
+        "confidence": 0.5288
+      },
+      "composite_pick": "Cincinnati Reds",
+      "composite_confidence": 0.5225,
+      "vote_count": 2,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
