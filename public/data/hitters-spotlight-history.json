@@ -14,9 +14,26 @@
             "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 11,
+            "Log5 Hit": 10,
             "HR Model": 19,
-            "ML HR": 7
+            "ML HR": 8
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "JJ Bleday",
+          "team": "CIN",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 15,
+            "HR Model": 12,
+            "ML HR": 6
           },
           "actual_hit": null,
           "actual_hr": null
@@ -32,25 +49,8 @@
           ],
           "ranks": {
             "ML Hit": 25,
-            "HR Model": 16,
-            "ML HR": 10
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Mike Trout",
-          "team": "LAA",
-          "appearances": 3,
-          "models": [
-            "HR Model",
-            "Log5 Hit",
-            "ML HR"
-          ],
-          "ranks": {
-            "Log5 Hit": 24,
-            "HR Model": 6,
-            "ML HR": 11
+            "HR Model": 17,
+            "ML HR": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -66,8 +66,8 @@
           ],
           "ranks": {
             "ML Hit": 5,
-            "HR Model": 21,
-            "ML HR": 4
+            "HR Model": 22,
+            "ML HR": 5
           },
           "actual_hit": null,
           "actual_hr": null
@@ -83,8 +83,8 @@
           ],
           "ranks": {
             "Log5 Hit": 6,
-            "HR Model": 1,
-            "ML HR": 5
+            "HR Model": 2,
+            "ML HR": 14
           },
           "actual_hit": null,
           "actual_hr": null
@@ -100,8 +100,8 @@
           ],
           "ranks": {
             "Log5 Hit": 13,
-            "HR Model": 13,
-            "ML HR": 21
+            "HR Model": 14,
+            "ML HR": 17
           },
           "actual_hit": null,
           "actual_hr": null
@@ -116,7 +116,7 @@
           ],
           "ranks": {
             "ML Hit": 24,
-            "ML HR": 13
+            "ML HR": 11
           },
           "actual_hit": null,
           "actual_hr": null
@@ -205,7 +205,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 12,
+            "Log5 Hit": 11,
             "ML Hit": 12
           },
           "actual_hit": null,
@@ -236,7 +236,7 @@
           ],
           "ranks": {
             "HR Model": 18,
-            "ML HR": 15
+            "ML HR": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -250,23 +250,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 23,
-            "ML HR": 8
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "JJ Bleday",
-          "team": "CIN",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "Log5 Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 15,
-            "HR Model": 9
+            "HR Model": 21,
+            "ML HR": 9
           },
           "actual_hit": null,
           "actual_hr": null
@@ -287,21 +272,6 @@
           "actual_hr": null
         },
         {
-          "player": "Jo Adell",
-          "team": "LAA",
-          "appearances": 2,
-          "models": [
-            "Log5 Hit",
-            "ML HR"
-          ],
-          "ranks": {
-            "Log5 Hit": 4,
-            "ML HR": 23
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Jordan Walker",
           "team": "STL",
           "appearances": 2,
@@ -310,8 +280,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 12,
-            "ML HR": 17
+            "HR Model": 13,
+            "ML HR": 16
           },
           "actual_hit": null,
           "actual_hr": null
@@ -341,7 +311,7 @@
           ],
           "ranks": {
             "HR Model": 4,
-            "ML HR": 22
+            "ML HR": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -355,8 +325,23 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 10,
+            "Log5 Hit": 12,
             "ML Hit": 7
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Mike Trout",
+          "team": "LAA",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "Log5 Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 24,
+            "HR Model": 6
           },
           "actual_hit": null,
           "actual_hr": null
@@ -371,7 +356,7 @@
           ],
           "ranks": {
             "HR Model": 25,
-            "ML HR": 9
+            "ML HR": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -415,8 +400,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 14,
-            "ML HR": 20
+            "HR Model": 11,
+            "ML HR": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -430,7 +415,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 17,
+            "Log5 Hit": 18,
             "ML Hit": 15
           },
           "actual_hit": null,
