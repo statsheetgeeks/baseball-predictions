@@ -6,15 +6,6 @@
       "predictions": [
         {
           "rank": 1,
-          "player": "Jose Siri",
-          "team": "LAA",
-          "score": 77,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 2,
           "player": "Shea Langeliers",
           "team": "ATH",
           "score": 76,
@@ -23,7 +14,7 @@
           "correct": null
         },
         {
-          "rank": 3,
+          "rank": 2,
           "player": "Brandon Lowe",
           "team": "PIT",
           "score": 74,
@@ -32,7 +23,7 @@
           "correct": null
         },
         {
-          "rank": 4,
+          "rank": 3,
           "player": "Nick Kurtz",
           "team": "ATH",
           "score": 71,
@@ -41,7 +32,7 @@
           "correct": null
         },
         {
-          "rank": 5,
+          "rank": 4,
           "player": "Mike Trout",
           "team": "LAA",
           "score": 71,
@@ -50,9 +41,18 @@
           "correct": null
         },
         {
-          "rank": 6,
+          "rank": 5,
           "player": "James Wood",
           "team": "WSH",
+          "score": 69,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 6,
+          "player": "JJ Bleday",
+          "team": "CIN",
           "score": 69,
           "confidence": "medium",
           "actual_hr": null,
@@ -96,15 +96,6 @@
         },
         {
           "rank": 11,
-          "player": "JJ Bleday",
-          "team": "CIN",
-          "score": 68,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 12,
           "player": "Yordan Alvarez",
           "team": "HOU",
           "score": 68,
@@ -113,7 +104,7 @@
           "correct": null
         },
         {
-          "rank": 13,
+          "rank": 12,
           "player": "Carlos Cortes",
           "team": "ATH",
           "score": 67,
@@ -122,7 +113,7 @@
           "correct": null
         },
         {
-          "rank": 14,
+          "rank": 13,
           "player": "Wade Meckler",
           "team": "LAA",
           "score": 67,
@@ -131,7 +122,7 @@
           "correct": null
         },
         {
-          "rank": 15,
+          "rank": 14,
           "player": "Juan Soto",
           "team": "NYM",
           "score": 67,
@@ -140,7 +131,7 @@
           "correct": null
         },
         {
-          "rank": 16,
+          "rank": 15,
           "player": "Corbin Carroll",
           "team": "AZ",
           "score": 66,
@@ -149,7 +140,7 @@
           "correct": null
         },
         {
-          "rank": 17,
+          "rank": 16,
           "player": "Dillon Dingler",
           "team": "DET",
           "score": 65,
@@ -158,16 +149,7 @@
           "correct": null
         },
         {
-          "rank": 18,
-          "player": "Gavin Sheets",
-          "team": "SD",
-          "score": 65,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 19,
+          "rank": 17,
           "player": "Oneil Cruz",
           "team": "PIT",
           "score": 65,
@@ -176,7 +158,7 @@
           "correct": null
         },
         {
-          "rank": 20,
+          "rank": 18,
           "player": "Junior Caminero",
           "team": "TB",
           "score": 64,
@@ -185,9 +167,27 @@
           "correct": null
         },
         {
-          "rank": 21,
+          "rank": 19,
+          "player": "Gavin Sheets",
+          "team": "SD",
+          "score": 64,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 20,
           "player": "CJ Abrams",
           "team": "WSH",
+          "score": 64,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 21,
+          "player": "Miguel Vargas",
+          "team": "CWS",
           "score": 64,
           "confidence": "medium",
           "actual_hr": null,
