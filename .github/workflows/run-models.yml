@@ -96,6 +96,9 @@ jobs:
 
       - name: Run Research — Elo Ratings
         run: python models/research_elo.py
+        
+      - name: Run Research — Team Metrics
+        run: python models/research_team_metrics.py
 
       # - name: Run Pitchers — Strikeout
       #   run: python models/pitchers_strikeout.py
