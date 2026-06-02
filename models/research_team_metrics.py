@@ -25,6 +25,12 @@ Combines two models into a single daily output:
     - MAE  (mean absolute error)
     - RMSE (root mean squared error)
 
+Note on team name matching:
+  All three API endpoints (standings, hitting stats, pitching stats) return
+  team names from the same MLB Stats API, so the names match exactly without
+  any hardcoded list or filtering. We simply use the standings endpoint as
+  the authoritative set of 30 active teams and key everything off that.
+
 Workflow:
   Runs daily via GitHub Actions after research_elo.py.
   Writes public/data/research-team-metrics.json.
@@ -49,18 +55,6 @@ SEASON           = datetime.now().year
 PYTHAG_EXPONENT  = 1.83
 MLB_API          = 'https://statsapi.mlb.com/api/v1'
 
-MLB_TEAMS = [
-    'Arizona Diamondbacks', 'Atlanta Braves', 'Baltimore Orioles',
-    'Boston Red Sox', 'Chicago Cubs', 'Chicago White Sox',
-    'Cincinnati Reds', 'Cleveland Guardians', 'Colorado Rockies',
-    'Detroit Tigers', 'Houston Astros', 'Kansas City Royals',
-    'Los Angeles Angels', 'Los Angeles Dodgers', 'Miami Marlins',
-    'Milwaukee Brewers', 'Minnesota Twins', 'New York Mets',
-    'New York Yankees', 'Athletics', 'Philadelphia Phillies',
-    'Pittsburgh Pirates', 'San Diego Padres', 'San Francisco Giants',
-    'Seattle Mariners', 'St. Louis Cardinals', 'Tampa Bay Rays',
-    'Texas Rangers', 'Toronto Blue Jays', 'Washington Nationals',
-]
 
 # ── API helpers ───────────────────────────────────────────────────────────────
 def get_json(url, params=None):
@@ -114,7 +108,8 @@ def rmse(predicted, actual):
 
 # ── Data fetching ─────────────────────────────────────────────────────────────
 def fetch_standings():
-    """Fetch actual W-L records keyed by team name."""
+    """Fetch actual W-L records keyed by team name.
+    Also returns the set of authoritative team names from the API."""
     data = get_json(f'{MLB_API}/standings', {'leagueId': '103,104', 'season': SEASON})
     records = {}
     for division in data['records']:
@@ -128,16 +123,16 @@ def fetch_standings():
 
 
 def fetch_hitting():
-    """Fetch team hitting stats; returns dict keyed by team name."""
+    """Fetch team hitting stats; returns dict keyed by API team name.
+    No name filtering — we accept whatever the API returns and let the
+    standings dict control which teams appear in the final output."""
     data = get_json(f'{MLB_API}/teams/stats', {
         'stats': 'season', 'group': 'hitting', 'sportIds': 1, 'season': SEASON,
     })
     hitting = {}
     for split in data['stats'][0]['splits']:
-        name = split['team']['name']
-        if name not in MLB_TEAMS:
-            continue
-        s = split['stat']
+        name  = split['team']['name']
+        s     = split['stat']
         games = int(s.get('gamesPlayed', 0))
         if games == 0:
             continue
@@ -149,62 +144,51 @@ def fetch_hitting():
             'slg':   float(s.get('slg', 0)),
             'tb_g':  total_bases / games,
             'bb_g':  walks / games,
+            'runs':  int(s.get('runs', 0)),   # actual RS for Pythagorean
         }
     return hitting
 
 
 def fetch_pitching():
-    """Fetch team pitching stats; returns dict keyed by team name.
-    Also includes actual runs allowed for the Pythagorean model."""
+    """Fetch team pitching stats; returns dict keyed by API team name.
+    No name filtering — same rationale as fetch_hitting."""
     data = get_json(f'{MLB_API}/teams/stats', {
         'stats': 'season', 'group': 'pitching', 'sportIds': 1, 'season': SEASON,
     })
     pitching = {}
     for split in data['stats'][0]['splits']:
         name = split['team']['name']
-        if name not in MLB_TEAMS:
-            continue
-        s  = split['stat']
-        ip = float(s.get('inningsPitched', 0))
+        s    = split['stat']
+        ip   = float(s.get('inningsPitched', 0))
         if ip == 0:
             continue
         hits  = int(s.get('hits', 0))
         hr    = int(s.get('homeRuns', 0))
         walks = int(s.get('baseOnBalls', 0))
         pitching[name] = {
-            'whip': float(s.get('whip', 0)),
-            'h9':   (hits  * 9) / ip,
-            'hr9':  (hr    * 9) / ip,
-            'bb9':  (walks * 9) / ip,
+            'whip':         float(s.get('whip', 0)),
+            'h9':           (hits  * 9) / ip,
+            'hr9':          (hr    * 9) / ip,
+            'bb9':          (walks * 9) / ip,
             'runs_allowed': int(s.get('runs', 0)),   # actual RA for Pythagorean
         }
     return pitching
 
 
-def fetch_hitting_runs():
-    """Fetch actual runs scored per team for the Pythagorean model."""
-    data = get_json(f'{MLB_API}/teams/stats', {
-        'stats': 'season', 'group': 'hitting', 'sportIds': 1, 'season': SEASON,
-    })
-    runs = {}
-    for split in data['stats'][0]['splits']:
-        name = split['team']['name']
-        runs[name] = int(split['stat'].get('runs', 0))
-    return runs
-
-
 # ── Model builder ─────────────────────────────────────────────────────────────
-def build_team_rows(standings, hitting, pitching, runs_scored):
+def build_team_rows(standings, hitting, pitching):
+    """Iterate over teams in standings (the authoritative 30-team set)
+    and join hitting/pitching by the same API-provided name."""
     rows = []
 
-    for name in MLB_TEAMS:
-        if name not in standings or name not in hitting or name not in pitching:
+    for name, rec in standings.items():
+        if name not in hitting or name not in pitching:
+            print(f'  SKIP {name}: missing hitting={name in hitting} pitching={name in pitching}')
             continue
 
-        rec    = standings[name]
         hit    = hitting[name]
         pit    = pitching[name]
-        rs_act = runs_scored.get(name, 0)
+        rs_act = hit['runs']
         ra_act = pit['runs_allowed']
 
         wins   = rec['wins']
@@ -222,16 +206,16 @@ def build_team_rows(standings, hitting, pitching, runs_scored):
         pred_rs = pred_r_g  * games
         pred_ra = pred_ra_g * games
 
-        formula_wp   = pythag_win_pct(pred_rs, pred_ra)
-        formula_wins = round(formula_wp * games)
+        formula_wp     = pythag_win_pct(pred_rs, pred_ra)
+        formula_wins   = round(formula_wp * games)
         formula_losses = games - formula_wins
-        formula_diff   = formula_wins - wins          # positive = model > actual ("unlucky")
+        formula_diff   = formula_wins - wins     # positive = model > actual ("unlucky")
 
         # ── Pythagorean model (actual RS/RA) ─────────────────────────────────
         pythag_wp     = pythag_win_pct(rs_act, ra_act)
         pythag_wins   = round(pythag_wp * games)
         pythag_losses = games - pythag_wins
-        pythag_diff   = pythag_wins - wins            # same sign convention
+        pythag_diff   = pythag_wins - wins       # same sign convention
 
         rows.append({
             'team':           name,
@@ -291,18 +275,19 @@ def run():
 
     print('Fetching standings...')
     standings = fetch_standings()
+    print(f'  {len(standings)} teams in standings')
 
     print('Fetching hitting stats...')
     hitting = fetch_hitting()
+    print(f'  {len(hitting)} teams with hitting data')
 
     print('Fetching pitching stats...')
     pitching = fetch_pitching()
-
-    print('Fetching actual runs scored...')
-    runs_scored = fetch_hitting_runs()
+    print(f'  {len(pitching)} teams with pitching data')
 
     print('Building team rows...')
-    rows = build_team_rows(standings, hitting, pitching, runs_scored)
+    rows = build_team_rows(standings, hitting, pitching)
+    print(f'  {len(rows)} teams built')
 
     print('Computing accuracy metrics...')
     accuracy = build_accuracy(rows)
