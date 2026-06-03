@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-03T16:10:42Z",
+  "updated": "2026-06-03T18:34:10Z",
   "season": 2026,
   "exponent": 1.83,
   "teams": [
@@ -109,19 +109,19 @@
       "pythag_wp": 0.53
     },
     {
-      "team": "Tampa Bay Rays",
-      "games": 58,
-      "actual_wins": 36,
-      "actual_losses": 22,
-      "actual_wp": 0.621,
-      "formula_wins": 31,
-      "formula_losses": 27,
-      "formula_diff": -5,
-      "formula_wp": 0.527,
-      "pythag_wins": 30,
-      "pythag_losses": 28,
-      "pythag_diff": -6,
-      "pythag_wp": 0.517
+      "team": "Chicago White Sox",
+      "games": 61,
+      "actual_wins": 32,
+      "actual_losses": 29,
+      "actual_wp": 0.525,
+      "formula_wins": 32,
+      "formula_losses": 29,
+      "formula_diff": 0,
+      "formula_wp": 0.525,
+      "pythag_wins": 31,
+      "pythag_losses": 30,
+      "pythag_diff": -1,
+      "pythag_wp": 0.511
     },
     {
       "team": "Texas Rangers",
@@ -139,19 +139,19 @@
       "pythag_wp": 0.521
     },
     {
-      "team": "Chicago White Sox",
-      "games": 61,
-      "actual_wins": 32,
-      "actual_losses": 29,
-      "actual_wp": 0.525,
-      "formula_wins": 32,
-      "formula_losses": 29,
-      "formula_diff": 0,
+      "team": "Tampa Bay Rays",
+      "games": 58,
+      "actual_wins": 36,
+      "actual_losses": 22,
+      "actual_wp": 0.621,
+      "formula_wins": 30,
+      "formula_losses": 28,
+      "formula_diff": -6,
       "formula_wp": 0.517,
-      "pythag_wins": 31,
-      "pythag_losses": 30,
-      "pythag_diff": -1,
-      "pythag_wp": 0.505
+      "pythag_wins": 30,
+      "pythag_losses": 28,
+      "pythag_diff": -6,
+      "pythag_wp": 0.51
     },
     {
       "team": "Arizona Diamondbacks",
@@ -177,7 +177,7 @@
       "formula_wins": 31,
       "formula_losses": 31,
       "formula_diff": 3,
-      "formula_wp": 0.497,
+      "formula_wp": 0.506,
       "pythag_wins": 29,
       "pythag_losses": 33,
       "pythag_diff": 1,
@@ -192,11 +192,11 @@
       "formula_wins": 31,
       "formula_losses": 31,
       "formula_diff": 7,
-      "formula_wp": 0.495,
+      "formula_wp": 0.498,
       "pythag_wins": 28,
       "pythag_losses": 34,
       "pythag_diff": 4,
-      "pythag_wp": 0.447
+      "pythag_wp": 0.454
     },
     {
       "team": "Cleveland Guardians",
@@ -212,21 +212,6 @@
       "pythag_losses": 30,
       "pythag_diff": -3,
       "pythag_wp": 0.511
-    },
-    {
-      "team": "Washington Nationals",
-      "games": 62,
-      "actual_wins": 31,
-      "actual_losses": 31,
-      "actual_wp": 0.5,
-      "formula_wins": 30,
-      "formula_losses": 32,
-      "formula_diff": -1,
-      "formula_wp": 0.482,
-      "pythag_wins": 30,
-      "pythag_losses": 32,
-      "pythag_diff": -1,
-      "pythag_wp": 0.49
     },
     {
       "team": "Boston Red Sox",
@@ -259,6 +244,21 @@
       "pythag_wp": 0.485
     },
     {
+      "team": "Washington Nationals",
+      "games": 62,
+      "actual_wins": 31,
+      "actual_losses": 31,
+      "actual_wp": 0.5,
+      "formula_wins": 30,
+      "formula_losses": 32,
+      "formula_diff": -1,
+      "formula_wp": 0.476,
+      "pythag_wins": 30,
+      "pythag_losses": 32,
+      "pythag_diff": -1,
+      "pythag_wp": 0.49
+    },
+    {
       "team": "San Diego Padres",
       "games": 59,
       "actual_wins": 32,
@@ -282,11 +282,11 @@
       "formula_wins": 28,
       "formula_losses": 34,
       "formula_diff": -1,
-      "formula_wp": 0.453,
+      "formula_wp": 0.454,
       "pythag_wins": 29,
       "pythag_losses": 33,
       "pythag_diff": 0,
-      "pythag_wp": 0.475
+      "pythag_wp": 0.47
     },
     {
       "team": "Athletics",
@@ -456,16 +456,16 @@
   ],
   "accuracy": {
     "correlation": {
-      "formula": 0.7796,
-      "pythag": 0.8591
+      "formula": 0.7694,
+      "pythag": 0.8536
     },
     "mae": {
-      "formula": 0.0437,
-      "pythag": 0.0353
+      "formula": 0.0443,
+      "pythag": 0.0354
     },
     "rmse": {
-      "formula": 0.0525,
-      "pythag": 0.0437
+      "formula": 0.0536,
+      "pythag": 0.0445
     }
   }
 }
