@@ -5,23 +5,6 @@
       "graded": false,
       "players": [
         {
-          "player": "Aaron Judge",
-          "team": "NYY",
-          "appearances": 3,
-          "models": [
-            "HR Model",
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 10,
-            "HR Model": 10,
-            "ML HR": 7
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Andy Pages",
           "team": "LAD",
           "appearances": 3,
@@ -33,7 +16,7 @@
           "ranks": {
             "ML Hit": 20,
             "HR Model": 7,
-            "ML HR": 10
+            "ML HR": 8
           },
           "actual_hit": null,
           "actual_hr": null
@@ -49,8 +32,8 @@
           ],
           "ranks": {
             "Log5 Hit": 15,
-            "HR Model": 2,
-            "ML HR": 13
+            "HR Model": 5,
+            "ML HR": 14
           },
           "actual_hit": null,
           "actual_hr": null
@@ -73,40 +56,6 @@
           "actual_hr": null
         },
         {
-          "player": "Cody Bellinger",
-          "team": "NYY",
-          "appearances": 3,
-          "models": [
-            "Log5 Hit",
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 18,
-            "ML Hit": 3,
-            "ML HR": 22
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Freddie Freeman",
-          "team": "LAD",
-          "appearances": 3,
-          "models": [
-            "HR Model",
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 16,
-            "HR Model": 20,
-            "ML HR": 18
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Jake Bauers",
           "team": "MIL",
           "appearances": 3,
@@ -118,7 +67,7 @@
           "ranks": {
             "Log5 Hit": 24,
             "ML Hit": 15,
-            "HR Model": 18
+            "HR Model": 16
           },
           "actual_hit": null,
           "actual_hr": null
@@ -134,8 +83,8 @@
           ],
           "ranks": {
             "ML Hit": 17,
-            "HR Model": 5,
-            "ML HR": 8
+            "HR Model": 4,
+            "ML HR": 12
           },
           "actual_hit": null,
           "actual_hr": null
@@ -152,7 +101,7 @@
           "ranks": {
             "Log5 Hit": 16,
             "ML Hit": 12,
-            "HR Model": 16
+            "HR Model": 14
           },
           "actual_hit": null,
           "actual_hr": null
@@ -167,9 +116,41 @@
             "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 6,
+            "Log5 Hit": 5,
             "HR Model": 8,
-            "ML HR": 14
+            "ML HR": 21
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Willson Contreras",
+          "team": "BOS",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 21,
+            "HR Model": 12,
+            "ML HR": 22
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Aaron Judge",
+          "team": "NYY",
+          "appearances": 2,
+          "models": [
+            "ML HR",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 10,
+            "ML HR": 7
           },
           "actual_hit": null,
           "actual_hr": null
@@ -190,21 +171,6 @@
           "actual_hr": null
         },
         {
-          "player": "Austin Wells",
-          "team": "NYY",
-          "appearances": 2,
-          "models": [
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 24,
-            "ML HR": 23
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Brandon Lowe",
           "team": "PIT",
           "appearances": 2,
@@ -213,8 +179,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 19,
-            "ML HR": 16
+            "HR Model": 17,
+            "ML HR": 17
           },
           "actual_hit": null,
           "actual_hr": null
@@ -235,6 +201,21 @@
           "actual_hr": null
         },
         {
+          "player": "Cody Bellinger",
+          "team": "NYY",
+          "appearances": 2,
+          "models": [
+            "Log5 Hit",
+            "ML Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 18,
+            "ML Hit": 3
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
           "player": "Dalton Rushing",
           "team": "LAD",
           "appearances": 2,
@@ -243,8 +224,23 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 3,
-            "ML HR": 15
+            "HR Model": 2,
+            "ML HR": 23
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Freddie Freeman",
+          "team": "LAD",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 16,
+            "HR Model": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -258,7 +254,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 11,
+            "Log5 Hit": 13,
             "ML Hit": 1
           },
           "actual_hit": null,
@@ -274,7 +270,7 @@
           ],
           "ranks": {
             "ML Hit": 21,
-            "ML HR": 21
+            "ML HR": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -288,7 +284,7 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 4,
+            "HR Model": 3,
             "ML HR": 1
           },
           "actual_hit": null,
@@ -303,7 +299,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 12,
+            "Log5 Hit": 11,
             "ML Hit": 9
           },
           "actual_hit": null,
@@ -319,7 +315,7 @@
           ],
           "ranks": {
             "ML Hit": 8,
-            "HR Model": 23
+            "HR Model": 20
           },
           "actual_hit": null,
           "actual_hr": null
@@ -333,7 +329,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 13,
+            "Log5 Hit": 12,
             "ML Hit": 25
           },
           "actual_hit": null,
@@ -348,7 +344,7 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 14,
+            "HR Model": 13,
             "ML HR": 9
           },
           "actual_hit": null,
@@ -363,8 +359,8 @@
             "Log5 Hit"
           ],
           "ranks": {
-            "Log5 Hit": 5,
-            "HR Model": 22
+            "Log5 Hit": 6,
+            "HR Model": 19
           },
           "actual_hit": null,
           "actual_hr": null
@@ -379,7 +375,7 @@
           ],
           "ranks": {
             "Log5 Hit": 22,
-            "HR Model": 11
+            "HR Model": 10
           },
           "actual_hit": null,
           "actual_hr": null
@@ -410,21 +406,6 @@
           "ranks": {
             "Log5 Hit": 7,
             "ML Hit": 7
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Willson Contreras",
-          "team": "BOS",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "Log5 Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 21,
-            "HR Model": 13
           },
           "actual_hit": null,
           "actual_hr": null
