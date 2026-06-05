@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-05T21:40:26Z",
+  "updated": "2026-06-05T22:41:51Z",
   "season": 2026,
   "exponent": 1.83,
   "teams": [
@@ -118,6 +118,25 @@
       "elo_wp": 0.529
     },
     {
+      "team": "Chicago Cubs",
+      "games": 64,
+      "actual_wins": 33,
+      "actual_losses": 31,
+      "actual_wp": 0.516,
+      "formula_wins": 34,
+      "formula_losses": 30,
+      "formula_diff": 1,
+      "formula_wp": 0.53,
+      "pythag_wins": 32,
+      "pythag_losses": 32,
+      "pythag_diff": -1,
+      "pythag_wp": 0.505,
+      "elo_wins": 33,
+      "elo_losses": 31,
+      "elo_diff": 0,
+      "elo_wp": 0.521
+    },
+    {
       "team": "Chicago White Sox",
       "games": 62,
       "actual_wins": 33,
@@ -135,25 +154,6 @@
       "elo_losses": 34,
       "elo_diff": -5,
       "elo_wp": 0.456
-    },
-    {
-      "team": "Chicago Cubs",
-      "games": 63,
-      "actual_wins": 33,
-      "actual_losses": 30,
-      "actual_wp": 0.524,
-      "formula_wins": 33,
-      "formula_losses": 30,
-      "formula_diff": 0,
-      "formula_wp": 0.529,
-      "pythag_wins": 32,
-      "pythag_losses": 31,
-      "pythag_diff": -1,
-      "pythag_wp": 0.505,
-      "elo_wins": 33,
-      "elo_losses": 30,
-      "elo_diff": 0,
-      "elo_wp": 0.524
     },
     {
       "team": "Tampa Bay Rays",
@@ -384,6 +384,25 @@
       "elo_wp": 0.496
     },
     {
+      "team": "San Francisco Giants",
+      "games": 64,
+      "actual_wins": 26,
+      "actual_losses": 38,
+      "actual_wp": 0.406,
+      "formula_wins": 29,
+      "formula_losses": 35,
+      "formula_diff": 3,
+      "formula_wp": 0.447,
+      "pythag_wins": 27,
+      "pythag_losses": 37,
+      "pythag_diff": 1,
+      "pythag_wp": 0.425,
+      "elo_wins": 30,
+      "elo_losses": 34,
+      "elo_diff": 4,
+      "elo_wp": 0.473
+    },
+    {
       "team": "Minnesota Twins",
       "games": 64,
       "actual_wins": 29,
@@ -458,25 +477,6 @@
       "elo_losses": 29,
       "elo_diff": 0,
       "elo_wp": 0.524
-    },
-    {
-      "team": "San Francisco Giants",
-      "games": 63,
-      "actual_wins": 25,
-      "actual_losses": 38,
-      "actual_wp": 0.397,
-      "formula_wins": 27,
-      "formula_losses": 36,
-      "formula_diff": 2,
-      "formula_wp": 0.436,
-      "pythag_wins": 27,
-      "pythag_losses": 36,
-      "pythag_diff": 2,
-      "pythag_wp": 0.425,
-      "elo_wins": 30,
-      "elo_losses": 33,
-      "elo_diff": 5,
-      "elo_wp": 0.469
     },
     {
       "team": "New York Mets",
@@ -576,19 +576,19 @@
   ],
   "accuracy": {
     "correlation": {
-      "formula": 0.7618,
-      "pythag": 0.8368,
-      "elo": 0.8217
+      "formula": 0.758,
+      "pythag": 0.8379,
+      "elo": 0.82
     },
     "mae": {
-      "formula": 0.0429,
-      "pythag": 0.0363,
+      "formula": 0.0433,
+      "pythag": 0.0357,
       "elo": 0.0389
     },
     "rmse": {
-      "formula": 0.0517,
-      "pythag": 0.0444,
-      "elo": 0.0488
+      "formula": 0.0518,
+      "pythag": 0.0441,
+      "elo": 0.0486
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-05T21:40:26Z",
+  "updated": "2026-06-05T22:41:51Z",
   "params": {
     "k": 4,
     "home_adv": 24,
@@ -15,9 +15,9 @@
   },
   "accuracy": {
     "season": 2026,
-    "games": 935,
+    "games": 936,
     "correct": 507,
-    "pct": 0.5422
+    "pct": 0.5417
   },
   "standings": [
     {
@@ -101,16 +101,6 @@
       "rank": 8
     },
     {
-      "team": "Chicago Cubs",
-      "abbr": "CHC",
-      "rating": 1516.7,
-      "delta": 16.7,
-      "implied_wp": 0.524,
-      "wins": 33,
-      "losses": 30,
-      "rank": 9
-    },
-    {
       "team": "Tampa Bay Rays",
       "abbr": "TB",
       "rating": 1515.4,
@@ -118,6 +108,16 @@
       "implied_wp": 0.5222,
       "wins": 36,
       "losses": 23,
+      "rank": 9
+    },
+    {
+      "team": "Chicago Cubs",
+      "abbr": "CHC",
+      "rating": 1514.3,
+      "delta": 14.3,
+      "implied_wp": 0.5206,
+      "wins": 33,
+      "losses": 31,
       "rank": 10
     },
     {
@@ -251,21 +251,21 @@
       "rank": 23
     },
     {
+      "team": "San Francisco Giants",
+      "abbr": "SF",
+      "rating": 1481.1,
+      "delta": -18.9,
+      "implied_wp": 0.4729,
+      "wins": 26,
+      "losses": 38,
+      "rank": 24
+    },
+    {
       "team": "Detroit Tigers",
       "abbr": "DET",
       "rating": 1480.0,
       "delta": -20.0,
       "implied_wp": 0.4712,
-      "wins": 25,
-      "losses": 38,
-      "rank": 24
-    },
-    {
-      "team": "San Francisco Giants",
-      "abbr": "SF",
-      "rating": 1478.8,
-      "delta": -21.2,
-      "implied_wp": 0.4695,
       "wins": 25,
       "losses": 38,
       "rank": 25
@@ -342,6 +342,22 @@
     }
   ],
   "recent_games": [
+    {
+      "date": "2026-06-05",
+      "game_pk": 824673,
+      "home_team": "Chicago Cubs",
+      "away_team": "San Francisco Giants",
+      "home_abbr": "CHC",
+      "away_abbr": "SF",
+      "home_elo_pre": 1516.7,
+      "away_elo_pre": 1478.8,
+      "home_prob": 0.5882,
+      "away_prob": 0.4118,
+      "home_score": 3,
+      "away_score": 18,
+      "home_win": 0,
+      "model_correct": false
+    },
     {
       "date": "2026-06-04",
       "game_pk": 825076,
@@ -805,22 +821,6 @@
       "away_score": 3,
       "home_win": 1,
       "model_correct": true
-    },
-    {
-      "date": "2026-06-02",
-      "game_pk": 824189,
-      "home_team": "Houston Astros",
-      "away_team": "Pittsburgh Pirates",
-      "home_abbr": "HOU",
-      "away_abbr": "PIT",
-      "home_elo_pre": 1499.5,
-      "away_elo_pre": 1495.0,
-      "home_prob": 0.5408,
-      "away_prob": 0.4592,
-      "home_score": 6,
-      "away_score": 10,
-      "home_win": 0,
-      "model_correct": false
     }
   ]
 }
