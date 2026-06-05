@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-05T14:27:29.881947+00:00",
+  "updated": "2026-06-05T16:37:14.233243+00:00",
   "date": "2026-06-05",
   "league_avg_xba": 0.2496,
   "predictions": [
@@ -79,31 +79,6 @@
       "rank": 3
     },
     {
-      "player": "Jung Hoo Lee",
-      "team": "SF",
-      "game": "SF @ CHC",
-      "game_time": "2:20 PM ET",
-      "opposing_team": "CHC",
-      "opposing_sp_name": "Edward Cabrera",
-      "sp_xbaa_source": "sp",
-      "batter_xba": 0.308,
-      "sp_xbaa": 0.26,
-      "bullpen_xbaa": 0.2546,
-      "vs_sp_log5": 0.3198,
-      "vs_bullpen_log5": 0.3137,
-      "hit_probability": 0.7634,
-      "games_played": 55,
-      "team_games": 63,
-      "at_bats": 208,
-      "ab_per_game": 3.782,
-      "sp_abs": 2.0,
-      "bp_abs": 1.782,
-      "league_avg_xba": 0.2496,
-      "actual_hits": null,
-      "correct": null,
-      "rank": 4
-    },
-    {
       "player": "Ketel Marte",
       "team": "AZ",
       "game": "WSH @ AZ",
@@ -126,6 +101,31 @@
       "league_avg_xba": 0.2496,
       "actual_hits": null,
       "correct": null,
+      "rank": 4
+    },
+    {
+      "player": "Jung Hoo Lee",
+      "team": "SF",
+      "game": "SF @ CHC",
+      "game_time": "2:20 PM ET",
+      "opposing_team": "CHC",
+      "opposing_sp_name": "Edward Cabrera",
+      "sp_xbaa_source": "sp",
+      "batter_xba": 0.308,
+      "sp_xbaa": 0.26,
+      "bullpen_xbaa": 0.2531,
+      "vs_sp_log5": 0.3198,
+      "vs_bullpen_log5": 0.312,
+      "hit_probability": 0.7624,
+      "games_played": 55,
+      "team_games": 63,
+      "at_bats": 208,
+      "ab_per_game": 3.782,
+      "sp_abs": 2.0,
+      "bp_abs": 1.782,
+      "league_avg_xba": 0.2496,
+      "actual_hits": null,
+      "correct": null,
       "rank": 5
     },
     {
@@ -138,10 +138,10 @@
       "sp_xbaa_source": "sp",
       "batter_xba": 0.295,
       "sp_xbaa": 0.26,
-      "bullpen_xbaa": 0.2546,
+      "bullpen_xbaa": 0.2531,
       "vs_sp_log5": 0.3065,
-      "vs_bullpen_log5": 0.3005,
-      "hit_probability": 0.7561,
+      "vs_bullpen_log5": 0.2989,
+      "hit_probability": 0.7551,
       "games_played": 60,
       "team_games": 63,
       "at_bats": 234,
@@ -388,10 +388,10 @@
       "sp_xbaa_source": "sp",
       "batter_xba": 0.275,
       "sp_xbaa": 0.26,
-      "bullpen_xbaa": 0.2546,
+      "bullpen_xbaa": 0.2531,
       "vs_sp_log5": 0.2861,
-      "vs_bullpen_log5": 0.2803,
-      "hit_probability": 0.7296,
+      "vs_bullpen_log5": 0.2787,
+      "hit_probability": 0.7284,
       "games_played": 55,
       "team_games": 63,
       "at_bats": 216,
@@ -454,31 +454,6 @@
       "rank": 18
     },
     {
-      "player": "Nico Hoerner",
-      "team": "CHC",
-      "game": "SF @ CHC",
-      "game_time": "2:20 PM ET",
-      "opposing_team": "SF",
-      "opposing_sp_name": "Robbie Ray",
-      "sp_xbaa_source": "sp",
-      "batter_xba": 0.291,
-      "sp_xbaa": 0.24,
-      "bullpen_xbaa": 0.2279,
-      "vs_sp_log5": 0.2804,
-      "vs_bullpen_log5": 0.267,
-      "hit_probability": 0.7232,
-      "games_played": 62,
-      "team_games": 63,
-      "at_bats": 249,
-      "ab_per_game": 4.016,
-      "sp_abs": 2.0,
-      "bp_abs": 2.016,
-      "league_avg_xba": 0.2496,
-      "actual_hits": null,
-      "correct": null,
-      "rank": 19
-    },
-    {
       "player": "Ildemaro Vargas",
       "team": "AZ",
       "game": "WSH @ AZ",
@@ -501,7 +476,7 @@
       "league_avg_xba": 0.2496,
       "actual_hits": null,
       "correct": null,
-      "rank": 20
+      "rank": 19
     },
     {
       "player": "Brandon Marsh",
@@ -526,7 +501,7 @@
       "league_avg_xba": 0.2496,
       "actual_hits": null,
       "correct": null,
-      "rank": 21
+      "rank": 20
     },
     {
       "player": "James Wood",
@@ -551,7 +526,7 @@
       "league_avg_xba": 0.2496,
       "actual_hits": null,
       "correct": null,
-      "rank": 22
+      "rank": 21
     },
     {
       "player": "Cody Bellinger",
@@ -576,7 +551,7 @@
       "league_avg_xba": 0.2496,
       "actual_hits": null,
       "correct": null,
-      "rank": 23
+      "rank": 22
     },
     {
       "player": "Nick Gonzales",
@@ -601,7 +576,7 @@
       "league_avg_xba": 0.2496,
       "actual_hits": null,
       "correct": null,
-      "rank": 24
+      "rank": 23
     },
     {
       "player": "Spencer Steer",
@@ -623,6 +598,31 @@
       "ab_per_game": 3.542,
       "sp_abs": 2.0,
       "bp_abs": 1.542,
+      "league_avg_xba": 0.2496,
+      "actual_hits": null,
+      "correct": null,
+      "rank": 24
+    },
+    {
+      "player": "Nico Hoerner",
+      "team": "CHC",
+      "game": "SF @ CHC",
+      "game_time": "2:20 PM ET",
+      "opposing_team": "SF",
+      "opposing_sp_name": "Robbie Ray",
+      "sp_xbaa_source": "sp",
+      "batter_xba": 0.291,
+      "sp_xbaa": 0.24,
+      "bullpen_xbaa": 0.2202,
+      "vs_sp_log5": 0.2804,
+      "vs_bullpen_log5": 0.2584,
+      "hit_probability": 0.7166,
+      "games_played": 62,
+      "team_games": 63,
+      "at_bats": 249,
+      "ab_per_game": 4.016,
+      "sp_abs": 2.0,
+      "bp_abs": 2.016,
       "league_avg_xba": 0.2496,
       "actual_hits": null,
       "correct": null,
