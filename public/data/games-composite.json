@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-05T16:29:39.979546+00:00",
+  "updated": "2026-06-05T21:28:43.680355+00:00",
   "date": "2026-06-05",
   "predictions": [
     {
@@ -84,33 +84,6 @@
       "correct": null
     },
     {
-      "game_time": "2:20 PM ET",
-      "away_team": "San Francisco Giants",
-      "home_team": "Chicago Cubs",
-      "log5": {
-        "pick": "Chicago Cubs",
-        "confidence": 0.6457
-      },
-      "research": {
-        "pick": "Chicago Cubs",
-        "confidence": 0.6134
-      },
-      "xgboost": {
-        "pick": "Chicago Cubs",
-        "confidence": 0.6077
-      },
-      "random_forest": {
-        "pick": "Chicago Cubs",
-        "confidence": 0.5353
-      },
-      "composite_pick": "Chicago Cubs",
-      "composite_confidence": 0.6005,
-      "vote_count": 4,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
       "game_time": "8:40 PM ET",
       "away_team": "Milwaukee Brewers",
       "home_team": "Colorado Rockies",
@@ -133,6 +106,33 @@
       "composite_pick": "Milwaukee Brewers",
       "composite_confidence": 0.5864,
       "vote_count": 3,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "2:20 PM ET",
+      "away_team": "San Francisco Giants",
+      "home_team": "Chicago Cubs",
+      "log5": {
+        "pick": "Chicago Cubs",
+        "confidence": 0.6457
+      },
+      "research": {
+        "pick": "Chicago Cubs",
+        "confidence": 0.6134
+      },
+      "xgboost": {
+        "pick": "Chicago Cubs",
+        "confidence": 0.543
+      },
+      "random_forest": {
+        "pick": "Chicago Cubs",
+        "confidence": 0.5355
+      },
+      "composite_pick": "Chicago Cubs",
+      "composite_confidence": 0.5844,
+      "vote_count": 4,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
