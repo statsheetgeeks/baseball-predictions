@@ -33,15 +33,10 @@ const tdBase = {
   verticalAlign: 'middle',
 }
 
-// ── Diff badge (positive = green/lucky, negative = red/unlucky) ────────────────
+// ── Diff badge ─────────────────────────────────────────────────────────────────
 function DiffBadge({ value }) {
-  if (value === 0) {
-    return (
-      <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, color: 'var(--silver)' }}>
-        0
-      </span>
-    )
-  }
+  if (value === null || value === undefined) return <span style={{ color: 'var(--muted)', fontSize: 11 }}>—</span>
+  if (value === 0) return <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, color: 'var(--silver)' }}>0</span>
   const pos   = value > 0
   const color = pos ? 'var(--green)' : 'var(--red)'
   return (
@@ -53,6 +48,7 @@ function DiffBadge({ value }) {
 
 // ── Win-percentage mini bar ────────────────────────────────────────────────────
 function WpBar({ value, color = 'var(--accent)' }) {
+  if (value === null || value === undefined) return <span style={{ color: 'var(--muted)', fontSize: 11 }}>—</span>
   const pct = (value * 100).toFixed(1)
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
@@ -60,7 +56,7 @@ function WpBar({ value, color = 'var(--accent)' }) {
         {pct}%
       </span>
       <div style={{
-        width: 48, height: 4, background: 'var(--navy-border)',
+        width: 44, height: 4, background: 'var(--navy-border)',
         borderRadius: 2, overflow: 'hidden', flexShrink: 0,
       }}>
         <div style={{
@@ -98,8 +94,31 @@ function GroupHeader({ label, color, colSpan }) {
   )
 }
 
+// ── Last group header (no right border) ───────────────────────────────────────
+function LastGroupHeader({ label, color, colSpan }) {
+  return (
+    <th
+      colSpan={colSpan}
+      style={{
+        textAlign:     'center',
+        fontSize:      10,
+        fontWeight:    700,
+        letterSpacing: 2,
+        textTransform: 'uppercase',
+        color,
+        padding:       '8px 12px 6px',
+        borderBottom:  `2px solid ${color}`,
+        background:    'rgba(255,255,255,0.02)',
+      }}
+    >
+      {label}
+    </th>
+  )
+}
+
 // ── Mono number cell ───────────────────────────────────────────────────────────
 function Num({ children, bold = false, color = 'var(--silver)' }) {
+  if (children === null || children === undefined) return <span style={{ color: 'var(--muted)', fontSize: 11 }}>—</span>
   return (
     <span style={{
       fontFamily: "'DM Mono', monospace",
@@ -114,8 +133,8 @@ function Num({ children, bold = false, color = 'var(--silver)' }) {
 
 // ── Main teams table ──────────────────────────────────────────────────────────
 function TeamsTable({ teams }) {
-  const [sortKey, setSortKey]   = useState('formula_wp')
-  const [sortDir, setSortDir]   = useState('desc')
+  const [sortKey, setSortKey] = useState('formula_wp')
+  const [sortDir, setSortDir] = useState('desc')
 
   const toggleSort = (key) => {
     if (sortKey === key) {
@@ -127,7 +146,8 @@ function TeamsTable({ teams }) {
   }
 
   const sorted = [...teams].sort((a, b) => {
-    const va = a[sortKey], vb = b[sortKey]
+    const va = a[sortKey] ?? -Infinity
+    const vb = b[sortKey] ?? -Infinity
     if (typeof va === 'string') return sortDir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va)
     return sortDir === 'asc' ? va - vb : vb - va
   })
@@ -140,10 +160,10 @@ function TeamsTable({ teams }) {
         onClick={() => toggleSort(field)}
         style={{
           ...thBase,
-          textAlign: align,
-          cursor:    'pointer',
-          color:     active ? 'var(--accent)' : 'var(--silver)',
-          userSelect:'none',
+          textAlign:  align,
+          cursor:     'pointer',
+          color:      active ? 'var(--accent)' : 'var(--silver)',
+          userSelect: 'none',
         }}
       >
         {label}{arrow}
@@ -151,7 +171,6 @@ function TeamsTable({ teams }) {
     )
   }
 
-  // Group separator style for right border between sections
   const sepTd = { borderRight: '1px solid var(--navy-border)' }
 
   return (
@@ -162,12 +181,11 @@ function TeamsTable({ teams }) {
       overflow:     'hidden',
       marginBottom: 28,
     }}>
-      {/* Card header */}
       <div style={{
-        padding:      '14px 18px',
-        borderBottom: '1px solid var(--navy-border)',
-        display:      'flex',
-        alignItems:   'center',
+        padding:        '14px 18px',
+        borderBottom:   '1px solid var(--navy-border)',
+        display:        'flex',
+        alignItems:     'center',
         justifyContent: 'space-between',
       }}>
         <span style={{
@@ -186,37 +204,43 @@ function TeamsTable({ teams }) {
       </div>
 
       <div style={{ overflowX: 'auto' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 860 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 1060 }}>
           <thead>
             {/* Group header row */}
             <tr>
               <th colSpan={2} style={{ ...thBase, borderBottom: '2px solid transparent', borderRight: '1px solid var(--navy-border)' }} />
-              <GroupHeader label="Actual Record"      color="var(--silver)"  colSpan={4} />
-              <GroupHeader label="Formula Model"      color="#7ecfff"        colSpan={4} />
-              <GroupHeader label="Pythagorean Model"  color="#b08fff"        colSpan={4} />
+              <GroupHeader     label="Actual Record"      color="var(--silver)"  colSpan={4} />
+              <GroupHeader     label="Formula Model"      color="#7ecfff"        colSpan={4} />
+              <GroupHeader     label="Pythagorean Model"  color="#b08fff"        colSpan={4} />
+              <LastGroupHeader label="Elo Model"          color="#ffd27a"        colSpan={4} />
             </tr>
             {/* Column header row */}
             <tr>
-              {/* Rank + Team */}
               <th style={{ ...thBase, textAlign: 'center', width: 36 }}>#</th>
-              <SortTh label="Team"    field="team"          align="left" />
+              <SortTh label="Team"  field="team"          align="left" />
 
               {/* Actual */}
-              <SortTh label="GP"      field="games" />
-              <SortTh label="W"       field="actual_wins" />
-              <SortTh label="L"       field="actual_losses" />
+              <SortTh label="GP"    field="games" />
+              <SortTh label="W"     field="actual_wins" />
+              <SortTh label="L"     field="actual_losses" />
               <th style={{ ...thBase, textAlign: 'right', ...sepTd }}>Win%</th>
 
               {/* Formula */}
-              <SortTh label="W"       field="formula_wins" />
-              <SortTh label="L"       field="formula_losses" />
-              <SortTh label="Δ"       field="formula_diff" />
+              <SortTh label="W"     field="formula_wins" />
+              <SortTh label="L"     field="formula_losses" />
+              <SortTh label="Δ"     field="formula_diff" />
               <th style={{ ...thBase, textAlign: 'right', ...sepTd }}>Win%</th>
 
               {/* Pythagorean */}
-              <SortTh label="W"       field="pythag_wins" />
-              <SortTh label="L"       field="pythag_losses" />
-              <SortTh label="Δ"       field="pythag_diff" />
+              <SortTh label="W"     field="pythag_wins" />
+              <SortTh label="L"     field="pythag_losses" />
+              <SortTh label="Δ"     field="pythag_diff" />
+              <th style={{ ...thBase, textAlign: 'right', ...sepTd }}>Win%</th>
+
+              {/* Elo */}
+              <SortTh label="W"     field="elo_wins" />
+              <SortTh label="L"     field="elo_losses" />
+              <SortTh label="Δ"     field="elo_diff" />
               <th style={{ ...thBase, textAlign: 'right' }}>Win%</th>
             </tr>
           </thead>
@@ -231,70 +255,34 @@ function TeamsTable({ teams }) {
                     {i + 1}
                   </td>
 
-                  {/* Team name */}
+                  {/* Team */}
                   <td style={{ ...tdBase, whiteSpace: 'nowrap' }}>
                     <span style={{ color: 'var(--white)', fontSize: 13 }}>{row.team}</span>
                   </td>
 
-                  {/* Actual: GP */}
-                  <td style={{ ...tdBase, textAlign: 'right' }}>
-                    <Num color="var(--white)">{row.games}</Num>
-                  </td>
+                  {/* Actual */}
+                  <td style={{ ...tdBase, textAlign: 'right' }}><Num color="var(--white)">{row.games}</Num></td>
+                  <td style={{ ...tdBase, textAlign: 'right' }}><Num bold color="var(--green)">{row.actual_wins}</Num></td>
+                  <td style={{ ...tdBase, textAlign: 'right' }}><Num color="var(--red)">{row.actual_losses}</Num></td>
+                  <td style={{ ...tdBase, textAlign: 'right', ...sepTd }}><WpBar value={row.actual_wp} color="var(--silver)" /></td>
 
-                  {/* Actual: W */}
-                  <td style={{ ...tdBase, textAlign: 'right' }}>
-                    <Num bold color="var(--green)">{row.actual_wins}</Num>
-                  </td>
+                  {/* Formula */}
+                  <td style={{ ...tdBase, textAlign: 'right' }}><Num bold color="#7ecfff">{row.formula_wins}</Num></td>
+                  <td style={{ ...tdBase, textAlign: 'right' }}><Num color="#5aabdd">{row.formula_losses}</Num></td>
+                  <td style={{ ...tdBase, textAlign: 'right' }}><DiffBadge value={row.formula_diff} /></td>
+                  <td style={{ ...tdBase, textAlign: 'right', ...sepTd }}><WpBar value={row.formula_wp} color="#7ecfff" /></td>
 
-                  {/* Actual: L */}
-                  <td style={{ ...tdBase, textAlign: 'right' }}>
-                    <Num color="var(--red)">{row.actual_losses}</Num>
-                  </td>
+                  {/* Pythagorean */}
+                  <td style={{ ...tdBase, textAlign: 'right' }}><Num bold color="#b08fff">{row.pythag_wins}</Num></td>
+                  <td style={{ ...tdBase, textAlign: 'right' }}><Num color="#8b6fd4">{row.pythag_losses}</Num></td>
+                  <td style={{ ...tdBase, textAlign: 'right' }}><DiffBadge value={row.pythag_diff} /></td>
+                  <td style={{ ...tdBase, textAlign: 'right', ...sepTd }}><WpBar value={row.pythag_wp} color="#b08fff" /></td>
 
-                  {/* Actual: Win% */}
-                  <td style={{ ...tdBase, textAlign: 'right', borderRight: '1px solid var(--navy-border)' }}>
-                    <WpBar value={row.actual_wp} color="var(--silver)" />
-                  </td>
-
-                  {/* Formula: W */}
-                  <td style={{ ...tdBase, textAlign: 'right' }}>
-                    <Num bold color="#7ecfff">{row.formula_wins}</Num>
-                  </td>
-
-                  {/* Formula: L */}
-                  <td style={{ ...tdBase, textAlign: 'right' }}>
-                    <Num color="#5aabdd">{row.formula_losses}</Num>
-                  </td>
-
-                  {/* Formula: Δ */}
-                  <td style={{ ...tdBase, textAlign: 'right' }}>
-                    <DiffBadge value={row.formula_diff} />
-                  </td>
-
-                  {/* Formula: Win% */}
-                  <td style={{ ...tdBase, textAlign: 'right', borderRight: '1px solid var(--navy-border)' }}>
-                    <WpBar value={row.formula_wp} color="#7ecfff" />
-                  </td>
-
-                  {/* Pythag: W */}
-                  <td style={{ ...tdBase, textAlign: 'right' }}>
-                    <Num bold color="#b08fff">{row.pythag_wins}</Num>
-                  </td>
-
-                  {/* Pythag: L */}
-                  <td style={{ ...tdBase, textAlign: 'right' }}>
-                    <Num color="#8b6fd4">{row.pythag_losses}</Num>
-                  </td>
-
-                  {/* Pythag: Δ */}
-                  <td style={{ ...tdBase, textAlign: 'right' }}>
-                    <DiffBadge value={row.pythag_diff} />
-                  </td>
-
-                  {/* Pythag: Win% */}
-                  <td style={{ ...tdBase, textAlign: 'right' }}>
-                    <WpBar value={row.pythag_wp} color="#b08fff" />
-                  </td>
+                  {/* Elo */}
+                  <td style={{ ...tdBase, textAlign: 'right' }}><Num bold color="#ffd27a">{row.elo_wins}</Num></td>
+                  <td style={{ ...tdBase, textAlign: 'right' }}><Num color="#c9a24f">{row.elo_losses}</Num></td>
+                  <td style={{ ...tdBase, textAlign: 'right' }}><DiffBadge value={row.elo_diff} /></td>
+                  <td style={{ ...tdBase, textAlign: 'right' }}><WpBar value={row.elo_wp} color="#ffd27a" /></td>
                 </tr>
               )
             })}
@@ -315,104 +303,84 @@ const cardStyle = {
 }
 
 const cardHeaderStyle = {
-  padding:      '13px 18px',
-  borderBottom: '1px solid var(--navy-border)',
-  fontFamily:   "'Barlow Condensed', sans-serif",
-  fontWeight:   700,
-  fontSize:     13,
+  padding:       '13px 18px',
+  borderBottom:  '1px solid var(--navy-border)',
+  fontFamily:    "'Barlow Condensed', sans-serif",
+  fontWeight:    700,
+  fontSize:      13,
   letterSpacing: 2,
   textTransform: 'uppercase',
-  color:        'var(--accent)',
+  color:         'var(--accent)',
 }
 
-function MetricRow({ label, formulaVal, pythagoreanVal, format = v => v.toFixed(4), higherBetter = true }) {
-  const fv = formulaVal
-  const pv = pythagoreanVal
-  const formulaWins  = higherBetter ? fv >= pv : fv <= pv
-  const pythagoreanWins = higherBetter ? pv >= fv : pv <= fv
+// ── Legend row shared by both cards ───────────────────────────────────────────
+function CardLegend() {
+  return (
+    <div style={{
+      display:      'grid',
+      gridTemplateColumns: '110px 1fr 1fr 1fr',
+      padding:      '8px 18px',
+      borderBottom: '1px solid var(--navy-border)',
+      gap:          8,
+    }}>
+      <span />
+      <span style={{ fontSize: 11, color: '#7ecfff', fontFamily: "'DM Mono', monospace" }}>Formula</span>
+      <span style={{ fontSize: 11, color: '#b08fff', fontFamily: "'DM Mono', monospace" }}>Pythagorean</span>
+      <span style={{ fontSize: 11, color: '#ffd27a', fontFamily: "'DM Mono', monospace" }}>Elo</span>
+    </div>
+  )
+}
+
+// ── Single metric row ──────────────────────────────────────────────────────────
+function MetricRow({ label, formulaVal, pythagoreanVal, eloVal, format = v => v.toFixed(4), higherBetter = true }) {
+  const vals     = [formulaVal, pythagoreanVal, eloVal]
+  const bestVal  = higherBetter ? Math.max(...vals) : Math.min(...vals)
+  const isBest   = v => v === bestVal
+
+  const dot = (color) => (
+    <span style={{
+      display: 'inline-block', width: 8, height: 8,
+      borderRadius: '50%', background: color, flexShrink: 0,
+    }} />
+  )
+
+  const cell = (val, color) => (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
+      {dot(color)}
+      <span style={{
+        fontFamily: "'DM Mono', monospace",
+        fontSize:   14,
+        fontWeight: isBest(val) ? 700 : 400,
+        color:      isBest(val) ? 'var(--white)' : 'var(--silver)',
+      }}>
+        {format(val)}
+      </span>
+      {isBest(val) && (
+        <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: 1, color, textTransform: 'uppercase', marginLeft: 2 }}>
+          ▲
+        </span>
+      )}
+    </div>
+  )
 
   return (
     <div style={{
-      display:       'grid',
-      gridTemplateColumns: '110px 1fr 1fr',
-      alignItems:    'center',
-      padding:       '11px 18px',
-      borderBottom:  '1px solid var(--navy-border)',
-      gap:           8,
+      display:      'grid',
+      gridTemplateColumns: '110px 1fr 1fr 1fr',
+      alignItems:   'center',
+      padding:      '11px 18px',
+      borderBottom: '1px solid var(--navy-border)',
+      gap:          8,
     }}>
       <span style={{
-        fontSize:      11,
-        fontWeight:    600,
-        letterSpacing: 1,
-        textTransform: 'uppercase',
-        color:         'var(--muted)',
+        fontSize: 11, fontWeight: 600, letterSpacing: 1,
+        textTransform: 'uppercase', color: 'var(--muted)',
       }}>
         {label}
       </span>
-
-      {/* Formula */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-        <span style={{
-          display:      'inline-block',
-          width:         8,
-          height:        8,
-          borderRadius: '50%',
-          background:   '#7ecfff',
-          flexShrink:   0,
-        }} />
-        <span style={{
-          fontFamily: "'DM Mono', monospace",
-          fontSize:   14,
-          fontWeight: formulaWins ? 700 : 400,
-          color:      formulaWins ? 'var(--white)' : 'var(--silver)',
-        }}>
-          {format(fv)}
-        </span>
-        {formulaWins && (
-          <span style={{
-            fontSize:      9,
-            fontWeight:    700,
-            letterSpacing: 1,
-            color:         '#7ecfff',
-            textTransform: 'uppercase',
-            marginLeft:    2,
-          }}>
-            ▲
-          </span>
-        )}
-      </div>
-
-      {/* Pythagorean */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-        <span style={{
-          display:      'inline-block',
-          width:         8,
-          height:        8,
-          borderRadius: '50%',
-          background:   '#b08fff',
-          flexShrink:   0,
-        }} />
-        <span style={{
-          fontFamily: "'DM Mono', monospace",
-          fontSize:   14,
-          fontWeight: pythagoreanWins ? 700 : 400,
-          color:      pythagoreanWins ? 'var(--white)' : 'var(--silver)',
-        }}>
-          {format(pv)}
-        </span>
-        {pythagoreanWins && (
-          <span style={{
-            fontSize:      9,
-            fontWeight:    700,
-            letterSpacing: 1,
-            color:         '#b08fff',
-            textTransform: 'uppercase',
-            marginLeft:    2,
-          }}>
-            ▲
-          </span>
-        )}
-      </div>
+      {cell(formulaVal,     '#7ecfff')}
+      {cell(pythagoreanVal, '#b08fff')}
+      {cell(eloVal,         '#ffd27a')}
     </div>
   )
 }
@@ -422,36 +390,18 @@ function CorrelationCard({ accuracy }) {
   return (
     <div style={cardStyle}>
       <div style={cardHeaderStyle}>Correlation with Actual Win%</div>
-
-      {/* Legend */}
-      <div style={{
-        display:    'grid',
-        gridTemplateColumns: '110px 1fr 1fr',
-        padding:    '8px 18px',
-        borderBottom: '1px solid var(--navy-border)',
-        gap:        8,
-      }}>
-        <span />
-        <span style={{ fontSize: 11, color: '#7ecfff', fontFamily: "'DM Mono', monospace", letterSpacing: 0.5 }}>
-          Formula
-        </span>
-        <span style={{ fontSize: 11, color: '#b08fff', fontFamily: "'DM Mono', monospace", letterSpacing: 0.5 }}>
-          Pythagorean
-        </span>
-      </div>
-
+      <CardLegend />
       <MetricRow
         label="Pearson r"
         formulaVal={accuracy.correlation.formula}
         pythagoreanVal={accuracy.correlation.pythag}
+        eloVal={accuracy.correlation.elo}
         format={v => v.toFixed(4)}
         higherBetter={true}
       />
-
       <div style={{ padding: '10px 18px' }}>
         <p style={{ fontSize: 12, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
-          Pearson r measures linear agreement with the actual win percentage.
-          A value of 1.0 is perfect correlation. Higher is better.
+          Pearson r measures linear agreement with actual win percentage. A value of 1.0 is perfect. Higher is better.
         </p>
       </div>
     </div>
@@ -463,44 +413,26 @@ function ErrorCard({ accuracy }) {
   return (
     <div style={cardStyle}>
       <div style={cardHeaderStyle}>Prediction Error vs Actual Win%</div>
-
-      {/* Legend */}
-      <div style={{
-        display:    'grid',
-        gridTemplateColumns: '110px 1fr 1fr',
-        padding:    '8px 18px',
-        borderBottom: '1px solid var(--navy-border)',
-        gap:        8,
-      }}>
-        <span />
-        <span style={{ fontSize: 11, color: '#7ecfff', fontFamily: "'DM Mono', monospace", letterSpacing: 0.5 }}>
-          Formula
-        </span>
-        <span style={{ fontSize: 11, color: '#b08fff', fontFamily: "'DM Mono', monospace", letterSpacing: 0.5 }}>
-          Pythagorean
-        </span>
-      </div>
-
+      <CardLegend />
       <MetricRow
         label="MAE"
         formulaVal={accuracy.mae.formula}
         pythagoreanVal={accuracy.mae.pythag}
+        eloVal={accuracy.mae.elo}
         format={v => v.toFixed(4)}
         higherBetter={false}
       />
-
       <MetricRow
         label="RMSE"
         formulaVal={accuracy.rmse.formula}
         pythagoreanVal={accuracy.rmse.pythag}
+        eloVal={accuracy.rmse.elo}
         format={v => v.toFixed(4)}
         higherBetter={false}
       />
-
       <div style={{ padding: '10px 18px' }}>
         <p style={{ fontSize: 12, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
-          MAE and RMSE measure average deviation from actual win percentage.
-          Lower is better. RMSE penalizes large misses more heavily.
+          MAE and RMSE measure average deviation from actual win percentage. Lower is better. RMSE penalizes large misses more heavily.
         </p>
       </div>
     </div>
@@ -510,22 +442,17 @@ function ErrorCard({ accuracy }) {
 // ── Methodology legend ─────────────────────────────────────────────────────────
 function MethodologyBar({ exponent }) {
   const pills = [
-    { label: 'Formula', desc: 'Predicted RS/RA from hitting & pitching rate stats → Pythagorean Win%', color: '#7ecfff' },
-    { label: 'Pythagorean', desc: `Actual RS/RA → Pythagorean Win%  (exponent ${exponent})`, color: '#b08fff' },
-    { label: 'Δ Convention', desc: 'Positive = model > actual wins ("lucky"); Negative = model < actual wins ("unlucky")', color: 'var(--silver)' },
+    { label: 'Formula',       desc: 'Predicted RS/RA from hitting & pitching rate stats → Pythagorean Win%',       color: '#7ecfff' },
+    { label: 'Pythagorean',   desc: `Actual RS/RA → Pythagorean Win%  (exponent ${exponent})`,                    color: '#b08fff' },
+    { label: 'Elo',           desc: 'Implied win% from Elo rating vs. league-average opponent on neutral field',   color: '#ffd27a' },
+    { label: 'Δ Convention',  desc: 'Positive = model projects more wins than actual ("lucky"); Negative = fewer ("unlucky")', color: 'var(--silver)' },
   ]
-
   return (
-    <div style={{
-      display:       'flex',
-      flexWrap:      'wrap',
-      gap:           10,
-      marginBottom:  24,
-    }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
       {pills.map(p => (
         <div key={p.label} style={{
           background:   'var(--navy-mid)',
-          border:       `1px solid var(--navy-border)`,
+          border:       '1px solid var(--navy-border)',
           borderLeft:   `3px solid ${p.color}`,
           borderRadius: 6,
           padding:      '8px 14px',
@@ -535,13 +462,9 @@ function MethodologyBar({ exponent }) {
           flexShrink:   0,
         }}>
           <span style={{
-            fontFamily:    "'Barlow Condensed', sans-serif",
-            fontWeight:    700,
-            fontSize:      11,
-            letterSpacing: 1.5,
-            textTransform: 'uppercase',
-            color:         p.color,
-            whiteSpace:    'nowrap',
+            fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700,
+            fontSize: 11, letterSpacing: 1.5, textTransform: 'uppercase',
+            color: p.color, whiteSpace: 'nowrap',
           }}>
             {p.label}
           </span>
@@ -570,7 +493,7 @@ export default function TeamMetrics() {
       <PageHeader
         tag="Research → Team Metrics"
         title="TEAM METRICS"
-        subtitle="Side-by-side comparison of two win-expectancy models — a proprietary formula using hitting and pitching rate stats, and a standard Pythagorean expectation using actual runs scored and allowed — benchmarked against each team's real record."
+        subtitle="Side-by-side comparison of three win-expectancy models — a proprietary formula, Pythagorean expectation, and Elo ratings — benchmarked against each team's real record."
       />
 
       {updatedLabel && (
@@ -600,10 +523,7 @@ export default function TeamMetrics() {
       {data && (
         <>
           <MethodologyBar exponent={data.exponent} />
-
           <TeamsTable teams={data.teams} />
-
-          {/* Accuracy metrics row */}
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'flex-start' }}>
             <CorrelationCard accuracy={data.accuracy} />
             <ErrorCard       accuracy={data.accuracy} />
