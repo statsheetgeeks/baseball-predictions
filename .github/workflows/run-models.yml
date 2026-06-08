@@ -99,6 +99,9 @@ jobs:
         
       - name: Run Research — Team Metrics
         run: python models/research_team_metrics.py
+        
+      - name: Run Research — Hot Hitters
+        run: python models/research_hot_hitters.py
 
       # - name: Run Pitchers — Strikeout
       #   run: python models/pitchers_strikeout.py
