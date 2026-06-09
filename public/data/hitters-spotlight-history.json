@@ -22,6 +22,23 @@
           "actual_hr": null
         },
         {
+          "player": "Michael Harris II",
+          "team": "ATL",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 18,
+            "HR Model": 8,
+            "ML HR": 23
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
           "player": "Ben Rice",
           "team": "NYY",
           "appearances": 2,
@@ -30,8 +47,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 8,
-            "ML HR": 12
+            "HR Model": 5,
+            "ML HR": 9
           },
           "actual_hit": null,
           "actual_hr": null
@@ -52,16 +69,31 @@
           "actual_hr": null
         },
         {
-          "player": "Bobby Witt Jr.",
-          "team": "KC",
+          "player": "Brandon Lowe",
+          "team": "PIT",
           "appearances": 2,
           "models": [
-            "Log5 Hit",
+            "HR Model",
             "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 9,
-            "ML HR": 10
+            "HR Model": 2,
+            "ML HR": 13
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "CJ Abrams",
+          "team": "WSH",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 10,
+            "HR Model": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -91,7 +123,7 @@
           ],
           "ranks": {
             "HR Model": 4,
-            "ML HR": 15
+            "ML HR": 11
           },
           "actual_hit": null,
           "actual_hr": null
@@ -105,7 +137,7 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 12,
+            "HR Model": 13,
             "ML HR": 1
           },
           "actual_hit": null,
@@ -157,6 +189,21 @@
           "actual_hr": null
         },
         {
+          "player": "Marcell Ozuna",
+          "team": "PIT",
+          "appearances": 2,
+          "models": [
+            "ML HR",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 9,
+            "ML HR": 21
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
           "player": "Matt Olson",
           "team": "ATL",
           "appearances": 2,
@@ -181,22 +228,7 @@
           ],
           "ranks": {
             "HR Model": 11,
-            "ML HR": 21
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Michael Harris II",
-          "team": "ATL",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "Log5 Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 18,
-            "HR Model": 6
+            "ML HR": 16
           },
           "actual_hit": null,
           "actual_hr": null
@@ -210,8 +242,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 25,
-            "ML HR": 3
+            "HR Model": 24,
+            "ML HR": 2
           },
           "actual_hit": null,
           "actual_hr": null
@@ -247,6 +279,36 @@
           "actual_hr": null
         },
         {
+          "player": "Oneil Cruz",
+          "team": "PIT",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML HR"
+          ],
+          "ranks": {
+            "HR Model": 14,
+            "ML HR": 25
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Paul Goldschmidt",
+          "team": "NYY",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML HR"
+          ],
+          "ranks": {
+            "HR Model": 20,
+            "ML HR": 3
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
           "player": "Pete Crow-Armstrong",
           "team": "CHC",
           "appearances": 2,
@@ -256,22 +318,7 @@
           ],
           "ranks": {
             "Log5 Hit": 12,
-            "HR Model": 24
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Vinnie Pasquantino",
-          "team": "KC",
-          "appearances": 2,
-          "models": [
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 13,
-            "ML HR": 16
+            "HR Model": 23
           },
           "actual_hit": null,
           "actual_hr": null
