@@ -1,17 +1,30 @@
 {
-  "date": "2026-06-08",
-  "updated": "2026-06-08T17:22:53.964918Z",
+  "date": "2026-06-09",
+  "updated": "2026-06-09T14:26:56.532504Z",
   "predictions": [
     {
       "game_time": "6:35 PM ET",
       "away_team": "Seattle Mariners",
       "home_team": "Baltimore Orioles",
-      "away_sp": "Emerson Hancock",
-      "home_sp": "TBD",
-      "away_prob": 0.5245,
-      "home_prob": 0.4755,
+      "away_sp": "Logan Gilbert",
+      "home_sp": "Trevor Rogers",
+      "away_prob": 0.5316,
+      "home_prob": 0.4684,
       "pick": "Seattle Mariners",
-      "confidence": 0.5245,
+      "confidence": 0.5316,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "6:40 PM ET",
+      "away_team": "Los Angeles Dodgers",
+      "home_team": "Pittsburgh Pirates",
+      "away_sp": "Eric Lauer",
+      "home_sp": "Paul Skenes",
+      "away_prob": 0.4256,
+      "home_prob": 0.5744,
+      "pick": "Pittsburgh Pirates",
+      "confidence": 0.5744,
       "actual_winner": null,
       "correct": null
     },
@@ -19,12 +32,38 @@
       "game_time": "6:40 PM ET",
       "away_team": "Boston Red Sox",
       "home_team": "Tampa Bay Rays",
-      "away_sp": "Connelly Early",
-      "home_sp": "Ian Seymour",
-      "away_prob": 0.5283,
-      "home_prob": 0.4717,
-      "pick": "Boston Red Sox",
-      "confidence": 0.5283,
+      "away_sp": "Payton Tolle",
+      "home_sp": "Nick Martinez",
+      "away_prob": 0.491,
+      "home_prob": 0.509,
+      "pick": "Tampa Bay Rays",
+      "confidence": 0.509,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "6:40 PM ET",
+      "away_team": "Minnesota Twins",
+      "home_team": "Detroit Tigers",
+      "away_sp": "Taj Bradley",
+      "home_sp": "Troy Melton",
+      "away_prob": 0.4621,
+      "home_prob": 0.5379,
+      "pick": "Detroit Tigers",
+      "confidence": 0.5379,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "6:40 PM ET",
+      "away_team": "Arizona Diamondbacks",
+      "home_team": "Miami Marlins",
+      "away_sp": "Zac Gallen",
+      "home_sp": "Max Meyer",
+      "away_prob": 0.4596,
+      "home_prob": 0.5404,
+      "pick": "Miami Marlins",
+      "confidence": 0.5404,
       "actual_winner": null,
       "correct": null
     },
@@ -32,12 +71,12 @@
       "game_time": "6:40 PM ET",
       "away_team": "New York Yankees",
       "home_team": "Cleveland Guardians",
-      "away_sp": "Will Warren",
-      "home_sp": "Gavin Williams",
-      "away_prob": 0.4645,
-      "home_prob": 0.5355,
-      "pick": "Cleveland Guardians",
-      "confidence": 0.5355,
+      "away_sp": "Gerrit Cole",
+      "home_sp": "Slade Cecconi",
+      "away_prob": 0.5212,
+      "home_prob": 0.4788,
+      "pick": "New York Yankees",
+      "confidence": 0.5212,
       "actual_winner": null,
       "correct": null
     },
@@ -45,12 +84,64 @@
       "game_time": "7:07 PM ET",
       "away_team": "Philadelphia Phillies",
       "home_team": "Toronto Blue Jays",
-      "away_sp": "Cristopher S\u00e1nchez",
-      "home_sp": "Patrick Corbin",
-      "away_prob": 0.5182,
-      "home_prob": 0.4818,
-      "pick": "Philadelphia Phillies",
-      "confidence": 0.5182,
+      "away_sp": "Zack Wheeler",
+      "home_sp": "Dylan Cease",
+      "away_prob": 0.4973,
+      "home_prob": 0.5027,
+      "pick": "Toronto Blue Jays",
+      "confidence": 0.5027,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "7:10 PM ET",
+      "away_team": "St. Louis Cardinals",
+      "home_team": "New York Mets",
+      "away_sp": "Dustin May",
+      "home_sp": "Freddy Peralta",
+      "away_prob": 0.4914,
+      "home_prob": 0.5086,
+      "pick": "New York Mets",
+      "confidence": 0.5086,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "7:40 PM ET",
+      "away_team": "Texas Rangers",
+      "home_team": "Kansas City Royals",
+      "away_sp": "Nathan Eovaldi",
+      "home_sp": "Stephen Kolek",
+      "away_prob": 0.4895,
+      "home_prob": 0.5105,
+      "pick": "Kansas City Royals",
+      "confidence": 0.5105,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "7:40 PM ET",
+      "away_team": "Atlanta Braves",
+      "home_team": "Chicago White Sox",
+      "away_sp": "Grant Holmes",
+      "home_sp": "Erick Fedde",
+      "away_prob": 0.4969,
+      "home_prob": 0.5031,
+      "pick": "Chicago White Sox",
+      "confidence": 0.5031,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "8:40 PM ET",
+      "away_team": "Chicago Cubs",
+      "home_team": "Colorado Rockies",
+      "away_sp": "Colin Rea",
+      "home_sp": "Tomoyuki Sugano",
+      "away_prob": 0.6059,
+      "home_prob": 0.3941,
+      "pick": "Chicago Cubs",
+      "confidence": 0.6059,
       "actual_winner": null,
       "correct": null
     },
@@ -58,12 +149,12 @@
       "game_time": "9:38 PM ET",
       "away_team": "Houston Astros",
       "home_team": "Los Angeles Angels",
-      "away_sp": "Spencer Arrighetti",
-      "home_sp": "Grayson Rodriguez",
-      "away_prob": 0.5924,
-      "home_prob": 0.4076,
+      "away_sp": "Kai-Wei Teng",
+      "home_sp": "Walbert Ure\u00f1a",
+      "away_prob": 0.5317,
+      "home_prob": 0.4683,
       "pick": "Houston Astros",
-      "confidence": 0.5924,
+      "confidence": 0.5317,
       "actual_winner": null,
       "correct": null
     },
@@ -71,12 +162,12 @@
       "game_time": "9:40 PM ET",
       "away_team": "Cincinnati Reds",
       "home_team": "San Diego Padres",
-      "away_sp": "Andrew Abbott",
-      "home_sp": "Walker Buehler",
-      "away_prob": 0.4991,
-      "home_prob": 0.5009,
-      "pick": "San Diego Padres",
-      "confidence": 0.5009,
+      "away_sp": "Chase Burns",
+      "home_sp": "Lucas Giolito",
+      "away_prob": 0.5456,
+      "home_prob": 0.4544,
+      "pick": "Cincinnati Reds",
+      "confidence": 0.5456,
       "actual_winner": null,
       "correct": null
     },
@@ -84,12 +175,12 @@
       "game_time": "9:45 PM ET",
       "away_team": "Washington Nationals",
       "home_team": "San Francisco Giants",
-      "away_sp": "Miles Mikolas",
-      "home_sp": "Logan Webb",
-      "away_prob": 0.4837,
-      "home_prob": 0.5163,
-      "pick": "San Francisco Giants",
-      "confidence": 0.5163,
+      "away_sp": "Andrew Alvarez",
+      "home_sp": "Adrian Houser",
+      "away_prob": 0.5655,
+      "home_prob": 0.4345,
+      "pick": "Washington Nationals",
+      "confidence": 0.5655,
       "actual_winner": null,
       "correct": null
     },
@@ -97,46 +188,46 @@
       "game_time": "10:05 PM ET",
       "away_team": "Milwaukee Brewers",
       "home_team": "Athletics",
-      "away_sp": "Kyle Harrison",
-      "home_sp": "Jeffrey Springs",
-      "away_prob": 0.5797,
-      "home_prob": 0.4203,
-      "pick": "Milwaukee Brewers",
-      "confidence": 0.5797,
+      "away_sp": "Robert Gasser",
+      "home_sp": "J.T. Ginn",
+      "away_prob": 0.4856,
+      "home_prob": 0.5144,
+      "pick": "Athletics",
+      "confidence": 0.5144,
       "actual_winner": null,
       "correct": null
     }
   ],
   "yesterday": {
     "total": {
-      "wins": 14,
-      "losses": 1,
-      "total": 15
+      "wins": 5,
+      "losses": 3,
+      "total": 8
     },
     "by_confidence": [
       {
         "band": "50\u201355%",
-        "wins": 8,
-        "losses": 0,
-        "total": 8
+        "wins": 3,
+        "losses": 3,
+        "total": 6
       },
       {
         "band": "55\u201360%",
-        "wins": 3,
-        "losses": 1,
-        "total": 4
-      },
-      {
-        "band": "60\u201365%",
         "wins": 2,
         "losses": 0,
         "total": 2
       },
       {
-        "band": "65\u201370%",
-        "wins": 1,
+        "band": "60\u201365%",
+        "wins": 0,
         "losses": 0,
-        "total": 1
+        "total": 0
+      },
+      {
+        "band": "65\u201370%",
+        "wins": 0,
+        "losses": 0,
+        "total": 0
       },
       {
         "band": "70\u201375%",
@@ -157,26 +248,26 @@
         "total": 0
       }
     ],
-    "date": "2026-06-07"
+    "date": "2026-06-08"
   },
   "alltime": {
     "total": {
-      "wins": 224,
-      "losses": 177,
-      "total": 401
+      "wins": 229,
+      "losses": 180,
+      "total": 409
     },
     "by_confidence": [
       {
         "band": "50\u201355%",
-        "wins": 141,
-        "losses": 116,
-        "total": 257
+        "wins": 144,
+        "losses": 119,
+        "total": 263
       },
       {
         "band": "55\u201360%",
-        "wins": 60,
+        "wins": 62,
         "losses": 52,
-        "total": 112
+        "total": 114
       },
       {
         "band": "60\u201365%",
