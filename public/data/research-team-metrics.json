@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-10T14:56:46Z",
+  "updated": "2026-06-10T17:12:55Z",
   "season": 2026,
   "exponent": 1.83,
   "teams": [
@@ -31,7 +31,7 @@
       "formula_wins": 42,
       "formula_losses": 24,
       "formula_diff": 2,
-      "formula_wp": 0.641,
+      "formula_wp": 0.638,
       "pythag_wins": 43,
       "pythag_losses": 23,
       "pythag_diff": 3,
@@ -118,6 +118,25 @@
       "elo_wp": 0.516
     },
     {
+      "team": "Tampa Bay Rays",
+      "games": 64,
+      "actual_wins": 39,
+      "actual_losses": 25,
+      "actual_wp": 0.609,
+      "formula_wins": 35,
+      "formula_losses": 29,
+      "formula_diff": -4,
+      "formula_wp": 0.539,
+      "pythag_wins": 33,
+      "pythag_losses": 31,
+      "pythag_diff": -6,
+      "pythag_wp": 0.516,
+      "elo_wins": 34,
+      "elo_losses": 30,
+      "elo_diff": -5,
+      "elo_wp": 0.524
+    },
+    {
       "team": "Pittsburgh Pirates",
       "games": 67,
       "actual_wins": 34,
@@ -135,25 +154,6 @@
       "elo_losses": 34,
       "elo_diff": -1,
       "elo_wp": 0.487
-    },
-    {
-      "team": "Tampa Bay Rays",
-      "games": 64,
-      "actual_wins": 39,
-      "actual_losses": 25,
-      "actual_wp": 0.609,
-      "formula_wins": 34,
-      "formula_losses": 30,
-      "formula_diff": -5,
-      "formula_wp": 0.531,
-      "pythag_wins": 33,
-      "pythag_losses": 31,
-      "pythag_diff": -6,
-      "pythag_wp": 0.516,
-      "elo_wins": 34,
-      "elo_losses": 30,
-      "elo_diff": -5,
-      "elo_wp": 0.524
     },
     {
       "team": "Chicago White Sox",
@@ -240,7 +240,7 @@
       "formula_wins": 34,
       "formula_losses": 35,
       "formula_diff": -3,
-      "formula_wp": 0.495,
+      "formula_wp": 0.492,
       "pythag_wins": 34,
       "pythag_losses": 35,
       "pythag_diff": -3,
@@ -316,7 +316,7 @@
       "formula_wins": 30,
       "formula_losses": 34,
       "formula_diff": -6,
-      "formula_wp": 0.471,
+      "formula_wp": 0.472,
       "pythag_wins": 33,
       "pythag_losses": 31,
       "pythag_diff": -3,
@@ -335,7 +335,7 @@
       "formula_wins": 30,
       "formula_losses": 35,
       "formula_diff": 3,
-      "formula_wp": 0.463,
+      "formula_wp": 0.459,
       "pythag_wins": 31,
       "pythag_losses": 34,
       "pythag_diff": 4,
@@ -449,7 +449,7 @@
       "formula_wins": 30,
       "formula_losses": 38,
       "formula_diff": 3,
-      "formula_wp": 0.446,
+      "formula_wp": 0.447,
       "pythag_wins": 29,
       "pythag_losses": 39,
       "pythag_diff": 2,
@@ -544,7 +544,7 @@
       "formula_wins": 28,
       "formula_losses": 38,
       "formula_diff": -4,
-      "formula_wp": 0.42,
+      "formula_wp": 0.421,
       "pythag_wins": 28,
       "pythag_losses": 38,
       "pythag_diff": -4,
@@ -576,17 +576,17 @@
   ],
   "accuracy": {
     "correlation": {
-      "formula": 0.7911,
+      "formula": 0.7962,
       "pythag": 0.859,
       "elo": 0.8434
     },
     "mae": {
-      "formula": 0.0396,
+      "formula": 0.0392,
       "pythag": 0.0327,
       "elo": 0.038
     },
     "rmse": {
-      "formula": 0.0481,
+      "formula": 0.0475,
       "pythag": 0.0411,
       "elo": 0.0476
     }
