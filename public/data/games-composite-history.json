@@ -32,6 +32,33 @@
         },
         {
           "game_time": "1:10 PM ET",
+          "away_team": "Minnesota Twins",
+          "home_team": "Detroit Tigers",
+          "log5": {
+            "pick": "Minnesota Twins",
+            "confidence": 0.5182
+          },
+          "research": {
+            "pick": "Detroit Tigers",
+            "confidence": 0.5335
+          },
+          "xgboost": {
+            "pick": "Detroit Tigers",
+            "confidence": 0.6024
+          },
+          "random_forest": {
+            "pick": "Detroit Tigers",
+            "confidence": 0.5107
+          },
+          "composite_pick": "Detroit Tigers",
+          "composite_confidence": 0.5321,
+          "vote_count": 3,
+          "total_votes": 4,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "1:10 PM ET",
           "away_team": "St. Louis Cardinals",
           "home_team": "New York Mets",
           "log5": {
@@ -44,15 +71,15 @@
           },
           "xgboost": {
             "pick": "St. Louis Cardinals",
-            "confidence": 0.506
+            "confidence": 0.5243
           },
           "random_forest": {
-            "pick": "St. Louis Cardinals",
-            "confidence": 0.5084
+            "pick": "New York Mets",
+            "confidence": 0.5126
           },
           "composite_pick": "St. Louis Cardinals",
-          "composite_confidence": 0.532,
-          "vote_count": 3,
+          "composite_confidence": 0.5313,
+          "vote_count": 2,
           "total_votes": 4,
           "actual_winner": null,
           "correct": null
@@ -79,33 +106,6 @@
           },
           "composite_pick": "Los Angeles Dodgers",
           "composite_confidence": 0.5293,
-          "vote_count": 3,
-          "total_votes": 4,
-          "actual_winner": null,
-          "correct": null
-        },
-        {
-          "game_time": "1:10 PM ET",
-          "away_team": "Minnesota Twins",
-          "home_team": "Detroit Tigers",
-          "log5": {
-            "pick": "Minnesota Twins",
-            "confidence": 0.5182
-          },
-          "research": {
-            "pick": "Detroit Tigers",
-            "confidence": 0.5335
-          },
-          "xgboost": {
-            "pick": "Detroit Tigers",
-            "confidence": 0.5918
-          },
-          "random_forest": {
-            "pick": "Detroit Tigers",
-            "confidence": 0.5031
-          },
-          "composite_pick": "Detroit Tigers",
-          "composite_confidence": 0.5275,
           "vote_count": 3,
           "total_votes": 4,
           "actual_winner": null,
@@ -139,6 +139,33 @@
           "correct": null
         },
         {
+          "game_time": "1:10 PM ET",
+          "away_team": "Arizona Diamondbacks",
+          "home_team": "Miami Marlins",
+          "log5": {
+            "pick": "Arizona Diamondbacks",
+            "confidence": 0.5022
+          },
+          "research": {
+            "pick": "Miami Marlins",
+            "confidence": 0.5501
+          },
+          "xgboost": {
+            "pick": "Arizona Diamondbacks",
+            "confidence": 0.5262
+          },
+          "random_forest": {
+            "pick": "Miami Marlins",
+            "confidence": 0.5664
+          },
+          "composite_pick": "Miami Marlins",
+          "composite_confidence": 0.522,
+          "vote_count": 2,
+          "total_votes": 4,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
           "game_time": "7:40 PM ET",
           "away_team": "Atlanta Braves",
           "home_team": "Chicago White Sox",
@@ -160,33 +187,6 @@
           },
           "composite_pick": "Atlanta Braves",
           "composite_confidence": 0.522,
-          "vote_count": 2,
-          "total_votes": 4,
-          "actual_winner": null,
-          "correct": null
-        },
-        {
-          "game_time": "1:10 PM ET",
-          "away_team": "Arizona Diamondbacks",
-          "home_team": "Miami Marlins",
-          "log5": {
-            "pick": "Arizona Diamondbacks",
-            "confidence": 0.5022
-          },
-          "research": {
-            "pick": "Miami Marlins",
-            "confidence": 0.5435
-          },
-          "xgboost": {
-            "pick": "Arizona Diamondbacks",
-            "confidence": 0.5602
-          },
-          "random_forest": {
-            "pick": "Miami Marlins",
-            "confidence": 0.561
-          },
-          "composite_pick": "Miami Marlins",
-          "composite_confidence": 0.5105,
           "vote_count": 2,
           "total_votes": 4,
           "actual_winner": null,

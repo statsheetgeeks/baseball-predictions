@@ -5,8 +5,8 @@
       "graded": false,
       "players": [
         {
-          "player": "Pete Crow-Armstrong",
-          "team": "CHC",
+          "player": "Juan Soto",
+          "team": "NYM",
           "appearances": 4,
           "models": [
             "HR Model",
@@ -15,26 +15,9 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 25,
-            "ML Hit": 14,
-            "HR Model": 14,
-            "ML HR": 12
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Juan Soto",
-          "team": "NYM",
-          "appearances": 3,
-          "models": [
-            "Log5 Hit",
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
             "Log5 Hit": 8,
             "ML Hit": 23,
+            "HR Model": 4,
             "ML HR": 1
           },
           "actual_hit": null,
@@ -51,8 +34,42 @@
           ],
           "ranks": {
             "ML Hit": 25,
-            "HR Model": 5,
-            "ML HR": 19
+            "HR Model": 8,
+            "ML HR": 17
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Michael Busch",
+          "team": "CHC",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "ML HR",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 5,
+            "HR Model": 25,
+            "ML HR": 14
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Pete Crow-Armstrong",
+          "team": "CHC",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 25,
+            "ML Hit": 14,
+            "HR Model": 15
           },
           "actual_hit": null,
           "actual_hr": null
@@ -68,8 +85,8 @@
           ],
           "ranks": {
             "ML Hit": 22,
-            "HR Model": 17,
-            "ML HR": 16
+            "HR Model": 16,
+            "ML HR": 22
           },
           "actual_hit": null,
           "actual_hr": null
@@ -113,8 +130,8 @@
             "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 11,
-            "ML HR": 11
+            "Log5 Hit": 9,
+            "ML HR": 10
           },
           "actual_hit": null,
           "actual_hr": null
@@ -129,7 +146,7 @@
           ],
           "ranks": {
             "ML Hit": 18,
-            "HR Model": 6
+            "HR Model": 7
           },
           "actual_hit": null,
           "actual_hr": null
@@ -143,8 +160,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 4,
-            "ML HR": 9
+            "HR Model": 6,
+            "ML HR": 8
           },
           "actual_hit": null,
           "actual_hr": null
@@ -159,7 +176,22 @@
           ],
           "ranks": {
             "HR Model": 2,
-            "ML HR": 4
+            "ML HR": 3
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Jordan Walker",
+          "team": "STL",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "Log5 Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 19,
+            "HR Model": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -203,7 +235,7 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 7,
+            "HR Model": 12,
             "ML HR": 2
           },
           "actual_hit": null,
@@ -219,7 +251,7 @@
           ],
           "ranks": {
             "ML Hit": 2,
-            "ML HR": 24
+            "ML HR": 23
           },
           "actual_hit": null,
           "actual_hr": null
@@ -233,38 +265,23 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 11,
-            "ML HR": 13
+            "HR Model": 14,
+            "ML HR": 11
           },
           "actual_hit": null,
           "actual_hr": null
         },
         {
-          "player": "Michael Busch",
-          "team": "CHC",
-          "appearances": 2,
-          "models": [
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 5,
-            "ML HR": 10
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Michael Conforto",
-          "team": "CHC",
+          "player": "MJ Melendez",
+          "team": "NYM",
           "appearances": 2,
           "models": [
             "HR Model",
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 9,
-            "ML HR": 5
+            "HR Model": 23,
+            "ML HR": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -279,7 +296,7 @@
           ],
           "ranks": {
             "HR Model": 24,
-            "ML HR": 8
+            "ML HR": 7
           },
           "actual_hit": null,
           "actual_hr": null
@@ -324,7 +341,7 @@
           ],
           "ranks": {
             "ML Hit": 9,
-            "ML HR": 21
+            "ML HR": 19
           },
           "actual_hit": null,
           "actual_hr": null
