@@ -5,18 +5,18 @@
       "graded": false,
       "players": [
         {
-          "player": "Byron Buxton",
-          "team": "MIN",
+          "player": "Julio Rodr\u00edguez",
+          "team": "SEA",
           "appearances": 3,
           "models": [
             "HR Model",
             "Log5 Hit",
-            "ML HR"
+            "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 18,
-            "HR Model": 25,
-            "ML HR": 15
+            "Log5 Hit": 12,
+            "ML Hit": 2,
+            "HR Model": 23
           },
           "actual_hit": null,
           "actual_hr": null
@@ -31,7 +31,22 @@
           ],
           "ranks": {
             "Log5 Hit": 14,
-            "ML HR": 4
+            "ML HR": 3
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Byron Buxton",
+          "team": "MIN",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "Log5 Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 18,
+            "HR Model": 20
           },
           "actual_hit": null,
           "actual_hr": null
@@ -60,8 +75,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 24,
-            "ML HR": 24
+            "HR Model": 22,
+            "ML HR": 19
           },
           "actual_hit": null,
           "actual_hr": null
@@ -76,7 +91,7 @@
           ],
           "ranks": {
             "ML Hit": 15,
-            "HR Model": 2
+            "HR Model": 1
           },
           "actual_hit": null,
           "actual_hr": null
@@ -90,7 +105,7 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 1,
+            "HR Model": 3,
             "ML HR": 12
           },
           "actual_hit": null,
@@ -105,8 +120,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 10,
-            "ML HR": 18
+            "HR Model": 9,
+            "ML HR": 22
           },
           "actual_hit": null,
           "actual_hr": null
@@ -121,7 +136,7 @@
           ],
           "ranks": {
             "HR Model": 4,
-            "ML HR": 19
+            "ML HR": 16
           },
           "actual_hit": null,
           "actual_hr": null
@@ -151,7 +166,7 @@
           ],
           "ranks": {
             "ML Hit": 4,
-            "ML HR": 3
+            "ML HR": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -181,22 +196,7 @@
           ],
           "ranks": {
             "HR Model": 14,
-            "ML HR": 1
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Julio Rodr\u00edguez",
-          "team": "SEA",
-          "appearances": 2,
-          "models": [
-            "Log5 Hit",
-            "ML Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 12,
-            "ML Hit": 2
+            "ML HR": 2
           },
           "actual_hit": null,
           "actual_hr": null
@@ -225,8 +225,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 20,
-            "ML HR": 11
+            "HR Model": 17,
+            "ML HR": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -241,7 +241,7 @@
           ],
           "ranks": {
             "Log5 Hit": 4,
-            "HR Model": 17
+            "HR Model": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -270,23 +270,23 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 3,
+            "HR Model": 2,
             "ML HR": 5
           },
           "actual_hit": null,
           "actual_hr": null
         },
         {
-          "player": "Pete Alonso",
-          "team": "BAL",
+          "player": "Mookie Betts",
+          "team": "LAD",
           "appearances": 2,
           "models": [
-            "HR Model",
-            "ML HR"
+            "ML HR",
+            "ML Hit"
           ],
           "ranks": {
-            "HR Model": 19,
-            "ML HR": 14
+            "ML Hit": 12,
+            "ML HR": 23
           },
           "actual_hit": null,
           "actual_hr": null
@@ -316,7 +316,7 @@
           ],
           "ranks": {
             "Log5 Hit": 3,
-            "HR Model": 11
+            "HR Model": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -331,7 +331,7 @@
           ],
           "ranks": {
             "Log5 Hit": 13,
-            "HR Model": 18
+            "HR Model": 19
           },
           "actual_hit": null,
           "actual_hr": null
