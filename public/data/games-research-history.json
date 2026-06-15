@@ -1,6 +1,151 @@
 {
   "records": [
     {
+      "date": "2026-06-15",
+      "games": [
+        {
+          "game_time": "6:40 PM ET",
+          "away_team": "Miami Marlins",
+          "home_team": "Philadelphia Phillies",
+          "away_prob": 0.4665,
+          "home_prob": 0.5335,
+          "base_logr_home": 0.5487,
+          "base_xgb_home": 0.5781,
+          "base_mlp_home": 0.4864,
+          "pick": "Philadelphia Phillies",
+          "confidence": 0.5335,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "6:45 PM ET",
+          "away_team": "Kansas City Royals",
+          "home_team": "Washington Nationals",
+          "away_prob": 0.4756,
+          "home_prob": 0.5244,
+          "base_logr_home": 0.5278,
+          "base_xgb_home": 0.5382,
+          "base_mlp_home": 0.5268,
+          "pick": "Washington Nationals",
+          "confidence": 0.5244,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "7:10 PM ET",
+          "away_team": "New York Mets",
+          "home_team": "Cincinnati Reds",
+          "away_prob": 0.5622,
+          "home_prob": 0.4378,
+          "base_logr_home": 0.4926,
+          "base_xgb_home": 0.4003,
+          "base_mlp_home": 0.4666,
+          "pick": "New York Mets",
+          "confidence": 0.5622,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "7:45 PM ET",
+          "away_team": "San Diego Padres",
+          "home_team": "St. Louis Cardinals",
+          "away_prob": 0.4565,
+          "home_prob": 0.5435,
+          "base_logr_home": 0.5511,
+          "base_xgb_home": 0.5943,
+          "base_mlp_home": 0.7435,
+          "pick": "St. Louis Cardinals",
+          "confidence": 0.5435,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "8:05 PM ET",
+          "away_team": "Colorado Rockies",
+          "home_team": "Chicago Cubs",
+          "away_prob": 0.4565,
+          "home_prob": 0.5435,
+          "base_logr_home": 0.5704,
+          "base_xgb_home": 0.5309,
+          "base_mlp_home": 0.5253,
+          "pick": "Chicago Cubs",
+          "confidence": 0.5435,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "8:05 PM ET",
+          "away_team": "Minnesota Twins",
+          "home_team": "Texas Rangers",
+          "away_prob": 0.3866,
+          "home_prob": 0.6134,
+          "base_logr_home": 0.6008,
+          "base_xgb_home": 0.5981,
+          "base_mlp_home": 0.658,
+          "pick": "Texas Rangers",
+          "confidence": 0.6134,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "8:10 PM ET",
+          "away_team": "Detroit Tigers",
+          "home_team": "Houston Astros",
+          "away_prob": 0.4756,
+          "home_prob": 0.5244,
+          "base_logr_home": 0.5381,
+          "base_xgb_home": 0.5477,
+          "base_mlp_home": 0.3073,
+          "pick": "Houston Astros",
+          "confidence": 0.5244,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "9:40 PM ET",
+          "away_team": "Los Angeles Angels",
+          "home_team": "Arizona Diamondbacks",
+          "away_prob": 0.4665,
+          "home_prob": 0.5335,
+          "base_logr_home": 0.5674,
+          "base_xgb_home": 0.4775,
+          "base_mlp_home": 0.3844,
+          "pick": "Arizona Diamondbacks",
+          "confidence": 0.5335,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "9:40 PM ET",
+          "away_team": "Pittsburgh Pirates",
+          "home_team": "Athletics",
+          "away_prob": 0.5622,
+          "home_prob": 0.4378,
+          "base_logr_home": 0.4841,
+          "base_xgb_home": 0.4729,
+          "base_mlp_home": 0.4245,
+          "pick": "Pittsburgh Pirates",
+          "confidence": 0.5622,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "10:10 PM ET",
+          "away_team": "Tampa Bay Rays",
+          "home_team": "Los Angeles Dodgers",
+          "away_prob": 0.3786,
+          "home_prob": 0.6214,
+          "base_logr_home": 0.6611,
+          "base_xgb_home": 0.7197,
+          "base_mlp_home": 0.6515,
+          "pick": "Los Angeles Dodgers",
+          "confidence": 0.6214,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-06-14",
       "games": [
         {
@@ -14,8 +159,8 @@
           "base_mlp_home": 0.587,
           "pick": "Pittsburgh Pirates",
           "confidence": 0.5004,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Miami Marlins",
+          "correct": false
         },
         {
           "game_time": "1:35 PM ET",
@@ -28,8 +173,8 @@
           "base_mlp_home": 0.5493,
           "pick": "Baltimore Orioles",
           "confidence": 0.5501,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "San Diego Padres",
+          "correct": false
         },
         {
           "game_time": "1:35 PM ET",
@@ -42,8 +187,8 @@
           "base_mlp_home": 0.4366,
           "pick": "Washington Nationals",
           "confidence": 0.5004,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Washington Nationals",
+          "correct": true
         },
         {
           "game_time": "1:37 PM ET",
@@ -56,8 +201,8 @@
           "base_mlp_home": 0.5945,
           "pick": "Toronto Blue Jays",
           "confidence": 0.5244,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "New York Yankees",
+          "correct": false
         },
         {
           "game_time": "1:40 PM ET",
@@ -70,8 +215,8 @@
           "base_mlp_home": 0.4297,
           "pick": "Arizona Diamondbacks",
           "confidence": 0.5139,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Arizona Diamondbacks",
+          "correct": true
         },
         {
           "game_time": "1:40 PM ET",
@@ -98,8 +243,8 @@
           "base_mlp_home": 0.4909,
           "pick": "New York Mets",
           "confidence": 0.5004,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "New York Mets",
+          "correct": true
         },
         {
           "game_time": "2:10 PM ET",
@@ -112,8 +257,8 @@
           "base_mlp_home": 0.5587,
           "pick": "Kansas City Royals",
           "confidence": 0.5435,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Kansas City Royals",
+          "correct": true
         },
         {
           "game_time": "2:10 PM ET",
@@ -126,8 +271,8 @@
           "base_mlp_home": 0.3757,
           "pick": "Minnesota Twins",
           "confidence": 0.5268,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Minnesota Twins",
+          "correct": true
         },
         {
           "game_time": "2:10 PM ET",
@@ -140,8 +285,8 @@
           "base_mlp_home": 0.717,
           "pick": "Chicago White Sox",
           "confidence": 0.5335,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Chicago White Sox",
+          "correct": true
         },
         {
           "game_time": "2:10 PM ET",
@@ -154,8 +299,8 @@
           "base_mlp_home": 0.6034,
           "pick": "Milwaukee Brewers",
           "confidence": 0.6134,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Milwaukee Brewers",
+          "correct": true
         },
         {
           "game_time": "3:05 PM ET",
@@ -168,8 +313,8 @@
           "base_mlp_home": 0.4511,
           "pick": "Colorado Rockies",
           "confidence": 0.5622,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Colorado Rockies",
+          "correct": true
         },
         {
           "game_time": "3:10 PM ET",
@@ -182,8 +327,8 @@
           "base_mlp_home": 0.3548,
           "pick": "Chicago Cubs",
           "confidence": 0.5622,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "San Francisco Giants",
+          "correct": false
         },
         {
           "game_time": "4:07 PM ET",
@@ -196,8 +341,8 @@
           "base_mlp_home": 0.293,
           "pick": "Tampa Bay Rays",
           "confidence": 0.5622,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Tampa Bay Rays",
+          "correct": true
         },
         {
           "game_time": "7:20 PM ET",
@@ -210,8 +355,8 @@
           "base_mlp_home": 0.5584,
           "pick": "Texas Rangers",
           "confidence": 0.5102,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Texas Rangers",
+          "correct": true
         }
       ]
     },
