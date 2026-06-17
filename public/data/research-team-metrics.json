@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-17T14:34:03Z",
+  "updated": "2026-06-17T17:05:46Z",
   "season": 2026,
   "exponent": 1.83,
   "teams": [
@@ -411,7 +411,7 @@
       "formula_wins": 33,
       "formula_losses": 40,
       "formula_diff": 1,
-      "formula_wp": 0.458,
+      "formula_wp": 0.454,
       "pythag_wins": 34,
       "pythag_losses": 39,
       "pythag_diff": 2,
@@ -517,25 +517,6 @@
       "elo_wp": 0.461
     },
     {
-      "team": "Cincinnati Reds",
-      "games": 72,
-      "actual_wins": 35,
-      "actual_losses": 37,
-      "actual_wp": 0.486,
-      "formula_wins": 31,
-      "formula_losses": 41,
-      "formula_diff": -4,
-      "formula_wp": 0.429,
-      "pythag_wins": 32,
-      "pythag_losses": 40,
-      "pythag_diff": -3,
-      "pythag_wp": 0.44,
-      "elo_wins": 36,
-      "elo_losses": 36,
-      "elo_diff": 1,
-      "elo_wp": 0.493
-    },
-    {
       "team": "San Diego Padres",
       "games": 72,
       "actual_wins": 37,
@@ -553,6 +534,25 @@
       "elo_losses": 35,
       "elo_diff": 0,
       "elo_wp": 0.52
+    },
+    {
+      "team": "Cincinnati Reds",
+      "games": 72,
+      "actual_wins": 35,
+      "actual_losses": 37,
+      "actual_wp": 0.486,
+      "formula_wins": 31,
+      "formula_losses": 41,
+      "formula_diff": -4,
+      "formula_wp": 0.426,
+      "pythag_wins": 32,
+      "pythag_losses": 40,
+      "pythag_diff": -3,
+      "pythag_wp": 0.44,
+      "elo_wins": 36,
+      "elo_losses": 36,
+      "elo_diff": 1,
+      "elo_wp": 0.493
     },
     {
       "team": "Colorado Rockies",
@@ -576,7 +576,7 @@
   ],
   "accuracy": {
     "correlation": {
-      "formula": 0.7738,
+      "formula": 0.7736,
       "pythag": 0.8581,
       "elo": 0.849
     },
@@ -586,7 +586,7 @@
       "elo": 0.0351
     },
     "rmse": {
-      "formula": 0.0474,
+      "formula": 0.0475,
       "pythag": 0.039,
       "elo": 0.0446
     }

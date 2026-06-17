@@ -21,10 +21,10 @@
           },
           "random_forest": {
             "pick": "Atlanta Braves",
-            "confidence": 0.5751
+            "confidence": 0.5872
           },
           "composite_pick": "Atlanta Braves",
-          "composite_confidence": 0.6369,
+          "composite_confidence": 0.6399,
           "vote_count": 4,
           "total_votes": 4,
           "actual_winner": null,
@@ -48,10 +48,10 @@
           },
           "random_forest": {
             "pick": "Atlanta Braves",
-            "confidence": 0.5751
+            "confidence": 0.5872
           },
           "composite_pick": "Atlanta Braves",
-          "composite_confidence": 0.6369,
+          "composite_confidence": 0.6399,
           "vote_count": 4,
           "total_votes": 4,
           "actual_winner": null,
@@ -220,33 +220,6 @@
           "correct": null
         },
         {
-          "game_time": "2:15 PM ET",
-          "away_team": "San Diego Padres",
-          "home_team": "St. Louis Cardinals",
-          "log5": {
-            "pick": "St. Louis Cardinals",
-            "confidence": 0.5697
-          },
-          "research": {
-            "pick": "St. Louis Cardinals",
-            "confidence": 0.562
-          },
-          "xgboost": {
-            "pick": "St. Louis Cardinals",
-            "confidence": 0.5329
-          },
-          "random_forest": {
-            "pick": "St. Louis Cardinals",
-            "confidence": 0.5288
-          },
-          "composite_pick": "St. Louis Cardinals",
-          "composite_confidence": 0.5484,
-          "vote_count": 4,
-          "total_votes": 4,
-          "actual_winner": null,
-          "correct": null
-        },
-        {
           "game_time": "9:40 PM ET",
           "away_team": "Baltimore Orioles",
           "home_team": "Seattle Mariners",
@@ -274,6 +247,33 @@
           "correct": null
         },
         {
+          "game_time": "2:15 PM ET",
+          "away_team": "San Diego Padres",
+          "home_team": "St. Louis Cardinals",
+          "log5": {
+            "pick": "St. Louis Cardinals",
+            "confidence": 0.5697
+          },
+          "research": {
+            "pick": "St. Louis Cardinals",
+            "confidence": 0.562
+          },
+          "xgboost": {
+            "pick": "St. Louis Cardinals",
+            "confidence": 0.5329
+          },
+          "random_forest": {
+            "pick": "San Diego Padres",
+            "confidence": 0.5018
+          },
+          "composite_pick": "St. Louis Cardinals",
+          "composite_confidence": 0.5407,
+          "vote_count": 3,
+          "total_votes": 4,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
           "game_time": "1:05 PM ET",
           "away_team": "Miami Marlins",
           "home_team": "Philadelphia Phillies",
@@ -295,33 +295,6 @@
           },
           "composite_pick": "Philadelphia Phillies",
           "composite_confidence": 0.5325,
-          "vote_count": 3,
-          "total_votes": 4,
-          "actual_winner": null,
-          "correct": null
-        },
-        {
-          "game_time": "12:40 PM ET",
-          "away_team": "New York Mets",
-          "home_team": "Cincinnati Reds",
-          "log5": {
-            "pick": "Cincinnati Reds",
-            "confidence": 0.5679
-          },
-          "research": {
-            "pick": "New York Mets",
-            "confidence": 0.5622
-          },
-          "xgboost": {
-            "pick": "New York Mets",
-            "confidence": 0.5757
-          },
-          "random_forest": {
-            "pick": "New York Mets",
-            "confidence": 0.5554
-          },
-          "composite_pick": "New York Mets",
-          "composite_confidence": 0.5313,
           "vote_count": 3,
           "total_votes": 4,
           "actual_winner": null,
@@ -376,6 +349,33 @@
           },
           "composite_pick": "Houston Astros",
           "composite_confidence": 0.5181,
+          "vote_count": 3,
+          "total_votes": 4,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "12:40 PM ET",
+          "away_team": "New York Mets",
+          "home_team": "Cincinnati Reds",
+          "log5": {
+            "pick": "Cincinnati Reds",
+            "confidence": 0.5679
+          },
+          "research": {
+            "pick": "New York Mets",
+            "confidence": 0.5622
+          },
+          "xgboost": {
+            "pick": "New York Mets",
+            "confidence": 0.5382
+          },
+          "random_forest": {
+            "pick": "New York Mets",
+            "confidence": 0.5396
+          },
+          "composite_pick": "New York Mets",
+          "composite_confidence": 0.518,
           "vote_count": 3,
           "total_votes": 4,
           "actual_winner": null,
