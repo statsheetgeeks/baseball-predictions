@@ -208,16 +208,62 @@ def add_derived_flags(sc):
     return sc
 
 
-def load_statcast_range(start_dt, end_dt, label=''):
-    """Pulls Statcast for a date range and adds derived flags. Raises if empty."""
-    print(f'  Pulling Statcast {label} ({start_dt} -> {end_dt})...')
-    sc = statcast(start_dt=start_dt, end_dt=end_dt)
-    if sc is None or len(sc) == 0:
-        raise ValueError(f'No Statcast data returned for {start_dt} -> {end_dt}.')
-    sc = add_derived_flags(sc)
-    print(f'    -> {len(sc):,} pitches, {sc["game_pk"].nunique():,} games, '
-          f'{sc["pitcher"].nunique():,} pitchers')
-    return sc
+def load_statcast_range(start_dt, end_dt, label='', max_retries=4, base_delay=20):
+    """
+    Pulls Statcast for a date range and adds derived flags. Raises if empty.
+
+    Baseball Savant serves Statcast as scraped CSV, not a stable API —
+    pybaseball splits a range into weekly chunks and fetches them with a
+    thread pool, and under load Savant occasionally returns a truncated or
+    non-CSV response (rate-limit page, timeout, empty body) instead of an
+    error. pandas then raises ParserError trying to read it as a CSV. This
+    retries with exponential backoff before giving up, since these failures
+    are almost always transient.
+    """
+    last_err = None
+    for attempt in range(1, max_retries + 1):
+        try:
+            print(f'  Pulling Statcast {label} ({start_dt} -> {end_dt})'
+                  f'{f" [attempt {attempt}/{max_retries}]" if attempt > 1 else ""}...')
+            sc = statcast(start_dt=start_dt, end_dt=end_dt)
+            if sc is None or len(sc) == 0:
+                raise ValueError(f'No Statcast data returned for {start_dt} -> {end_dt}.')
+            sc = add_derived_flags(sc)
+            print(f'    -> {len(sc):,} pitches, {sc["game_pk"].nunique():,} games, '
+                  f'{sc["pitcher"].nunique():,} pitchers')
+            return sc
+        except Exception as e:
+            last_err = e
+            is_transient = isinstance(e, (pd.errors.ParserError, ConnectionError, TimeoutError)) \
+                or 'ParserError' in type(e).__name__ \
+                or 'tokenizing' in str(e).lower()
+            if attempt < max_retries and is_transient:
+                delay = base_delay * attempt   # 20s, 40s, 60s, ...
+                print(f'    WARN: transient fetch error ({type(e).__name__}: {e}). '
+                      f'Retrying in {delay}s...')
+                time.sleep(delay)
+                continue
+            raise
+
+    raise last_err
+
+
+def iter_month_ranges(start_dt, end_dt):
+    """Splits a date range into calendar-month sub-ranges (inclusive), so a
+    season pull can be cached incrementally instead of all-or-nothing."""
+    start = datetime.strptime(start_dt, '%Y-%m-%d').date()
+    end = datetime.strptime(end_dt, '%Y-%m-%d').date()
+    ranges = []
+    cur = start
+    while cur <= end:
+        if cur.month == 12:
+            next_month_start = date(cur.year + 1, 1, 1)
+        else:
+            next_month_start = date(cur.year, cur.month + 1, 1)
+        chunk_end = min(end, next_month_start - timedelta(days=1))
+        ranges.append((cur.strftime('%Y-%m-%d'), chunk_end.strftime('%Y-%m-%d')))
+        cur = chunk_end + timedelta(days=1)
+    return ranges
 
 
 def load_from_cache(season_label):
@@ -235,36 +281,70 @@ def load_from_cache(season_label):
     return df
 
 
-def append_to_cache(df, season_label):
-    """Append new rows to the cache under a season label (no de-dup needed —
-    callers are responsible for only passing genuinely new date ranges)."""
+def get_cached_month_keys(season_label):
+    """Returns the set of month-chunk labels already cached for a season,
+    e.g. {'2023-03', '2023-04', ...}, by reading the chunk_label column."""
+    conn = sqlite3.connect(CACHE_DB)
+    try:
+        df = pd.read_sql_query(
+            f"SELECT DISTINCT chunk_label FROM pitches WHERE season_label = '{season_label}'",
+            conn
+        )
+        keys = set(df['chunk_label'].dropna().tolist())
+    except Exception:
+        keys = set()
+    conn.close()
+    return keys
+
+
+def append_to_cache(df, season_label, chunk_label=None):
+    """Append new rows to the cache under a season label, tagged with the
+    calendar-month chunk they came from (chunk_label) so a partially-pulled
+    season can resume from the last completed month instead of restarting."""
     df = df.copy()
     df['season_label'] = season_label
+    df['chunk_label'] = chunk_label
     df['game_date'] = df['game_date'].astype(str)
     conn = sqlite3.connect(CACHE_DB)
     df.to_sql('pitches', conn, if_exists='append', index=False)
     conn.close()
-    print(f'  Cached {len(df):,} new rows under season_label="{season_label}"')
+    tag = f' (chunk {chunk_label})' if chunk_label else ''
+    print(f'  Cached {len(df):,} new rows under season_label="{season_label}"{tag}')
 
 
 def get_historical_data():
     """
     Pulls (or loads from cache) each immutable historical season. Each season
-    is pulled exactly once, ever — if it's already in the cache, it's
-    final and never needs refreshing.
+    is pulled exactly once, ever, and in MONTHLY chunks rather than one
+    multi-month call — each completed month is cached and tagged with its
+    chunk_label immediately, so if a later month fails (even after retries),
+    the next run resumes from the first un-cached month instead of
+    re-pulling the whole season from scratch.
     """
     frames, weights_applied = [], []
     for season_label, start_dt, end_dt, recency_weight in HISTORICAL_SEASONS:
         cached = load_from_cache(season_label)
-        if len(cached) > 0:
-            print(f'  Loaded historical "{season_label}" from cache: {len(cached):,} rows')
+        cached_months = get_cached_month_keys(season_label)
+        month_ranges = iter_month_ranges(start_dt, end_dt)
+        all_months_cached = cached_months.issuperset(
+            {f'{season_label}-{m_start[5:7]}' for m_start, _ in month_ranges}
+        )
+
+        if len(cached) > 0 and all_months_cached:
+            print(f'  Loaded historical "{season_label}" from cache: {len(cached):,} rows '
+                  f'({len(cached_months)} months)')
             sc_season = cached
         else:
-            sc_season = load_statcast_range(start_dt, end_dt, label=season_label)
-            try:
-                append_to_cache(sc_season, season_label)
-            except Exception as e:
-                print(f'    Cache write skipped ({e})')
+            print(f'  Historical "{season_label}": {len(cached_months)}/{len(month_ranges)} '
+                  f'months already cached — pulling the rest...')
+            for m_start, m_end in month_ranges:
+                chunk_label = f'{season_label}-{m_start[5:7]}'
+                if chunk_label in cached_months:
+                    continue   # already have this month, skip straight to the next
+                sc_month = load_statcast_range(m_start, m_end, label=chunk_label)
+                append_to_cache(sc_month, season_label, chunk_label=chunk_label)
+            sc_season = load_from_cache(season_label)
+
         sc_season = sc_season.copy()
         sc_season['_recency_weight'] = recency_weight
         frames.append(sc_season)
@@ -294,16 +374,24 @@ def get_current_season_data():
     """
     Incrementally refreshes the current season's cache. Only pulls the gap
     between the cache's most recent game_date and today, then appends —
-    never re-pulls the whole season. First-ever run falls back to a full
-    season pull (there's nothing to be incremental against yet).
+    never re-pulls the whole season. First-ever run (cold start, e.g. early
+    in the season or first deploy) also chunks by month so a mid-pull
+    failure doesn't lose everything already fetched.
     """
     cached = load_from_cache(CURRENT_SEASON_LABEL)
+    cached_months = get_cached_month_keys(CURRENT_SEASON_LABEL)
 
     if len(cached) == 0:
-        print(f'  No cache for {CURRENT_SEASON_LABEL} — pulling full season to date.')
-        sc_new = load_statcast_range(CURRENT_SEASON_START, TODAY_STR, label=CURRENT_SEASON_LABEL)
-        append_to_cache(sc_new, CURRENT_SEASON_LABEL)
-        return sc_new
+        month_ranges = iter_month_ranges(CURRENT_SEASON_START, TODAY_STR)
+        print(f'  No cache for {CURRENT_SEASON_LABEL} — pulling {len(month_ranges)} '
+              f'month(s) to date.')
+        for m_start, m_end in month_ranges:
+            chunk_label = f'{CURRENT_SEASON_LABEL}-{m_start[5:7]}'
+            if chunk_label in cached_months:
+                continue
+            sc_month = load_statcast_range(m_start, m_end, label=chunk_label)
+            append_to_cache(sc_month, CURRENT_SEASON_LABEL, chunk_label=chunk_label)
+        return load_from_cache(CURRENT_SEASON_LABEL)
 
     cached_max_date = pd.to_datetime(cached['game_date']).max().date()
     days_stale = (TODAY - cached_max_date).days
@@ -314,11 +402,14 @@ def get_current_season_data():
         print('  Cache already up to date for today.')
         return cached
 
-    # Pull only the new gap (day after the cache's last date, through today)
+    # Pull only the new gap (day after the cache's last date, through today).
+    # This is always a small window (days, not months) so it's left as a
+    # single retry-wrapped call rather than further chunked.
     gap_start = (cached_max_date + timedelta(days=1)).strftime('%Y-%m-%d')
+    gap_chunk_label = f'{CURRENT_SEASON_LABEL}-{TODAY_STR[5:7]}-gap-{TODAY_STR}'
     try:
         sc_gap = load_statcast_range(gap_start, TODAY_STR, label=f'{CURRENT_SEASON_LABEL}-gap')
-        append_to_cache(sc_gap, CURRENT_SEASON_LABEL)
+        append_to_cache(sc_gap, CURRENT_SEASON_LABEL, chunk_label=gap_chunk_label)
         combined = pd.concat([cached, sc_gap], ignore_index=True)
         dedup_cols = [c for c in ['game_pk', 'at_bat_number', 'pitch_number', 'pitcher']
                       if c in combined.columns]
