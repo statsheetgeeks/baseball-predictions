@@ -38,6 +38,7 @@ const NAV = [
     section: 'Pitchers',
     items: [
       { label: 'Overview', href: '/pitchers' },
+      { label: 'Strikeout', href: '/pitchers/strikeout' },
     ],
   },
 ];

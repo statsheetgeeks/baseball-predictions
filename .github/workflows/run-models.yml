@@ -63,6 +63,17 @@ jobs:
           restore-keys: |
             hr-pred-cache-${{ steps.get-year.outputs.year }}-
 
+      # Strikeout model: Statcast pitch cache (historical seasons cached
+      # forever, current season refreshed incrementally) + trained
+      # KNN/XGBoost models (retrained weekly, not on every run)
+      - name: Restore strikeout model cache
+        uses: actions/cache@v4
+        with:
+          path: models/k_pred_cache
+          key: k-pred-cache-${{ steps.get-year.outputs.year }}-${{ github.run_id }}
+          restore-keys: |
+            k-pred-cache-${{ steps.get-year.outputs.year }}-
+
       # ── 6. Run each model (composite MUST run last) ─────────────────────────
       - name: Run Games — Log5
         run: python models/games_log5.py
@@ -96,15 +107,15 @@ jobs:
 
       - name: Run Research — Elo Ratings
         run: python models/research_elo.py
-        
+
       - name: Run Research — Team Metrics
         run: python models/research_team_metrics.py
-        
+
       - name: Run Research — Hot Hitters
         run: python models/research_hot_hitters.py
 
-      # - name: Run Pitchers — Strikeout
-      #   run: python models/pitchers_strikeout.py
+      - name: Run Pitchers — Strikeout
+        run: python models/pitchers_strikeout.py
 
       # ── 7. Commit updated prediction JSONs ─────────────────────────────────
       - name: Commit and push updated predictions

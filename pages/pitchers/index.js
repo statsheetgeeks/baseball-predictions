@@ -1,5 +1,14 @@
 import Layout from '../../components/Layout'
-import { PageHeader } from '../../components/PredictionTable'
+import { ModelCard, PageHeader } from '../../components/PredictionTable'
+
+const MODELS = [
+  {
+    title: 'Strikeout Model',
+    description: 'Three approaches projected side by side — Calculation Engine, KNN, and Gradient Boosting (XGBoost) — built on Statcast pitch-level data. Falls back to an expected lineup when today\'s isn\'t posted yet.',
+    href: '/pitchers/strikeout',
+    tag: 'Calc Engine · KNN · XGBoost',
+  },
+]
 
 export default function PitchersHub() {
   return (
@@ -7,37 +16,10 @@ export default function PitchersHub() {
       <PageHeader
         tag="Pitchers"
         title="PITCHER PREDICTIONS"
-        subtitle="Projection models for starting pitcher performance. Coming soon."
+        subtitle="Models for projecting individual starting-pitcher performance for today's games. Click a model to see its full prediction table."
       />
-
-      <div style={{
-        background:   'var(--navy-mid)',
-        border:       '1px solid var(--navy-border)',
-        borderRadius: 8,
-        padding:      '40px 32px',
-        textAlign:    'center',
-        maxWidth:     560,
-      }}>
-        <div style={{
-          fontFamily:    "'Barlow Condensed', sans-serif",
-          fontWeight:    700,
-          fontSize:      13,
-          letterSpacing: 2,
-          textTransform: 'uppercase',
-          color:         'var(--silver-dim)',
-          marginBottom:  16,
-        }}>
-          Under Development
-        </div>
-        <p style={{ fontSize: 14, color: 'var(--silver)', lineHeight: 1.7, marginBottom: 12 }}>
-          Pitcher models are in active development. Planned features include
-          strikeout projections, ERA estimators, and pitching matchup analysis
-          using Statcast whiff rate, chase rate, and batter handedness splits.
-        </p>
-        <p style={{ fontSize: 13, color: 'var(--silver-dim)', lineHeight: 1.6 }}>
-          Check back soon — this section will be enabled once the models are
-          validated and ready for daily production runs.
-        </p>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
+        {MODELS.map(m => <ModelCard key={m.href} {...m} />)}
       </div>
     </Layout>
   )
