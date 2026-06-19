@@ -464,19 +464,38 @@ def build_batter_k_profile(sc):
     return profile
 
 
-def bayesian_batter_k_rate(batter_id, category, batter_profile, league_avg_k):
+def index_batter_profile(batter_profile):
+    """
+    Converts the batter_profile DataFrame into a dict keyed by
+    (batter_id, category) for O(1) lookups. Without this, every call to
+    bayesian_batter_k_rate does a full boolean-mask scan over the whole
+    profile table — fine for a handful of live-slate lookups, but ruinous
+    when called tens of thousands of times while building the training
+    table (9 batters x 3 categories x thousands of historical games).
+    """
+    if len(batter_profile) == 0:
+        return {}
+    return {
+        (row.batter, row.pitch_category): (row.k_rate, row.n_pa)
+        for row in batter_profile.itertuples(index=False)
+    }
+
+
+def bayesian_batter_k_rate(batter_id, category, batter_profile_index, league_avg_k):
     """Shrinks a batter's observed K rate toward league average based on
     sample size — full weight at PA_FULL+, blended below that, pure league
-    average below PA_BLEND."""
-    row = batter_profile[
-        (batter_profile['batter'] == batter_id) &
-        (batter_profile['pitch_category'] == category)
-    ]
-    if row.empty:
+    average below PA_BLEND.
+
+    batter_profile_index must be the dict produced by index_batter_profile
+    (NOT the raw DataFrame) — O(1) lookup instead of a per-call table scan.
+    """
+    hit = batter_profile_index.get((batter_id, category))
+    if hit is None:
         return league_avg_k, 0
 
-    n_pa = int(row.iloc[0]['n_pa'])
-    observed = float(row.iloc[0]['k_rate'])
+    observed, n_pa = hit
+    n_pa = int(n_pa)
+    observed = float(observed)
 
     if n_pa >= PA_FULL:
         return observed, n_pa
@@ -575,26 +594,45 @@ def blend_pitcher_k_profiles(splits_a, usage_a, splits_b, usage_b, sc_a, sc_b,
     return pitcher_splits, pitcher_usage
 
 
-def get_pitcher_k_vals(pitcher_id, category, pitcher_splits, pitcher_usage):
+def index_pitcher_profile(pitcher_splits, pitcher_usage):
+    """
+    Converts pitcher_splits/pitcher_usage into dicts keyed by
+    (pitcher_id, category) for O(1) lookups, for the same reason as
+    index_batter_profile — get_pitcher_k_vals is called 3x per batter x 9
+    batters x thousands of historical games while building the training
+    table, and a per-call boolean-mask scan at that volume is what causes
+    the function to silently run for hours.
+    """
+    splits_idx = {}
+    if len(pitcher_splits) > 0:
+        for row in pitcher_splits.itertuples(index=False):
+            splits_idx[(row.pitcher, row.pitch_category)] = (
+                row.k_rate_blended, row.whiff_rate_blended,
+                row.called_strike_rate_blended, row.csw_rate_blended,
+            )
+    usage_idx = {}
+    if len(pitcher_usage) > 0:
+        for row in pitcher_usage.itertuples(index=False):
+            usage_idx[(row.pitcher, row.pitch_category)] = row.usage_pct_blended
+    return splits_idx, usage_idx
+
+
+def get_pitcher_k_vals(pitcher_id, category, pitcher_splits_index, pitcher_usage_index):
     """Returns (k_rate, whiff_rate, called_strike_rate, csw_rate, usage_pct)
-    for a pitcher x pitch category, with league-average fallback."""
-    split_row = pitcher_splits[
-        (pitcher_splits['pitcher'] == pitcher_id) &
-        (pitcher_splits['pitch_category'] == category)
-    ]
-    usage_row = pitcher_usage[
-        (pitcher_usage['pitcher'] == pitcher_id) &
-        (pitcher_usage['pitch_category'] == category)
-    ]
-    if not split_row.empty:
-        k_rate = float(split_row.iloc[0]['k_rate_blended'])
-        whiff = float(split_row.iloc[0]['whiff_rate_blended'])
-        cs = float(split_row.iloc[0]['called_strike_rate_blended'])
-        csw = float(split_row.iloc[0]['csw_rate_blended'])
+    for a pitcher x pitch category, with league-average fallback.
+
+    pitcher_splits_index / pitcher_usage_index must be the dicts produced
+    by index_pitcher_profile (NOT the raw DataFrames) — O(1) lookup instead
+    of a per-call table scan.
+    """
+    hit = pitcher_splits_index.get((pitcher_id, category))
+    if hit is not None:
+        k_rate, whiff, cs, csw = (float(v) for v in hit)
     else:
         k_rate, whiff, cs, csw = (LEAGUE_AVG_K_RATE, LEAGUE_AVG_WHIFF_RATE,
                                    LEAGUE_AVG_CALLED_STRIKE_RATE, LEAGUE_AVG_CSW_RATE)
-    usage = float(usage_row.iloc[0]['usage_pct_blended']) if not usage_row.empty else (1 / 3)
+    usage_hit = pitcher_usage_index.get((pitcher_id, category))
+    usage = float(usage_hit) if usage_hit is not None else (1 / 3)
     return k_rate, whiff, cs, csw, usage
 
 
@@ -638,19 +676,27 @@ def batting_order_pa_weights():
 BATTING_ORDER_WEIGHTS = batting_order_pa_weights()
 
 
-def calculate_batter_k_probability(batter_id, pitcher_id, batter_profile,
-                                    pitcher_splits, pitcher_usage,
+def calculate_batter_k_probability(batter_id, pitcher_id, batter_profile_index,
+                                    pitcher_splits_index, pitcher_usage_index,
                                     league_avg_k=None):
     """One batter's expected strikeout probability against one pitcher,
-    summed across pitch categories weighted by the PITCHER's usage%."""
+    summed across pitch categories weighted by the PITCHER's usage%.
+
+    batter_profile_index / pitcher_splits_index / pitcher_usage_index must
+    be the dicts produced by index_batter_profile / index_pitcher_profile
+    — NOT the raw DataFrames. This function is called 9x per game (once
+    per lineup slot) and thousands of times while building the training
+    table, so per-call DataFrame scans here are what previously caused the
+    pipeline to silently run for hours.
+    """
     league_avg_k = LEAGUE_AVG_K_RATE if league_avg_k is None else league_avg_k
     k_matchup = 0.0
     usage_total = 0.0
 
     for cat in PITCH_CATEGORIES:
-        batter_k, _ = bayesian_batter_k_rate(batter_id, cat, batter_profile, league_avg_k)
+        batter_k, _ = bayesian_batter_k_rate(batter_id, cat, batter_profile_index, league_avg_k)
         pitcher_k, _, _, _, usage = get_pitcher_k_vals(
-            pitcher_id, cat, pitcher_splits, pitcher_usage
+            pitcher_id, cat, pitcher_splits_index, pitcher_usage_index
         )
         cat_k = (batter_k * pitcher_k) / league_avg_k if league_avg_k > 0 else 0.0
         k_matchup += cat_k * usage
@@ -663,12 +709,17 @@ def calculate_batter_k_probability(batter_id, pitcher_id, batter_profile,
 
 
 def calculate_game_k_projection(pitcher_id, opposing_lineup_batter_ids,
-                                 batter_profile, pitcher_splits, pitcher_usage,
-                                 sc_for_tbf, league_avg_k=None):
+                                 batter_profile_index, pitcher_splits_index,
+                                 pitcher_usage_index, sc_for_tbf, league_avg_k=None):
     """
     CALCULATION ENGINE — top-level function.
     Projects a starting pitcher's total strikeouts for a game against a
     specific opposing lineup (list of batter_ids in batting-order sequence).
+
+    batter_profile_index / pitcher_splits_index / pitcher_usage_index must
+    be pre-built via index_batter_profile() / index_pitcher_profile() —
+    build them ONCE outside any per-game loop and pass the same dicts to
+    every call, rather than re-indexing (or worse, re-scanning) per game.
     """
     expected_tbf, n_games_used = estimate_expected_tbf(pitcher_id, sc_for_tbf)
 
@@ -685,7 +736,8 @@ def calculate_game_k_projection(pitcher_id, opposing_lineup_batter_ids,
     total_ks = 0.0
     for batter_id, slot, expected_pa in zip(opposing_lineup_batter_ids, slot_numbers, pa_per_slot):
         k_prob = calculate_batter_k_probability(
-            batter_id, pitcher_id, batter_profile, pitcher_splits, pitcher_usage, league_avg_k
+            batter_id, pitcher_id, batter_profile_index, pitcher_splits_index,
+            pitcher_usage_index, league_avg_k
         )
         batter_expected_ks = k_prob * expected_pa
         total_ks += batter_expected_ks
@@ -878,7 +930,7 @@ def get_actual_lineup_for_game(sc, game_pk, pitcher_id):
 
 
 def build_training_table(sc_all, starters_df, batter_profile, pitcher_splits,
-                          pitcher_usage, min_games_history=3):
+                          pitcher_usage, min_games_history=3, progress_every=250):
     """
     One row per (pitcher, game_pk):
       - actual_ks               : label
@@ -890,9 +942,38 @@ def build_training_table(sc_all, starters_df, batter_profile, pitcher_splits,
       - recent_3start_k_rate    : pitcher's K rate over his last 3 starts
                                    STRICTLY before this game's date
       - opposing_lineup_size
+
+    PERFORMANCE NOTE: the naive version of this function re-scanned the
+    ENTIRE multi-season sc_all DataFrame (millions of rows) once per
+    (pitcher, game) row, AND re-scanned the batter/pitcher profile tables
+    with boolean masking on every lookup inside calculate_game_k_projection
+    (9 batters x 3 categories x thousands of historical games). With
+    thousands of starter-games across 3+ seasons, that combination is what
+    silently ran for hours with no console output. This version (a) groups
+    sc_all by pitcher ONCE up front, and (b) indexes the profile tables
+    into O(1) dicts ONCE up front, then prints progress every
+    `progress_every` rows so a real hang is never silent again.
     """
+    t_start = time.time()
     rows = []
-    sc_sorted = sc_all.sort_values('game_date')
+
+    # Pre-group: pitcher_id -> that pitcher's full pitch log, sorted by date.
+    # Avoids re-filtering the full multi-million-row sc_all per game.
+    print(f'  Pre-grouping {len(sc_all):,} pitches by pitcher...')
+    pitcher_groups = {
+        pid: g.sort_values('game_date')
+        for pid, g in sc_all.groupby('pitcher')
+    }
+    print(f'  Grouped into {len(pitcher_groups):,} pitcher logs.')
+
+    # Pre-index the profile tables ONCE — turns every downstream lookup
+    # from an O(n) DataFrame scan into an O(1) dict access.
+    print('  Indexing batter/pitcher profile tables for fast lookup...')
+    batter_profile_index = index_batter_profile(batter_profile)
+    pitcher_splits_index, pitcher_usage_index = index_pitcher_profile(pitcher_splits, pitcher_usage)
+    print(f'  Indexed {len(batter_profile_index):,} batter-category entries, '
+          f'{len(pitcher_splits_index):,} pitcher-category entries.')
+
     pitcher_game_dates = (
         starters_df.sort_values('game_date')
         .groupby('pitcher')['game_date']
@@ -900,31 +981,54 @@ def build_training_table(sc_all, starters_df, batter_profile, pitcher_splits,
         .to_dict()
     )
 
-    for _, srow in starters_df.iterrows():
+    n_total = len(starters_df)
+    print(f'  Building training rows for {n_total:,} (pitcher, game) candidates...')
+
+    for i, (_, srow) in enumerate(starters_df.iterrows(), start=1):
+        if i % progress_every == 0 or i == n_total:
+            elapsed = time.time() - t_start
+            rate = i / elapsed if elapsed > 0 else 0
+            eta = (n_total - i) / rate if rate > 0 else float('nan')
+            print(f'    ...{i:,}/{n_total:,} candidates processed '
+                  f'({len(rows):,} kept, {elapsed:.0f}s elapsed, ETA {eta:.0f}s)')
+
         pitcher_id = srow['pitcher']
         game_pk    = srow['game_pk']
         game_date  = srow['game_date']
 
-        # As-of-date history: strictly before this game
-        history = sc_all[(sc_all['pitcher'] == pitcher_id) & (sc_all['game_date'] < game_date)]
+        pitcher_log = pitcher_groups.get(pitcher_id)
+        if pitcher_log is None:
+            continue
+
+        # As-of-date history: strictly before this game — now scanning only
+        # this pitcher's own (small) log, not the full multi-season table.
+        history = pitcher_log[pitcher_log['game_date'] < game_date]
         prior_game_dates = [d for d in pitcher_game_dates.get(pitcher_id, []) if d < game_date]
         games_pitched_before = len(prior_game_dates)
 
         if games_pitched_before < min_games_history:
             continue   # not enough history yet for a meaningful row
 
-        # Actual lineup faced (known after the fact — fine for training)
-        lineup = get_actual_lineup_for_game(sc_all, game_pk, pitcher_id)
+        # Actual lineup faced (known after the fact — fine for training).
+        # Pulled from the pitcher's own log + game_pk filter (small slice).
+        game_rows = pitcher_log[pitcher_log['game_pk'] == game_pk]
+        if len(game_rows) == 0:
+            continue
+        lineup = (
+            game_rows.sort_values('at_bat_number')[['at_bat_number', 'batter']]
+            .drop_duplicates(subset='at_bat_number')['batter']
+            .tolist()
+        )
         if not lineup:
             continue
 
         # Actual strikeouts that game (label)
-        g = sc_all[(sc_all['game_pk'] == game_pk) & (sc_all['pitcher'] == pitcher_id)]
-        actual_ks = int(g['ends_in_strikeout'].sum())
+        actual_ks = int(game_rows['ends_in_strikeout'].sum())
 
         # Calc Engine projection, using only as-of-date history for TBF/profiles
         calc_result = calculate_game_k_projection(
-            pitcher_id, lineup, batter_profile, pitcher_splits, pitcher_usage, history
+            pitcher_id, lineup, batter_profile_index, pitcher_splits_index,
+            pitcher_usage_index, history
         )
         if pd.isna(calc_result['projected_ks']):
             continue
@@ -1117,6 +1221,11 @@ def predict_todays_slate(games, batter_profile, pitcher_splits, pitcher_usage,
     train_fill_values = model_cache['train_fill_values']
     feature_columns  = model_cache['feature_columns']
 
+    # Index once for fast O(1) lookups inside the per-pitcher loop below
+    # (same fix applied to build_training_table — see its docstring).
+    batter_profile_index = index_batter_profile(batter_profile)
+    pitcher_splits_index, pitcher_usage_index = index_pitcher_profile(pitcher_splits, pitcher_usage)
+
     rows = []
     for game in games:
         try:
@@ -1145,8 +1254,8 @@ def predict_todays_slate(games, batter_profile, pitcher_splits, pitcher_usage,
             lineup_ids = [pid for pid, _name in lineup_pairs]
 
             calc_result = calculate_game_k_projection(
-                pitcher_id, lineup_ids, batter_profile, pitcher_splits,
-                pitcher_usage, sc_for_tbf
+                pitcher_id, lineup_ids, batter_profile_index, pitcher_splits_index,
+                pitcher_usage_index, sc_for_tbf
             )
 
             row = {
