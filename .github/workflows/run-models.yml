@@ -114,8 +114,11 @@ jobs:
       - name: Run Research — Hot Hitters
         run: python models/research_hot_hitters.py
 
-      - name: Run Pitchers — Strikeout
-        run: python models/pitchers_strikeout.py
+      # Strikeout model temporarily disabled — performance issue under
+      # investigation (see models/pitchers_strikeout.py). Re-enable once
+      # fixed by uncommenting the step below.
+      # - name: Run Pitchers — Strikeout
+      #   run: python models/pitchers_strikeout.py
 
       # ── 7. Commit updated prediction JSONs ─────────────────────────────────
       - name: Commit and push updated predictions
