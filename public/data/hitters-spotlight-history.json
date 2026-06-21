@@ -15,8 +15,25 @@
           ],
           "ranks": {
             "ML Hit": 8,
-            "HR Model": 5,
+            "HR Model": 3,
             "ML HR": 2
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Bryan Reynolds",
+          "team": "PIT",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 24,
+            "HR Model": 15,
+            "ML HR": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -32,8 +49,8 @@
           ],
           "ranks": {
             "ML Hit": 3,
-            "HR Model": 19,
-            "ML HR": 25
+            "HR Model": 16,
+            "ML HR": 22
           },
           "actual_hit": null,
           "actual_hr": null
@@ -49,8 +66,8 @@
           ],
           "ranks": {
             "Log5 Hit": 5,
-            "HR Model": 7,
-            "ML HR": 10
+            "HR Model": 6,
+            "ML HR": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -65,7 +82,7 @@
           ],
           "ranks": {
             "Log5 Hit": 10,
-            "ML HR": 7
+            "ML HR": 10
           },
           "actual_hit": null,
           "actual_hr": null
@@ -79,23 +96,23 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 9,
-            "ML HR": 20
+            "HR Model": 8,
+            "ML HR": 13
           },
           "actual_hit": null,
           "actual_hr": null
         },
         {
-          "player": "Bryan Reynolds",
-          "team": "PIT",
+          "player": "Gavin Sheets",
+          "team": "SD",
           "appearances": 2,
           "models": [
             "HR Model",
-            "Log5 Hit"
+            "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 24,
-            "HR Model": 18
+            "HR Model": 23,
+            "ML HR": 9
           },
           "actual_hit": null,
           "actual_hr": null
@@ -110,7 +127,7 @@
           ],
           "ranks": {
             "ML Hit": 4,
-            "ML HR": 6
+            "ML HR": 7
           },
           "actual_hit": null,
           "actual_hr": null
@@ -125,7 +142,7 @@
           ],
           "ranks": {
             "ML Hit": 14,
-            "ML HR": 16
+            "ML HR": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -140,22 +157,7 @@
           ],
           "ranks": {
             "Log5 Hit": 11,
-            "ML HR": 11
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Jarren Duran",
-          "team": "BOS",
-          "appearances": 2,
-          "models": [
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 18,
-            "ML HR": 23
+            "ML HR": 12
           },
           "actual_hit": null,
           "actual_hr": null
@@ -170,7 +172,7 @@
           ],
           "ranks": {
             "Log5 Hit": 13,
-            "ML HR": 9
+            "ML HR": 11
           },
           "actual_hit": null,
           "actual_hr": null
@@ -199,7 +201,7 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 14,
+            "HR Model": 13,
             "ML HR": 1
           },
           "actual_hit": null,
@@ -244,8 +246,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 17,
-            "ML HR": 18
+            "HR Model": 19,
+            "ML HR": 19
           },
           "actual_hit": null,
           "actual_hr": null
@@ -305,22 +307,7 @@
           ],
           "ranks": {
             "ML Hit": 7,
-            "HR Model": 20
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Ty France",
-          "team": "SD",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "ML HR"
-          ],
-          "ranks": {
-            "HR Model": 23,
-            "ML HR": 14
+            "HR Model": 17
           },
           "actual_hit": null,
           "actual_hr": null
