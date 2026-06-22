@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-22T14:43:25.279002+00:00",
+  "updated": "2026-06-22T18:12:43.497177+00:00",
   "date": "2026-06-22",
   "predictions": [
     {
@@ -128,10 +128,10 @@
       },
       "random_forest": {
         "pick": "Washington Nationals",
-        "confidence": 0.5332
+        "confidence": 0.532
       },
       "composite_pick": "Washington Nationals",
-      "composite_confidence": 0.536,
+      "composite_confidence": 0.5357,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
@@ -246,33 +246,6 @@
       "correct": null
     },
     {
-      "game_time": "6:40 PM ET",
-      "away_team": "Texas Rangers",
-      "home_team": "Miami Marlins",
-      "log5": {
-        "pick": "Miami Marlins",
-        "confidence": 0.5523
-      },
-      "research": {
-        "pick": "Miami Marlins",
-        "confidence": 0.5318
-      },
-      "xgboost": {
-        "pick": "Texas Rangers",
-        "confidence": 0.5224
-      },
-      "random_forest": {
-        "pick": "Miami Marlins",
-        "confidence": 0.5319
-      },
-      "composite_pick": "Miami Marlins",
-      "composite_confidence": 0.5234,
-      "vote_count": 3,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
       "game_time": "10:10 PM ET",
       "away_team": "Atlanta Braves",
       "home_team": "San Diego Padres",
@@ -348,6 +321,33 @@
       },
       "composite_pick": "Houston Astros",
       "composite_confidence": 0.5107,
+      "vote_count": 3,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "6:40 PM ET",
+      "away_team": "Texas Rangers",
+      "home_team": "Miami Marlins",
+      "log5": {
+        "pick": "Miami Marlins",
+        "confidence": 0.5523
+      },
+      "research": {
+        "pick": "Miami Marlins",
+        "confidence": 0.5318
+      },
+      "xgboost": {
+        "pick": "Texas Rangers",
+        "confidence": 0.5709
+      },
+      "random_forest": {
+        "pick": "Miami Marlins",
+        "confidence": 0.5139
+      },
+      "composite_pick": "Miami Marlins",
+      "composite_confidence": 0.5068,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,

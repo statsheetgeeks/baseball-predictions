@@ -17,8 +17,8 @@
           "ranks": {
             "Log5 Hit": 1,
             "ML Hit": 6,
-            "HR Model": 25,
-            "ML HR": 23
+            "HR Model": 24,
+            "ML HR": 12
           },
           "actual_hit": null,
           "actual_hr": null
@@ -26,16 +26,18 @@
         {
           "player": "Jordan Walker",
           "team": "STL",
-          "appearances": 3,
+          "appearances": 4,
           "models": [
             "HR Model",
             "Log5 Hit",
+            "ML HR",
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 3,
+            "Log5 Hit": 2,
             "ML Hit": 14,
-            "HR Model": 11
+            "HR Model": 10,
+            "ML HR": 17
           },
           "actual_hit": null,
           "actual_hr": null
@@ -51,8 +53,23 @@
           ],
           "ranks": {
             "ML Hit": 13,
-            "HR Model": 13,
-            "ML HR": 4
+            "HR Model": 9,
+            "ML HR": 7
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Ben Rice",
+          "team": "NYY",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "Log5 Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 24,
+            "HR Model": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -81,7 +98,7 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 12,
+            "HR Model": 11,
             "ML HR": 5
           },
           "actual_hit": null,
@@ -96,7 +113,7 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 1,
+            "HR Model": 2,
             "ML HR": 1
           },
           "actual_hit": null,
@@ -111,8 +128,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 24,
-            "ML HR": 6
+            "HR Model": 23,
+            "ML HR": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -126,8 +143,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 18,
-            "ML HR": 12
+            "HR Model": 19,
+            "ML HR": 11
           },
           "actual_hit": null,
           "actual_hr": null
@@ -156,8 +173,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 16,
-            "ML HR": 3
+            "HR Model": 14,
+            "ML HR": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -201,7 +218,7 @@
             "Log5 Hit"
           ],
           "ranks": {
-            "Log5 Hit": 8,
+            "Log5 Hit": 7,
             "HR Model": 6
           },
           "actual_hit": null,
@@ -232,7 +249,7 @@
           ],
           "ranks": {
             "ML Hit": 18,
-            "HR Model": 19
+            "HR Model": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -247,7 +264,7 @@
           ],
           "ranks": {
             "ML Hit": 17,
-            "ML HR": 14
+            "ML HR": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -262,7 +279,7 @@
           ],
           "ranks": {
             "Log5 Hit": 13,
-            "HR Model": 5
+            "HR Model": 1
           },
           "actual_hit": null,
           "actual_hr": null
@@ -276,8 +293,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 2,
-            "ML HR": 7
+            "HR Model": 3,
+            "ML HR": 8
           },
           "actual_hit": null,
           "actual_hr": null
@@ -306,23 +323,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 14,
+            "HR Model": 15,
             "ML HR": 2
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Michael Busch",
-          "team": "CHC",
-          "appearances": 2,
-          "models": [
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 3,
-            "ML HR": 22
           },
           "actual_hit": null,
           "actual_hr": null
@@ -337,7 +339,7 @@
           ],
           "ranks": {
             "Log5 Hit": 10,
-            "ML Hit": 4
+            "ML Hit": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -352,22 +354,7 @@
           ],
           "ranks": {
             "HR Model": 20,
-            "ML HR": 17
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Seiya Suzuki",
-          "team": "CHC",
-          "appearances": 2,
-          "models": [
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 21,
-            "ML HR": 19
+            "ML HR": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -381,7 +368,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 6,
+            "Log5 Hit": 5,
             "ML Hit": 25
           },
           "actual_hit": null,
@@ -396,8 +383,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 4,
-            "ML HR": 11
+            "HR Model": 5,
+            "ML HR": 14
           },
           "actual_hit": null,
           "actual_hr": null
