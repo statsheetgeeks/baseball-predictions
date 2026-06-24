@@ -6,8 +6,8 @@
       "predictions": [
         {
           "rank": 1,
-          "player": "Kyle Schwarber",
-          "team": "PHI",
+          "player": "Willson Contreras",
+          "team": "BOS",
           "score": 81,
           "confidence": "high",
           "actual_hr": null,
@@ -15,8 +15,8 @@
         },
         {
           "rank": 2,
-          "player": "Willson Contreras",
-          "team": "BOS",
+          "player": "Kyle Schwarber",
+          "team": "PHI",
           "score": 80,
           "confidence": "high",
           "actual_hr": null,
@@ -24,17 +24,17 @@
         },
         {
           "rank": 3,
-          "player": "Bryce Harper",
-          "team": "PHI",
-          "score": 75,
+          "player": "Juan Soto",
+          "team": "NYM",
+          "score": 76,
           "confidence": "high",
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 4,
-          "player": "James Wood",
-          "team": "WSH",
+          "player": "Bryce Harper",
+          "team": "PHI",
           "score": 74,
           "confidence": "high",
           "actual_hr": null,
@@ -42,8 +42,8 @@
         },
         {
           "rank": 5,
-          "player": "Juan Soto",
-          "team": "NYM",
+          "player": "James Wood",
+          "team": "WSH",
           "score": 72,
           "confidence": "high",
           "actual_hr": null,
@@ -51,8 +51,8 @@
         },
         {
           "rank": 6,
-          "player": "Randal Grichuk",
-          "team": "CWS",
+          "player": "Nick Kurtz",
+          "team": "ATH",
           "score": 72,
           "confidence": "high",
           "actual_hr": null,
@@ -60,24 +60,6 @@
         },
         {
           "rank": 7,
-          "player": "Juan Soto",
-          "team": "NYM",
-          "score": 71,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 8,
-          "player": "CJ Abrams",
-          "team": "WSH",
-          "score": 71,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 9,
           "player": "Kazuma Okamoto",
           "team": "TOR",
           "score": 71,
@@ -86,88 +68,61 @@
           "correct": null
         },
         {
-          "rank": 10,
-          "player": "Matt Olson",
-          "team": "ATL",
-          "score": 70,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 11,
-          "player": "Nick Kurtz",
-          "team": "ATH",
-          "score": 70,
-          "confidence": "high",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 12,
+          "rank": 8,
           "player": "Corbin Carroll",
           "team": "AZ",
+          "score": 70,
+          "confidence": "high",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 9,
+          "player": "Dillon Dingler",
+          "team": "DET",
           "score": 69,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
-          "rank": 13,
+          "rank": 10,
+          "player": "CJ Abrams",
+          "team": "WSH",
+          "score": 69,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 11,
+          "player": "Matt Olson",
+          "team": "ATL",
+          "score": 69,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 12,
           "player": "Colson Montgomery",
           "team": "CWS",
-          "score": 68,
+          "score": 67,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 13,
+          "player": "Wilyer Abreu",
+          "team": "BOS",
+          "score": 67,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 14,
-          "player": "Dillon Dingler",
-          "team": "DET",
-          "score": 68,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 15,
-          "player": "Miguel Vargas",
-          "team": "CWS",
-          "score": 66,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 16,
-          "player": "Wilyer Abreu",
-          "team": "BOS",
-          "score": 66,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 17,
-          "player": "Curtis Mead",
-          "team": "WSH",
-          "score": 66,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 18,
-          "player": "Brandon Marsh",
-          "team": "PHI",
-          "score": 66,
-          "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
-        },
-        {
-          "rank": 19,
           "player": "Drake Baldwin",
           "team": "ATL",
           "score": 66,
@@ -176,7 +131,34 @@
           "correct": null
         },
         {
-          "rank": 20,
+          "rank": 15,
+          "player": "Shea Langeliers",
+          "team": "ATH",
+          "score": 66,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 16,
+          "player": "Miguel Vargas",
+          "team": "CWS",
+          "score": 65,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 17,
+          "player": "Curtis Mead",
+          "team": "WSH",
+          "score": 65,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 18,
           "player": "Brandon Valenzuela",
           "team": "TOR",
           "score": 65,
@@ -185,7 +167,7 @@
           "correct": null
         },
         {
-          "rank": 21,
+          "rank": 19,
           "player": "Yordan Alvarez",
           "team": "HOU",
           "score": 65,
@@ -194,18 +176,36 @@
           "correct": null
         },
         {
+          "rank": 20,
+          "player": "Ceddanne Rafaela",
+          "team": "BOS",
+          "score": 64,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 21,
+          "player": "Jac Caglianone",
+          "team": "KC",
+          "score": 64,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
           "rank": 22,
-          "player": "Shea Langeliers",
-          "team": "ATH",
-          "score": 65,
+          "player": "Kerry Carpenter",
+          "team": "DET",
+          "score": 64,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 23,
-          "player": "Mickey Moniak",
-          "team": "COL",
+          "player": "Brandon Marsh",
+          "team": "PHI",
           "score": 64,
           "confidence": "medium",
           "actual_hr": null,
@@ -213,8 +213,8 @@
         },
         {
           "rank": 24,
-          "player": "Jac Caglianone",
-          "team": "KC",
+          "player": "Michael Harris II",
+          "team": "ATL",
           "score": 64,
           "confidence": "medium",
           "actual_hr": null,
@@ -224,7 +224,7 @@
           "rank": 25,
           "player": "Luis Garc\u00eda Jr.",
           "team": "WSH",
-          "score": 64,
+          "score": 63,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null

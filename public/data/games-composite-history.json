@@ -220,6 +220,33 @@
           "correct": null
         },
         {
+          "game_time": "12:10 PM ET",
+          "away_team": "Texas Rangers",
+          "home_team": "Miami Marlins",
+          "log5": {
+            "pick": "Miami Marlins",
+            "confidence": 0.5515
+          },
+          "research": {
+            "pick": "Miami Marlins",
+            "confidence": 0.5335
+          },
+          "xgboost": {
+            "pick": "Miami Marlins",
+            "confidence": 0.5463
+          },
+          "random_forest": {
+            "pick": "Miami Marlins",
+            "confidence": 0.5086
+          },
+          "composite_pick": "Miami Marlins",
+          "composite_confidence": 0.535,
+          "vote_count": 4,
+          "total_votes": 4,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
           "game_time": "8:40 PM ET",
           "away_team": "Atlanta Braves",
           "home_team": "San Diego Padres",
@@ -323,33 +350,6 @@
           "composite_pick": "Detroit Tigers",
           "composite_confidence": 0.5144,
           "vote_count": 3,
-          "total_votes": 4,
-          "actual_winner": null,
-          "correct": null
-        },
-        {
-          "game_time": "12:10 PM ET",
-          "away_team": "Texas Rangers",
-          "home_team": "Miami Marlins",
-          "log5": {
-            "pick": "Miami Marlins",
-            "confidence": 0.5515
-          },
-          "research": {
-            "pick": "Miami Marlins",
-            "confidence": 0.5318
-          },
-          "xgboost": {
-            "pick": "Texas Rangers",
-            "confidence": 0.5299
-          },
-          "random_forest": {
-            "pick": "Texas Rangers",
-            "confidence": 0.5004
-          },
-          "composite_pick": "Miami Marlins",
-          "composite_confidence": 0.5132,
-          "vote_count": 2,
           "total_votes": 4,
           "actual_winner": null,
           "correct": null

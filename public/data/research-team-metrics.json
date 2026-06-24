@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-24T14:30:03Z",
+  "updated": "2026-06-24T16:33:08Z",
   "season": 2026,
   "exponent": 1.83,
   "teams": [
@@ -180,10 +180,10 @@
       "actual_wins": 41,
       "actual_losses": 39,
       "actual_wp": 0.512,
-      "formula_wins": 42,
-      "formula_losses": 38,
-      "formula_diff": 1,
-      "formula_wp": 0.519,
+      "formula_wins": 41,
+      "formula_losses": 39,
+      "formula_diff": 0,
+      "formula_wp": 0.516,
       "pythag_wins": 40,
       "pythag_losses": 40,
       "pythag_diff": -1,
@@ -202,7 +202,7 @@
       "formula_wins": 40,
       "formula_losses": 39,
       "formula_diff": 2,
-      "formula_wp": 0.507,
+      "formula_wp": 0.504,
       "pythag_wins": 38,
       "pythag_losses": 41,
       "pythag_diff": 0,
@@ -576,17 +576,17 @@
   ],
   "accuracy": {
     "correlation": {
-      "formula": 0.7519,
+      "formula": 0.7527,
       "pythag": 0.8559,
       "elo": 0.8469
     },
     "mae": {
-      "formula": 0.0382,
+      "formula": 0.038,
       "pythag": 0.0292,
       "elo": 0.0305
     },
     "rmse": {
-      "formula": 0.0452,
+      "formula": 0.0451,
       "pythag": 0.0354,
       "elo": 0.0381
     }
