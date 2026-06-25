@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T14:49:37Z",
+  "updated": "2026-06-25T16:32:24Z",
   "season": 2026,
   "exponent": 1.83,
   "teams": [
@@ -118,6 +118,25 @@
       "elo_wp": 0.484
     },
     {
+      "team": "Tampa Bay Rays",
+      "games": 77,
+      "actual_wins": 44,
+      "actual_losses": 33,
+      "actual_wp": 0.571,
+      "formula_wins": 41,
+      "formula_losses": 36,
+      "formula_diff": -3,
+      "formula_wp": 0.534,
+      "pythag_wins": 39,
+      "pythag_losses": 38,
+      "pythag_diff": -5,
+      "pythag_wp": 0.505,
+      "elo_wins": 40,
+      "elo_losses": 37,
+      "elo_diff": -4,
+      "elo_wp": 0.513
+    },
+    {
       "team": "Seattle Mariners",
       "games": 81,
       "actual_wins": 41,
@@ -135,25 +154,6 @@
       "elo_losses": 39,
       "elo_diff": 1,
       "elo_wp": 0.52
-    },
-    {
-      "team": "Tampa Bay Rays",
-      "games": 77,
-      "actual_wins": 44,
-      "actual_losses": 33,
-      "actual_wp": 0.571,
-      "formula_wins": 40,
-      "formula_losses": 37,
-      "formula_diff": -4,
-      "formula_wp": 0.525,
-      "pythag_wins": 39,
-      "pythag_losses": 38,
-      "pythag_diff": -5,
-      "pythag_wp": 0.503,
-      "elo_wins": 40,
-      "elo_losses": 37,
-      "elo_diff": -4,
-      "elo_wp": 0.513
     },
     {
       "team": "Miami Marlins",
@@ -498,25 +498,6 @@
       "elo_wp": 0.474
     },
     {
-      "team": "Kansas City Royals",
-      "games": 81,
-      "actual_wins": 34,
-      "actual_losses": 47,
-      "actual_wp": 0.42,
-      "formula_wins": 37,
-      "formula_losses": 44,
-      "formula_diff": 3,
-      "formula_wp": 0.453,
-      "pythag_wins": 37,
-      "pythag_losses": 44,
-      "pythag_diff": 3,
-      "pythag_wp": 0.453,
-      "elo_wins": 38,
-      "elo_losses": 43,
-      "elo_diff": 4,
-      "elo_wp": 0.471
-    },
-    {
       "team": "San Diego Padres",
       "games": 79,
       "actual_wins": 42,
@@ -534,6 +515,25 @@
       "elo_losses": 37,
       "elo_diff": 0,
       "elo_wp": 0.528
+    },
+    {
+      "team": "Kansas City Royals",
+      "games": 81,
+      "actual_wins": 34,
+      "actual_losses": 47,
+      "actual_wp": 0.42,
+      "formula_wins": 36,
+      "formula_losses": 45,
+      "formula_diff": 2,
+      "formula_wp": 0.439,
+      "pythag_wins": 36,
+      "pythag_losses": 45,
+      "pythag_diff": 2,
+      "pythag_wp": 0.45,
+      "elo_wins": 38,
+      "elo_losses": 43,
+      "elo_diff": 4,
+      "elo_wp": 0.471
     },
     {
       "team": "Cincinnati Reds",
@@ -576,18 +576,18 @@
   ],
   "accuracy": {
     "correlation": {
-      "formula": 0.7526,
-      "pythag": 0.8615,
+      "formula": 0.7604,
+      "pythag": 0.8634,
       "elo": 0.8554
     },
     "mae": {
-      "formula": 0.0376,
-      "pythag": 0.0288,
+      "formula": 0.0368,
+      "pythag": 0.0287,
       "elo": 0.031
     },
     "rmse": {
-      "formula": 0.0451,
-      "pythag": 0.0349,
+      "formula": 0.0445,
+      "pythag": 0.0347,
       "elo": 0.0383
     }
   }
