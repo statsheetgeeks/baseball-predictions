@@ -1,13 +1,13 @@
 {
   "records": [
     {
-      "date": "2026-06-25",
+      "date": "2026-06-26",
       "graded": false,
       "predictions": [
         {
           "rank": 1,
-          "player": "Yordan Alvarez",
-          "team": "HOU",
+          "player": "Byron Buxton",
+          "team": "MIN",
           "score": 73,
           "confidence": "high",
           "actual_hr": null,
@@ -15,80 +15,80 @@
         },
         {
           "rank": 2,
-          "player": "Victor Bericoto",
-          "team": "SF",
-          "score": 71,
-          "confidence": "high",
+          "player": "Randal Grichuk",
+          "team": "CWS",
+          "score": 69,
+          "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 3,
-          "player": "Ben Rice",
-          "team": "NYY",
-          "score": 71,
-          "confidence": "high",
+          "player": "Mickey Moniak",
+          "team": "COL",
+          "score": 68,
+          "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 4,
-          "player": "Eric Haase",
-          "team": "SF",
-          "score": 70,
-          "confidence": "high",
+          "player": "Junior Caminero",
+          "team": "TB",
+          "score": 67,
+          "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 5,
-          "player": "Paul Goldschmidt",
-          "team": "NYY",
-          "score": 70,
-          "confidence": "high",
+          "player": "Kyle Schwarber",
+          "team": "PHI",
+          "score": 67,
+          "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 6,
-          "player": "Casey Schmitt",
-          "team": "SF",
-          "score": 69,
+          "player": "Jake Bauers",
+          "team": "MIL",
+          "score": 67,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 7,
-          "player": "Dillon Dingler",
-          "team": "DET",
-          "score": 69,
+          "player": "Brandon Lowe",
+          "team": "PIT",
+          "score": 65,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 8,
-          "player": "Bryce Eldridge",
-          "team": "SF",
-          "score": 66,
+          "player": "Kazuma Okamoto",
+          "team": "TOR",
+          "score": 65,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 9,
-          "player": "Kyle Schwarber",
-          "team": "PHI",
-          "score": 66,
+          "player": "Jackson Chourio",
+          "team": "MIL",
+          "score": 65,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 10,
-          "player": "Juan Soto",
-          "team": "NYM",
+          "player": "Cole Carrigg",
+          "team": "COL",
           "score": 65,
           "confidence": "medium",
           "actual_hr": null,
@@ -96,8 +96,8 @@
         },
         {
           "rank": 11,
-          "player": "Kerry Carpenter",
-          "team": "DET",
+          "player": "Yordan Alvarez",
+          "team": "HOU",
           "score": 64,
           "confidence": "medium",
           "actual_hr": null,
@@ -105,8 +105,8 @@
         },
         {
           "rank": 12,
-          "player": "Jordan Walker",
-          "team": "STL",
+          "player": "Dominic Canzone",
+          "team": "SEA",
           "score": 64,
           "confidence": "medium",
           "actual_hr": null,
@@ -114,16 +114,79 @@
         },
         {
           "rank": 13,
-          "player": "Christian Walker",
-          "team": "HOU",
-          "score": 62,
+          "player": "Juan Soto",
+          "team": "NYM",
+          "score": 64,
           "confidence": "medium",
           "actual_hr": null,
           "correct": null
         },
         {
           "rank": 14,
-          "player": "Amed Rosario",
+          "player": "Colson Montgomery",
+          "team": "CWS",
+          "score": 64,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 15,
+          "player": "James Wood",
+          "team": "WSH",
+          "score": 63,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 16,
+          "player": "Gary S\u00e1nchez",
+          "team": "MIL",
+          "score": 63,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 17,
+          "player": "Hunter Goodman",
+          "team": "COL",
+          "score": 63,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 18,
+          "player": "Esteury Ruiz",
+          "team": "MIA",
+          "score": 63,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 19,
+          "player": "CJ Abrams",
+          "team": "WSH",
+          "score": 62,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 20,
+          "player": "Bryce Harper",
+          "team": "PHI",
+          "score": 62,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 21,
+          "player": "Ben Rice",
           "team": "NYY",
           "score": 62,
           "confidence": "medium",
@@ -131,13 +194,181 @@
           "correct": null
         },
         {
+          "rank": 22,
+          "player": "Paul Goldschmidt",
+          "team": "NYY",
+          "score": 62,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 23,
+          "player": "Curtis Mead",
+          "team": "WSH",
+          "score": 61,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 24,
+          "player": "Miguel Vargas",
+          "team": "CWS",
+          "score": 61,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        },
+        {
+          "rank": 25,
+          "player": "Luke Raley",
+          "team": "SEA",
+          "score": 60,
+          "confidence": "medium",
+          "actual_hr": null,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "date": "2026-06-25",
+      "graded": true,
+      "predictions": [
+        {
+          "rank": 1,
+          "player": "Yordan Alvarez",
+          "team": "HOU",
+          "score": 73,
+          "confidence": "high",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 2,
+          "player": "Victor Bericoto",
+          "team": "SF",
+          "score": 71,
+          "confidence": "high",
+          "actual_hr": 1,
+          "correct": true
+        },
+        {
+          "rank": 3,
+          "player": "Ben Rice",
+          "team": "NYY",
+          "score": 71,
+          "confidence": "high",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 4,
+          "player": "Eric Haase",
+          "team": "SF",
+          "score": 70,
+          "confidence": "high",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 5,
+          "player": "Paul Goldschmidt",
+          "team": "NYY",
+          "score": 70,
+          "confidence": "high",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 6,
+          "player": "Casey Schmitt",
+          "team": "SF",
+          "score": 69,
+          "confidence": "medium",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 7,
+          "player": "Dillon Dingler",
+          "team": "DET",
+          "score": 69,
+          "confidence": "medium",
+          "actual_hr": 1,
+          "correct": true
+        },
+        {
+          "rank": 8,
+          "player": "Bryce Eldridge",
+          "team": "SF",
+          "score": 66,
+          "confidence": "medium",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 9,
+          "player": "Kyle Schwarber",
+          "team": "PHI",
+          "score": 66,
+          "confidence": "medium",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 10,
+          "player": "Juan Soto",
+          "team": "NYM",
+          "score": 65,
+          "confidence": "medium",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 11,
+          "player": "Kerry Carpenter",
+          "team": "DET",
+          "score": 64,
+          "confidence": "medium",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 12,
+          "player": "Jordan Walker",
+          "team": "STL",
+          "score": 64,
+          "confidence": "medium",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 13,
+          "player": "Christian Walker",
+          "team": "HOU",
+          "score": 62,
+          "confidence": "medium",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
+          "rank": 14,
+          "player": "Amed Rosario",
+          "team": "NYY",
+          "score": 62,
+          "confidence": "medium",
+          "actual_hr": 0,
+          "correct": false
+        },
+        {
           "rank": 15,
           "player": "Nelson Vel\u00e1zquez",
           "team": "STL",
           "score": 62,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 16,
@@ -145,8 +376,8 @@
           "team": "SF",
           "score": 61,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 17,
@@ -154,8 +385,8 @@
           "team": "SF",
           "score": 59,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 1,
+          "correct": true
         },
         {
           "rank": 18,
@@ -163,8 +394,8 @@
           "team": "PHI",
           "score": 59,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 1,
+          "correct": true
         },
         {
           "rank": 19,
@@ -172,8 +403,8 @@
           "team": "CHC",
           "score": 59,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 20,
@@ -181,8 +412,8 @@
           "team": "AZ",
           "score": 59,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 21,
@@ -190,8 +421,8 @@
           "team": "PIT",
           "score": 58,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 1,
+          "correct": true
         },
         {
           "rank": 22,
@@ -199,8 +430,8 @@
           "team": "SEA",
           "score": 58,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 23,
@@ -208,8 +439,8 @@
           "team": "STL",
           "score": 58,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 24,
@@ -217,8 +448,8 @@
           "team": "PIT",
           "score": 57,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 25,
@@ -226,10 +457,39 @@
           "team": "SEA",
           "score": 56,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         }
-      ]
+      ],
+      "summary": {
+        "total": 25,
+        "hr_count": 5,
+        "hit_rate_pct": 20.0,
+        "hr_players": [
+          "Victor Bericoto",
+          "Dillon Dingler",
+          "Willy Adames",
+          "Bryce Harper",
+          "Brandon Lowe"
+        ],
+        "by_bucket": {
+          "70+": {
+            "predicted": 5,
+            "hr": 1,
+            "rate_pct": 20.0
+          },
+          "60-69": {
+            "predicted": 11,
+            "hr": 1,
+            "rate_pct": 9.1
+          },
+          "50-59": {
+            "predicted": 9,
+            "hr": 3,
+            "rate_pct": 33.3
+          }
+        }
+      }
     },
     {
       "date": "2026-06-24",
