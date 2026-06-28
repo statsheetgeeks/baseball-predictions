@@ -15,9 +15,9 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 16,
+            "Log5 Hit": 17,
             "ML Hit": 22,
-            "HR Model": 11,
+            "HR Model": 12,
             "ML HR": 13
           },
           "actual_hit": null,
@@ -33,9 +33,9 @@
             "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 19,
-            "HR Model": 5,
-            "ML HR": 18
+            "Log5 Hit": 20,
+            "HR Model": 3,
+            "ML HR": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -51,25 +51,8 @@
           ],
           "ranks": {
             "Log5 Hit": 5,
-            "HR Model": 24,
+            "HR Model": 23,
             "ML HR": 1
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Gunnar Henderson",
-          "team": "BAL",
-          "appearances": 3,
-          "models": [
-            "HR Model",
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 3,
-            "HR Model": 16,
-            "ML HR": 15
           },
           "actual_hit": null,
           "actual_hr": null
@@ -85,8 +68,8 @@
           ],
           "ranks": {
             "Log5 Hit": 3,
-            "HR Model": 22,
-            "ML HR": 14
+            "HR Model": 19,
+            "ML HR": 16
           },
           "actual_hit": null,
           "actual_hr": null
@@ -102,7 +85,7 @@
           ],
           "ranks": {
             "Log5 Hit": 8,
-            "HR Model": 9,
+            "HR Model": 8,
             "ML HR": 2
           },
           "actual_hit": null,
@@ -118,7 +101,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 20,
+            "Log5 Hit": 21,
             "ML Hit": 4,
             "HR Model": 4
           },
@@ -136,25 +119,8 @@
           ],
           "ranks": {
             "ML Hit": 25,
-            "HR Model": 7,
-            "ML HR": 8
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Pete Alonso",
-          "team": "BAL",
-          "appearances": 3,
-          "models": [
-            "HR Model",
-            "Log5 Hit",
-            "ML HR"
-          ],
-          "ranks": {
-            "Log5 Hit": 14,
             "HR Model": 6,
-            "ML HR": 10
+            "ML HR": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -171,7 +137,22 @@
           "ranks": {
             "Log5 Hit": 10,
             "ML Hit": 5,
-            "HR Model": 25
+            "HR Model": 24
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Adley Rutschman",
+          "team": "BAL",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "Log5 Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 16,
+            "HR Model": 15
           },
           "actual_hit": null,
           "actual_hr": null
@@ -186,7 +167,7 @@
           ],
           "ranks": {
             "Log5 Hit": 9,
-            "ML HR": 23
+            "ML HR": 20
           },
           "actual_hit": null,
           "actual_hr": null
@@ -201,7 +182,7 @@
           ],
           "ranks": {
             "HR Model": 2,
-            "ML HR": 20
+            "ML HR": 10
           },
           "actual_hit": null,
           "actual_hr": null
@@ -216,22 +197,37 @@
           ],
           "ranks": {
             "Log5 Hit": 1,
-            "ML HR": 22
+            "ML HR": 19
           },
           "actual_hit": null,
           "actual_hr": null
         },
         {
-          "player": "Dominic Canzone",
-          "team": "SEA",
+          "player": "Gunnar Henderson",
+          "team": "BAL",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 3,
+            "HR Model": 14
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Matt Olson",
+          "team": "ATL",
           "appearances": 2,
           "models": [
             "HR Model",
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 18,
-            "ML HR": 12
+            "HR Model": 25,
+            "ML HR": 7
           },
           "actual_hit": null,
           "actual_hr": null
@@ -245,38 +241,23 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 22,
+            "Log5 Hit": 23,
             "ML Hit": 24
           },
           "actual_hit": null,
           "actual_hr": null
         },
         {
-          "player": "Ty France",
-          "team": "SD",
+          "player": "Pete Alonso",
+          "team": "BAL",
           "appearances": 2,
           "models": [
             "HR Model",
-            "ML HR"
+            "Log5 Hit"
           ],
           "ranks": {
-            "HR Model": 21,
-            "ML HR": 11
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Wyatt Langford",
-          "team": "TEX",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "ML HR"
-          ],
-          "ranks": {
-            "HR Model": 10,
-            "ML HR": 19
+            "Log5 Hit": 14,
+            "HR Model": 5
           },
           "actual_hit": null,
           "actual_hr": null
@@ -290,7 +271,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 21,
+            "Log5 Hit": 22,
             "ML Hit": 15
           },
           "actual_hit": null,
@@ -306,7 +287,7 @@
           ],
           "ranks": {
             "Log5 Hit": 11,
-            "HR Model": 13
+            "HR Model": 11
           },
           "actual_hit": null,
           "actual_hr": null
