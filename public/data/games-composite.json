@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T14:15:57.796496+00:00",
+  "updated": "2026-07-01T16:26:10.059798+00:00",
   "date": "2026-07-01",
   "predictions": [
     {
@@ -273,33 +273,6 @@
       "correct": null
     },
     {
-      "game_time": "1:35 PM ET",
-      "away_team": "Washington Nationals",
-      "home_team": "Boston Red Sox",
-      "log5": {
-        "pick": "Washington Nationals",
-        "confidence": 0.5452
-      },
-      "research": {
-        "pick": "Boston Red Sox",
-        "confidence": 0.5244
-      },
-      "xgboost": {
-        "pick": "Boston Red Sox",
-        "confidence": 0.5457
-      },
-      "random_forest": {
-        "pick": "Boston Red Sox",
-        "confidence": 0.5554
-      },
-      "composite_pick": "Boston Red Sox",
-      "composite_confidence": 0.5201,
-      "vote_count": 3,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
       "game_time": "9:40 PM ET",
       "away_team": "San Francisco Giants",
       "home_team": "Arizona Diamondbacks",
@@ -349,6 +322,33 @@
       "composite_pick": "New York Mets",
       "composite_confidence": 0.5161,
       "vote_count": 2,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "1:35 PM ET",
+      "away_team": "Washington Nationals",
+      "home_team": "Boston Red Sox",
+      "log5": {
+        "pick": "Washington Nationals",
+        "confidence": 0.5452
+      },
+      "research": {
+        "pick": "Boston Red Sox",
+        "confidence": 0.5244
+      },
+      "xgboost": {
+        "pick": "Boston Red Sox",
+        "confidence": 0.5248
+      },
+      "random_forest": {
+        "pick": "Boston Red Sox",
+        "confidence": 0.5534
+      },
+      "composite_pick": "Boston Red Sox",
+      "composite_confidence": 0.5143,
+      "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
