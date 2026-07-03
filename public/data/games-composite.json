@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T14:42:36.110837+00:00",
+  "updated": "2026-07-03T15:52:26.182079+00:00",
   "date": "2026-07-03",
   "predictions": [
     {
@@ -78,33 +78,6 @@
       },
       "composite_pick": "Atlanta Braves",
       "composite_confidence": 0.6254,
-      "vote_count": 4,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
-      "game_time": "9:40 PM ET",
-      "away_team": "Miami Marlins",
-      "home_team": "Athletics",
-      "log5": {
-        "pick": "Miami Marlins",
-        "confidence": 0.5313
-      },
-      "research": {
-        "pick": "Miami Marlins",
-        "confidence": 0.5622
-      },
-      "xgboost": {
-        "pick": "Miami Marlins",
-        "confidence": 0.6954
-      },
-      "random_forest": {
-        "pick": "Miami Marlins",
-        "confidence": 0.5765
-      },
-      "composite_pick": "Miami Marlins",
-      "composite_confidence": 0.5914,
       "vote_count": 4,
       "total_votes": 4,
       "actual_winner": null,
@@ -219,6 +192,33 @@
       "correct": null
     },
     {
+      "game_time": "9:40 PM ET",
+      "away_team": "Miami Marlins",
+      "home_team": "Athletics",
+      "log5": {
+        "pick": "Miami Marlins",
+        "confidence": 0.5313
+      },
+      "research": {
+        "pick": "Miami Marlins",
+        "confidence": 0.5622
+      },
+      "xgboost": {
+        "pick": "Miami Marlins",
+        "confidence": 0.5241
+      },
+      "random_forest": {
+        "pick": "Miami Marlins",
+        "confidence": 0.5785
+      },
+      "composite_pick": "Miami Marlins",
+      "composite_confidence": 0.549,
+      "vote_count": 4,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
       "game_time": "4:05 PM ET",
       "away_team": "St. Louis Cardinals",
       "home_team": "Chicago Cubs",
@@ -313,14 +313,14 @@
       },
       "xgboost": {
         "pick": "Los Angeles Angels",
-        "confidence": 0.5064
+        "confidence": 0.5057
       },
       "random_forest": {
         "pick": "Boston Red Sox",
-        "confidence": 0.5125
+        "confidence": 0.5142
       },
       "composite_pick": "Boston Red Sox",
-      "composite_confidence": 0.5031,
+      "composite_confidence": 0.5037,
       "vote_count": 2,
       "total_votes": 4,
       "actual_winner": null,

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T14:54:05Z",
+  "updated": "2026-07-03T16:02:05Z",
   "season": 2026,
   "exponent": 1.83,
   "teams": [
@@ -202,7 +202,7 @@
       "formula_wins": 46,
       "formula_losses": 42,
       "formula_diff": 1,
-      "formula_wp": 0.52,
+      "formula_wp": 0.518,
       "pythag_wins": 44,
       "pythag_losses": 44,
       "pythag_diff": -1,
@@ -392,7 +392,7 @@
       "formula_wins": 40,
       "formula_losses": 47,
       "formula_diff": -1,
-      "formula_wp": 0.465,
+      "formula_wp": 0.464,
       "pythag_wins": 40,
       "pythag_losses": 47,
       "pythag_diff": -1,
@@ -460,34 +460,15 @@
       "elo_wp": 0.468
     },
     {
-      "team": "Los Angeles Angels",
-      "games": 88,
-      "actual_wins": 36,
-      "actual_losses": 52,
-      "actual_wp": 0.409,
-      "formula_wins": 40,
-      "formula_losses": 48,
-      "formula_diff": 4,
-      "formula_wp": 0.451,
-      "pythag_wins": 40,
-      "pythag_losses": 48,
-      "pythag_diff": 4,
-      "pythag_wp": 0.449,
-      "elo_wins": 39,
-      "elo_losses": 49,
-      "elo_diff": 3,
-      "elo_wp": 0.44
-    },
-    {
       "team": "Athletics",
       "games": 87,
       "actual_wins": 41,
       "actual_losses": 46,
       "actual_wp": 0.471,
-      "formula_wins": 38,
-      "formula_losses": 49,
-      "formula_diff": -3,
-      "formula_wp": 0.442,
+      "formula_wins": 39,
+      "formula_losses": 48,
+      "formula_diff": -2,
+      "formula_wp": 0.451,
       "pythag_wins": 38,
       "pythag_losses": 49,
       "pythag_diff": -3,
@@ -496,6 +477,25 @@
       "elo_losses": 45,
       "elo_diff": 1,
       "elo_wp": 0.482
+    },
+    {
+      "team": "Los Angeles Angels",
+      "games": 88,
+      "actual_wins": 36,
+      "actual_losses": 52,
+      "actual_wp": 0.409,
+      "formula_wins": 40,
+      "formula_losses": 48,
+      "formula_diff": 4,
+      "formula_wp": 0.45,
+      "pythag_wins": 40,
+      "pythag_losses": 48,
+      "pythag_diff": 4,
+      "pythag_wp": 0.449,
+      "elo_wins": 39,
+      "elo_losses": 49,
+      "elo_diff": 3,
+      "elo_wp": 0.44
     },
     {
       "team": "San Diego Padres",
@@ -576,17 +576,17 @@
   ],
   "accuracy": {
     "correlation": {
-      "formula": 0.7818,
+      "formula": 0.7833,
       "pythag": 0.8742,
       "elo": 0.8665
     },
     "mae": {
-      "formula": 0.035,
+      "formula": 0.0346,
       "pythag": 0.0271,
       "elo": 0.03
     },
     "rmse": {
-      "formula": 0.0426,
+      "formula": 0.0424,
       "pythag": 0.033,
       "elo": 0.0373
     }
