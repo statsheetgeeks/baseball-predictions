@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T16:58:40Z",
+  "updated": "2026-07-06T19:06:37Z",
   "season": 2026,
   "exponent": 1.83,
   "teams": [
@@ -308,25 +308,6 @@
       "elo_wp": 0.52
     },
     {
-      "team": "Philadelphia Phillies",
-      "games": 90,
-      "actual_wins": 50,
-      "actual_losses": 40,
-      "actual_wp": 0.556,
-      "formula_wins": 43,
-      "formula_losses": 47,
-      "formula_diff": -7,
-      "formula_wp": 0.475,
-      "pythag_wins": 46,
-      "pythag_losses": 44,
-      "pythag_diff": -4,
-      "pythag_wp": 0.508,
-      "elo_wins": 50,
-      "elo_losses": 40,
-      "elo_diff": 0,
-      "elo_wp": 0.556
-    },
-    {
       "team": "Minnesota Twins",
       "games": 91,
       "actual_wins": 44,
@@ -363,6 +344,25 @@
       "elo_losses": 45,
       "elo_diff": 2,
       "elo_wp": 0.51
+    },
+    {
+      "team": "Philadelphia Phillies",
+      "games": 90,
+      "actual_wins": 50,
+      "actual_losses": 40,
+      "actual_wp": 0.556,
+      "formula_wins": 42,
+      "formula_losses": 48,
+      "formula_diff": -8,
+      "formula_wp": 0.468,
+      "pythag_wins": 45,
+      "pythag_losses": 45,
+      "pythag_diff": -5,
+      "pythag_wp": 0.501,
+      "elo_wins": 50,
+      "elo_losses": 40,
+      "elo_diff": 0,
+      "elo_wp": 0.556
     },
     {
       "team": "Baltimore Orioles",
@@ -560,14 +560,14 @@
       "actual_wins": 36,
       "actual_losses": 54,
       "actual_wp": 0.4,
-      "formula_wins": 37,
-      "formula_losses": 53,
-      "formula_diff": 1,
-      "formula_wp": 0.407,
+      "formula_wins": 36,
+      "formula_losses": 54,
+      "formula_diff": 0,
+      "formula_wp": 0.404,
       "pythag_wins": 37,
       "pythag_losses": 53,
       "pythag_diff": 1,
-      "pythag_wp": 0.406,
+      "pythag_wp": 0.414,
       "elo_wins": 41,
       "elo_losses": 49,
       "elo_diff": 5,
@@ -576,18 +576,18 @@
   ],
   "accuracy": {
     "correlation": {
-      "formula": 0.8104,
-      "pythag": 0.8922,
+      "formula": 0.8065,
+      "pythag": 0.888,
       "elo": 0.87
     },
     "mae": {
-      "formula": 0.0328,
-      "pythag": 0.0253,
+      "formula": 0.0329,
+      "pythag": 0.0258,
       "elo": 0.0297
     },
     "rmse": {
-      "formula": 0.0391,
-      "pythag": 0.0305,
+      "formula": 0.0396,
+      "pythag": 0.031,
       "elo": 0.0364
     }
   }
