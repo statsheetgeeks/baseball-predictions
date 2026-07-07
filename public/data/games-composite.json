@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T15:41:59.985526+00:00",
+  "updated": "2026-07-07T16:29:33.370069+00:00",
   "date": "2026-07-07",
   "predictions": [
     {
@@ -219,60 +219,6 @@
       "correct": null
     },
     {
-      "game_time": "2:15 PM ET",
-      "away_team": "Milwaukee Brewers",
-      "home_team": "St. Louis Cardinals",
-      "log5": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.5768
-      },
-      "research": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.5102
-      },
-      "xgboost": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.5019
-      },
-      "random_forest": {
-        "pick": "St. Louis Cardinals",
-        "confidence": 0.5268
-      },
-      "composite_pick": "Milwaukee Brewers",
-      "composite_confidence": 0.5155,
-      "vote_count": 3,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
-      "game_time": "7:45 PM ET",
-      "away_team": "Milwaukee Brewers",
-      "home_team": "St. Louis Cardinals",
-      "log5": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.5768
-      },
-      "research": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.5102
-      },
-      "xgboost": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.5019
-      },
-      "random_forest": {
-        "pick": "St. Louis Cardinals",
-        "confidence": 0.5268
-      },
-      "composite_pick": "Milwaukee Brewers",
-      "composite_confidence": 0.5155,
-      "vote_count": 3,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
       "game_time": "6:40 PM ET",
       "away_team": "Atlanta Braves",
       "home_team": "Pittsburgh Pirates",
@@ -295,6 +241,60 @@
       "composite_pick": "Pittsburgh Pirates",
       "composite_confidence": 0.5127,
       "vote_count": 3,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "2:15 PM ET",
+      "away_team": "Milwaukee Brewers",
+      "home_team": "St. Louis Cardinals",
+      "log5": {
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.5768
+      },
+      "research": {
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.5102
+      },
+      "xgboost": {
+        "pick": "St. Louis Cardinals",
+        "confidence": 0.508
+      },
+      "random_forest": {
+        "pick": "St. Louis Cardinals",
+        "confidence": 0.5353
+      },
+      "composite_pick": "Milwaukee Brewers",
+      "composite_confidence": 0.5109,
+      "vote_count": 2,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "7:45 PM ET",
+      "away_team": "Milwaukee Brewers",
+      "home_team": "St. Louis Cardinals",
+      "log5": {
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.5768
+      },
+      "research": {
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.5102
+      },
+      "xgboost": {
+        "pick": "St. Louis Cardinals",
+        "confidence": 0.508
+      },
+      "random_forest": {
+        "pick": "St. Louis Cardinals",
+        "confidence": 0.5353
+      },
+      "composite_pick": "Milwaukee Brewers",
+      "composite_confidence": 0.5109,
+      "vote_count": 2,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
@@ -421,14 +421,14 @@
       },
       "xgboost": {
         "pick": "San Francisco Giants",
-        "confidence": 0.5798
+        "confidence": 0.5808
       },
       "random_forest": {
         "pick": "Toronto Blue Jays",
-        "confidence": 0.5005
+        "confidence": 0.5211
       },
       "composite_pick": "Toronto Blue Jays",
-      "composite_confidence": 0.487,
+      "composite_confidence": 0.4919,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,

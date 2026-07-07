@@ -5,18 +5,53 @@
       "graded": false,
       "players": [
         {
+          "player": "Jackson Chourio",
+          "team": "MIL",
+          "appearances": 5,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "Log5 Hit",
+            "ML HR",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 16,
+            "HR Model": 22,
+            "ML HR": 21
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "William Contreras",
+          "team": "MIL",
+          "appearances": 4,
+          "models": [
+            "Log5 Hit",
+            "Log5 Hit",
+            "ML Hit",
+            "ML Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 9,
+            "ML Hit": 14
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
           "player": "Brice Turang",
           "team": "MIL",
           "appearances": 3,
           "models": [
             "Log5 Hit",
-            "ML HR",
+            "Log5 Hit",
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 17,
-            "ML Hit": 13,
-            "ML HR": 21
+            "Log5 Hit": 19,
+            "ML Hit": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -31,9 +66,9 @@
             "ML Hit"
           ],
           "ranks": {
-            "ML Hit": 22,
-            "HR Model": 20,
-            "ML HR": 6
+            "ML Hit": 23,
+            "HR Model": 19,
+            "ML HR": 22
           },
           "actual_hit": null,
           "actual_hr": null
@@ -50,23 +85,23 @@
           "ranks": {
             "Log5 Hit": 2,
             "ML Hit": 6,
-            "ML HR": 12
+            "ML HR": 16
           },
           "actual_hit": null,
           "actual_hr": null
         },
         {
-          "player": "Jackson Chourio",
+          "player": "Jake Bauers",
           "team": "MIL",
           "appearances": 3,
           "models": [
-            "Log5 Hit",
-            "Log5 Hit",
+            "HR Model",
+            "ML HR",
             "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 18,
-            "ML HR": 22
+            "HR Model": 23,
+            "ML HR": 6
           },
           "actual_hit": null,
           "actual_hr": null
@@ -81,9 +116,9 @@
             "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 11,
-            "HR Model": 19,
-            "ML HR": 3
+            "Log5 Hit": 12,
+            "HR Model": 21,
+            "ML HR": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -100,23 +135,7 @@
           "ranks": {
             "ML Hit": 1,
             "HR Model": 17,
-            "ML HR": 2
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "William Contreras",
-          "team": "MIL",
-          "appearances": 3,
-          "models": [
-            "Log5 Hit",
-            "Log5 Hit",
-            "ML Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 14,
-            "ML Hit": 8
+            "ML HR": 10
           },
           "actual_hit": null,
           "actual_hr": null
@@ -130,7 +149,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 12,
+            "Log5 Hit": 13,
             "ML Hit": 2
           },
           "actual_hit": null,
@@ -146,7 +165,7 @@
           ],
           "ranks": {
             "HR Model": 4,
-            "ML HR": 5
+            "ML HR": 2
           },
           "actual_hit": null,
           "actual_hr": null
@@ -160,8 +179,22 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 11,
-            "ML HR": 23
+            "HR Model": 10,
+            "ML HR": 12
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Christian Yelich",
+          "team": "MIL",
+          "appearances": 2,
+          "models": [
+            "ML Hit",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 15
           },
           "actual_hit": null,
           "actual_hr": null
@@ -175,8 +208,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 16,
-            "ML HR": 4
+            "HR Model": 18,
+            "ML HR": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -191,7 +224,7 @@
           ],
           "ranks": {
             "Log5 Hit": 7,
-            "ML Hit": 16
+            "ML Hit": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -220,7 +253,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 20,
+            "Log5 Hit": 23,
             "ML Hit": 9
           },
           "actual_hit": null,
@@ -235,23 +268,8 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 24,
-            "ML Hit": 21
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Matt Olson",
-          "team": "ATL",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "ML HR"
-          ],
-          "ranks": {
-            "HR Model": 22,
-            "ML HR": 18
+            "Log5 Hit": 20,
+            "ML Hit": 24
           },
           "actual_hit": null,
           "actual_hr": null
@@ -280,7 +298,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 16,
+            "Log5 Hit": 17,
             "ML Hit": 5
           },
           "actual_hit": null,
@@ -295,8 +313,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 23,
-            "ML HR": 19
+            "HR Model": 24,
+            "ML HR": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -311,7 +329,7 @@
           ],
           "ranks": {
             "Log5 Hit": 5,
-            "HR Model": 13
+            "HR Model": 12
           },
           "actual_hit": null,
           "actual_hr": null
@@ -326,7 +344,7 @@
           ],
           "ranks": {
             "Log5 Hit": 3,
-            "HR Model": 24
+            "HR Model": 25
           },
           "actual_hit": null,
           "actual_hr": null
