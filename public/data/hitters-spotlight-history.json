@@ -16,7 +16,7 @@
           "ranks": {
             "Log5 Hit": 1,
             "ML Hit": 7,
-            "HR Model": 18
+            "HR Model": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -32,8 +32,25 @@
           ],
           "ranks": {
             "Log5 Hit": 14,
-            "HR Model": 11,
-            "ML HR": 18
+            "HR Model": 10,
+            "ML HR": 20
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Kody Clemens",
+          "team": "MIN",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "ML HR",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 6,
+            "HR Model": 6,
+            "ML HR": 15
           },
           "actual_hit": null,
           "actual_hr": null
@@ -50,7 +67,7 @@
           "ranks": {
             "Log5 Hit": 21,
             "HR Model": 5,
-            "ML HR": 4
+            "ML HR": 11
           },
           "actual_hit": null,
           "actual_hr": null
@@ -66,8 +83,25 @@
           ],
           "ranks": {
             "ML Hit": 21,
-            "HR Model": 19,
-            "ML HR": 1
+            "HR Model": 20,
+            "ML HR": 3
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Ryan Jeffers",
+          "team": "MIN",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "ML HR",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 4,
+            "HR Model": 1,
+            "ML HR": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -81,23 +115,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 20,
-            "ML HR": 3
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Bryce Eldridge",
-          "team": "SF",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "Log5 Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 15,
-            "HR Model": 23
+            "HR Model": 18,
+            "ML HR": 2
           },
           "actual_hit": null,
           "actual_hr": null
@@ -127,7 +146,7 @@
           ],
           "ranks": {
             "Log5 Hit": 10,
-            "ML HR": 16
+            "ML HR": 12
           },
           "actual_hit": null,
           "actual_hr": null
@@ -142,7 +161,7 @@
           ],
           "ranks": {
             "Log5 Hit": 22,
-            "ML HR": 7
+            "ML HR": 6
           },
           "actual_hit": null,
           "actual_hr": null
@@ -156,8 +175,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 9,
-            "ML HR": 2
+            "HR Model": 13,
+            "ML HR": 1
           },
           "actual_hit": null,
           "actual_hr": null
@@ -172,7 +191,7 @@
           ],
           "ranks": {
             "HR Model": 3,
-            "ML HR": 5
+            "ML HR": 8
           },
           "actual_hit": null,
           "actual_hr": null
@@ -207,21 +226,6 @@
           "actual_hr": null
         },
         {
-          "player": "Kody Clemens",
-          "team": "MIN",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 6,
-            "HR Model": 8
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Luke Raley",
           "team": "SEA",
           "appearances": 2,
@@ -230,8 +234,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 25,
-            "ML HR": 20
+            "HR Model": 24,
+            "ML HR": 19
           },
           "actual_hit": null,
           "actual_hr": null
@@ -245,8 +249,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 4,
-            "ML HR": 9
+            "HR Model": 7,
+            "ML HR": 5
           },
           "actual_hit": null,
           "actual_hr": null
@@ -267,16 +271,16 @@
           "actual_hr": null
         },
         {
-          "player": "Ryan Jeffers",
-          "team": "MIN",
+          "player": "Pete Alonso",
+          "team": "BAL",
           "appearances": 2,
           "models": [
-            "HR Model",
-            "ML Hit"
+            "Log5 Hit",
+            "ML HR"
           ],
           "ranks": {
-            "ML Hit": 4,
-            "HR Model": 1
+            "Log5 Hit": 19,
+            "ML HR": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -305,7 +309,7 @@
           ],
           "ranks": {
             "Log5 Hit": 4,
-            "HR Model": 16
+            "HR Model": 15
           },
           "actual_hit": null,
           "actual_hr": null
