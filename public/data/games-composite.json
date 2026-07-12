@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-12T14:55:23.284607+00:00",
+  "updated": "2026-07-12T16:28:09.505376+00:00",
   "date": "2026-07-12",
   "predictions": [
     {
@@ -300,33 +300,6 @@
       "correct": null
     },
     {
-      "game_time": "12:15 PM ET",
-      "away_team": "Milwaukee Brewers",
-      "home_team": "Pittsburgh Pirates",
-      "log5": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.5912
-      },
-      "research": {
-        "pick": "Pittsburgh Pirates",
-        "confidence": 0.5004
-      },
-      "xgboost": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.5044
-      },
-      "random_forest": {
-        "pick": "Pittsburgh Pirates",
-        "confidence": 0.5291
-      },
-      "composite_pick": "Milwaukee Brewers",
-      "composite_confidence": 0.5165,
-      "vote_count": 2,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
       "game_time": "4:05 PM ET",
       "away_team": "Colorado Rockies",
       "home_team": "San Francisco Giants",
@@ -381,6 +354,33 @@
       "correct": null
     },
     {
+      "game_time": "12:15 PM ET",
+      "away_team": "Milwaukee Brewers",
+      "home_team": "Pittsburgh Pirates",
+      "log5": {
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.5912
+      },
+      "research": {
+        "pick": "Pittsburgh Pirates",
+        "confidence": 0.5004
+      },
+      "xgboost": {
+        "pick": "Pittsburgh Pirates",
+        "confidence": 0.5012
+      },
+      "random_forest": {
+        "pick": "Pittsburgh Pirates",
+        "confidence": 0.5337
+      },
+      "composite_pick": "Pittsburgh Pirates",
+      "composite_confidence": 0.486,
+      "vote_count": 3,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
       "game_time": "2:15 PM ET",
       "away_team": "Atlanta Braves",
       "home_team": "St. Louis Cardinals",
@@ -394,14 +394,14 @@
       },
       "xgboost": {
         "pick": "St. Louis Cardinals",
-        "confidence": 0.6951
+        "confidence": 0.672
       },
       "random_forest": {
         "pick": "Atlanta Braves",
-        "confidence": 0.5078
+        "confidence": 0.5138
       },
       "composite_pick": "Atlanta Braves",
-      "composite_confidence": 0.4615,
+      "composite_confidence": 0.4687,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
