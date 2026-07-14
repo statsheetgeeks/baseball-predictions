@@ -1,6 +1,29 @@
 {
   "records": [
     {
+      "date": "2026-07-14",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "American League All-Stars",
+          "home_team": "National League All-Stars",
+          "log5": {
+            "pick": "National League All-Stars",
+            "confidence": 0.52
+          },
+          "research": null,
+          "xgboost": null,
+          "random_forest": null,
+          "composite_pick": "National League All-Stars",
+          "composite_confidence": 0.52,
+          "vote_count": 1,
+          "total_votes": 1,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-07-13",
       "games": []
     },
