@@ -1,26 +1,7 @@
 {
-  "updated": "2026-07-14T15:23:08.572359+00:00",
-  "date": "2026-07-14",
-  "predictions": [
-    {
-      "game_time": "8:00 PM ET",
-      "away_team": "American League All-Stars",
-      "home_team": "National League All-Stars",
-      "log5": {
-        "pick": "National League All-Stars",
-        "confidence": 0.52
-      },
-      "research": null,
-      "xgboost": null,
-      "random_forest": null,
-      "composite_pick": "National League All-Stars",
-      "composite_confidence": 0.52,
-      "vote_count": 1,
-      "total_votes": 1,
-      "actual_winner": null,
-      "correct": null
-    }
-  ],
+  "updated": "2026-07-15T15:25:35.154104+00:00",
+  "date": "2026-07-15",
+  "predictions": [],
   "model_standings": [
     {
       "model": "Random Forest",
@@ -32,9 +13,9 @@
     {
       "model": "Log5",
       "wins": 447,
-      "losses": 397,
-      "total": 844,
-      "pct": 0.5296
+      "losses": 398,
+      "total": 845,
+      "pct": 0.529
     },
     {
       "model": "Research",
@@ -52,18 +33,18 @@
     }
   ],
   "yesterday": {
-    "date": "2026-07-13",
+    "date": "2026-07-14",
     "total": {
       "wins": 0,
-      "losses": 0,
-      "total": 0
+      "losses": 1,
+      "total": 1
     },
     "by_confidence": [
       {
         "band": "50-59%",
         "wins": 0,
-        "losses": 0,
-        "total": 0
+        "losses": 1,
+        "total": 1
       },
       {
         "band": "60-69%",
@@ -88,15 +69,15 @@
   "alltime": {
     "total": {
       "wins": 459,
-      "losses": 385,
-      "total": 844
+      "losses": 386,
+      "total": 845
     },
     "by_confidence": [
       {
         "band": "50-59%",
         "wins": 383,
-        "losses": 321,
-        "total": 704
+        "losses": 322,
+        "total": 705
       },
       {
         "band": "60-69%",

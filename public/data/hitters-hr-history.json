@@ -1,8 +1,13 @@
 {
   "records": [
     {
-      "date": "2026-07-14",
+      "date": "2026-07-15",
       "graded": false,
+      "predictions": []
+    },
+    {
+      "date": "2026-07-14",
+      "graded": true,
       "predictions": [
         {
           "rank": 1,
@@ -10,8 +15,8 @@
           "team": "AL",
           "score": 64,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 2,
@@ -19,8 +24,8 @@
           "team": "AL",
           "score": 63,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 3,
@@ -28,8 +33,8 @@
           "team": "AL",
           "score": 60,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 4,
@@ -37,8 +42,8 @@
           "team": "NL",
           "score": 58,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 5,
@@ -46,8 +51,8 @@
           "team": "NL",
           "score": 57,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 6,
@@ -55,8 +60,8 @@
           "team": "AL",
           "score": 55,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 7,
@@ -64,8 +69,8 @@
           "team": "AL",
           "score": 53,
           "confidence": "low",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 8,
@@ -73,8 +78,8 @@
           "team": "NL",
           "score": 50,
           "confidence": "low",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 9,
@@ -82,8 +87,8 @@
           "team": "NL",
           "score": 50,
           "confidence": "low",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 10,
@@ -91,8 +96,8 @@
           "team": "AL",
           "score": 45,
           "confidence": "low",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 11,
@@ -100,8 +105,8 @@
           "team": "NL",
           "score": 44,
           "confidence": "low",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 12,
@@ -109,8 +114,8 @@
           "team": "NL",
           "score": 44,
           "confidence": "low",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 13,
@@ -118,8 +123,8 @@
           "team": "NL",
           "score": 44,
           "confidence": "low",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 14,
@@ -127,8 +132,8 @@
           "team": "NL",
           "score": 44,
           "confidence": "low",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 15,
@@ -136,8 +141,8 @@
           "team": "AL",
           "score": 44,
           "confidence": "low",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 16,
@@ -145,8 +150,8 @@
           "team": "AL",
           "score": 41,
           "confidence": "low",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 17,
@@ -154,8 +159,8 @@
           "team": "NL",
           "score": 39,
           "confidence": "low",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 18,
@@ -163,10 +168,33 @@
           "team": "AL",
           "score": 37,
           "confidence": "low",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         }
-      ]
+      ],
+      "summary": {
+        "total": 18,
+        "hr_count": 0,
+        "hit_rate_pct": 0.0,
+        "hr_players": [],
+        "by_bucket": {
+          "60-69": {
+            "predicted": 3,
+            "hr": 0,
+            "rate_pct": 0.0
+          },
+          "50-59": {
+            "predicted": 6,
+            "hr": 0,
+            "rate_pct": 0.0
+          },
+          "<50": {
+            "predicted": 9,
+            "hr": 0,
+            "rate_pct": 0.0
+          }
+        }
+      }
     },
     {
       "date": "2026-07-13",
