@@ -1,58 +1,205 @@
 {
-  "date": "2026-07-15",
-  "updated": "2026-07-15T15:25:34.801313Z",
-  "predictions": [],
-  "yesterday": {
-    "total": {
-      "wins": 0,
-      "losses": 0,
-      "total": 0
+  "date": "2026-07-17",
+  "updated": "2026-07-17T17:40:46.181009Z",
+  "predictions": [
+    {
+      "game_time": "1:35 PM ET",
+      "away_team": "Tampa Bay Rays",
+      "home_team": "Boston Red Sox",
+      "away_sp": "Griffin Jax",
+      "home_sp": "Jake Bennett",
+      "away_prob": 0.4393,
+      "home_prob": 0.5607,
+      "pick": "Boston Red Sox",
+      "confidence": 0.5607,
+      "actual_winner": null,
+      "correct": null
     },
-    "by_confidence": [
-      {
-        "band": "50\u201355%",
-        "wins": 0,
-        "losses": 0,
-        "total": 0
-      },
-      {
-        "band": "55\u201360%",
-        "wins": 0,
-        "losses": 0,
-        "total": 0
-      },
-      {
-        "band": "60\u201365%",
-        "wins": 0,
-        "losses": 0,
-        "total": 0
-      },
-      {
-        "band": "65\u201370%",
-        "wins": 0,
-        "losses": 0,
-        "total": 0
-      },
-      {
-        "band": "70\u201375%",
-        "wins": 0,
-        "losses": 0,
-        "total": 0
-      },
-      {
-        "band": "75\u201380%",
-        "wins": 0,
-        "losses": 0,
-        "total": 0
-      },
-      {
-        "band": "80%+",
-        "wins": 0,
-        "losses": 0,
-        "total": 0
-      }
-    ],
-    "date": "2026-07-14"
+    {
+      "game_time": "7:10 PM ET",
+      "away_team": "Tampa Bay Rays",
+      "home_team": "Boston Red Sox",
+      "away_sp": "TBD",
+      "home_sp": "TBD",
+      "away_prob": 0.4517,
+      "home_prob": 0.5483,
+      "pick": "Boston Red Sox",
+      "confidence": 0.5483,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "7:05 PM ET",
+      "away_team": "Los Angeles Dodgers",
+      "home_team": "New York Yankees",
+      "away_sp": "Roki Sasaki",
+      "home_sp": "Gerrit Cole",
+      "away_prob": 0.4138,
+      "home_prob": 0.5862,
+      "pick": "New York Yankees",
+      "confidence": 0.5862,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "7:10 PM ET",
+      "away_team": "Pittsburgh Pirates",
+      "home_team": "Cleveland Guardians",
+      "away_sp": "Jared Jones",
+      "home_sp": "Gavin Williams",
+      "away_prob": 0.4799,
+      "home_prob": 0.5201,
+      "pick": "Cleveland Guardians",
+      "confidence": 0.5201,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "7:15 PM ET",
+      "away_team": "Texas Rangers",
+      "home_team": "Atlanta Braves",
+      "away_sp": "Cal Quantrill",
+      "home_sp": "Chris Sale",
+      "away_prob": 0.4368,
+      "home_prob": 0.5632,
+      "pick": "Atlanta Braves",
+      "confidence": 0.5632,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "7:15 PM ET",
+      "away_team": "Chicago White Sox",
+      "home_team": "Toronto Blue Jays",
+      "away_sp": "Anthony Kay",
+      "home_sp": "Spencer Miles",
+      "away_prob": 0.4607,
+      "home_prob": 0.5393,
+      "pick": "Toronto Blue Jays",
+      "confidence": 0.5393,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "7:40 PM ET",
+      "away_team": "Miami Marlins",
+      "home_team": "Milwaukee Brewers",
+      "away_sp": "Sandy Alcantara",
+      "home_sp": "Logan Henderson",
+      "away_prob": 0.3711,
+      "home_prob": 0.6289,
+      "pick": "Milwaukee Brewers",
+      "confidence": 0.6289,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "8:05 PM ET",
+      "away_team": "Minnesota Twins",
+      "home_team": "Chicago Cubs",
+      "away_sp": "Bailey Ober",
+      "home_sp": "Colin Rea",
+      "away_prob": 0.4811,
+      "home_prob": 0.5189,
+      "pick": "Chicago Cubs",
+      "confidence": 0.5189,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "8:10 PM ET",
+      "away_team": "Baltimore Orioles",
+      "home_team": "Houston Astros",
+      "away_sp": "Dean Kremer",
+      "home_sp": "Peter Lambert",
+      "away_prob": 0.5151,
+      "home_prob": 0.4849,
+      "pick": "Baltimore Orioles",
+      "confidence": 0.5151,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "8:10 PM ET",
+      "away_team": "San Diego Padres",
+      "home_team": "Kansas City Royals",
+      "away_sp": "Michael King",
+      "home_sp": "Seth Lugo",
+      "away_prob": 0.5245,
+      "home_prob": 0.4755,
+      "pick": "San Diego Padres",
+      "confidence": 0.5245,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "8:40 PM ET",
+      "away_team": "Cincinnati Reds",
+      "home_team": "Colorado Rockies",
+      "away_sp": "Brady Singer",
+      "home_sp": "Gabriel Hughes",
+      "away_prob": 0.546,
+      "home_prob": 0.454,
+      "pick": "Cincinnati Reds",
+      "confidence": 0.546,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "9:38 PM ET",
+      "away_team": "Detroit Tigers",
+      "home_team": "Los Angeles Angels",
+      "away_sp": "Troy Melton",
+      "home_sp": "Reid Detmers",
+      "away_prob": 0.534,
+      "home_prob": 0.466,
+      "pick": "Detroit Tigers",
+      "confidence": 0.534,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "9:40 PM ET",
+      "away_team": "Washington Nationals",
+      "home_team": "Athletics",
+      "away_sp": "Cade Cavalli",
+      "home_sp": "Gage Jump",
+      "away_prob": 0.5183,
+      "home_prob": 0.4817,
+      "pick": "Washington Nationals",
+      "confidence": 0.5183,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "9:40 PM ET",
+      "away_team": "St. Louis Cardinals",
+      "home_team": "Arizona Diamondbacks",
+      "away_sp": "Michael McGreevy",
+      "home_sp": "Merrill Kelly",
+      "away_prob": 0.5025,
+      "home_prob": 0.4975,
+      "pick": "St. Louis Cardinals",
+      "confidence": 0.5025,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "10:10 PM ET",
+      "away_team": "San Francisco Giants",
+      "home_team": "Seattle Mariners",
+      "away_sp": "Landen Roupp",
+      "home_sp": "Bryce Miller",
+      "away_prob": 0.4016,
+      "home_prob": 0.5984,
+      "pick": "Seattle Mariners",
+      "confidence": 0.5984,
+      "actual_winner": null,
+      "correct": null
+    }
+  ],
+  "yesterday": {
+    "date": "2026-07-16"
   },
   "alltime": {
     "total": {

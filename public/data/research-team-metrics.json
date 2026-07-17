@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T15:26:07Z",
+  "updated": "2026-07-17T17:54:45Z",
   "season": 2026,
   "exponent": 1.83,
   "teams": [
@@ -69,7 +69,7 @@
       "formula_wins": 54,
       "formula_losses": 40,
       "formula_diff": -2,
-      "formula_wp": 0.579,
+      "formula_wp": 0.576,
       "pythag_wins": 50,
       "pythag_losses": 44,
       "pythag_diff": -6,
@@ -194,25 +194,6 @@
       "elo_wp": 0.514
     },
     {
-      "team": "Boston Red Sox",
-      "games": 94,
-      "actual_wins": 46,
-      "actual_losses": 48,
-      "actual_wp": 0.489,
-      "formula_wins": 49,
-      "formula_losses": 45,
-      "formula_diff": 3,
-      "formula_wp": 0.518,
-      "pythag_wins": 50,
-      "pythag_losses": 44,
-      "pythag_diff": 4,
-      "pythag_wp": 0.533,
-      "elo_wins": 49,
-      "elo_losses": 45,
-      "elo_diff": 3,
-      "elo_wp": 0.521
-    },
-    {
       "team": "Texas Rangers",
       "games": 96,
       "actual_wins": 49,
@@ -230,6 +211,25 @@
       "elo_losses": 47,
       "elo_diff": 0,
       "elo_wp": 0.506
+    },
+    {
+      "team": "Boston Red Sox",
+      "games": 94,
+      "actual_wins": 46,
+      "actual_losses": 48,
+      "actual_wp": 0.489,
+      "formula_wins": 48,
+      "formula_losses": 46,
+      "formula_diff": 2,
+      "formula_wp": 0.514,
+      "pythag_wins": 50,
+      "pythag_losses": 44,
+      "pythag_diff": 4,
+      "pythag_wp": 0.533,
+      "elo_wins": 49,
+      "elo_losses": 45,
+      "elo_diff": 3,
+      "elo_wp": 0.521
     },
     {
       "team": "Chicago White Sox",
@@ -384,42 +384,23 @@
       "elo_wp": 0.506
     },
     {
-      "team": "Philadelphia Phillies",
-      "games": 97,
-      "actual_wins": 54,
-      "actual_losses": 43,
-      "actual_wp": 0.557,
-      "formula_wins": 45,
-      "formula_losses": 52,
-      "formula_diff": -9,
-      "formula_wp": 0.463,
-      "pythag_wins": 47,
-      "pythag_losses": 50,
-      "pythag_diff": -7,
-      "pythag_wp": 0.489,
-      "elo_wins": 54,
-      "elo_losses": 43,
-      "elo_diff": 0,
-      "elo_wp": 0.557
-    },
-    {
       "team": "New York Mets",
-      "games": 97,
-      "actual_wins": 40,
+      "games": 98,
+      "actual_wins": 41,
       "actual_losses": 57,
-      "actual_wp": 0.412,
-      "formula_wins": 44,
-      "formula_losses": 53,
-      "formula_diff": 4,
-      "formula_wp": 0.456,
-      "pythag_wins": 42,
+      "actual_wp": 0.418,
+      "formula_wins": 46,
+      "formula_losses": 52,
+      "formula_diff": 5,
+      "formula_wp": 0.465,
+      "pythag_wins": 43,
       "pythag_losses": 55,
       "pythag_diff": 2,
-      "pythag_wp": 0.431,
-      "elo_wins": 45,
+      "pythag_wp": 0.435,
+      "elo_wins": 46,
       "elo_losses": 52,
       "elo_diff": 5,
-      "elo_wp": 0.464
+      "elo_wp": 0.468
     },
     {
       "team": "Houston Astros",
@@ -458,6 +439,25 @@
       "elo_losses": 47,
       "elo_diff": 4,
       "elo_wp": 0.507
+    },
+    {
+      "team": "Philadelphia Phillies",
+      "games": 98,
+      "actual_wins": 54,
+      "actual_losses": 44,
+      "actual_wp": 0.551,
+      "formula_wins": 44,
+      "formula_losses": 54,
+      "formula_diff": -10,
+      "formula_wp": 0.45,
+      "pythag_wins": 48,
+      "pythag_losses": 50,
+      "pythag_diff": -6,
+      "pythag_wp": 0.486,
+      "elo_wins": 54,
+      "elo_losses": 44,
+      "elo_diff": 0,
+      "elo_wp": 0.554
     },
     {
       "team": "Los Angeles Angels",
@@ -576,19 +576,19 @@
   ],
   "accuracy": {
     "correlation": {
-      "formula": 0.7972,
-      "pythag": 0.872,
-      "elo": 0.8846
+      "formula": 0.7891,
+      "pythag": 0.8729,
+      "elo": 0.8826
     },
     "mae": {
-      "formula": 0.0327,
-      "pythag": 0.0266,
+      "formula": 0.033,
+      "pythag": 0.0264,
       "elo": 0.0281
     },
     "rmse": {
-      "formula": 0.0398,
-      "pythag": 0.0319,
-      "elo": 0.0336
+      "formula": 0.0405,
+      "pythag": 0.0316,
+      "elo": 0.0335
     }
   }
 }

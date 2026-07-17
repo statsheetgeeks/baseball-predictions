@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T15:26:07Z",
+  "updated": "2026-07-17T17:54:45Z",
   "params": {
     "k": 4,
     "home_adv": 24,
@@ -15,9 +15,9 @@
   },
   "accuracy": {
     "season": 2026,
-    "games": 1445,
+    "games": 1446,
     "correct": 780,
-    "pct": 0.5398
+    "pct": 0.5394
   },
   "standings": [
     {
@@ -43,11 +43,11 @@
     {
       "team": "Philadelphia Phillies",
       "abbr": "PHI",
-      "rating": 1540.0,
-      "delta": 40.0,
-      "implied_wp": 0.5573,
+      "rating": 1537.5,
+      "delta": 37.5,
+      "implied_wp": 0.5538,
       "wins": 54,
-      "losses": 43,
+      "losses": 44,
       "rank": 3
     },
     {
@@ -161,16 +161,6 @@
       "rank": 14
     },
     {
-      "team": "Texas Rangers",
-      "abbr": "TEX",
-      "rating": 1504.4,
-      "delta": 4.4,
-      "implied_wp": 0.5063,
-      "wins": 49,
-      "losses": 47,
-      "rank": 15
-    },
-    {
       "team": "St. Louis Cardinals",
       "abbr": "STL",
       "rating": 1504.4,
@@ -178,6 +168,16 @@
       "implied_wp": 0.5063,
       "wins": 50,
       "losses": 45,
+      "rank": 15
+    },
+    {
+      "team": "Texas Rangers",
+      "abbr": "TEX",
+      "rating": 1504.4,
+      "delta": 4.4,
+      "implied_wp": 0.5063,
+      "wins": 49,
+      "losses": 47,
       "rank": 16
     },
     {
@@ -281,6 +281,16 @@
       "rank": 26
     },
     {
+      "team": "New York Mets",
+      "abbr": "NYM",
+      "rating": 1477.4,
+      "delta": -22.6,
+      "implied_wp": 0.4675,
+      "wins": 41,
+      "losses": 57,
+      "rank": 27
+    },
+    {
       "team": "Oakland Athletics",
       "abbr": "OAK",
       "rating": 1477.0,
@@ -288,16 +298,6 @@
       "implied_wp": 0.4669,
       "wins": 0,
       "losses": 0,
-      "rank": 27
-    },
-    {
-      "team": "New York Mets",
-      "abbr": "NYM",
-      "rating": 1474.9,
-      "delta": -25.1,
-      "implied_wp": 0.4639,
-      "wins": 40,
-      "losses": 57,
       "rank": 28
     },
     {
@@ -342,6 +342,22 @@
     }
   ],
   "recent_games": [
+    {
+      "date": "2026-07-16",
+      "game_pk": 823440,
+      "home_team": "Philadelphia Phillies",
+      "away_team": "New York Mets",
+      "home_abbr": "PHI",
+      "away_abbr": "NYM",
+      "home_elo_pre": 1540.0,
+      "away_elo_pre": 1474.9,
+      "home_prob": 0.6255,
+      "away_prob": 0.3745,
+      "home_score": 1,
+      "away_score": 4,
+      "home_win": 0,
+      "model_correct": false
+    },
     {
       "date": "2026-07-12",
       "game_pk": 824814,
@@ -805,22 +821,6 @@
       "away_score": 1,
       "home_win": 1,
       "model_correct": true
-    },
-    {
-      "date": "2026-07-11",
-      "game_pk": 822875,
-      "home_team": "Texas Rangers",
-      "away_team": "Houston Astros",
-      "home_abbr": "TEX",
-      "away_abbr": "HOU",
-      "home_elo_pre": 1504.7,
-      "away_elo_pre": 1503.2,
-      "home_prob": 0.5365,
-      "away_prob": 0.4635,
-      "home_score": 3,
-      "away_score": 9,
-      "home_win": 0,
-      "model_correct": false
     }
   ]
 }
