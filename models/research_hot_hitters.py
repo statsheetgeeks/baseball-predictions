@@ -11,6 +11,13 @@ Modifications vs. original notebook:
      Weight for a game N days ago = 0.85^N
   2. Minimum qualifier: ≥ 10 ABs in last 5 calendar days AND ≥ 2 distinct
      games played (AB > 0) in the same window.
+  3. If nothing qualifies (e.g. the All-Star break, or any other league-wide
+     gap in the schedule), the script no longer hard-fails the whole run.
+     It leaves the previously published JSON in place and exits cleanly,
+     so the rest of the site's build/deploy isn't blocked. The anchor date
+     stays pinned to "today" (not "last date a game was played"), so a
+     player who's been hurt or inactive still correctly drops off the
+     board rather than lingering on stale pre-injury at-bats.
 
 Writes: public/data/research-hot-hitters.json
 ──────────────────────────────────────────────────────────────────────────────
@@ -263,7 +270,28 @@ def run():
         })
 
     if not leaderboard:
-        raise SystemExit("Leaderboard is empty — check data pull.")
+        # No qualifiers in the trailing window — most likely a league-wide gap
+        # in the schedule (e.g. the All-Star break) rather than a real data
+        # problem, since we already confirmed boxscore + Statcast data came
+        # back non-empty above. Don't hard-fail the whole Action over this:
+        # leave whatever was last published in place and exit cleanly so the
+        # rest of the site's build/deploy isn't blocked.
+        print(
+            "No qualifiers in the trailing 5-day window (likely a league-wide "
+            "scheduling gap, e.g. the All-Star break) — leaving the existing "
+            "leaderboard file in place."
+        )
+        if not os.path.exists(OUT_JSON):
+            # First-ever run with nothing to fall back to — write an explicit
+            # empty state so the frontend has something valid to read.
+            with open(OUT_JSON, "w") as f:
+                json.dump({
+                    "updated": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+                    "decay":   DECAY,
+                    "players": [],
+                    "status":  "no_recent_games",
+                }, f, indent=2)
+        return
 
     df = (
         pd.DataFrame(leaderboard)
