@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18T14:59:36Z",
+  "updated": "2026-07-18T17:32:21Z",
   "season": 2026,
   "exponent": 1.83,
   "teams": [
@@ -126,11 +126,11 @@
       "formula_wins": 53,
       "formula_losses": 44,
       "formula_diff": 3,
-      "formula_wp": 0.55,
-      "pythag_wins": 52,
-      "pythag_losses": 45,
-      "pythag_diff": 2,
-      "pythag_wp": 0.541,
+      "formula_wp": 0.548,
+      "pythag_wins": 53,
+      "pythag_losses": 44,
+      "pythag_diff": 3,
+      "pythag_wp": 0.542,
       "elo_wins": 48,
       "elo_losses": 49,
       "elo_diff": -2,
@@ -270,25 +270,6 @@
       "elo_wp": 0.476
     },
     {
-      "team": "Cleveland Guardians",
-      "games": 97,
-      "actual_wins": 51,
-      "actual_losses": 46,
-      "actual_wp": 0.526,
-      "formula_wins": 47,
-      "formula_losses": 50,
-      "formula_diff": -4,
-      "formula_wp": 0.481,
-      "pythag_wins": 48,
-      "pythag_losses": 49,
-      "pythag_diff": -3,
-      "pythag_wp": 0.498,
-      "elo_wins": 51,
-      "elo_losses": 46,
-      "elo_diff": 0,
-      "elo_wp": 0.526
-    },
-    {
       "team": "Minnesota Twins",
       "games": 98,
       "actual_wins": 49,
@@ -306,6 +287,25 @@
       "elo_losses": 51,
       "elo_diff": -2,
       "elo_wp": 0.482
+    },
+    {
+      "team": "Cleveland Guardians",
+      "games": 97,
+      "actual_wins": 51,
+      "actual_losses": 46,
+      "actual_wp": 0.526,
+      "formula_wins": 46,
+      "formula_losses": 51,
+      "formula_diff": -5,
+      "formula_wp": 0.479,
+      "pythag_wins": 48,
+      "pythag_losses": 49,
+      "pythag_diff": -3,
+      "pythag_wp": 0.495,
+      "elo_wins": 51,
+      "elo_losses": 46,
+      "elo_diff": 0,
+      "elo_wp": 0.526
     },
     {
       "team": "Baltimore Orioles",
@@ -576,18 +576,18 @@
   ],
   "accuracy": {
     "correlation": {
-      "formula": 0.8033,
-      "pythag": 0.8708,
+      "formula": 0.8031,
+      "pythag": 0.8699,
       "elo": 0.8866
     },
     "mae": {
       "formula": 0.0306,
-      "pythag": 0.0272,
+      "pythag": 0.0273,
       "elo": 0.0275
     },
     "rmse": {
       "formula": 0.0388,
-      "pythag": 0.0324,
+      "pythag": 0.0325,
       "elo": 0.0329
     }
   }
