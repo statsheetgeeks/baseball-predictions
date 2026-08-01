@@ -1,8 +1,251 @@
 {
   "records": [
     {
-      "date": "2026-07-31",
+      "date": "2026-08-01",
       "graded": false,
+      "players": [
+        {
+          "player": "Drake Baldwin",
+          "team": "ATL",
+          "appearances": 4,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML HR",
+            "ML Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 9,
+            "ML Hit": 11,
+            "HR Model": 11,
+            "ML HR": 18
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "James Wood",
+          "team": "WSH",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "ML HR",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 5,
+            "HR Model": 18,
+            "ML HR": 3
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Matt Olson",
+          "team": "ATL",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "ML HR",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 24,
+            "HR Model": 2,
+            "ML HR": 1
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Michael Harris II",
+          "team": "ATL",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 4,
+            "HR Model": 15,
+            "ML HR": 6
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Yordan Alvarez",
+          "team": "HOU",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 1,
+            "HR Model": 6,
+            "ML HR": 16
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Ben Rice",
+          "team": "NYY",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "Log5 Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 5,
+            "HR Model": 14
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "CJ Abrams",
+          "team": "WSH",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML HR"
+          ],
+          "ranks": {
+            "HR Model": 20,
+            "ML HR": 5
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "JJ Bleday",
+          "team": "CIN",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML HR"
+          ],
+          "ranks": {
+            "HR Model": 24,
+            "ML HR": 22
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Jac Caglianone",
+          "team": "KC",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "Log5 Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 16,
+            "HR Model": 7
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Joc Pederson",
+          "team": "TEX",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML HR"
+          ],
+          "ranks": {
+            "HR Model": 3,
+            "ML HR": 2
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Luis Arraez",
+          "team": "SF",
+          "appearances": 2,
+          "models": [
+            "Log5 Hit",
+            "ML Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 24,
+            "ML Hit": 3
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Luis Garc\u00eda Jr.",
+          "team": "WSH",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML HR"
+          ],
+          "ranks": {
+            "HR Model": 21,
+            "ML HR": 4
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Munetaka Murakami",
+          "team": "CWS",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML HR"
+          ],
+          "ranks": {
+            "HR Model": 23,
+            "ML HR": 12
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Nick Gonzales",
+          "team": "PIT",
+          "appearances": 2,
+          "models": [
+            "Log5 Hit",
+            "ML Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 13,
+            "ML Hit": 2
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Wyatt Langford",
+          "team": "TEX",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML HR"
+          ],
+          "ranks": {
+            "HR Model": 10,
+            "ML HR": 20
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        }
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "graded": true,
       "players": [
         {
           "player": "Yordan Alvarez",
@@ -20,8 +263,8 @@
             "HR Model": 5,
             "ML HR": 15
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": true,
+          "actual_hr": false
         },
         {
           "player": "Dillon Dingler",
@@ -37,8 +280,8 @@
             "HR Model": 6,
             "ML HR": 13
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": true,
+          "actual_hr": true
         },
         {
           "player": "Jake Bauers",
@@ -54,8 +297,8 @@
             "HR Model": 17,
             "ML HR": 12
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": true,
+          "actual_hr": true
         },
         {
           "player": "Ben Rice",
@@ -69,8 +312,8 @@
             "Log5 Hit": 25,
             "HR Model": 4
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": true,
+          "actual_hr": false
         },
         {
           "player": "Brandon Lowe",
@@ -84,8 +327,8 @@
             "HR Model": 19,
             "ML HR": 1
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": false,
+          "actual_hr": false
         },
         {
           "player": "Brice Turang",
@@ -99,8 +342,8 @@
             "ML Hit": 3,
             "ML HR": 21
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": true,
+          "actual_hr": true
         },
         {
           "player": "Christian Walker",
@@ -114,8 +357,8 @@
             "ML Hit": 24,
             "ML HR": 11
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": true,
+          "actual_hr": true
         },
         {
           "player": "Dominic Canzone",
@@ -129,8 +372,8 @@
             "HR Model": 13,
             "ML HR": 2
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": false,
+          "actual_hr": false
         },
         {
           "player": "Esmerlyn Valdez",
@@ -144,8 +387,8 @@
             "HR Model": 3,
             "ML HR": 8
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": false,
+          "actual_hr": false
         },
         {
           "player": "J.P. Crawford",
@@ -159,8 +402,8 @@
             "ML Hit": 10,
             "ML HR": 19
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": false,
+          "actual_hr": false
         },
         {
           "player": "Jac Caglianone",
@@ -174,8 +417,8 @@
             "Log5 Hit": 4,
             "HR Model": 11
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": false,
+          "actual_hr": false
         },
         {
           "player": "Jose Altuve",
@@ -189,8 +432,8 @@
             "ML Hit": 6,
             "ML HR": 23
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": false,
+          "actual_hr": false
         },
         {
           "player": "Josh Naylor",
@@ -204,8 +447,8 @@
             "Log5 Hit": 11,
             "ML Hit": 4
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": false,
+          "actual_hr": false
         },
         {
           "player": "Julio Rodr\u00edguez",
@@ -219,8 +462,8 @@
             "Log5 Hit": 12,
             "ML Hit": 5
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": true,
+          "actual_hr": false
         },
         {
           "player": "Junior Caminero",
@@ -234,8 +477,8 @@
             "Log5 Hit": 18,
             "HR Model": 9
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": true,
+          "actual_hr": false
         },
         {
           "player": "Ketel Marte",
@@ -249,8 +492,8 @@
             "Log5 Hit": 7,
             "ML Hit": 15
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": true,
+          "actual_hr": false
         },
         {
           "player": "Kody Clemens",
@@ -264,8 +507,8 @@
             "ML Hit": 12,
             "ML HR": 4
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": false,
+          "actual_hr": false
         },
         {
           "player": "Matt Olson",
@@ -279,8 +522,8 @@
             "HR Model": 22,
             "ML HR": 3
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": true,
+          "actual_hr": true
         },
         {
           "player": "Mickey Moniak",
@@ -294,8 +537,8 @@
             "HR Model": 8,
             "ML HR": 24
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": false,
+          "actual_hr": false
         },
         {
           "player": "Salvador Perez",
@@ -309,8 +552,8 @@
             "Log5 Hit": 17,
             "ML HR": 20
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": true,
+          "actual_hr": false
         },
         {
           "player": "Spencer Torkelson",
@@ -324,10 +567,60 @@
             "HR Model": 18,
             "ML HR": 9
           },
-          "actual_hit": null,
-          "actual_hr": null
+          "actual_hit": false,
+          "actual_hr": false
         }
-      ]
+      ],
+      "summary": {
+        "total": 21,
+        "hit_count": 11,
+        "hr_count": 5,
+        "hit_rate_pct": 52.4,
+        "hr_rate_pct": 23.8,
+        "hit_players": [
+          "Yordan Alvarez",
+          "Dillon Dingler",
+          "Jake Bauers",
+          "Ben Rice",
+          "Brice Turang",
+          "Christian Walker",
+          "Julio Rodr\u00edguez",
+          "Junior Caminero",
+          "Ketel Marte",
+          "Matt Olson",
+          "Salvador Perez"
+        ],
+        "hr_players": [
+          "Dillon Dingler",
+          "Jake Bauers",
+          "Brice Turang",
+          "Christian Walker",
+          "Matt Olson"
+        ],
+        "by_appearances": {
+          "4 models": {
+            "total": 1,
+            "hits": 1,
+            "hrs": 0,
+            "hit_rate_pct": 100.0,
+            "hr_rate_pct": 0.0
+          },
+          "3 models": {
+            "total": 2,
+            "hits": 2,
+            "hrs": 2,
+            "hit_rate_pct": 100.0,
+            "hr_rate_pct": 100.0
+          },
+          "2 models": {
+            "total": 18,
+            "hits": 8,
+            "hrs": 3,
+            "hit_rate_pct": 44.4,
+            "hr_rate_pct": 16.7
+          }
+        }
+      }
     },
     {
       "date": "2026-07-30",
@@ -30621,62 +30914,62 @@
     }
   ],
   "yesterday": {
-    "date": "2026-07-30",
-    "total": 27,
-    "hit_count": 12,
-    "hr_count": 4,
-    "hit_rate_pct": 44.4,
-    "hr_rate_pct": 14.8,
+    "date": "2026-07-31",
+    "total": 21,
+    "hit_count": 11,
+    "hr_count": 5,
+    "hit_rate_pct": 52.4,
+    "hr_rate_pct": 23.8,
     "hit_players": [
-      "Ryan Jeffers",
-      "Yandy D\u00edaz",
-      "Bo Bichette",
-      "Cedric Mullins",
-      "Iv\u00e1n Herrera",
-      "Jacob Wilson",
-      "Jordan Walker",
-      "Jung Hoo Lee",
-      "Kody Clemens",
-      "Luis Garc\u00eda Jr.",
-      "Nico Hoerner",
-      "Willson Contreras"
+      "Yordan Alvarez",
+      "Dillon Dingler",
+      "Jake Bauers",
+      "Ben Rice",
+      "Brice Turang",
+      "Christian Walker",
+      "Julio Rodr\u00edguez",
+      "Junior Caminero",
+      "Ketel Marte",
+      "Matt Olson",
+      "Salvador Perez"
     ],
     "hr_players": [
-      "Cedric Mullins",
-      "Kody Clemens",
-      "Luis Garc\u00eda Jr.",
-      "Willson Contreras"
+      "Dillon Dingler",
+      "Jake Bauers",
+      "Brice Turang",
+      "Christian Walker",
+      "Matt Olson"
     ],
     "by_appearances": {
       "4 models": {
         "total": 1,
-        "hits": 0,
+        "hits": 1,
         "hrs": 0,
-        "hit_rate_pct": 0.0,
+        "hit_rate_pct": 100.0,
         "hr_rate_pct": 0.0
       },
       "3 models": {
-        "total": 3,
+        "total": 2,
         "hits": 2,
-        "hrs": 0,
-        "hit_rate_pct": 66.7,
-        "hr_rate_pct": 0.0
+        "hrs": 2,
+        "hit_rate_pct": 100.0,
+        "hr_rate_pct": 100.0
       },
       "2 models": {
-        "total": 23,
-        "hits": 10,
-        "hrs": 4,
-        "hit_rate_pct": 43.5,
-        "hr_rate_pct": 17.4
+        "total": 18,
+        "hits": 8,
+        "hrs": 3,
+        "hit_rate_pct": 44.4,
+        "hr_rate_pct": 16.7
       }
     }
   },
   "alltime": {
-    "total": 1639,
-    "hit_count": 855,
-    "hr_count": 181,
+    "total": 1660,
+    "hit_count": 866,
+    "hr_count": 186,
     "hit_rate_pct": 52.2,
-    "hr_rate_pct": 11.0,
+    "hr_rate_pct": 11.2,
     "by_appearances": {
       "5 models": {
         "total": 3,
@@ -30686,25 +30979,25 @@
         "hr_rate_pct": 33.3
       },
       "4 models": {
-        "total": 59,
-        "hits": 38,
+        "total": 60,
+        "hits": 39,
         "hrs": 9,
-        "hit_rate_pct": 64.4,
-        "hr_rate_pct": 15.3
+        "hit_rate_pct": 65.0,
+        "hr_rate_pct": 15.0
       },
       "3 models": {
-        "total": 291,
-        "hits": 189,
-        "hrs": 48,
-        "hit_rate_pct": 64.9,
-        "hr_rate_pct": 16.5
+        "total": 293,
+        "hits": 191,
+        "hrs": 50,
+        "hit_rate_pct": 65.2,
+        "hr_rate_pct": 17.1
       },
       "2 models": {
-        "total": 1286,
-        "hits": 625,
-        "hrs": 123,
-        "hit_rate_pct": 48.6,
-        "hr_rate_pct": 9.6
+        "total": 1304,
+        "hits": 633,
+        "hrs": 126,
+        "hit_rate_pct": 48.5,
+        "hr_rate_pct": 9.7
       }
     }
   }
