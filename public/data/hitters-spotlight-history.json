@@ -5,18 +5,18 @@
       "graded": false,
       "players": [
         {
-          "player": "Alec Burleson",
-          "team": "STL",
+          "player": "CJ Abrams",
+          "team": "WSH",
           "appearances": 3,
           "models": [
             "HR Model",
-            "Log5 Hit",
+            "ML HR",
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 1,
-            "ML Hit": 23,
-            "HR Model": 16
+            "ML Hit": 9,
+            "HR Model": 5,
+            "ML HR": 24
           },
           "actual_hit": null,
           "actual_hr": null
@@ -31,26 +31,24 @@
             "ML Hit"
           ],
           "ranks": {
-            "ML Hit": 4,
+            "ML Hit": 7,
             "HR Model": 8,
-            "ML HR": 13
+            "ML HR": 23
           },
           "actual_hit": null,
           "actual_hr": null
         },
         {
-          "player": "Yordan Alvarez",
-          "team": "HOU",
-          "appearances": 3,
+          "player": "Alec Burleson",
+          "team": "STL",
+          "appearances": 2,
           "models": [
             "HR Model",
-            "Log5 Hit",
-            "ML HR"
+            "Log5 Hit"
           ],
           "ranks": {
-            "Log5 Hit": 13,
-            "HR Model": 18,
-            "ML HR": 12
+            "Log5 Hit": 1,
+            "HR Model": 16
           },
           "actual_hit": null,
           "actual_hr": null
@@ -65,7 +63,7 @@
           ],
           "ranks": {
             "Log5 Hit": 10,
-            "ML Hit": 1
+            "ML Hit": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -79,7 +77,7 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 5,
+            "HR Model": 6,
             "ML HR": 1
           },
           "actual_hit": null,
@@ -95,7 +93,7 @@
           ],
           "ranks": {
             "Log5 Hit": 12,
-            "ML Hit": 15
+            "ML Hit": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -110,7 +108,7 @@
           ],
           "ranks": {
             "Log5 Hit": 9,
-            "ML Hit": 2
+            "ML Hit": 5
           },
           "actual_hit": null,
           "actual_hr": null
@@ -124,8 +122,8 @@
             "ML Hit"
           ],
           "ranks": {
-            "ML Hit": 17,
-            "ML HR": 25
+            "ML Hit": 23,
+            "ML HR": 17
           },
           "actual_hit": null,
           "actual_hr": null
@@ -140,7 +138,7 @@
           ],
           "ranks": {
             "Log5 Hit": 2,
-            "ML Hit": 7
+            "ML Hit": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -154,8 +152,8 @@
             "ML Hit"
           ],
           "ranks": {
-            "ML Hit": 5,
-            "ML HR": 8
+            "ML Hit": 8,
+            "ML HR": 11
           },
           "actual_hit": null,
           "actual_hr": null
@@ -191,21 +189,6 @@
           "actual_hr": null
         },
         {
-          "player": "Jung Hoo Lee",
-          "team": "SF",
-          "appearances": 2,
-          "models": [
-            "Log5 Hit",
-            "ML Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 21,
-            "ML Hit": 21
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Kyle Tucker",
           "team": "LAD",
           "appearances": 2,
@@ -215,7 +198,7 @@
           ],
           "ranks": {
             "Log5 Hit": 25,
-            "ML Hit": 12
+            "ML Hit": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -230,7 +213,7 @@
           ],
           "ranks": {
             "HR Model": 9,
-            "ML HR": 4
+            "ML HR": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -244,8 +227,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 17,
-            "ML HR": 6
+            "HR Model": 23,
+            "ML HR": 9
           },
           "actual_hit": null,
           "actual_hr": null
@@ -275,7 +258,7 @@
           ],
           "ranks": {
             "Log5 Hit": 5,
-            "ML Hit": 6
+            "ML Hit": 12
           },
           "actual_hit": null,
           "actual_hr": null
@@ -296,31 +279,16 @@
           "actual_hr": null
         },
         {
-          "player": "Ty France",
-          "team": "SD",
+          "player": "Yordan Alvarez",
+          "team": "HOU",
           "appearances": 2,
           "models": [
             "HR Model",
-            "ML HR"
+            "Log5 Hit"
           ],
           "ranks": {
-            "HR Model": 4,
-            "ML HR": 19
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Xavier Edwards",
-          "team": "MIA",
-          "appearances": 2,
-          "models": [
-            "Log5 Hit",
-            "ML Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 23,
-            "ML Hit": 25
+            "Log5 Hit": 13,
+            "HR Model": 18
           },
           "actual_hit": null,
           "actual_hr": null
