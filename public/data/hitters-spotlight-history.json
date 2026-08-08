@@ -5,23 +5,6 @@
       "graded": false,
       "players": [
         {
-          "player": "Freddie Freeman",
-          "team": "LAD",
-          "appearances": 3,
-          "models": [
-            "Log5 Hit",
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 10,
-            "ML Hit": 17,
-            "ML HR": 15
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "George Springer",
           "team": "TOR",
           "appearances": 3,
@@ -33,7 +16,7 @@
           "ranks": {
             "ML Hit": 16,
             "HR Model": 25,
-            "ML HR": 16
+            "ML HR": 19
           },
           "actual_hit": null,
           "actual_hr": null
@@ -50,7 +33,7 @@
           "ranks": {
             "Log5 Hit": 18,
             "HR Model": 24,
-            "ML HR": 14
+            "ML HR": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -67,7 +50,7 @@
           "ranks": {
             "ML Hit": 18,
             "HR Model": 2,
-            "ML HR": 6
+            "ML HR": 5
           },
           "actual_hit": null,
           "actual_hr": null
@@ -82,7 +65,7 @@
           ],
           "ranks": {
             "Log5 Hit": 1,
-            "HR Model": 20
+            "HR Model": 22
           },
           "actual_hit": null,
           "actual_hr": null
@@ -103,21 +86,6 @@
           "actual_hr": null
         },
         {
-          "player": "Bryce Eldridge",
-          "team": "SF",
-          "appearances": 2,
-          "models": [
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 8,
-            "ML HR": 18
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Bryce Harper",
           "team": "PHI",
           "appearances": 2,
@@ -127,7 +95,22 @@
           ],
           "ranks": {
             "HR Model": 3,
-            "ML HR": 3
+            "ML HR": 2
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "CJ Abrams",
+          "team": "WSH",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML HR"
+          ],
+          "ranks": {
+            "HR Model": 16,
+            "ML HR": 12
           },
           "actual_hit": null,
           "actual_hr": null
@@ -142,22 +125,22 @@
           ],
           "ranks": {
             "Log5 Hit": 20,
-            "ML HR": 23
+            "ML HR": 17
           },
           "actual_hit": null,
           "actual_hr": null
         },
         {
-          "player": "Derek Hill",
-          "team": "PHI",
+          "player": "Freddie Freeman",
+          "team": "LAD",
           "appearances": 2,
           "models": [
-            "HR Model",
-            "ML HR"
+            "Log5 Hit",
+            "ML Hit"
           ],
           "ranks": {
-            "HR Model": 6,
-            "ML HR": 24
+            "Log5 Hit": 10,
+            "ML Hit": 17
           },
           "actual_hit": null,
           "actual_hr": null
@@ -172,7 +155,7 @@
           ],
           "ranks": {
             "ML Hit": 25,
-            "ML HR": 8
+            "ML HR": 7
           },
           "actual_hit": null,
           "actual_hr": null
@@ -186,7 +169,7 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 8,
+            "HR Model": 10,
             "ML HR": 4
           },
           "actual_hit": null,
@@ -217,7 +200,7 @@
           ],
           "ranks": {
             "ML Hit": 14,
-            "ML HR": 10
+            "ML HR": 9
           },
           "actual_hit": null,
           "actual_hr": null
@@ -232,7 +215,7 @@
           ],
           "ranks": {
             "Log5 Hit": 3,
-            "HR Model": 12
+            "HR Model": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -306,8 +289,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 7,
-            "ML HR": 13
+            "HR Model": 6,
+            "ML HR": 15
           },
           "actual_hit": null,
           "actual_hr": null
@@ -337,7 +320,22 @@
           ],
           "ranks": {
             "ML Hit": 11,
-            "ML HR": 5
+            "ML HR": 10
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Munetaka Murakami",
+          "team": "CWS",
+          "appearances": 2,
+          "models": [
+            "HR Model",
+            "ML HR"
+          ],
+          "ranks": {
+            "HR Model": 9,
+            "ML HR": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -352,7 +350,7 @@
           ],
           "ranks": {
             "Log5 Hit": 19,
-            "HR Model": 22
+            "HR Model": 17
           },
           "actual_hit": null,
           "actual_hr": null
@@ -382,7 +380,7 @@
           ],
           "ranks": {
             "ML Hit": 23,
-            "HR Model": 13
+            "HR Model": 12
           },
           "actual_hit": null,
           "actual_hr": null
@@ -397,7 +395,7 @@
           ],
           "ranks": {
             "Log5 Hit": 8,
-            "HR Model": 15
+            "HR Model": 19
           },
           "actual_hit": null,
           "actual_hr": null
