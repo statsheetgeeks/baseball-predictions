@@ -16,7 +16,7 @@
           "ranks": {
             "Log5 Hit": 19,
             "HR Model": 1,
-            "ML HR": 3
+            "ML HR": 2
           },
           "actual_hit": null,
           "actual_hr": null
@@ -33,7 +33,7 @@
           "ranks": {
             "Log5 Hit": 12,
             "HR Model": 2,
-            "ML HR": 4
+            "ML HR": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -49,8 +49,8 @@
           ],
           "ranks": {
             "Log5 Hit": 13,
-            "HR Model": 11,
-            "ML HR": 16
+            "HR Model": 10,
+            "ML HR": 11
           },
           "actual_hit": null,
           "actual_hr": null
@@ -67,7 +67,7 @@
           "ranks": {
             "ML Hit": 21,
             "HR Model": 25,
-            "ML HR": 23
+            "ML HR": 17
           },
           "actual_hit": null,
           "actual_hr": null
@@ -84,7 +84,22 @@
           "ranks": {
             "Log5 Hit": 4,
             "HR Model": 9,
-            "ML HR": 13
+            "ML HR": 10
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Alex Bregman",
+          "team": "CHC",
+          "appearances": 2,
+          "models": [
+            "ML HR",
+            "ML Hit"
+          ],
+          "ranks": {
+            "ML Hit": 2,
+            "ML HR": 24
           },
           "actual_hit": null,
           "actual_hr": null
@@ -114,7 +129,7 @@
           ],
           "ranks": {
             "HR Model": 22,
-            "ML HR": 19
+            "ML HR": 14
           },
           "actual_hit": null,
           "actual_hr": null
@@ -129,7 +144,7 @@
           ],
           "ranks": {
             "ML Hit": 13,
-            "ML HR": 24
+            "ML HR": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -174,7 +189,7 @@
           ],
           "ranks": {
             "Log5 Hit": 23,
-            "ML HR": 20
+            "ML HR": 15
           },
           "actual_hit": null,
           "actual_hr": null
@@ -203,8 +218,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 17,
-            "ML HR": 9
+            "HR Model": 16,
+            "ML HR": 22
           },
           "actual_hit": null,
           "actual_hr": null
@@ -219,7 +234,7 @@
           ],
           "ranks": {
             "Log5 Hit": 15,
-            "HR Model": 10
+            "HR Model": 11
           },
           "actual_hit": null,
           "actual_hr": null
@@ -233,23 +248,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 19,
-            "ML HR": 11
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Wilyer Abreu",
-          "team": "BOS",
-          "appearances": 2,
-          "models": [
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 18,
-            "ML HR": 15
+            "HR Model": 18,
+            "ML HR": 9
           },
           "actual_hit": null,
           "actual_hr": null
