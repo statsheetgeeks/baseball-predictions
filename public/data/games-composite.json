@@ -1,29 +1,29 @@
 {
-  "updated": "2026-08-17T14:25:33.134190+00:00",
-  "date": "2026-08-17",
+  "updated": "2026-08-18T14:31:48.597574+00:00",
+  "date": "2026-08-18",
   "predictions": [
     {
-      "game_time": "8:05 PM ET",
-      "away_team": "Chicago White Sox",
-      "home_team": "Chicago Cubs",
+      "game_time": "7:40 PM ET",
+      "away_team": "Seattle Mariners",
+      "home_team": "Milwaukee Brewers",
       "log5": {
-        "pick": "Chicago Cubs",
-        "confidence": 0.568
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.6622
       },
       "research": {
-        "pick": "Chicago Cubs",
-        "confidence": 0.6134
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.6214
       },
       "xgboost": {
-        "pick": "Chicago Cubs",
-        "confidence": 0.7254
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.7087
       },
       "random_forest": {
-        "pick": "Chicago Cubs",
-        "confidence": 0.5633
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.5867
       },
-      "composite_pick": "Chicago Cubs",
-      "composite_confidence": 0.6175,
+      "composite_pick": "Milwaukee Brewers",
+      "composite_confidence": 0.6447,
       "vote_count": 4,
       "total_votes": 4,
       "actual_winner": null,
@@ -35,7 +35,7 @@
       "home_team": "Colorado Rockies",
       "log5": {
         "pick": "Los Angeles Dodgers",
-        "confidence": 0.6623
+        "confidence": 0.6681
       },
       "research": {
         "pick": "Los Angeles Dodgers",
@@ -43,41 +43,122 @@
       },
       "xgboost": {
         "pick": "Los Angeles Dodgers",
-        "confidence": 0.6384
+        "confidence": 0.6533
       },
       "random_forest": {
         "pick": "Los Angeles Dodgers",
-        "confidence": 0.5737
+        "confidence": 0.5741
       },
       "composite_pick": "Los Angeles Dodgers",
-      "composite_confidence": 0.6091,
+      "composite_confidence": 0.6144,
       "vote_count": 4,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
     },
     {
-      "game_time": "6:05 PM ET",
-      "away_team": "Baltimore Orioles",
+      "game_time": "8:05 PM ET",
+      "away_team": "Chicago White Sox",
+      "home_team": "Chicago Cubs",
+      "log5": {
+        "pick": "Chicago Cubs",
+        "confidence": 0.5756
+      },
+      "research": {
+        "pick": "Chicago Cubs",
+        "confidence": 0.5877
+      },
+      "xgboost": {
+        "pick": "Chicago Cubs",
+        "confidence": 0.6449
+      },
+      "random_forest": {
+        "pick": "Chicago Cubs",
+        "confidence": 0.5457
+      },
+      "composite_pick": "Chicago Cubs",
+      "composite_confidence": 0.5885,
+      "vote_count": 4,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "7:10 PM ET",
+      "away_team": "Arizona Diamondbacks",
+      "home_team": "Boston Red Sox",
+      "log5": {
+        "pick": "Boston Red Sox",
+        "confidence": 0.5322
+      },
+      "research": {
+        "pick": "Boston Red Sox",
+        "confidence": 0.5877
+      },
+      "xgboost": {
+        "pick": "Boston Red Sox",
+        "confidence": 0.5937
+      },
+      "random_forest": {
+        "pick": "Boston Red Sox",
+        "confidence": 0.5835
+      },
+      "composite_pick": "Boston Red Sox",
+      "composite_confidence": 0.5743,
+      "vote_count": 4,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "6:40 PM ET",
+      "away_team": "Toronto Blue Jays",
       "home_team": "Tampa Bay Rays",
       "log5": {
         "pick": "Tampa Bay Rays",
-        "confidence": 0.6293
+        "confidence": 0.6399
       },
       "research": {
         "pick": "Tampa Bay Rays",
         "confidence": 0.5759
       },
       "xgboost": {
-        "pick": "Tampa Bay Rays",
-        "confidence": 0.6099
+        "pick": "Toronto Blue Jays",
+        "confidence": 0.5007
       },
       "random_forest": {
         "pick": "Tampa Bay Rays",
-        "confidence": 0.5773
+        "confidence": 0.5789
       },
       "composite_pick": "Tampa Bay Rays",
-      "composite_confidence": 0.5981,
+      "composite_confidence": 0.5735,
+      "vote_count": 3,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "6:40 PM ET",
+      "away_team": "San Francisco Giants",
+      "home_team": "Cleveland Guardians",
+      "log5": {
+        "pick": "Cleveland Guardians",
+        "confidence": 0.5892
+      },
+      "research": {
+        "pick": "Cleveland Guardians",
+        "confidence": 0.5651
+      },
+      "xgboost": {
+        "pick": "Cleveland Guardians",
+        "confidence": 0.5802
+      },
+      "random_forest": {
+        "pick": "Cleveland Guardians",
+        "confidence": 0.5454
+      },
+      "composite_pick": "Cleveland Guardians",
+      "composite_confidence": 0.57,
       "vote_count": 4,
       "total_votes": 4,
       "actual_winner": null,
@@ -89,7 +170,7 @@
       "home_team": "Minnesota Twins",
       "log5": {
         "pick": "Atlanta Braves",
-        "confidence": 0.5959
+        "confidence": 0.5872
       },
       "research": {
         "pick": "Minnesota Twins",
@@ -97,69 +178,69 @@
       },
       "xgboost": {
         "pick": "Atlanta Braves",
-        "confidence": 0.6104
+        "confidence": 0.6147
       },
       "random_forest": {
         "pick": "Atlanta Braves",
-        "confidence": 0.5229
+        "confidence": 0.5212
       },
       "composite_pick": "Atlanta Braves",
-      "composite_confidence": 0.5572,
+      "composite_confidence": 0.5557,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
     },
     {
-      "game_time": "7:10 PM ET",
-      "away_team": "Arizona Diamondbacks",
-      "home_team": "Boston Red Sox",
+      "game_time": "8:10 PM ET",
+      "away_team": "Los Angeles Angels",
+      "home_team": "Houston Astros",
       "log5": {
-        "pick": "Boston Red Sox",
-        "confidence": 0.5243
+        "pick": "Houston Astros",
+        "confidence": 0.6318
       },
       "research": {
-        "pick": "Boston Red Sox",
-        "confidence": 0.6134
+        "pick": "Houston Astros",
+        "confidence": 0.5877
       },
       "xgboost": {
-        "pick": "Boston Red Sox",
-        "confidence": 0.5424
+        "pick": "Los Angeles Angels",
+        "confidence": 0.5392
       },
       "random_forest": {
-        "pick": "Boston Red Sox",
-        "confidence": 0.5406
+        "pick": "Los Angeles Angels",
+        "confidence": 0.5028
       },
-      "composite_pick": "Boston Red Sox",
-      "composite_confidence": 0.5552,
-      "vote_count": 4,
+      "composite_pick": "Houston Astros",
+      "composite_confidence": 0.5444,
+      "vote_count": 2,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
     },
     {
-      "game_time": "7:05 PM ET",
-      "away_team": "Detroit Tigers",
-      "home_team": "Pittsburgh Pirates",
+      "game_time": "6:40 PM ET",
+      "away_team": "St. Louis Cardinals",
+      "home_team": "Cincinnati Reds",
       "log5": {
-        "pick": "Pittsburgh Pirates",
-        "confidence": 0.5203
+        "pick": "St. Louis Cardinals",
+        "confidence": 0.5079
       },
       "research": {
-        "pick": "Pittsburgh Pirates",
-        "confidence": 0.5335
+        "pick": "Cincinnati Reds",
+        "confidence": 0.5004
       },
       "xgboost": {
-        "pick": "Pittsburgh Pirates",
-        "confidence": 0.5573
+        "pick": "Cincinnati Reds",
+        "confidence": 0.673
       },
       "random_forest": {
-        "pick": "Pittsburgh Pirates",
-        "confidence": 0.5451
+        "pick": "Cincinnati Reds",
+        "confidence": 0.5
       },
-      "composite_pick": "Pittsburgh Pirates",
-      "composite_confidence": 0.5391,
-      "vote_count": 4,
+      "composite_pick": "Cincinnati Reds",
+      "composite_confidence": 0.5414,
+      "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
@@ -170,7 +251,7 @@
       "home_team": "Kansas City Royals",
       "log5": {
         "pick": "Kansas City Royals",
-        "confidence": 0.5334
+        "confidence": 0.5415
       },
       "research": {
         "pick": "Athletics",
@@ -178,14 +259,14 @@
       },
       "xgboost": {
         "pick": "Kansas City Royals",
-        "confidence": 0.5971
+        "confidence": 0.6155
       },
       "random_forest": {
         "pick": "Kansas City Royals",
-        "confidence": 0.5325
+        "confidence": 0.5439
       },
       "composite_pick": "Kansas City Royals",
-      "composite_confidence": 0.5252,
+      "composite_confidence": 0.5347,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
@@ -193,26 +274,53 @@
     },
     {
       "game_time": "6:40 PM ET",
-      "away_team": "Miami Marlins",
-      "home_team": "Philadelphia Phillies",
+      "away_team": "Detroit Tigers",
+      "home_team": "Pittsburgh Pirates",
       "log5": {
-        "pick": "Philadelphia Phillies",
-        "confidence": 0.544
+        "pick": "Pittsburgh Pirates",
+        "confidence": 0.5123
       },
       "research": {
-        "pick": "Philadelphia Phillies",
-        "confidence": 0.5244
+        "pick": "Pittsburgh Pirates",
+        "confidence": 0.5335
       },
       "xgboost": {
-        "pick": "Miami Marlins",
-        "confidence": 0.5353
+        "pick": "Pittsburgh Pirates",
+        "confidence": 0.5391
       },
       "random_forest": {
-        "pick": "Philadelphia Phillies",
-        "confidence": 0.5393
+        "pick": "Pittsburgh Pirates",
+        "confidence": 0.523
       },
-      "composite_pick": "Philadelphia Phillies",
-      "composite_confidence": 0.5181,
+      "composite_pick": "Pittsburgh Pirates",
+      "composite_confidence": 0.527,
+      "vote_count": 4,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "6:35 PM ET",
+      "away_team": "New York Yankees",
+      "home_team": "Baltimore Orioles",
+      "log5": {
+        "pick": "New York Yankees",
+        "confidence": 0.5483
+      },
+      "research": {
+        "pick": "Baltimore Orioles",
+        "confidence": 0.5435
+      },
+      "xgboost": {
+        "pick": "New York Yankees",
+        "confidence": 0.5595
+      },
+      "random_forest": {
+        "pick": "New York Yankees",
+        "confidence": 0.5054
+      },
+      "composite_pick": "New York Yankees",
+      "composite_confidence": 0.5174,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
@@ -224,76 +332,76 @@
       "home_team": "New York Mets",
       "log5": {
         "pick": "San Diego Padres",
-        "confidence": 0.5673
+        "confidence": 0.5589
       },
       "research": {
         "pick": "New York Mets",
-        "confidence": 0.5004
+        "confidence": 0.5244
       },
       "xgboost": {
         "pick": "New York Mets",
-        "confidence": 0.5918
+        "confidence": 0.5356
       },
       "random_forest": {
         "pick": "New York Mets",
-        "confidence": 0.5179
+        "confidence": 0.5114
       },
       "composite_pick": "New York Mets",
-      "composite_confidence": 0.5107,
+      "composite_confidence": 0.5031,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
     },
     {
-      "game_time": "1:40 PM ET",
-      "away_team": "St. Louis Cardinals",
-      "home_team": "Cincinnati Reds",
+      "game_time": "6:40 PM ET",
+      "away_team": "Miami Marlins",
+      "home_team": "Philadelphia Phillies",
       "log5": {
-        "pick": "St. Louis Cardinals",
-        "confidence": 0.5084
+        "pick": "Philadelphia Phillies",
+        "confidence": 0.5518
       },
       "research": {
-        "pick": "Cincinnati Reds",
+        "pick": "Philadelphia Phillies",
         "confidence": 0.5004
       },
       "xgboost": {
-        "pick": "Cincinnati Reds",
-        "confidence": 0.5384
+        "pick": "Miami Marlins",
+        "confidence": 0.6044
       },
       "random_forest": {
-        "pick": "St. Louis Cardinals",
-        "confidence": 0.5361
+        "pick": "Philadelphia Phillies",
+        "confidence": 0.5629
       },
-      "composite_pick": "St. Louis Cardinals",
-      "composite_confidence": 0.5014,
-      "vote_count": 2,
+      "composite_pick": "Philadelphia Phillies",
+      "composite_confidence": 0.5027,
+      "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
     },
     {
-      "game_time": "6:40 PM ET",
-      "away_team": "St. Louis Cardinals",
-      "home_team": "Cincinnati Reds",
+      "game_time": "8:05 PM ET",
+      "away_team": "Washington Nationals",
+      "home_team": "Texas Rangers",
       "log5": {
-        "pick": "St. Louis Cardinals",
-        "confidence": 0.5084
+        "pick": "Texas Rangers",
+        "confidence": 0.5318
       },
       "research": {
-        "pick": "Cincinnati Reds",
-        "confidence": 0.5004
+        "pick": "Washington Nationals",
+        "confidence": 0.5076
       },
       "xgboost": {
-        "pick": "Cincinnati Reds",
-        "confidence": 0.5384
+        "pick": "Washington Nationals",
+        "confidence": 0.5403
       },
       "random_forest": {
-        "pick": "St. Louis Cardinals",
-        "confidence": 0.5361
+        "pick": "Texas Rangers",
+        "confidence": 0.5173
       },
-      "composite_pick": "St. Louis Cardinals",
-      "composite_confidence": 0.5014,
+      "composite_pick": "Texas Rangers",
+      "composite_confidence": 0.5003,
       "vote_count": 2,
       "total_votes": 4,
       "actual_winner": null,
@@ -303,52 +411,52 @@
   "model_standings": [
     {
       "model": "Random Forest",
-      "wins": 684,
-      "losses": 558,
-      "total": 1242,
-      "pct": 0.5507
-    },
-    {
-      "model": "Log5",
-      "wins": 657,
-      "losses": 586,
-      "total": 1243,
-      "pct": 0.5286
+      "wins": 691,
+      "losses": 562,
+      "total": 1253,
+      "pct": 0.5515
     },
     {
       "model": "Research",
-      "wins": 655,
-      "losses": 587,
-      "total": 1242,
-      "pct": 0.5274
+      "wins": 664,
+      "losses": 589,
+      "total": 1253,
+      "pct": 0.5299
+    },
+    {
+      "model": "Log5",
+      "wins": 663,
+      "losses": 591,
+      "total": 1254,
+      "pct": 0.5287
     },
     {
       "model": "XGBoost",
-      "wins": 629,
-      "losses": 613,
-      "total": 1242,
-      "pct": 0.5064
+      "wins": 637,
+      "losses": 616,
+      "total": 1253,
+      "pct": 0.5084
     }
   ],
   "yesterday": {
-    "date": "2026-08-16",
+    "date": "2026-08-17",
     "total": {
-      "wins": 6,
-      "losses": 9,
-      "total": 15
+      "wins": 7,
+      "losses": 4,
+      "total": 11
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 6,
-        "losses": 8,
-        "total": 14
+        "wins": 5,
+        "losses": 4,
+        "total": 9
       },
       {
         "band": "60-69%",
-        "wins": 0,
-        "losses": 1,
-        "total": 1
+        "wins": 2,
+        "losses": 0,
+        "total": 2
       },
       {
         "band": "70-79%",
@@ -366,22 +474,22 @@
   },
   "alltime": {
     "total": {
-      "wins": 665,
-      "losses": 578,
-      "total": 1243
+      "wins": 672,
+      "losses": 582,
+      "total": 1254
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 565,
-        "losses": 492,
-        "total": 1057
+        "wins": 570,
+        "losses": 496,
+        "total": 1066
       },
       {
         "band": "60-69%",
-        "wins": 80,
+        "wins": 82,
         "losses": 71,
-        "total": 151
+        "total": 153
       },
       {
         "band": "70-79%",
