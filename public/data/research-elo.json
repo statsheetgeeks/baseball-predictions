@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-27T18:01:12Z",
+  "updated": "2026-08-27T23:40:50Z",
   "params": {
     "k": 4,
     "home_adv": 24,
@@ -15,9 +15,9 @@
   },
   "accuracy": {
     "season": 2026,
-    "games": 2005,
-    "correct": 1092,
-    "pct": 0.5446
+    "games": 2007,
+    "correct": 1094,
+    "pct": 0.5451
   },
   "standings": [
     {
@@ -171,16 +171,6 @@
       "rank": 15
     },
     {
-      "team": "Baltimore Orioles",
-      "abbr": "BAL",
-      "rating": 1500.3,
-      "delta": 0.3,
-      "implied_wp": 0.5004,
-      "wins": 65,
-      "losses": 68,
-      "rank": 16
-    },
-    {
       "team": "Cleveland Indians",
       "abbr": "CLE",
       "rating": 1499.2,
@@ -188,7 +178,27 @@
       "implied_wp": 0.4988,
       "wins": 0,
       "losses": 0,
+      "rank": 16
+    },
+    {
+      "team": "Baltimore Orioles",
+      "abbr": "BAL",
+      "rating": 1498.4,
+      "delta": -1.6,
+      "implied_wp": 0.4977,
+      "wins": 65,
+      "losses": 69,
       "rank": 17
+    },
+    {
+      "team": "St. Louis Cardinals",
+      "abbr": "STL",
+      "rating": 1494.8,
+      "delta": -5.2,
+      "implied_wp": 0.4925,
+      "wins": 67,
+      "losses": 68,
+      "rank": 18
     },
     {
       "team": "Texas Rangers",
@@ -196,16 +206,6 @@
       "rating": 1493.2,
       "delta": -6.8,
       "implied_wp": 0.4902,
-      "wins": 66,
-      "losses": 68,
-      "rank": 18
-    },
-    {
-      "team": "St. Louis Cardinals",
-      "abbr": "STL",
-      "rating": 1492.9,
-      "delta": -7.1,
-      "implied_wp": 0.4897,
       "wins": 66,
       "losses": 68,
       "rank": 19
@@ -231,16 +231,6 @@
       "rank": 21
     },
     {
-      "team": "Pittsburgh Pirates",
-      "abbr": "PIT",
-      "rating": 1488.4,
-      "delta": -11.6,
-      "implied_wp": 0.4832,
-      "wins": 65,
-      "losses": 70,
-      "rank": 22
-    },
-    {
       "team": "Chicago White Sox",
       "abbr": "CWS",
       "rating": 1488.4,
@@ -248,6 +238,16 @@
       "implied_wp": 0.4833,
       "wins": 70,
       "losses": 63,
+      "rank": 22
+    },
+    {
+      "team": "Pittsburgh Pirates",
+      "abbr": "PIT",
+      "rating": 1488.4,
+      "delta": -11.6,
+      "implied_wp": 0.4832,
+      "wins": 65,
+      "losses": 70,
       "rank": 23
     },
     {
@@ -293,10 +293,10 @@
     {
       "team": "Washington Nationals",
       "abbr": "WSH",
-      "rating": 1465.4,
-      "delta": -34.6,
-      "implied_wp": 0.4504,
-      "wins": 62,
+      "rating": 1467.1,
+      "delta": -32.9,
+      "implied_wp": 0.4527,
+      "wins": 63,
       "losses": 73,
       "rank": 28
     },
@@ -333,15 +333,47 @@
     {
       "team": "Colorado Rockies",
       "abbr": "COL",
-      "rating": 1427.6,
-      "delta": -72.4,
-      "implied_wp": 0.3973,
+      "rating": 1426.0,
+      "delta": -74.0,
+      "implied_wp": 0.3951,
       "wins": 52,
-      "losses": 81,
+      "losses": 82,
       "rank": 32
     }
   ],
   "recent_games": [
+    {
+      "date": "2026-08-27",
+      "game_pk": 823014,
+      "home_team": "St. Louis Cardinals",
+      "away_team": "Baltimore Orioles",
+      "home_abbr": "STL",
+      "away_abbr": "BAL",
+      "home_elo_pre": 1492.9,
+      "away_elo_pre": 1500.3,
+      "home_prob": 0.5238,
+      "away_prob": 0.4762,
+      "home_score": 7,
+      "away_score": 5,
+      "home_win": 1,
+      "model_correct": true
+    },
+    {
+      "date": "2026-08-27",
+      "game_pk": 822694,
+      "home_team": "Washington Nationals",
+      "away_team": "Colorado Rockies",
+      "home_abbr": "WSH",
+      "away_abbr": "COL",
+      "home_elo_pre": 1465.4,
+      "away_elo_pre": 1427.6,
+      "home_prob": 0.588,
+      "away_prob": 0.412,
+      "home_score": 7,
+      "away_score": 1,
+      "home_win": 1,
+      "model_correct": true
+    },
     {
       "date": "2026-08-26",
       "game_pk": 825039,
@@ -787,38 +819,6 @@
       "away_prob": 0.464,
       "home_score": 1,
       "away_score": 13,
-      "home_win": 0,
-      "model_correct": false
-    },
-    {
-      "date": "2026-08-25",
-      "game_pk": 822773,
-      "home_team": "Toronto Blue Jays",
-      "away_team": "Kansas City Royals",
-      "home_abbr": "TOR",
-      "away_abbr": "KC",
-      "home_elo_pre": 1511.6,
-      "away_elo_pre": 1479.8,
-      "home_prob": 0.5797,
-      "away_prob": 0.4203,
-      "home_score": 3,
-      "away_score": 5,
-      "home_win": 0,
-      "model_correct": false
-    },
-    {
-      "date": "2026-08-25",
-      "game_pk": 822693,
-      "home_team": "Washington Nationals",
-      "away_team": "Colorado Rockies",
-      "home_abbr": "WSH",
-      "away_abbr": "COL",
-      "home_elo_pre": 1470.2,
-      "away_elo_pre": 1422.8,
-      "home_prob": 0.6013,
-      "away_prob": 0.3987,
-      "home_score": 1,
-      "away_score": 3,
       "home_win": 0,
       "model_correct": false
     }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-27T17:54:13.201729+00:00",
+  "updated": "2026-08-27T23:36:10.101973+00:00",
   "date": "2026-08-27",
   "predictions": [
     {
@@ -12,46 +12,73 @@
       },
       "research": {
         "pick": "New York Yankees",
-        "confidence": 0.5759
+        "confidence": 0.5702
       },
       "xgboost": {
         "pick": "New York Yankees",
-        "confidence": 0.6874
+        "confidence": 0.6667
       },
       "random_forest": {
         "pick": "New York Yankees",
-        "confidence": 0.59
+        "confidence": 0.5927
       },
       "composite_pick": "New York Yankees",
-      "composite_confidence": 0.6113,
+      "composite_confidence": 0.6054,
       "vote_count": 4,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
     },
     {
-      "game_time": "7:15 PM ET",
-      "away_team": "Los Angeles Dodgers",
-      "home_team": "Atlanta Braves",
+      "game_time": "1:05 PM ET",
+      "away_team": "Colorado Rockies",
+      "home_team": "Washington Nationals",
       "log5": {
-        "pick": "Atlanta Braves",
-        "confidence": 0.5044
+        "pick": "Washington Nationals",
+        "confidence": 0.5964
       },
       "research": {
-        "pick": "Atlanta Braves",
-        "confidence": 0.5877
+        "pick": "Washington Nationals",
+        "confidence": 0.5244
       },
       "xgboost": {
-        "pick": "Atlanta Braves",
-        "confidence": 0.6186
+        "pick": "Washington Nationals",
+        "confidence": 0.5717
       },
       "random_forest": {
-        "pick": "Atlanta Braves",
-        "confidence": 0.5458
+        "pick": "Washington Nationals",
+        "confidence": 0.5171
       },
-      "composite_pick": "Atlanta Braves",
-      "composite_confidence": 0.5641,
+      "composite_pick": "Washington Nationals",
+      "composite_confidence": 0.5524,
       "vote_count": 4,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "7:10 PM ET",
+      "away_team": "Milwaukee Brewers",
+      "home_team": "New York Mets",
+      "log5": {
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.6417
+      },
+      "research": {
+        "pick": "New York Mets",
+        "confidence": 0.5004
+      },
+      "xgboost": {
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.5171
+      },
+      "random_forest": {
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.539
+      },
+      "composite_pick": "Milwaukee Brewers",
+      "composite_confidence": 0.5494,
+      "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
@@ -84,55 +111,28 @@
       "correct": null
     },
     {
-      "game_time": "1:05 PM ET",
-      "away_team": "Colorado Rockies",
-      "home_team": "Washington Nationals",
+      "game_time": "7:15 PM ET",
+      "away_team": "Los Angeles Dodgers",
+      "home_team": "Atlanta Braves",
       "log5": {
-        "pick": "Washington Nationals",
-        "confidence": 0.5895
+        "pick": "Atlanta Braves",
+        "confidence": 0.5044
       },
       "research": {
-        "pick": "Washington Nationals",
-        "confidence": 0.5244
+        "pick": "Atlanta Braves",
+        "confidence": 0.5655
       },
       "xgboost": {
-        "pick": "Washington Nationals",
-        "confidence": 0.5434
+        "pick": "Atlanta Braves",
+        "confidence": 0.5637
       },
       "random_forest": {
-        "pick": "Washington Nationals",
-        "confidence": 0.5171
+        "pick": "Atlanta Braves",
+        "confidence": 0.5326
       },
-      "composite_pick": "Washington Nationals",
-      "composite_confidence": 0.5436,
+      "composite_pick": "Atlanta Braves",
+      "composite_confidence": 0.5415,
       "vote_count": 4,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
-      "game_time": "7:10 PM ET",
-      "away_team": "Milwaukee Brewers",
-      "home_team": "New York Mets",
-      "log5": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.6417
-      },
-      "research": {
-        "pick": "New York Mets",
-        "confidence": 0.5244
-      },
-      "xgboost": {
-        "pick": "New York Mets",
-        "confidence": 0.5129
-      },
-      "random_forest": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.5312
-      },
-      "composite_pick": "Milwaukee Brewers",
-      "composite_confidence": 0.5339,
-      "vote_count": 2,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
@@ -143,23 +143,23 @@
       "home_team": "St. Louis Cardinals",
       "log5": {
         "pick": "St. Louis Cardinals",
-        "confidence": 0.5238
+        "confidence": 0.5312
       },
       "research": {
-        "pick": "St. Louis Cardinals",
-        "confidence": 0.5004
+        "pick": "Baltimore Orioles",
+        "confidence": 0.5076
       },
       "xgboost": {
         "pick": "St. Louis Cardinals",
-        "confidence": 0.5745
+        "confidence": 0.5546
       },
       "random_forest": {
         "pick": "St. Louis Cardinals",
-        "confidence": 0.5259
+        "confidence": 0.5298
       },
       "composite_pick": "St. Louis Cardinals",
-      "composite_confidence": 0.5312,
-      "vote_count": 4,
+      "composite_confidence": 0.527,
+      "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
@@ -174,18 +174,18 @@
       },
       "research": {
         "pick": "Toronto Blue Jays",
-        "confidence": 0.5244
+        "confidence": 0.5268
       },
       "xgboost": {
         "pick": "Kansas City Royals",
-        "confidence": 0.6803
+        "confidence": 0.6545
       },
       "random_forest": {
         "pick": "Kansas City Royals",
-        "confidence": 0.5164
+        "confidence": 0.5081
       },
       "composite_pick": "Kansas City Royals",
-      "composite_confidence": 0.5269,
+      "composite_confidence": 0.5177,
       "vote_count": 2,
       "total_votes": 4,
       "actual_winner": null,
