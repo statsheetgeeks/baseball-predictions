@@ -71,14 +71,14 @@
           },
           "xgboost": {
             "pick": "Baltimore Orioles",
-            "confidence": 0.6484
+            "confidence": 0.6394
           },
           "random_forest": {
             "pick": "Baltimore Orioles",
-            "confidence": 0.5638
+            "confidence": 0.56
           },
           "composite_pick": "Baltimore Orioles",
-          "composite_confidence": 0.5928,
+          "composite_confidence": 0.5897,
           "vote_count": 4,
           "total_votes": 4,
           "actual_winner": null,
@@ -247,6 +247,33 @@
           "correct": null
         },
         {
+          "game_time": "9:40 PM ET",
+          "away_team": "Philadelphia Phillies",
+          "home_team": "Arizona Diamondbacks",
+          "log5": {
+            "pick": "Philadelphia Phillies",
+            "confidence": 0.5133
+          },
+          "research": {
+            "pick": "Philadelphia Phillies",
+            "confidence": 0.5102
+          },
+          "xgboost": {
+            "pick": "Arizona Diamondbacks",
+            "confidence": 0.5434
+          },
+          "random_forest": {
+            "pick": "Arizona Diamondbacks",
+            "confidence": 0.5365
+          },
+          "composite_pick": "Arizona Diamondbacks",
+          "composite_confidence": 0.5141,
+          "vote_count": 2,
+          "total_votes": 4,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
           "game_time": "6:45 PM ET",
           "away_team": "Miami Marlins",
           "home_team": "Washington Nationals",
@@ -268,33 +295,6 @@
           },
           "composite_pick": "Miami Marlins",
           "composite_confidence": 0.5101,
-          "vote_count": 2,
-          "total_votes": 4,
-          "actual_winner": null,
-          "correct": null
-        },
-        {
-          "game_time": "9:40 PM ET",
-          "away_team": "Philadelphia Phillies",
-          "home_team": "Arizona Diamondbacks",
-          "log5": {
-            "pick": "Philadelphia Phillies",
-            "confidence": 0.5133
-          },
-          "research": {
-            "pick": "Philadelphia Phillies",
-            "confidence": 0.5102
-          },
-          "xgboost": {
-            "pick": "Arizona Diamondbacks",
-            "confidence": 0.5129
-          },
-          "random_forest": {
-            "pick": "Arizona Diamondbacks",
-            "confidence": 0.5262
-          },
-          "composite_pick": "Arizona Diamondbacks",
-          "composite_confidence": 0.5039,
           "vote_count": 2,
           "total_votes": 4,
           "actual_winner": null,
