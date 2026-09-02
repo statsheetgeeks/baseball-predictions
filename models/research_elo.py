@@ -3,28 +3,46 @@ models/research_elo.py
 ──────────────────────────────────────────────────────────────────────────────
 MLB Elo Rating Engine — Chalk Line Labs Research
 ──────────────────────────────────────────────────────────────────────────────
-Methodology (matches FiveThirtyEight's published MLB approach):
-  - Standard Elo with K = 4  (MLB uses a low K — results are noisy)
-  - Home field advantage = 24 Elo points added to home team's rating
-  - Season carry-over: 1/3 regression toward the mean (1500) each new year
-  - All teams start at 1500 on first appearance
+Methodology (matches FiveThirtyEight's published MLB approach, base layer only):
+  - Standard win/loss Elo (no margin-of-victory or starting-pitcher layers —
+    those live in the separate game-matchups model).
+  - K-factor, home-field advantage, and season reversion are NOT fixed
+    constants. Each run, they're auto-tuned via a small walk-forward
+    validation search (scipy.optimize.differential_evolution): the loaded
+    seasons are split into a burn-in window, a validation window, and a
+    held-out test window; the params that minimize log-loss on the
+    validation window are the ones used to build the final standings. This
+    mirrors Stage 1 of the standalone `mlb_elo_v2.py` auto-tuned model.
+  - Season carry-over: tuned fraction of regression toward the mean (1500)
+    each new year.
+  - All teams start at 1500 on first appearance.
+  - Team identity is canonicalized across franchise renames (Cleveland
+    Indians → Guardians in 2022, Oakland/Sacramento → Athletics in 2025) so
+    a single franchise never gets split into multiple rows.
 
 Workflow (runs daily at 9 AM CT via GitHub Actions):
   1. Fetch all completed regular-season games for SEASONS via MLB Stats API
      Historical seasons are cached permanently; current season is
      re-fetched each day so new results are included.
-  2. Build Elo ratings chronologically across all seasons
-  3. Compute current standings (latest post-game ratings + W-L record)
-  4. Compile the last 30 completed games with pre-game Elos + model accuracy
-  5. Write public/data/research-elo.json  (read by Next.js page)
+  2. Canonicalize renamed franchises to a single current team identity.
+  3. Auto-tune K / home-field advantage / season reversion via walk-forward
+     validation (differential_evolution minimizing validation log-loss).
+  4. Build final Elo ratings chronologically across all seasons with the
+     tuned params.
+  5. Compute current standings (latest post-game ratings + W-L record).
+  6. Compile the last 30 completed games with pre-game Elos + model accuracy.
+  7. Write public/data/research-elo.json  (read by Next.js page)
 ──────────────────────────────────────────────────────────────────────────────
 """
 
 import json
+import math
 import os
 import time
 import requests
 from datetime import date, datetime, timezone
+
+from scipy.optimize import differential_evolution
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
 BASE_DIR  = os.path.dirname(os.path.abspath(__file__))
@@ -36,17 +54,37 @@ os.makedirs(DATA_DIR,  exist_ok=True)
 os.makedirs(CACHE_DIR, exist_ok=True)
 
 MLB_API      = 'https://statsapi.mlb.com/api/v1'
-TODAY        = date.today().isoformat()      # e.g. '2025-05-16'
+TODAY        = date.today().isoformat()
 CURRENT_YEAR = date.today().year
 SEASONS      = list(range(2021, CURRENT_YEAR + 1))
 SLEEP_S      = 0.15
 RECENT_N     = 30   # recent completed games to surface on the page
 
 # ── Elo parameters ────────────────────────────────────────────────────────────
-K           = 4
-HOME_ADV    = 24
-REVERSION   = 1 / 3
-INIT_RATING = 1500
+# Defaults — used only as a fallback if there isn't enough season history yet
+# to run the walk-forward tuning search (e.g. a brand-new deployment).
+DEFAULT_K           = 4.0
+DEFAULT_HOME_ADV    = 24.0
+DEFAULT_REVERSION   = 1 / 3
+INIT_RATING         = 1500
+
+# Search bounds for the auto-tuner (mirrors Stage 1 of mlb_elo_v2.py).
+TUNE_BOUNDS = [(1, 40), (0, 80), (0, 1)]   # K, HOME_ADV, REVERSION
+
+# ── Franchise renames → canonical current identity ────────────────────────────
+# Collapses historical name variants returned by the MLB Stats API so each
+# franchise is tracked as a single team across seasons, instead of quietly
+# splitting into extra "teams" (which was inflating the standings count
+# past 30).
+CANONICAL_TEAM = {
+    'Cleveland Indians':     'Cleveland Guardians',   # renamed 2022
+    'Oakland Athletics':     'Athletics',             # relocated 2025
+    'Sacramento Athletics':  'Athletics',             # transitional naming
+}
+
+def canonicalize_team(name):
+    return CANONICAL_TEAM.get(name, name)
+
 
 # ── Team name → display abbreviation ─────────────────────────────────────────
 NAME2ABBR = {
@@ -59,15 +97,17 @@ NAME2ABBR = {
     'Los Angeles Angels':     'LAA',  'Los Angeles Dodgers':      'LAD',
     'Miami Marlins':          'MIA',  'Milwaukee Brewers':        'MIL',
     'Minnesota Twins':        'MIN',  'New York Mets':            'NYM',
-    'New York Yankees':       'NYY',  'Oakland Athletics':        'OAK',
+    'New York Yankees':       'NYY',  'Athletics':                'ATH',
     'Philadelphia Phillies':  'PHI',  'Pittsburgh Pirates':       'PIT',
     'San Diego Padres':       'SD',   'Seattle Mariners':         'SEA',
     'San Francisco Giants':   'SF',   'St. Louis Cardinals':      'STL',
     'Tampa Bay Rays':         'TB',   'Texas Rangers':            'TEX',
     'Toronto Blue Jays':      'TOR',  'Washington Nationals':     'WSH',
-    # Aliases
-    'Athletics':              'OAK',  'Sacramento Athletics':     'OAK',
-    'Guardians':              'CLE',
+    # Legacy aliases — kept as a safety net in case an un-canonicalized name
+    # slips through somewhere, but canonicalize_team() should catch these
+    # before resolve_abbr() is ever called.
+    'Oakland Athletics':      'ATH',  'Sacramento Athletics':     'ATH',
+    'Cleveland Indians':      'CLE',  'Guardians':                'CLE',
 }
 
 def resolve_abbr(name):
@@ -104,50 +144,58 @@ def fetch_season_games(season):
 
     if os.path.exists(cache):
         with open(cache) as f:
-            return json.load(f)
+            games = json.load(f)
+    else:
+        print(f'  Fetching {season} schedule with scores...')
+        url = (f'{MLB_API}/schedule?sportId=1&season={season}'
+               f'&gameType=R&hydrate=linescore,team')
 
-    print(f'  Fetching {season} schedule with scores...')
-    url = (f'{MLB_API}/schedule?sportId=1&season={season}'
-           f'&gameType=R&hydrate=linescore,team')
+        games = []
+        data  = _get(url)
 
-    games = []
-    data  = _get(url)
+        for day in data.get('dates', []):
+            game_date = day.get('date', '')
+            for g in day.get('games', []):
+                state = g.get('status', {}).get('abstractGameState', '')
+                coded = g.get('status', {}).get('codedGameState', '')
+                if state != 'Final' and coded != 'F':
+                    continue
 
-    for day in data.get('dates', []):
-        game_date = day.get('date', '')
-        for g in day.get('games', []):
-            state = g.get('status', {}).get('abstractGameState', '')
-            coded = g.get('status', {}).get('codedGameState', '')
-            if state != 'Final' and coded != 'F':
-                continue
+                ls         = g.get('linescore', {}).get('teams', {})
+                home_score = ls.get('home', {}).get('runs')
+                away_score = ls.get('away', {}).get('runs')
 
-            ls         = g.get('linescore', {}).get('teams', {})
-            home_score = ls.get('home', {}).get('runs')
-            away_score = ls.get('away', {}).get('runs')
+                if home_score is None or away_score is None:
+                    continue
 
-            if home_score is None or away_score is None:
-                continue
+                home_name = g['teams']['home']['team']['name']
+                away_name = g['teams']['away']['team']['name']
 
-            home_name = g['teams']['home']['team']['name']
-            away_name = g['teams']['away']['team']['name']
+                games.append({
+                    'date':       game_date,
+                    'game_pk':    g['gamePk'],
+                    'home_team':  home_name,
+                    'away_team':  away_name,
+                    'home_score': int(home_score),
+                    'away_score': int(away_score),
+                })
 
-            games.append({
-                'date':       game_date,
-                'game_pk':    g['gamePk'],
-                'home_team':  home_name,
-                'away_team':  away_name,
-                'home_score': int(home_score),
-                'away_score': int(away_score),
-            })
+        games.sort(key=lambda x: (x['date'], x['game_pk']))
 
-    games.sort(key=lambda x: (x['date'], x['game_pk']))
+        if games:   # don't cache an empty response (API may have errored)
+            with open(cache, 'w') as f:
+                json.dump(games, f)
 
-    if games:   # don't cache an empty response (API may have errored)
-        with open(cache, 'w') as f:
-            json.dump(games, f)
+        print(f'    {season}: {len(games)} completed games')
+        time.sleep(SLEEP_S)
 
-    print(f'    {season}: {len(games)} completed games')
-    time.sleep(SLEEP_S)
+    # Canonicalize franchise renames on every load (fresh fetch OR cache hit)
+    # so old caches written before this fix still come out correct, with no
+    # need to bust/re-fetch them.
+    for g in games:
+        g['home_team'] = canonicalize_team(g['home_team'])
+        g['away_team'] = canonicalize_team(g['away_team'])
+
     return games
 
 
@@ -157,14 +205,15 @@ def elo_win_prob(rating_a, rating_b):
     return 1.0 / (1.0 + 10.0 ** ((rating_b - rating_a) / 400.0))
 
 
-def build_elo(all_games):
+def build_elo(all_games, K, HOME_ADV, REVERSION):
     """
-    Process every game chronologically.
+    Process every game chronologically with the given hyperparameters.
 
     Returns
     -------
     ratings        : dict  {team_name: current_elo_float}
-    rows           : list  of per-game dicts (used for recent_games output)
+    rows           : list  of per-game dicts (used for recent_games output
+                     and for log-loss scoring during tuning)
     season_records : dict  {team_name: {'wins': N, 'losses': N}}
                      — tracks W-L for the current season only
     """
@@ -235,6 +284,7 @@ def build_elo(all_games):
 
         rows.append({
             'date':          game['date'],
+            'season':        season,
             'game_pk':       game['game_pk'],
             'home_team':     home,
             'away_team':     away,
@@ -251,6 +301,79 @@ def build_elo(all_games):
         })
 
     return ratings, rows, season_records
+
+
+# ── Walk-forward hyperparameter tuning (Stage 1 of mlb_elo_v2.py) ─────────────
+def auto_season_split(seasons_sorted):
+    """
+    Carve the loaded seasons into burn-in / validation / held-out test.
+    Roughly 30% burn-in / 50% validation / 20% test by season count.
+    """
+    n = len(seasons_sorted)
+    if n < 3:
+        return 0, 0, seasons_sorted, []
+    test_n = max(1, round(n * 0.2))
+    burn_in_n = max(1, round(n * 0.3))
+    while burn_in_n + test_n >= n:
+        if burn_in_n > 1:
+            burn_in_n -= 1
+        elif test_n > 1:
+            test_n -= 1
+        else:
+            break
+    val_seasons  = seasons_sorted[burn_in_n : n - test_n]
+    test_seasons = seasons_sorted[n - test_n :]
+    return burn_in_n, test_n, val_seasons, test_seasons
+
+
+def log_loss(rows, seasons_mask):
+    if not seasons_mask:
+        return 10.0
+    seasons_mask = set(seasons_mask)
+    filtered = [r for r in rows if r['season'] in seasons_mask]
+    if not filtered:
+        return 10.0
+    eps   = 1e-6
+    total = 0.0
+    for r in filtered:
+        p = min(max(r['home_prob'], eps), 1 - eps)
+        y = r['home_win']
+        total += -(y * math.log(p) + (1 - y) * math.log(1 - p))
+    return total / len(filtered)
+
+
+def tune_base_params(all_games):
+    """
+    Auto-tune K, home-field advantage, and season reversion via
+    differential_evolution, minimizing log-loss on a validation window of
+    seasons (walk-forward style, matching Stage 1 of mlb_elo_v2.py).
+
+    Falls back to the fixed defaults if there isn't enough season history
+    yet to form a meaningful validation window.
+    """
+    seasons_sorted = sorted(set(int(g['date'][:4]) for g in all_games))
+    _, _, val_seasons, test_seasons = auto_season_split(seasons_sorted)
+
+    if not val_seasons:
+        print('Not enough season history to auto-tune — using defaults '
+              f'(K={DEFAULT_K:g}, home_adv={DEFAULT_HOME_ADV:g}, '
+              f'revert={DEFAULT_REVERSION:.3g}).')
+        return DEFAULT_K, DEFAULT_HOME_ADV, DEFAULT_REVERSION, val_seasons, test_seasons
+
+    def _objective(x):
+        K_, HA_, REV_ = x
+        _, rows, _ = build_elo(all_games, K=K_, HOME_ADV=HA_, REVERSION=REV_)
+        return log_loss(rows, val_seasons)
+
+    res = differential_evolution(
+        _objective, bounds=TUNE_BOUNDS,
+        maxiter=8, popsize=8, tol=1e-4, seed=42, polish=True, workers=1,
+    )
+    tuned_K, tuned_HOME_ADV, tuned_REVERSION = (float(v) for v in res.x)
+    print(f'Auto-tuned params: K={tuned_K:.2f}, home_adv={tuned_HOME_ADV:.2f}, '
+          f'season_revert={tuned_REVERSION:.3f} -> val log-loss {res.fun:.4f}')
+
+    return tuned_K, tuned_HOME_ADV, tuned_REVERSION, val_seasons, test_seasons
 
 
 # ── Standings builder ─────────────────────────────────────────────────────────
@@ -287,9 +410,7 @@ def build_standings(ratings, season_records):
 def run():
     print(f'\n{"=" * 60}')
     print(f'  MLB Elo Research Model — {TODAY}')
-    print(f'  Seasons: {SEASONS[0]}–{SEASONS[-1]}'
-          f'  |  K={K}  |  home_adv={HOME_ADV}'
-          f'  |  reversion={REVERSION:.2f}')
+    print(f'  Seasons: {SEASONS[0]}–{SEASONS[-1]}')
     print(f'{"=" * 60}\n')
 
     # ── 1. Fetch all seasons ──────────────────────────────────────────────
@@ -302,31 +423,49 @@ def run():
     print(f'\n  Total: {len(all_games):,} completed games '
           f'({SEASONS[0]}–{SEASONS[-1]})\n')
 
-    # ── 2. Build Elo ratings ──────────────────────────────────────────────
-    print('Computing Elo ratings...')
-    ratings, rows, season_records = build_elo(all_games)
+    n_teams = len(set(g['home_team'] for g in all_games)
+                  | set(g['away_team'] for g in all_games))
+    print(f'  {n_teams} distinct teams after canonicalization\n')
+
+    # ── 2. Auto-tune K / home-field advantage / season reversion ──────────
+    print('Auto-tuning base Elo params (walk-forward validation)...')
+    K, HOME_ADV, REVERSION, val_seasons, test_seasons = tune_base_params(all_games)
+    print()
+
+    # ── 3. Build final Elo ratings with tuned params ───────────────────────
+    print('Computing final Elo ratings...')
+    ratings, rows, season_records = build_elo(all_games, K=K, HOME_ADV=HOME_ADV, REVERSION=REVERSION)
     print(f'  Done. {len(ratings)} teams rated.\n')
 
-    # ── 3. Standings ──────────────────────────────────────────────────────
+    if test_seasons:
+        test_ll = log_loss(rows, test_seasons)
+        print(f'  Held-out test log-loss ({test_seasons}): {test_ll:.4f}\n')
+
+    # ── 4. Standings ────────────────────────────────────────────────────────
     standings = build_standings(ratings, season_records)
 
-    # ── 4. Recent games (last RECENT_N, most-recent first) ────────────────
+    # ── 5. Recent games (last RECENT_N, most-recent first) ────────────────
     recent = list(reversed(rows[-RECENT_N:]))
 
-    # ── 5. Season accuracy ────────────────────────────────────────────────
+    # ── 6. Season accuracy ─────────────────────────────────────────────────
     current_rows = [r for r in rows if r['date'].startswith(str(CURRENT_YEAR))]
     n_games   = len(current_rows)
     n_correct = sum(1 for r in current_rows if r['model_correct'])
     accuracy  = round(n_correct / n_games, 4) if n_games else None
 
-    # ── 6. Write JSON ─────────────────────────────────────────────────────
+    # ── 7. Write JSON ───────────────────────────────────────────────────────
     out = {
         'updated': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
         'params': {
-            'k':        K,
-            'home_adv': HOME_ADV,
+            'k':        round(K, 2),
+            'home_adv': round(HOME_ADV, 2),
             'reversion': round(REVERSION, 4),
             'seasons':  SEASONS,
+            'tuning':   {
+                'method':        'differential_evolution (walk-forward validation)',
+                'val_seasons':   val_seasons,
+                'test_seasons':  test_seasons,
+            },
         },
         'accuracy': {
             'season':  CURRENT_YEAR,

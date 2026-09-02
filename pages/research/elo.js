@@ -370,7 +370,7 @@ export default function EloRatings() {
       <PageHeader
         tag="Research → Elo"
         title="MLB ELO RATINGS"
-        subtitle="Team power ratings built on the FiveThirtyEight methodology: K=4, 24-point home advantage, 1/3 seasonal regression toward 1500. Trained on regular-season game results since 2021."
+        subtitle="Team power ratings built on the FiveThirtyEight-style Elo framework. K-factor, home-field advantage, and season reversion are auto-tuned each run via walk-forward validation rather than fixed. Trained on regular-season game results since 2021."
       />
 
       {updatedLabel && (
