@@ -14,24 +14,9 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 2,
+            "Log5 Hit": 3,
             "ML Hit": 7,
-            "ML HR": 7
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Carson Benge",
-          "team": "NYM",
-          "appearances": 2,
-          "models": [
-            "Log5 Hit",
-            "ML Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 25,
-            "ML Hit": 23
+            "ML HR": 10
           },
           "actual_hit": null,
           "actual_hr": null
@@ -39,14 +24,33 @@
         {
           "player": "Gunnar Henderson",
           "team": "BAL",
-          "appearances": 2,
+          "appearances": 3,
           "models": [
             "HR Model",
-            "Log5 Hit"
+            "Log5 Hit",
+            "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 6,
-            "HR Model": 11
+            "Log5 Hit": 7,
+            "HR Model": 13,
+            "ML HR": 23
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
+          "player": "Pete Alonso",
+          "team": "BAL",
+          "appearances": 3,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML HR"
+          ],
+          "ranks": {
+            "Log5 Hit": 1,
+            "HR Model": 1,
+            "ML HR": 17
           },
           "actual_hit": null,
           "actual_hr": null
@@ -76,7 +80,7 @@
           ],
           "ranks": {
             "ML Hit": 18,
-            "ML HR": 11
+            "ML HR": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -91,7 +95,7 @@
           ],
           "ranks": {
             "HR Model": 10,
-            "ML HR": 24
+            "ML HR": 22
           },
           "actual_hit": null,
           "actual_hr": null
@@ -135,8 +139,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 18,
-            "ML HR": 1
+            "HR Model": 15,
+            "ML HR": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -151,22 +155,7 @@
           ],
           "ranks": {
             "Log5 Hit": 22,
-            "ML HR": 5
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Pete Alonso",
-          "team": "BAL",
-          "appearances": 2,
-          "models": [
-            "HR Model",
-            "Log5 Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 1,
-            "HR Model": 1
+            "ML HR": 12
           },
           "actual_hit": null,
           "actual_hr": null
@@ -181,7 +170,7 @@
           ],
           "ranks": {
             "HR Model": 24,
-            "ML HR": 3
+            "ML HR": 6
           },
           "actual_hit": null,
           "actual_hr": null
@@ -196,7 +185,7 @@
           ],
           "ranks": {
             "HR Model": 14,
-            "ML HR": 2
+            "ML HR": 9
           },
           "actual_hit": null,
           "actual_hr": null
@@ -210,7 +199,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 17,
+            "Log5 Hit": 18,
             "ML Hit": 1
           },
           "actual_hit": null,
@@ -226,7 +215,7 @@
           ],
           "ranks": {
             "ML Hit": 10,
-            "ML HR": 6
+            "ML HR": 5
           },
           "actual_hit": null,
           "actual_hr": null
@@ -241,22 +230,7 @@
           ],
           "ranks": {
             "ML Hit": 9,
-            "ML HR": 20
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Yordan Alvarez",
-          "team": "HOU",
-          "appearances": 2,
-          "models": [
-            "Log5 Hit",
-            "ML Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 5,
-            "ML Hit": 20
+            "ML HR": 19
           },
           "actual_hit": null,
           "actual_hr": null

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02T02:28:10.589528+00:00",
+  "updated": "2026-09-02T06:01:12.353850+00:00",
   "date": "2026-09-02",
   "predictions": [
     {
@@ -8,7 +8,7 @@
       "home_team": "Los Angeles Dodgers",
       "log5": {
         "pick": "Los Angeles Dodgers",
-        "confidence": 0.6255
+        "confidence": 0.6177
       },
       "research": {
         "pick": "Los Angeles Dodgers",
@@ -23,7 +23,7 @@
         "confidence": 0.5979
       },
       "composite_pick": "Los Angeles Dodgers",
-      "composite_confidence": 0.6197,
+      "composite_confidence": 0.6178,
       "vote_count": 4,
       "total_votes": 4,
       "actual_winner": null,
@@ -35,7 +35,7 @@
       "home_team": "Colorado Rockies",
       "log5": {
         "pick": "Baltimore Orioles",
-        "confidence": 0.6032
+        "confidence": 0.5953
       },
       "research": {
         "pick": "Baltimore Orioles",
@@ -50,7 +50,7 @@
         "confidence": 0.5711
       },
       "composite_pick": "Baltimore Orioles",
-      "composite_confidence": 0.5996,
+      "composite_confidence": 0.5977,
       "vote_count": 4,
       "total_votes": 4,
       "actual_winner": null,
@@ -116,7 +116,7 @@
       "home_team": "Los Angeles Angels",
       "log5": {
         "pick": "New York Yankees",
-        "confidence": 0.6558
+        "confidence": 0.6612
       },
       "research": {
         "pick": "Los Angeles Angels",
@@ -131,7 +131,7 @@
         "confidence": 0.548
       },
       "composite_pick": "New York Yankees",
-      "composite_confidence": 0.5711,
+      "composite_confidence": 0.5725,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
@@ -143,7 +143,7 @@
       "home_team": "Chicago Cubs",
       "log5": {
         "pick": "Milwaukee Brewers",
-        "confidence": 0.5323
+        "confidence": 0.5393
       },
       "research": {
         "pick": "Chicago Cubs",
@@ -158,7 +158,7 @@
         "confidence": 0.505
       },
       "composite_pick": "Chicago Cubs",
-      "composite_confidence": 0.5481,
+      "composite_confidence": 0.5464,
       "vote_count": 2,
       "total_votes": 4,
       "actual_winner": null,
@@ -170,7 +170,7 @@
       "home_team": "Texas Rangers",
       "log5": {
         "pick": "Texas Rangers",
-        "confidence": 0.6291
+        "confidence": 0.6353
       },
       "research": {
         "pick": "Texas Rangers",
@@ -185,7 +185,7 @@
         "confidence": 0.5265
       },
       "composite_pick": "Texas Rangers",
-      "composite_confidence": 0.5406,
+      "composite_confidence": 0.5422,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
@@ -214,6 +214,33 @@
       "composite_pick": "Miami Marlins",
       "composite_confidence": 0.5397,
       "vote_count": 4,
+      "total_votes": 4,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "8:10 PM ET",
+      "away_team": "Chicago White Sox",
+      "home_team": "Houston Astros",
+      "log5": {
+        "pick": "Chicago White Sox",
+        "confidence": 0.5054
+      },
+      "research": {
+        "pick": "Houston Astros",
+        "confidence": 0.5004
+      },
+      "xgboost": {
+        "pick": "Houston Astros",
+        "confidence": 0.6206
+      },
+      "random_forest": {
+        "pick": "Houston Astros",
+        "confidence": 0.5088
+      },
+      "composite_pick": "Houston Astros",
+      "composite_confidence": 0.5311,
+      "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
@@ -273,28 +300,28 @@
       "correct": null
     },
     {
-      "game_time": "8:10 PM ET",
-      "away_team": "Chicago White Sox",
-      "home_team": "Houston Astros",
+      "game_time": "7:40 PM ET",
+      "away_team": "Detroit Tigers",
+      "home_team": "Minnesota Twins",
       "log5": {
-        "pick": "Houston Astros",
-        "confidence": 0.5017
+        "pick": "Minnesota Twins",
+        "confidence": 0.5456
       },
       "research": {
-        "pick": "Houston Astros",
+        "pick": "Minnesota Twins",
         "confidence": 0.5004
       },
       "xgboost": {
-        "pick": "Houston Astros",
-        "confidence": 0.5552
+        "pick": "Detroit Tigers",
+        "confidence": 0.5033
       },
       "random_forest": {
-        "pick": "Houston Astros",
-        "confidence": 0.507
+        "pick": "Minnesota Twins",
+        "confidence": 0.5025
       },
-      "composite_pick": "Houston Astros",
-      "composite_confidence": 0.5161,
-      "vote_count": 4,
+      "composite_pick": "Minnesota Twins",
+      "composite_confidence": 0.5113,
+      "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
       "correct": null
@@ -327,39 +354,12 @@
       "correct": null
     },
     {
-      "game_time": "7:40 PM ET",
-      "away_team": "Detroit Tigers",
-      "home_team": "Minnesota Twins",
-      "log5": {
-        "pick": "Minnesota Twins",
-        "confidence": 0.5385
-      },
-      "research": {
-        "pick": "Minnesota Twins",
-        "confidence": 0.5004
-      },
-      "xgboost": {
-        "pick": "Detroit Tigers",
-        "confidence": 0.5033
-      },
-      "random_forest": {
-        "pick": "Minnesota Twins",
-        "confidence": 0.5025
-      },
-      "composite_pick": "Minnesota Twins",
-      "composite_confidence": 0.5095,
-      "vote_count": 3,
-      "total_votes": 4,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
       "game_time": "3:40 PM ET",
       "away_team": "Philadelphia Phillies",
       "home_team": "Arizona Diamondbacks",
       "log5": {
         "pick": "Philadelphia Phillies",
-        "confidence": 0.5203
+        "confidence": 0.5272
       },
       "research": {
         "pick": "Philadelphia Phillies",
@@ -371,10 +371,10 @@
       },
       "random_forest": {
         "pick": "Arizona Diamondbacks",
-        "confidence": 0.531
+        "confidence": 0.555
       },
       "composite_pick": "Philadelphia Phillies",
-      "composite_confidence": 0.5077,
+      "composite_confidence": 0.5034,
       "vote_count": 3,
       "total_votes": 4,
       "actual_winner": null,
@@ -411,52 +411,52 @@
   "model_standings": [
     {
       "model": "Random Forest",
-      "wins": 804,
-      "losses": 645,
-      "total": 1449,
-      "pct": 0.5549
+      "wins": 807,
+      "losses": 650,
+      "total": 1457,
+      "pct": 0.5539
     },
     {
       "model": "Log5",
-      "wins": 784,
-      "losses": 666,
-      "total": 1450,
-      "pct": 0.5407
+      "wins": 789,
+      "losses": 669,
+      "total": 1458,
+      "pct": 0.5412
     },
     {
       "model": "Research",
-      "wins": 776,
-      "losses": 673,
-      "total": 1449,
-      "pct": 0.5355
+      "wins": 779,
+      "losses": 678,
+      "total": 1457,
+      "pct": 0.5347
     },
     {
       "model": "XGBoost",
-      "wins": 751,
-      "losses": 698,
-      "total": 1449,
-      "pct": 0.5183
+      "wins": 753,
+      "losses": 704,
+      "total": 1457,
+      "pct": 0.5168
     }
   ],
   "yesterday": {
     "date": "2026-09-01",
     "total": {
-      "wins": 5,
-      "losses": 2,
-      "total": 7
+      "wins": 9,
+      "losses": 6,
+      "total": 15
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 3,
-        "losses": 2,
-        "total": 5
+        "wins": 7,
+        "losses": 5,
+        "total": 12
       },
       {
         "band": "60-69%",
         "wins": 1,
-        "losses": 0,
-        "total": 1
+        "losses": 1,
+        "total": 2
       },
       {
         "band": "70-79%",
@@ -474,22 +474,22 @@
   },
   "alltime": {
     "total": {
-      "wins": 785,
-      "losses": 665,
-      "total": 1450
+      "wins": 789,
+      "losses": 669,
+      "total": 1458
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 661,
-        "losses": 568,
-        "total": 1229
+        "wins": 665,
+        "losses": 571,
+        "total": 1236
       },
       {
         "band": "60-69%",
         "wins": 99,
-        "losses": 80,
-        "total": 179
+        "losses": 81,
+        "total": 180
       },
       {
         "band": "70-79%",
