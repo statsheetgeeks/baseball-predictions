@@ -5,6 +5,25 @@
       "graded": false,
       "players": [
         {
+          "player": "Yordan Alvarez",
+          "team": "HOU",
+          "appearances": 4,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML HR",
+            "ML Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 1,
+            "ML Hit": 6,
+            "HR Model": 1,
+            "ML HR": 9
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
           "player": "Jeremy Pe\u00f1a",
           "team": "HOU",
           "appearances": 3,
@@ -16,7 +35,7 @@
           "ranks": {
             "Log5 Hit": 5,
             "ML Hit": 17,
-            "HR Model": 14
+            "HR Model": 12
           },
           "actual_hit": null,
           "actual_hr": null
@@ -31,26 +50,9 @@
             "ML HR"
           ],
           "ranks": {
-            "Log5 Hit": 12,
-            "HR Model": 11,
-            "ML HR": 21
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Yordan Alvarez",
-          "team": "HOU",
-          "appearances": 3,
-          "models": [
-            "Log5 Hit",
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 1,
-            "ML Hit": 6,
-            "ML HR": 14
+            "Log5 Hit": 11,
+            "HR Model": 9,
+            "ML HR": 18
           },
           "actual_hit": null,
           "actual_hr": null
@@ -65,7 +67,7 @@
           ],
           "ranks": {
             "Log5 Hit": 2,
-            "ML HR": 7
+            "ML HR": 11
           },
           "actual_hit": null,
           "actual_hr": null
@@ -80,7 +82,7 @@
           ],
           "ranks": {
             "ML Hit": 23,
-            "ML HR": 10
+            "ML HR": 12
           },
           "actual_hit": null,
           "actual_hr": null
@@ -95,7 +97,7 @@
           ],
           "ranks": {
             "ML Hit": 7,
-            "HR Model": 21
+            "HR Model": 16
           },
           "actual_hit": null,
           "actual_hr": null
@@ -110,7 +112,7 @@
           ],
           "ranks": {
             "ML Hit": 10,
-            "ML HR": 8
+            "ML HR": 7
           },
           "actual_hit": null,
           "actual_hr": null
@@ -124,7 +126,7 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 18,
+            "HR Model": 22,
             "ML HR": 6
           },
           "actual_hit": null,
@@ -140,7 +142,7 @@
           ],
           "ranks": {
             "Log5 Hit": 17,
-            "ML HR": 5
+            "ML HR": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -155,7 +157,7 @@
           ],
           "ranks": {
             "Log5 Hit": 10,
-            "HR Model": 24
+            "HR Model": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -169,8 +171,8 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 9,
-            "ML HR": 15
+            "HR Model": 8,
+            "ML HR": 21
           },
           "actual_hit": null,
           "actual_hr": null
@@ -200,7 +202,7 @@
           ],
           "ranks": {
             "ML Hit": 15,
-            "ML HR": 12
+            "ML HR": 17
           },
           "actual_hit": null,
           "actual_hr": null
@@ -214,7 +216,7 @@
             "ML Hit"
           ],
           "ranks": {
-            "Log5 Hit": 20,
+            "Log5 Hit": 19,
             "ML Hit": 13
           },
           "actual_hit": null,
@@ -230,7 +232,7 @@
           ],
           "ranks": {
             "ML Hit": 14,
-            "ML HR": 23
+            "ML HR": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -259,7 +261,7 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 6,
+            "HR Model": 5,
             "ML HR": 1
           },
           "actual_hit": null,
@@ -275,7 +277,7 @@
           ],
           "ranks": {
             "Log5 Hit": 6,
-            "ML HR": 18
+            "ML HR": 14
           },
           "actual_hit": null,
           "actual_hr": null
