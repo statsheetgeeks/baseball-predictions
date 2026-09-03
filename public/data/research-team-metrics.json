@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T17:39:37Z",
+  "updated": "2026-09-03T18:02:44Z",
   "season": 2026,
   "exponent": 1.83,
   "teams": [
@@ -270,25 +270,6 @@
       "elo_wp": 0.527
     },
     {
-      "team": "Cleveland Guardians",
-      "games": 139,
-      "actual_wins": 70,
-      "actual_losses": 69,
-      "actual_wp": 0.504,
-      "formula_wins": 67,
-      "formula_losses": 72,
-      "formula_diff": -3,
-      "formula_wp": 0.485,
-      "pythag_wins": 69,
-      "pythag_losses": 70,
-      "pythag_diff": -1,
-      "pythag_wp": 0.494,
-      "elo_wins": 70,
-      "elo_losses": 69,
-      "elo_diff": 0,
-      "elo_wp": 0.503
-    },
-    {
       "team": "Arizona Diamondbacks",
       "games": 141,
       "actual_wins": 74,
@@ -306,6 +287,25 @@
       "elo_losses": 68,
       "elo_diff": -1,
       "elo_wp": 0.52
+    },
+    {
+      "team": "Cleveland Guardians",
+      "games": 139,
+      "actual_wins": 70,
+      "actual_losses": 69,
+      "actual_wp": 0.504,
+      "formula_wins": 67,
+      "formula_losses": 72,
+      "formula_diff": -3,
+      "formula_wp": 0.484,
+      "pythag_wins": 69,
+      "pythag_losses": 70,
+      "pythag_diff": -1,
+      "pythag_wp": 0.494,
+      "elo_wins": 70,
+      "elo_losses": 69,
+      "elo_diff": 0,
+      "elo_wp": 0.503
     },
     {
       "team": "Texas Rangers",
@@ -576,7 +576,7 @@
   ],
   "accuracy": {
     "correlation": {
-      "formula": 0.8313,
+      "formula": 0.8312,
       "pythag": 0.8709,
       "elo": 0.9557
     },
