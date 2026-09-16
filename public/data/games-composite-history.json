@@ -85,6 +85,87 @@
           "correct": null
         },
         {
+          "game_time": "1:15 PM ET",
+          "away_team": "San Francisco Giants",
+          "home_team": "St. Louis Cardinals",
+          "log5": {
+            "pick": "St. Louis Cardinals",
+            "confidence": 0.5991
+          },
+          "research": {
+            "pick": "St. Louis Cardinals",
+            "confidence": 0.5335
+          },
+          "xgboost": {
+            "pick": "St. Louis Cardinals",
+            "confidence": 0.6848
+          },
+          "random_forest": {
+            "pick": "St. Louis Cardinals",
+            "confidence": 0.5268
+          },
+          "composite_pick": "St. Louis Cardinals",
+          "composite_confidence": 0.5861,
+          "vote_count": 4,
+          "total_votes": 4,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "1:40 PM ET",
+          "away_team": "New York Yankees",
+          "home_team": "Minnesota Twins",
+          "log5": {
+            "pick": "New York Yankees",
+            "confidence": 0.5978
+          },
+          "research": {
+            "pick": "New York Yankees",
+            "confidence": 0.5102
+          },
+          "xgboost": {
+            "pick": "New York Yankees",
+            "confidence": 0.5925
+          },
+          "random_forest": {
+            "pick": "New York Yankees",
+            "confidence": 0.5706
+          },
+          "composite_pick": "New York Yankees",
+          "composite_confidence": 0.5678,
+          "vote_count": 4,
+          "total_votes": 4,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "1:10 PM ET",
+          "away_team": "Chicago White Sox",
+          "home_team": "Cleveland Guardians",
+          "log5": {
+            "pick": "Cleveland Guardians",
+            "confidence": 0.5166
+          },
+          "research": {
+            "pick": "Cleveland Guardians",
+            "confidence": 0.562
+          },
+          "xgboost": {
+            "pick": "Cleveland Guardians",
+            "confidence": 0.6178
+          },
+          "random_forest": {
+            "pick": "Cleveland Guardians",
+            "confidence": 0.57
+          },
+          "composite_pick": "Cleveland Guardians",
+          "composite_confidence": 0.5666,
+          "vote_count": 4,
+          "total_votes": 4,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
           "game_time": "7:40 PM ET",
           "away_team": "Atlanta Braves",
           "home_team": "Chicago Cubs",
@@ -134,87 +215,6 @@
           "composite_pick": "Toronto Blue Jays",
           "composite_confidence": 0.5483,
           "vote_count": 3,
-          "total_votes": 4,
-          "actual_winner": null,
-          "correct": null
-        },
-        {
-          "game_time": "1:40 PM ET",
-          "away_team": "New York Yankees",
-          "home_team": "Minnesota Twins",
-          "log5": {
-            "pick": "New York Yankees",
-            "confidence": 0.5978
-          },
-          "research": {
-            "pick": "New York Yankees",
-            "confidence": 0.5102
-          },
-          "xgboost": {
-            "pick": "New York Yankees",
-            "confidence": 0.5299
-          },
-          "random_forest": {
-            "pick": "New York Yankees",
-            "confidence": 0.5544
-          },
-          "composite_pick": "New York Yankees",
-          "composite_confidence": 0.5481,
-          "vote_count": 4,
-          "total_votes": 4,
-          "actual_winner": null,
-          "correct": null
-        },
-        {
-          "game_time": "1:10 PM ET",
-          "away_team": "Chicago White Sox",
-          "home_team": "Cleveland Guardians",
-          "log5": {
-            "pick": "Cleveland Guardians",
-            "confidence": 0.5166
-          },
-          "research": {
-            "pick": "Cleveland Guardians",
-            "confidence": 0.5651
-          },
-          "xgboost": {
-            "pick": "Cleveland Guardians",
-            "confidence": 0.5415
-          },
-          "random_forest": {
-            "pick": "Cleveland Guardians",
-            "confidence": 0.5617
-          },
-          "composite_pick": "Cleveland Guardians",
-          "composite_confidence": 0.5462,
-          "vote_count": 4,
-          "total_votes": 4,
-          "actual_winner": null,
-          "correct": null
-        },
-        {
-          "game_time": "1:15 PM ET",
-          "away_team": "San Francisco Giants",
-          "home_team": "St. Louis Cardinals",
-          "log5": {
-            "pick": "St. Louis Cardinals",
-            "confidence": 0.5991
-          },
-          "research": {
-            "pick": "St. Louis Cardinals",
-            "confidence": 0.5335
-          },
-          "xgboost": {
-            "pick": "St. Louis Cardinals",
-            "confidence": 0.5425
-          },
-          "random_forest": {
-            "pick": "St. Louis Cardinals",
-            "confidence": 0.5077
-          },
-          "composite_pick": "St. Louis Cardinals",
-          "composite_confidence": 0.5457,
-          "vote_count": 4,
           "total_votes": 4,
           "actual_winner": null,
           "correct": null
