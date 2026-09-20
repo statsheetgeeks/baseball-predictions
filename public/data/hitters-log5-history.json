@@ -1,8 +1,215 @@
 {
   "records": [
     {
-      "date": "2026-09-19",
+      "date": "2026-09-20",
       "graded": false,
+      "league_avg_xba": 0.2456,
+      "predictions": [
+        {
+          "rank": 1,
+          "player": "Josh Naylor",
+          "team": "SEA",
+          "hit_probability": 0.7611,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 2,
+          "player": "Nico Hoerner",
+          "team": "CHC",
+          "hit_probability": 0.7556,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 3,
+          "player": "Julio Rodr\u00edguez",
+          "team": "SEA",
+          "hit_probability": 0.751,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 4,
+          "player": "Freddie Freeman",
+          "team": "LAD",
+          "hit_probability": 0.7434,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 5,
+          "player": "Mookie Betts",
+          "team": "LAD",
+          "hit_probability": 0.7429,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 6,
+          "player": "Yordan Alvarez",
+          "team": "HOU",
+          "hit_probability": 0.7393,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 7,
+          "player": "Fernando Tatis Jr.",
+          "team": "SD",
+          "hit_probability": 0.7379,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 8,
+          "player": "Elly De La Cruz",
+          "team": "CIN",
+          "hit_probability": 0.7262,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 9,
+          "player": "Yandy D\u00edaz",
+          "team": "TB",
+          "hit_probability": 0.7256,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 10,
+          "player": "Randy Arozarena",
+          "team": "SEA",
+          "hit_probability": 0.7244,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 11,
+          "player": "Ketel Marte",
+          "team": "AZ",
+          "hit_probability": 0.7193,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 12,
+          "player": "Cole Young",
+          "team": "SEA",
+          "hit_probability": 0.7145,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 13,
+          "player": "Jake McCarthy",
+          "team": "COL",
+          "hit_probability": 0.7125,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 14,
+          "player": "Alec Burleson",
+          "team": "STL",
+          "hit_probability": 0.7108,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 15,
+          "player": "Jackson Chourio",
+          "team": "MIL",
+          "hit_probability": 0.7091,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 16,
+          "player": "Gabriel Moreno",
+          "team": "AZ",
+          "hit_probability": 0.7074,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 17,
+          "player": "Nick Gonzales",
+          "team": "PIT",
+          "hit_probability": 0.7073,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 18,
+          "player": "Jeremy Pe\u00f1a",
+          "team": "HOU",
+          "hit_probability": 0.7045,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 19,
+          "player": "Junior Caminero",
+          "team": "TB",
+          "hit_probability": 0.7006,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 20,
+          "player": "Bo Bichette",
+          "team": "NYM",
+          "hit_probability": 0.6976,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 21,
+          "player": "Pete Crow-Armstrong",
+          "team": "CHC",
+          "hit_probability": 0.6974,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 22,
+          "player": "Jackson Merrill",
+          "team": "SD",
+          "hit_probability": 0.6958,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 23,
+          "player": "Dominic Canzone",
+          "team": "SEA",
+          "hit_probability": 0.6945,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 24,
+          "player": "Josh Jung",
+          "team": "TEX",
+          "hit_probability": 0.6939,
+          "actual_hits": null,
+          "correct": null
+        },
+        {
+          "rank": 25,
+          "player": "Kevin McGonigle",
+          "team": "DET",
+          "hit_probability": 0.6926,
+          "actual_hits": null,
+          "correct": null
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "graded": true,
       "league_avg_xba": 0.2455,
       "predictions": [
         {
@@ -10,202 +217,238 @@
           "player": "Nico Hoerner",
           "team": "CHC",
           "hit_probability": 0.7679,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 2,
+          "correct": true
         },
         {
           "rank": 2,
           "player": "Josh Naylor",
           "team": "SEA",
           "hit_probability": 0.7391,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 3,
           "player": "Yordan Alvarez",
           "team": "HOU",
           "hit_probability": 0.7323,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 4,
           "player": "Yandy D\u00edaz",
           "team": "TB",
           "hit_probability": 0.7318,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 5,
           "player": "James Wood",
           "team": "WSH",
           "hit_probability": 0.7278,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 2,
+          "correct": true
         },
         {
           "rank": 6,
           "player": "Julio Rodr\u00edguez",
           "team": "SEA",
           "hit_probability": 0.7273,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 2,
+          "correct": true
         },
         {
           "rank": 7,
           "player": "Elly De La Cruz",
           "team": "CIN",
           "hit_probability": 0.7236,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 8,
           "player": "Bo Bichette",
           "team": "NYM",
           "hit_probability": 0.7124,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 9,
           "player": "Pete Crow-Armstrong",
           "team": "CHC",
           "hit_probability": 0.712,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 10,
           "player": "Josh Jung",
           "team": "TEX",
           "hit_probability": 0.7119,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 11,
           "player": "Bobby Witt Jr.",
           "team": "KC",
           "hit_probability": 0.7107,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 3,
+          "correct": true
         },
         {
           "rank": 12,
           "player": "Fernando Tatis Jr.",
           "team": "SD",
           "hit_probability": 0.7099,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 13,
           "player": "Nick Gonzales",
           "team": "PIT",
           "hit_probability": 0.7087,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 14,
           "player": "Junior Caminero",
           "team": "TB",
           "hit_probability": 0.7059,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 15,
           "player": "Juan Soto",
           "team": "NYM",
           "hit_probability": 0.7024,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 16,
           "player": "Alec Burleson",
           "team": "STL",
           "hit_probability": 0.7022,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 17,
           "player": "Freddie Freeman",
           "team": "LAD",
           "hit_probability": 0.7012,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 18,
           "player": "Jackson Chourio",
           "team": "MIL",
           "hit_probability": 0.7004,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 19,
           "player": "Vladimir Guerrero Jr.",
           "team": "TOR",
           "hit_probability": 0.7003,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 20,
           "player": "Mookie Betts",
           "team": "LAD",
           "hit_probability": 0.6996,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 4,
+          "correct": true
         },
         {
           "rank": 21,
           "player": "Pete Alonso",
           "team": "BAL",
           "hit_probability": 0.6994,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 22,
           "player": "Michael Harris II",
           "team": "ATL",
           "hit_probability": 0.699,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 0,
+          "correct": false
         },
         {
           "rank": 23,
           "player": "Jeremy Pe\u00f1a",
           "team": "HOU",
           "hit_probability": 0.698,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 24,
           "player": "Daylen Lile",
           "team": "WSH",
           "hit_probability": 0.6968,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         },
         {
           "rank": 25,
           "player": "Randy Arozarena",
           "team": "SEA",
           "hit_probability": 0.6967,
-          "actual_hits": null,
-          "correct": null
+          "actual_hits": 1,
+          "correct": true
         }
-      ]
+      ],
+      "summary": {
+        "total": 25,
+        "hit_count": 17,
+        "hit_rate_pct": 68.0,
+        "hit_players": [
+          "Nico Hoerner",
+          "Yordan Alvarez",
+          "James Wood",
+          "Julio Rodr\u00edguez",
+          "Bo Bichette",
+          "Josh Jung",
+          "Bobby Witt Jr.",
+          "Fernando Tatis Jr.",
+          "Nick Gonzales",
+          "Junior Caminero",
+          "Juan Soto",
+          "Alec Burleson",
+          "Vladimir Guerrero Jr.",
+          "Mookie Betts",
+          "Jeremy Pe\u00f1a",
+          "Daylen Lile",
+          "Randy Arozarena"
+        ],
+        "by_bucket": {
+          "70%+": {
+            "predicted": 19,
+            "hits": 13,
+            "rate_pct": 68.4
+          },
+          "60-69%": {
+            "predicted": 6,
+            "hits": 4,
+            "rate_pct": 66.7
+          }
+        }
+      }
     },
     {
       "date": "2026-09-18",
