@@ -85,60 +85,6 @@
           "correct": null
         },
         {
-          "game_time": "1:05 PM ET",
-          "away_team": "Tampa Bay Rays",
-          "home_team": "New York Yankees",
-          "log5": {
-            "pick": "Tampa Bay Rays",
-            "confidence": 0.5201
-          },
-          "research": {
-            "pick": "New York Yankees",
-            "confidence": 0.6134
-          },
-          "xgboost": {
-            "pick": "New York Yankees",
-            "confidence": 0.6739
-          },
-          "random_forest": {
-            "pick": "New York Yankees",
-            "confidence": 0.5659
-          },
-          "composite_pick": "New York Yankees",
-          "composite_confidence": 0.5833,
-          "vote_count": 3,
-          "total_votes": 4,
-          "actual_winner": null,
-          "correct": null
-        },
-        {
-          "game_time": "7:05 PM ET",
-          "away_team": "Tampa Bay Rays",
-          "home_team": "New York Yankees",
-          "log5": {
-            "pick": "Tampa Bay Rays",
-            "confidence": 0.5201
-          },
-          "research": {
-            "pick": "New York Yankees",
-            "confidence": 0.6134
-          },
-          "xgboost": {
-            "pick": "New York Yankees",
-            "confidence": 0.6739
-          },
-          "random_forest": {
-            "pick": "New York Yankees",
-            "confidence": 0.5659
-          },
-          "composite_pick": "New York Yankees",
-          "composite_confidence": 0.5833,
-          "vote_count": 3,
-          "total_votes": 4,
-          "actual_winner": null,
-          "correct": null
-        },
-        {
           "game_time": "7:40 PM ET",
           "away_team": "Miami Marlins",
           "home_team": "Chicago Cubs",
@@ -161,6 +107,60 @@
           "composite_pick": "Chicago Cubs",
           "composite_confidence": 0.5782,
           "vote_count": 4,
+          "total_votes": 4,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "1:05 PM ET",
+          "away_team": "Tampa Bay Rays",
+          "home_team": "New York Yankees",
+          "log5": {
+            "pick": "Tampa Bay Rays",
+            "confidence": 0.5201
+          },
+          "research": {
+            "pick": "New York Yankees",
+            "confidence": 0.6134
+          },
+          "xgboost": {
+            "pick": "New York Yankees",
+            "confidence": 0.6083
+          },
+          "random_forest": {
+            "pick": "New York Yankees",
+            "confidence": 0.568
+          },
+          "composite_pick": "New York Yankees",
+          "composite_confidence": 0.5674,
+          "vote_count": 3,
+          "total_votes": 4,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "7:05 PM ET",
+          "away_team": "Tampa Bay Rays",
+          "home_team": "New York Yankees",
+          "log5": {
+            "pick": "Tampa Bay Rays",
+            "confidence": 0.5201
+          },
+          "research": {
+            "pick": "New York Yankees",
+            "confidence": 0.6134
+          },
+          "xgboost": {
+            "pick": "New York Yankees",
+            "confidence": 0.6083
+          },
+          "random_forest": {
+            "pick": "New York Yankees",
+            "confidence": 0.568
+          },
+          "composite_pick": "New York Yankees",
+          "composite_confidence": 0.5674,
+          "vote_count": 3,
           "total_votes": 4,
           "actual_winner": null,
           "correct": null
@@ -248,33 +248,6 @@
         },
         {
           "game_time": "6:40 PM ET",
-          "away_team": "Washington Nationals",
-          "home_team": "Detroit Tigers",
-          "log5": {
-            "pick": "Detroit Tigers",
-            "confidence": 0.5264
-          },
-          "research": {
-            "pick": "Detroit Tigers",
-            "confidence": 0.5877
-          },
-          "xgboost": {
-            "pick": "Detroit Tigers",
-            "confidence": 0.5542
-          },
-          "random_forest": {
-            "pick": "Detroit Tigers",
-            "confidence": 0.5613
-          },
-          "composite_pick": "Detroit Tigers",
-          "composite_confidence": 0.5574,
-          "vote_count": 4,
-          "total_votes": 4,
-          "actual_winner": null,
-          "correct": null
-        },
-        {
-          "game_time": "6:40 PM ET",
           "away_team": "Milwaukee Brewers",
           "home_team": "Philadelphia Phillies",
           "log5": {
@@ -296,6 +269,33 @@
           "composite_pick": "Philadelphia Phillies",
           "composite_confidence": 0.5509,
           "vote_count": 3,
+          "total_votes": 4,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "6:40 PM ET",
+          "away_team": "Washington Nationals",
+          "home_team": "Detroit Tigers",
+          "log5": {
+            "pick": "Detroit Tigers",
+            "confidence": 0.5264
+          },
+          "research": {
+            "pick": "Detroit Tigers",
+            "confidence": 0.5877
+          },
+          "xgboost": {
+            "pick": "Detroit Tigers",
+            "confidence": 0.523
+          },
+          "random_forest": {
+            "pick": "Detroit Tigers",
+            "confidence": 0.5286
+          },
+          "composite_pick": "Detroit Tigers",
+          "composite_confidence": 0.5414,
+          "vote_count": 4,
           "total_votes": 4,
           "actual_winner": null,
           "correct": null
