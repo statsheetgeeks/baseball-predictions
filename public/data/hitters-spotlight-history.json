@@ -5,6 +5,25 @@
       "graded": false,
       "players": [
         {
+          "player": "Ketel Marte",
+          "team": "AZ",
+          "appearances": 4,
+          "models": [
+            "HR Model",
+            "Log5 Hit",
+            "ML HR",
+            "ML Hit"
+          ],
+          "ranks": {
+            "Log5 Hit": 4,
+            "ML Hit": 1,
+            "HR Model": 12,
+            "ML HR": 20
+          },
+          "actual_hit": null,
+          "actual_hr": null
+        },
+        {
           "player": "Corbin Carroll",
           "team": "AZ",
           "appearances": 3,
@@ -16,7 +35,7 @@
           "ranks": {
             "ML Hit": 9,
             "HR Model": 5,
-            "ML HR": 10
+            "ML HR": 11
           },
           "actual_hit": null,
           "actual_hr": null
@@ -33,24 +52,7 @@
           "ranks": {
             "Log5 Hit": 10,
             "ML Hit": 22,
-            "HR Model": 11
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Ketel Marte",
-          "team": "AZ",
-          "appearances": 3,
-          "models": [
-            "HR Model",
-            "Log5 Hit",
-            "ML Hit"
-          ],
-          "ranks": {
-            "Log5 Hit": 4,
-            "ML Hit": 1,
-            "HR Model": 10
+            "HR Model": 8
           },
           "actual_hit": null,
           "actual_hr": null
@@ -66,8 +68,8 @@
           ],
           "ranks": {
             "ML Hit": 18,
-            "HR Model": 2,
-            "ML HR": 13
+            "HR Model": 3,
+            "ML HR": 5
           },
           "actual_hit": null,
           "actual_hr": null
@@ -83,7 +85,7 @@
           ],
           "ranks": {
             "ML Hit": 8,
-            "HR Model": 3,
+            "HR Model": 2,
             "ML HR": 12
           },
           "actual_hit": null,
@@ -117,21 +119,6 @@
           "ranks": {
             "HR Model": 1,
             "ML HR": 7
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
-          "player": "Bobby Witt Jr.",
-          "team": "KC",
-          "appearances": 2,
-          "models": [
-            "Log5 Hit",
-            "ML HR"
-          ],
-          "ranks": {
-            "Log5 Hit": 14,
-            "ML HR": 25
           },
           "actual_hit": null,
           "actual_hr": null
@@ -176,7 +163,7 @@
           ],
           "ranks": {
             "Log5 Hit": 25,
-            "ML HR": 8
+            "ML HR": 6
           },
           "actual_hit": null,
           "actual_hr": null
@@ -191,7 +178,7 @@
           ],
           "ranks": {
             "ML Hit": 25,
-            "ML HR": 11
+            "ML HR": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -205,7 +192,7 @@
             "ML HR"
           ],
           "ranks": {
-            "HR Model": 14,
+            "HR Model": 11,
             "ML HR": 2
           },
           "actual_hit": null,
@@ -221,7 +208,7 @@
           ],
           "ranks": {
             "Log5 Hit": 18,
-            "HR Model": 12
+            "HR Model": 13
           },
           "actual_hit": null,
           "actual_hr": null
@@ -236,7 +223,7 @@
           ],
           "ranks": {
             "Log5 Hit": 17,
-            "HR Model": 13
+            "HR Model": 14
           },
           "actual_hit": null,
           "actual_hr": null
@@ -266,7 +253,7 @@
           ],
           "ranks": {
             "HR Model": 6,
-            "ML HR": 4
+            "ML HR": 3
           },
           "actual_hit": null,
           "actual_hr": null
@@ -296,7 +283,7 @@
           ],
           "ranks": {
             "ML Hit": 19,
-            "ML HR": 3
+            "ML HR": 4
           },
           "actual_hit": null,
           "actual_hr": null
@@ -332,21 +319,6 @@
           "actual_hr": null
         },
         {
-          "player": "Vinnie Pasquantino",
-          "team": "KC",
-          "appearances": 2,
-          "models": [
-            "ML HR",
-            "ML Hit"
-          ],
-          "ranks": {
-            "ML Hit": 15,
-            "ML HR": 19
-          },
-          "actual_hit": null,
-          "actual_hr": null
-        },
-        {
           "player": "Yordan Alvarez",
           "team": "HOU",
           "appearances": 2,
@@ -356,7 +328,7 @@
           ],
           "ranks": {
             "Log5 Hit": 1,
-            "ML HR": 6
+            "ML HR": 9
           },
           "actual_hit": null,
           "actual_hr": null
