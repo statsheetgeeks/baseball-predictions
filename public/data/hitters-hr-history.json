@@ -1,8 +1,13 @@
 {
   "records": [
     {
-      "date": "2026-09-27",
+      "date": "2026-09-28",
       "graded": false,
+      "predictions": []
+    },
+    {
+      "date": "2026-09-27",
+      "graded": true,
       "predictions": [
         {
           "rank": 1,
@@ -10,8 +15,8 @@
           "team": "NYM",
           "score": 75,
           "confidence": "high",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 2,
@@ -19,8 +24,8 @@
           "team": "CHC",
           "score": 74,
           "confidence": "high",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 3,
@@ -28,8 +33,8 @@
           "team": "HOU",
           "score": 73,
           "confidence": "high",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 4,
@@ -37,8 +42,8 @@
           "team": "CWS",
           "score": 73,
           "confidence": "high",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 5,
@@ -46,8 +51,8 @@
           "team": "CWS",
           "score": 72,
           "confidence": "high",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 1,
+          "correct": true
         },
         {
           "rank": 6,
@@ -55,8 +60,8 @@
           "team": "BOS",
           "score": 70,
           "confidence": "high",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 7,
@@ -64,8 +69,8 @@
           "team": "CIN",
           "score": 68,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 8,
@@ -73,8 +78,8 @@
           "team": "CHC",
           "score": 65,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 9,
@@ -82,8 +87,8 @@
           "team": "HOU",
           "score": 65,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 10,
@@ -91,8 +96,8 @@
           "team": "COL",
           "score": 64,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 11,
@@ -100,8 +105,8 @@
           "team": "PHI",
           "score": 63,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 12,
@@ -109,8 +114,8 @@
           "team": "LAD",
           "score": 63,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 13,
@@ -118,8 +123,8 @@
           "team": "CWS",
           "score": 63,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 14,
@@ -127,8 +132,8 @@
           "team": "MIA",
           "score": 63,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 1,
+          "correct": true
         },
         {
           "rank": 15,
@@ -136,8 +141,8 @@
           "team": "WSH",
           "score": 62,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 16,
@@ -145,8 +150,8 @@
           "team": "NYM",
           "score": 62,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 1,
+          "correct": true
         },
         {
           "rank": 17,
@@ -154,8 +159,8 @@
           "team": "TB",
           "score": 62,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 18,
@@ -163,8 +168,8 @@
           "team": "LAD",
           "score": 62,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 19,
@@ -172,8 +177,8 @@
           "team": "TOR",
           "score": 62,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 20,
@@ -181,8 +186,8 @@
           "team": "CIN",
           "score": 62,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 21,
@@ -190,8 +195,8 @@
           "team": "DET",
           "score": 62,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 1,
+          "correct": true
         },
         {
           "rank": 22,
@@ -199,8 +204,8 @@
           "team": "WSH",
           "score": 61,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         },
         {
           "rank": 23,
@@ -208,8 +213,8 @@
           "team": "CHC",
           "score": 61,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 2,
+          "correct": true
         },
         {
           "rank": 24,
@@ -217,8 +222,8 @@
           "team": "WSH",
           "score": 60,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 2,
+          "correct": true
         },
         {
           "rank": 25,
@@ -226,10 +231,35 @@
           "team": "TB",
           "score": 60,
           "confidence": "medium",
-          "actual_hr": null,
-          "correct": null
+          "actual_hr": 0,
+          "correct": false
         }
-      ]
+      ],
+      "summary": {
+        "total": 25,
+        "hr_count": 6,
+        "hit_rate_pct": 24.0,
+        "hr_players": [
+          "Randal Grichuk",
+          "Griffin Conine",
+          "Francisco Lindor",
+          "Eduardo Valencia",
+          "Alex Bregman",
+          "Andr\u00e9s Chaparro"
+        ],
+        "by_bucket": {
+          "70+": {
+            "predicted": 6,
+            "hr": 1,
+            "rate_pct": 16.7
+          },
+          "60-69": {
+            "predicted": 19,
+            "hr": 5,
+            "rate_pct": 26.3
+          }
+        }
+      }
     },
     {
       "date": "2026-09-26",
