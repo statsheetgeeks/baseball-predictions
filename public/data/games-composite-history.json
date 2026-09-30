@@ -1,6 +1,107 @@
 {
   "records": [
     {
+      "date": "2026-09-30",
+      "games": [
+        {
+          "game_time": "2:00 PM ET",
+          "away_team": "Philadelphia Phillies",
+          "home_team": "Atlanta Braves",
+          "log5": {
+            "pick": "Atlanta Braves",
+            "confidence": 0.5576
+          },
+          "research": {
+            "pick": "Atlanta Braves",
+            "confidence": 0.6201
+          },
+          "xgboost": {
+            "pick": "Atlanta Braves",
+            "confidence": 0.5929
+          },
+          "random_forest": null,
+          "composite_pick": "Atlanta Braves",
+          "composite_confidence": 0.5902,
+          "vote_count": 3,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Boston Red Sox",
+          "home_team": "New York Yankees",
+          "log5": {
+            "pick": "New York Yankees",
+            "confidence": 0.5611
+          },
+          "research": {
+            "pick": "New York Yankees",
+            "confidence": 0.5655
+          },
+          "xgboost": {
+            "pick": "New York Yankees",
+            "confidence": 0.6056
+          },
+          "random_forest": null,
+          "composite_pick": "New York Yankees",
+          "composite_confidence": 0.5774,
+          "vote_count": 3,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "10:00 PM ET",
+          "away_team": "Chicago Cubs",
+          "home_team": "San Diego Padres",
+          "log5": {
+            "pick": "San Diego Padres",
+            "confidence": 0.5325
+          },
+          "research": {
+            "pick": "San Diego Padres",
+            "confidence": 0.5501
+          },
+          "xgboost": {
+            "pick": "Chicago Cubs",
+            "confidence": 0.505
+          },
+          "random_forest": null,
+          "composite_pick": "San Diego Padres",
+          "composite_confidence": 0.5259,
+          "vote_count": 2,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "5:00 PM ET",
+          "away_team": "Chicago White Sox",
+          "home_team": "Houston Astros",
+          "log5": {
+            "pick": "Houston Astros",
+            "confidence": 0.5015
+          },
+          "research": {
+            "pick": "Houston Astros",
+            "confidence": 0.5004
+          },
+          "xgboost": {
+            "pick": "Chicago White Sox",
+            "confidence": 0.521
+          },
+          "random_forest": null,
+          "composite_pick": "Houston Astros",
+          "composite_confidence": 0.4936,
+          "vote_count": 2,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-09-29",
       "games": [
         {
@@ -24,8 +125,8 @@
           "composite_confidence": 0.5883,
           "vote_count": 3,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "New York Yankees",
+          "correct": true
         },
         {
           "game_time": "2:00 PM ET",
@@ -48,8 +149,8 @@
           "composite_confidence": 0.5679,
           "vote_count": 3,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Atlanta Braves",
+          "correct": true
         },
         {
           "game_time": "5:00 PM ET",
@@ -72,8 +173,8 @@
           "composite_confidence": 0.5177,
           "vote_count": 3,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Chicago White Sox",
+          "correct": false
         },
         {
           "game_time": "10:00 PM ET",
@@ -96,8 +197,8 @@
           "composite_confidence": 0.5057,
           "vote_count": 2,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "San Diego Padres",
+          "correct": true
         }
       ]
     },

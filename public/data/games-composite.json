@@ -1,31 +1,7 @@
 {
-  "updated": "2026-09-29T19:07:23.591083+00:00",
-  "date": "2026-09-29",
+  "updated": "2026-09-30T18:50:35.062454+00:00",
+  "date": "2026-09-30",
   "predictions": [
-    {
-      "game_time": "8:00 PM ET",
-      "away_team": "Boston Red Sox",
-      "home_team": "New York Yankees",
-      "log5": {
-        "pick": "New York Yankees",
-        "confidence": 0.5611
-      },
-      "research": {
-        "pick": "New York Yankees",
-        "confidence": 0.5655
-      },
-      "xgboost": {
-        "pick": "New York Yankees",
-        "confidence": 0.6383
-      },
-      "random_forest": null,
-      "composite_pick": "New York Yankees",
-      "composite_confidence": 0.5883,
-      "vote_count": 3,
-      "total_votes": 3,
-      "actual_winner": null,
-      "correct": null
-    },
     {
       "game_time": "2:00 PM ET",
       "away_team": "Philadelphia Phillies",
@@ -40,35 +16,35 @@
       },
       "xgboost": {
         "pick": "Atlanta Braves",
-        "confidence": 0.5261
+        "confidence": 0.5929
       },
       "random_forest": null,
       "composite_pick": "Atlanta Braves",
-      "composite_confidence": 0.5679,
+      "composite_confidence": 0.5902,
       "vote_count": 3,
       "total_votes": 3,
       "actual_winner": null,
       "correct": null
     },
     {
-      "game_time": "5:00 PM ET",
-      "away_team": "Chicago White Sox",
-      "home_team": "Houston Astros",
+      "game_time": "8:00 PM ET",
+      "away_team": "Boston Red Sox",
+      "home_team": "New York Yankees",
       "log5": {
-        "pick": "Houston Astros",
-        "confidence": 0.5015
+        "pick": "New York Yankees",
+        "confidence": 0.5611
       },
       "research": {
-        "pick": "Houston Astros",
-        "confidence": 0.5004
+        "pick": "New York Yankees",
+        "confidence": 0.5655
       },
       "xgboost": {
-        "pick": "Houston Astros",
-        "confidence": 0.5513
+        "pick": "New York Yankees",
+        "confidence": 0.6056
       },
       "random_forest": null,
-      "composite_pick": "Houston Astros",
-      "composite_confidence": 0.5177,
+      "composite_pick": "New York Yankees",
+      "composite_confidence": 0.5774,
       "vote_count": 3,
       "total_votes": 3,
       "actual_winner": null,
@@ -88,11 +64,35 @@
       },
       "xgboost": {
         "pick": "Chicago Cubs",
-        "confidence": 0.5655
+        "confidence": 0.505
       },
       "random_forest": null,
       "composite_pick": "San Diego Padres",
-      "composite_confidence": 0.5057,
+      "composite_confidence": 0.5259,
+      "vote_count": 2,
+      "total_votes": 3,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "5:00 PM ET",
+      "away_team": "Chicago White Sox",
+      "home_team": "Houston Astros",
+      "log5": {
+        "pick": "Houston Astros",
+        "confidence": 0.5015
+      },
+      "research": {
+        "pick": "Houston Astros",
+        "confidence": 0.5004
+      },
+      "xgboost": {
+        "pick": "Chicago White Sox",
+        "confidence": 0.521
+      },
+      "random_forest": null,
+      "composite_pick": "Houston Astros",
+      "composite_confidence": 0.4936,
       "vote_count": 2,
       "total_votes": 3,
       "actual_winner": null,
@@ -109,39 +109,39 @@
     },
     {
       "model": "Log5",
-      "wins": 990,
-      "losses": 813,
-      "total": 1803,
-      "pct": 0.5491
+      "wins": 993,
+      "losses": 814,
+      "total": 1807,
+      "pct": 0.5495
     },
     {
       "model": "Research",
-      "wins": 977,
-      "losses": 825,
-      "total": 1802,
-      "pct": 0.5422
+      "wins": 980,
+      "losses": 826,
+      "total": 1806,
+      "pct": 0.5426
     },
     {
       "model": "XGBoost",
-      "wins": 949,
-      "losses": 853,
-      "total": 1802,
+      "wins": 951,
+      "losses": 855,
+      "total": 1806,
       "pct": 0.5266
     }
   ],
   "yesterday": {
-    "date": "2026-09-28",
+    "date": "2026-09-29",
     "total": {
-      "wins": 0,
-      "losses": 0,
-      "total": 0
+      "wins": 3,
+      "losses": 1,
+      "total": 4
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 0,
-        "losses": 0,
-        "total": 0
+        "wins": 3,
+        "losses": 1,
+        "total": 4
       },
       {
         "band": "60-69%",
@@ -165,16 +165,16 @@
   },
   "alltime": {
     "total": {
-      "wins": 991,
-      "losses": 812,
-      "total": 1803
+      "wins": 994,
+      "losses": 813,
+      "total": 1807
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 821,
-        "losses": 692,
-        "total": 1513
+        "wins": 824,
+        "losses": 693,
+        "total": 1517
       },
       {
         "band": "60-69%",
