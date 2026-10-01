@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30T18:52:42Z",
+  "updated": "2026-10-01T19:18:58Z",
   "season": 2026,
   "exponent": 1.83,
   "teams": [
@@ -50,7 +50,7 @@
       "formula_wins": 94,
       "formula_losses": 67,
       "formula_diff": 1,
-      "formula_wp": 0.587,
+      "formula_wp": 0.586,
       "pythag_wins": 96,
       "pythag_losses": 65,
       "pythag_diff": 3,
@@ -126,7 +126,7 @@
       "formula_wins": 86,
       "formula_losses": 76,
       "formula_diff": -1,
-      "formula_wp": 0.533,
+      "formula_wp": 0.534,
       "pythag_wins": 90,
       "pythag_losses": 72,
       "pythag_diff": 3,
@@ -259,7 +259,7 @@
       "formula_wins": 81,
       "formula_losses": 81,
       "formula_diff": -4,
-      "formula_wp": 0.501,
+      "formula_wp": 0.502,
       "pythag_wins": 82,
       "pythag_losses": 80,
       "pythag_diff": -3,
@@ -294,10 +294,10 @@
       "actual_wins": 74,
       "actual_losses": 88,
       "actual_wp": 0.457,
-      "formula_wins": 79,
-      "formula_losses": 83,
-      "formula_diff": 5,
-      "formula_wp": 0.49,
+      "formula_wins": 80,
+      "formula_losses": 82,
+      "formula_diff": 6,
+      "formula_wp": 0.491,
       "pythag_wins": 78,
       "pythag_losses": 84,
       "pythag_diff": 4,
@@ -354,7 +354,7 @@
       "formula_wins": 78,
       "formula_losses": 84,
       "formula_diff": 1,
-      "formula_wp": 0.479,
+      "formula_wp": 0.48,
       "pythag_wins": 82,
       "pythag_losses": 80,
       "pythag_diff": 5,
@@ -363,25 +363,6 @@
       "elo_losses": 87,
       "elo_diff": -2,
       "elo_wp": 0.463
-    },
-    {
-      "team": "Baltimore Orioles",
-      "games": 161,
-      "actual_wins": 79,
-      "actual_losses": 82,
-      "actual_wp": 0.491,
-      "formula_wins": 76,
-      "formula_losses": 85,
-      "formula_diff": -3,
-      "formula_wp": 0.473,
-      "pythag_wins": 78,
-      "pythag_losses": 83,
-      "pythag_diff": -1,
-      "pythag_wp": 0.487,
-      "elo_wins": 81,
-      "elo_losses": 80,
-      "elo_diff": 2,
-      "elo_wp": 0.503
     },
     {
       "team": "Seattle Mariners",
@@ -403,14 +384,33 @@
       "elo_wp": 0.476
     },
     {
+      "team": "Baltimore Orioles",
+      "games": 161,
+      "actual_wins": 79,
+      "actual_losses": 82,
+      "actual_wp": 0.491,
+      "formula_wins": 76,
+      "formula_losses": 85,
+      "formula_diff": -3,
+      "formula_wp": 0.472,
+      "pythag_wins": 78,
+      "pythag_losses": 83,
+      "pythag_diff": -1,
+      "pythag_wp": 0.487,
+      "elo_wins": 81,
+      "elo_losses": 80,
+      "elo_diff": 2,
+      "elo_wp": 0.503
+    },
+    {
       "team": "Toronto Blue Jays",
       "games": 162,
       "actual_wins": 79,
       "actual_losses": 83,
       "actual_wp": 0.488,
-      "formula_wins": 77,
-      "formula_losses": 85,
-      "formula_diff": -2,
+      "formula_wins": 76,
+      "formula_losses": 86,
+      "formula_diff": -3,
       "formula_wp": 0.472,
       "pythag_wins": 76,
       "pythag_losses": 86,
@@ -576,7 +576,7 @@
   ],
   "accuracy": {
     "correlation": {
-      "formula": 0.8641,
+      "formula": 0.8639,
       "pythag": 0.8948,
       "elo": 0.9752
     },
@@ -586,7 +586,7 @@
       "elo": 0.0133
     },
     "rmse": {
-      "formula": 0.0338,
+      "formula": 0.0339,
       "pythag": 0.0302,
       "elo": 0.0165
     }

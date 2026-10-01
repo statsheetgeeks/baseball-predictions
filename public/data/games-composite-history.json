@@ -1,6 +1,35 @@
 {
   "records": [
     {
+      "date": "2026-10-01",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Philadelphia Phillies",
+          "home_team": "Atlanta Braves",
+          "log5": {
+            "pick": "Atlanta Braves",
+            "confidence": 0.5576
+          },
+          "research": {
+            "pick": "Atlanta Braves",
+            "confidence": 0.6201
+          },
+          "xgboost": {
+            "pick": "Atlanta Braves",
+            "confidence": 0.5728
+          },
+          "random_forest": null,
+          "composite_pick": "Atlanta Braves",
+          "composite_confidence": 0.5835,
+          "vote_count": 3,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-09-30",
       "games": [
         {
@@ -24,8 +53,8 @@
           "composite_confidence": 0.5902,
           "vote_count": 3,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Philadelphia Phillies",
+          "correct": false
         },
         {
           "game_time": "8:00 PM ET",
@@ -48,8 +77,8 @@
           "composite_confidence": 0.5774,
           "vote_count": 3,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "New York Yankees",
+          "correct": true
         },
         {
           "game_time": "10:00 PM ET",
@@ -72,8 +101,8 @@
           "composite_confidence": 0.5259,
           "vote_count": 2,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "San Diego Padres",
+          "correct": true
         },
         {
           "game_time": "5:00 PM ET",
@@ -96,8 +125,8 @@
           "composite_confidence": 0.4936,
           "vote_count": 2,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Chicago White Sox",
+          "correct": false
         }
       ]
     },

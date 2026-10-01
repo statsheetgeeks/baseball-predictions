@@ -1,6 +1,27 @@
 {
   "records": [
     {
+      "date": "2026-10-01",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Philadelphia Phillies",
+          "home_team": "Atlanta Braves",
+          "away_prob": 0.4272,
+          "home_prob": 0.5728,
+          "base_prob_home": 0.5454,
+          "home_sp": "Ray Kerr",
+          "home_sp_era": 0.71,
+          "away_sp": "Aaron Nola",
+          "away_sp_era": 2.3,
+          "pick": "Atlanta Braves",
+          "confidence": 0.5728,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-09-30",
       "games": [
         {
@@ -16,8 +37,8 @@
           "away_sp_era": 5.12,
           "pick": "Atlanta Braves",
           "confidence": 0.5929,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Philadelphia Phillies",
+          "correct": false
         },
         {
           "game_time": "5:00 PM ET",
@@ -32,8 +53,8 @@
           "away_sp_era": 1.44,
           "pick": "Chicago White Sox",
           "confidence": 0.521,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Chicago White Sox",
+          "correct": true
         },
         {
           "game_time": "8:00 PM ET",
@@ -48,8 +69,8 @@
           "away_sp_era": 2.37,
           "pick": "New York Yankees",
           "confidence": 0.6056,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "New York Yankees",
+          "correct": true
         },
         {
           "game_time": "10:00 PM ET",
@@ -64,8 +85,8 @@
           "away_sp_era": 5.27,
           "pick": "Chicago Cubs",
           "confidence": 0.505,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "San Diego Padres",
+          "correct": false
         }
       ]
     },
