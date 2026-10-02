@@ -1,40 +1,25 @@
 {
-  "updated": "2026-10-01T19:17:13.019270+00:00",
-  "date": "2026-10-01",
-  "predictions": [
-    {
-      "game_time": "8:00 PM ET",
-      "away_team": "Philadelphia Phillies",
-      "home_team": "Atlanta Braves",
-      "away_prob": 0.3799,
-      "home_prob": 0.6201,
-      "base_logr_home": 0.6514,
-      "base_xgb_home": 0.541,
-      "base_mlp_home": 0.4953,
-      "pick": "Atlanta Braves",
-      "confidence": 0.6201,
-      "actual_winner": null,
-      "correct": null
-    }
-  ],
+  "updated": "2026-10-02T18:58:32.961605+00:00",
+  "date": "2026-10-02",
+  "predictions": [],
   "yesterday": {
-    "date": "2026-09-30",
+    "date": "2026-10-01",
     "total": {
-      "wins": 2,
-      "losses": 2,
-      "total": 4
+      "wins": 1,
+      "losses": 0,
+      "total": 1
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 2,
-        "losses": 1,
-        "total": 3
+        "wins": 0,
+        "losses": 0,
+        "total": 0
       },
       {
         "band": "60-69%",
-        "wins": 0,
-        "losses": 1,
+        "wins": 1,
+        "losses": 0,
         "total": 1
       },
       {
@@ -53,9 +38,9 @@
   },
   "alltime": {
     "total": {
-      "wins": 982,
+      "wins": 983,
       "losses": 828,
-      "total": 1810
+      "total": 1811
     },
     "by_confidence": [
       {
@@ -66,9 +51,9 @@
       },
       {
         "band": "60-69%",
-        "wins": 172,
+        "wins": 173,
         "losses": 114,
-        "total": 286
+        "total": 287
       },
       {
         "band": "70-79%",

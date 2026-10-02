@@ -1,32 +1,7 @@
 {
-  "updated": "2026-10-01T19:17:26.770888+00:00",
-  "date": "2026-10-01",
-  "predictions": [
-    {
-      "game_time": "8:00 PM ET",
-      "away_team": "Philadelphia Phillies",
-      "home_team": "Atlanta Braves",
-      "log5": {
-        "pick": "Atlanta Braves",
-        "confidence": 0.5576
-      },
-      "research": {
-        "pick": "Atlanta Braves",
-        "confidence": 0.6201
-      },
-      "xgboost": {
-        "pick": "Atlanta Braves",
-        "confidence": 0.5728
-      },
-      "random_forest": null,
-      "composite_pick": "Atlanta Braves",
-      "composite_confidence": 0.5835,
-      "vote_count": 3,
-      "total_votes": 3,
-      "actual_winner": null,
-      "correct": null
-    }
-  ],
+  "updated": "2026-10-02T18:58:43.045865+00:00",
+  "date": "2026-10-02",
+  "predictions": [],
   "model_standings": [
     {
       "model": "Random Forest",
@@ -37,39 +12,39 @@
     },
     {
       "model": "Log5",
-      "wins": 995,
+      "wins": 996,
       "losses": 816,
-      "total": 1811,
-      "pct": 0.5494
+      "total": 1812,
+      "pct": 0.5497
     },
     {
       "model": "Research",
-      "wins": 982,
+      "wins": 983,
       "losses": 828,
-      "total": 1810,
-      "pct": 0.5425
+      "total": 1811,
+      "pct": 0.5428
     },
     {
       "model": "XGBoost",
-      "wins": 953,
+      "wins": 954,
       "losses": 857,
-      "total": 1810,
-      "pct": 0.5265
+      "total": 1811,
+      "pct": 0.5268
     }
   ],
   "yesterday": {
-    "date": "2026-09-30",
+    "date": "2026-10-01",
     "total": {
-      "wins": 2,
-      "losses": 2,
-      "total": 4
+      "wins": 1,
+      "losses": 0,
+      "total": 1
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 2,
-        "losses": 1,
-        "total": 3
+        "wins": 1,
+        "losses": 0,
+        "total": 1
       },
       {
         "band": "60-69%",
@@ -86,23 +61,23 @@
       {
         "band": "80%+",
         "wins": 0,
-        "losses": 1,
-        "total": 1
+        "losses": 0,
+        "total": 0
       }
     ]
   },
   "alltime": {
     "total": {
-      "wins": 996,
+      "wins": 997,
       "losses": 815,
-      "total": 1811
+      "total": 1812
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 826,
+        "wins": 827,
         "losses": 694,
-        "total": 1520
+        "total": 1521
       },
       {
         "band": "60-69%",
