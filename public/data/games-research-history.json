@@ -1,6 +1,67 @@
 {
   "records": [
     {
+      "date": "2026-10-03",
+      "games": [
+        {
+          "game_time": "1:00 PM ET",
+          "away_team": "Chicago White Sox",
+          "home_team": "Cleveland Guardians",
+          "away_prob": 0.438,
+          "home_prob": 0.562,
+          "base_logr_home": 0.5696,
+          "base_xgb_home": 0.5311,
+          "base_mlp_home": 0.8175,
+          "pick": "Cleveland Guardians",
+          "confidence": 0.562,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "4:00 PM ET",
+          "away_team": "Atlanta Braves",
+          "home_team": "Los Angeles Dodgers",
+          "away_prob": 0.3799,
+          "home_prob": 0.6201,
+          "base_logr_home": 0.6377,
+          "base_xgb_home": 0.6603,
+          "base_mlp_home": 0.7061,
+          "pick": "Los Angeles Dodgers",
+          "confidence": 0.6201,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "6:30 PM ET",
+          "away_team": "New York Yankees",
+          "home_team": "Tampa Bay Rays",
+          "away_prob": 0.4665,
+          "home_prob": 0.5335,
+          "base_logr_home": 0.5425,
+          "base_xgb_home": 0.5825,
+          "base_mlp_home": 0.5229,
+          "pick": "Tampa Bay Rays",
+          "confidence": 0.5335,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "8:30 PM ET",
+          "away_team": "San Diego Padres",
+          "home_team": "Milwaukee Brewers",
+          "away_prob": 0.3799,
+          "home_prob": 0.6201,
+          "base_logr_home": 0.6387,
+          "base_xgb_home": 0.5616,
+          "base_mlp_home": 0.6246,
+          "pick": "Milwaukee Brewers",
+          "confidence": 0.6201,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-02",
       "games": []
     },

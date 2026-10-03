@@ -1,7 +1,104 @@
 {
-  "updated": "2026-10-02T18:58:43.045865+00:00",
-  "date": "2026-10-02",
-  "predictions": [],
+  "updated": "2026-10-03T17:46:20.792450+00:00",
+  "date": "2026-10-03",
+  "predictions": [
+    {
+      "game_time": "8:30 PM ET",
+      "away_team": "San Diego Padres",
+      "home_team": "Milwaukee Brewers",
+      "log5": {
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.5966
+      },
+      "research": {
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.6201
+      },
+      "xgboost": {
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.6664
+      },
+      "random_forest": null,
+      "composite_pick": "Milwaukee Brewers",
+      "composite_confidence": 0.6277,
+      "vote_count": 3,
+      "total_votes": 3,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "6:30 PM ET",
+      "away_team": "New York Yankees",
+      "home_team": "Tampa Bay Rays",
+      "log5": {
+        "pick": "Tampa Bay Rays",
+        "confidence": 0.5482
+      },
+      "research": {
+        "pick": "Tampa Bay Rays",
+        "confidence": 0.5335
+      },
+      "xgboost": {
+        "pick": "Tampa Bay Rays",
+        "confidence": 0.7076
+      },
+      "random_forest": null,
+      "composite_pick": "Tampa Bay Rays",
+      "composite_confidence": 0.5964,
+      "vote_count": 3,
+      "total_votes": 3,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "4:00 PM ET",
+      "away_team": "Atlanta Braves",
+      "home_team": "Los Angeles Dodgers",
+      "log5": {
+        "pick": "Los Angeles Dodgers",
+        "confidence": 0.5585
+      },
+      "research": {
+        "pick": "Los Angeles Dodgers",
+        "confidence": 0.6201
+      },
+      "xgboost": {
+        "pick": "Los Angeles Dodgers",
+        "confidence": 0.5793
+      },
+      "random_forest": null,
+      "composite_pick": "Los Angeles Dodgers",
+      "composite_confidence": 0.586,
+      "vote_count": 3,
+      "total_votes": 3,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "1:00 PM ET",
+      "away_team": "Chicago White Sox",
+      "home_team": "Cleveland Guardians",
+      "log5": {
+        "pick": "Cleveland Guardians",
+        "confidence": 0.5262
+      },
+      "research": {
+        "pick": "Cleveland Guardians",
+        "confidence": 0.562
+      },
+      "xgboost": {
+        "pick": "Cleveland Guardians",
+        "confidence": 0.5476
+      },
+      "random_forest": null,
+      "composite_pick": "Cleveland Guardians",
+      "composite_confidence": 0.5453,
+      "vote_count": 3,
+      "total_votes": 3,
+      "actual_winner": null,
+      "correct": null
+    }
+  ],
   "model_standings": [
     {
       "model": "Random Forest",
@@ -33,18 +130,18 @@
     }
   ],
   "yesterday": {
-    "date": "2026-10-01",
+    "date": "2026-10-02",
     "total": {
-      "wins": 1,
+      "wins": 0,
       "losses": 0,
-      "total": 1
+      "total": 0
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 1,
+        "wins": 0,
         "losses": 0,
-        "total": 1
+        "total": 0
       },
       {
         "band": "60-69%",
