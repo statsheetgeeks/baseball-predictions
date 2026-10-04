@@ -1,6 +1,43 @@
 {
   "records": [
     {
+      "date": "2026-10-04",
+      "games": [
+        {
+          "game_time": "4:00 PM ET",
+          "away_team": "San Diego Padres",
+          "home_team": "Milwaukee Brewers",
+          "away_prob": 0.3493,
+          "home_prob": 0.6507,
+          "base_prob_home": 0.6357,
+          "home_sp": "Logan Henderson",
+          "home_sp_era": 2.17,
+          "away_sp": "Michael King",
+          "away_sp_era": 3.1,
+          "pick": "Milwaukee Brewers",
+          "confidence": 0.6507,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Atlanta Braves",
+          "home_team": "Los Angeles Dodgers",
+          "away_prob": 0.3997,
+          "home_prob": 0.6003,
+          "base_prob_home": 0.5457,
+          "home_sp": "Blake Snell",
+          "home_sp_era": 1.01,
+          "away_sp": "TBD",
+          "away_sp_era": null,
+          "pick": "Los Angeles Dodgers",
+          "confidence": 0.6003,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-03",
       "games": [
         {
@@ -16,8 +53,8 @@
           "away_sp_era": 4.2,
           "pick": "Cleveland Guardians",
           "confidence": 0.5476,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Chicago White Sox",
+          "correct": false
         },
         {
           "game_time": "4:00 PM ET",
@@ -32,8 +69,8 @@
           "away_sp_era": 4.2,
           "pick": "Los Angeles Dodgers",
           "confidence": 0.5793,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Los Angeles Dodgers",
+          "correct": true
         },
         {
           "game_time": "6:30 PM ET",
@@ -48,8 +85,8 @@
           "away_sp_era": 5.08,
           "pick": "Tampa Bay Rays",
           "confidence": 0.7076,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Tampa Bay Rays",
+          "correct": true
         },
         {
           "game_time": "8:30 PM ET",
@@ -64,8 +101,8 @@
           "away_sp_era": 4.21,
           "pick": "Milwaukee Brewers",
           "confidence": 0.6664,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Milwaukee Brewers",
+          "correct": true
         }
       ]
     },

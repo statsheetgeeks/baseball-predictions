@@ -1,6 +1,59 @@
 {
   "records": [
     {
+      "date": "2026-10-04",
+      "games": [
+        {
+          "game_time": "4:00 PM ET",
+          "away_team": "San Diego Padres",
+          "home_team": "Milwaukee Brewers",
+          "log5": {
+            "pick": "Milwaukee Brewers",
+            "confidence": 0.5966
+          },
+          "research": {
+            "pick": "Milwaukee Brewers",
+            "confidence": 0.6201
+          },
+          "xgboost": {
+            "pick": "Milwaukee Brewers",
+            "confidence": 0.6507
+          },
+          "random_forest": null,
+          "composite_pick": "Milwaukee Brewers",
+          "composite_confidence": 0.6225,
+          "vote_count": 3,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Atlanta Braves",
+          "home_team": "Los Angeles Dodgers",
+          "log5": {
+            "pick": "Los Angeles Dodgers",
+            "confidence": 0.5585
+          },
+          "research": {
+            "pick": "Los Angeles Dodgers",
+            "confidence": 0.6201
+          },
+          "xgboost": {
+            "pick": "Los Angeles Dodgers",
+            "confidence": 0.6003
+          },
+          "random_forest": null,
+          "composite_pick": "Los Angeles Dodgers",
+          "composite_confidence": 0.593,
+          "vote_count": 3,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-03",
       "games": [
         {
@@ -24,8 +77,8 @@
           "composite_confidence": 0.6277,
           "vote_count": 3,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Milwaukee Brewers",
+          "correct": true
         },
         {
           "game_time": "6:30 PM ET",
@@ -48,8 +101,8 @@
           "composite_confidence": 0.5964,
           "vote_count": 3,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Tampa Bay Rays",
+          "correct": true
         },
         {
           "game_time": "4:00 PM ET",
@@ -72,8 +125,8 @@
           "composite_confidence": 0.586,
           "vote_count": 3,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Los Angeles Dodgers",
+          "correct": true
         },
         {
           "game_time": "1:00 PM ET",
@@ -96,8 +149,8 @@
           "composite_confidence": 0.5453,
           "vote_count": 3,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Chicago White Sox",
+          "correct": false
         }
       ]
     },

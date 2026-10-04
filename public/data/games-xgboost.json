@@ -1,97 +1,65 @@
 {
-  "updated": "2026-10-03T17:46:14.797694+00:00",
-  "date": "2026-10-03",
+  "updated": "2026-10-04T17:59:18.737590+00:00",
+  "date": "2026-10-04",
   "predictions": [
     {
-      "game_time": "1:00 PM ET",
-      "away_team": "Chicago White Sox",
-      "home_team": "Cleveland Guardians",
-      "away_prob": 0.4524,
-      "home_prob": 0.5476,
-      "base_prob_home": 0.5302,
-      "home_sp": "Parker Messick",
-      "home_sp_era": 3.2,
-      "away_sp": "Hagen Smith",
-      "away_sp_era": 4.2,
-      "pick": "Cleveland Guardians",
-      "confidence": 0.5476,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
       "game_time": "4:00 PM ET",
-      "away_team": "Atlanta Braves",
-      "home_team": "Los Angeles Dodgers",
-      "away_prob": 0.4207,
-      "home_prob": 0.5793,
-      "base_prob_home": 0.5457,
-      "home_sp": "Tarik Skubal",
-      "home_sp_era": 2.25,
-      "away_sp": "Dylan Dodd",
-      "away_sp_era": 4.2,
-      "pick": "Los Angeles Dodgers",
-      "confidence": 0.5793,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
-      "game_time": "6:30 PM ET",
-      "away_team": "New York Yankees",
-      "home_team": "Tampa Bay Rays",
-      "away_prob": 0.2924,
-      "home_prob": 0.7076,
-      "base_prob_home": 0.652,
-      "home_sp": "Drew Rasmussen",
-      "home_sp_era": 1.42,
-      "away_sp": "Gerrit Cole",
-      "away_sp_era": 5.08,
-      "pick": "Tampa Bay Rays",
-      "confidence": 0.7076,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
-      "game_time": "8:30 PM ET",
       "away_team": "San Diego Padres",
       "home_team": "Milwaukee Brewers",
-      "away_prob": 0.3336,
-      "home_prob": 0.6664,
+      "away_prob": 0.3493,
+      "home_prob": 0.6507,
       "base_prob_home": 0.6357,
-      "home_sp": "Jacob Misiorowski",
-      "home_sp_era": 2.28,
-      "away_sp": "Robbie Ray",
-      "away_sp_era": 4.21,
+      "home_sp": "Logan Henderson",
+      "home_sp_era": 2.17,
+      "away_sp": "Michael King",
+      "away_sp_era": 3.1,
       "pick": "Milwaukee Brewers",
-      "confidence": 0.6664,
+      "confidence": 0.6507,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "8:00 PM ET",
+      "away_team": "Atlanta Braves",
+      "home_team": "Los Angeles Dodgers",
+      "away_prob": 0.3997,
+      "home_prob": 0.6003,
+      "base_prob_home": 0.5457,
+      "home_sp": "Blake Snell",
+      "home_sp_era": 1.01,
+      "away_sp": "TBD",
+      "away_sp_era": null,
+      "pick": "Los Angeles Dodgers",
+      "confidence": 0.6003,
       "actual_winner": null,
       "correct": null
     }
   ],
   "yesterday": {
-    "date": "2026-10-02",
+    "date": "2026-10-03",
     "total": {
-      "wins": 0,
-      "losses": 0,
-      "total": 0
+      "wins": 3,
+      "losses": 1,
+      "total": 4
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 0,
-        "losses": 0,
-        "total": 0
+        "wins": 1,
+        "losses": 1,
+        "total": 2
       },
       {
         "band": "60-69%",
-        "wins": 0,
+        "wins": 1,
         "losses": 0,
-        "total": 0
+        "total": 1
       },
       {
         "band": "70-79%",
-        "wins": 0,
+        "wins": 1,
         "losses": 0,
-        "total": 0
+        "total": 1
       },
       {
         "band": "80%+",
@@ -103,28 +71,28 @@
   },
   "alltime": {
     "total": {
-      "wins": 954,
-      "losses": 857,
-      "total": 1811
+      "wins": 957,
+      "losses": 858,
+      "total": 1815
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 627,
-        "losses": 603,
-        "total": 1230
+        "wins": 628,
+        "losses": 604,
+        "total": 1232
       },
       {
         "band": "60-69%",
-        "wins": 277,
+        "wins": 278,
         "losses": 219,
-        "total": 496
+        "total": 497
       },
       {
         "band": "70-79%",
-        "wins": 47,
+        "wins": 48,
         "losses": 31,
-        "total": 78
+        "total": 79
       },
       {
         "band": "80%+",
