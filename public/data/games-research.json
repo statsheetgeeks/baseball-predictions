@@ -1,54 +1,54 @@
 {
-  "updated": "2026-10-04T17:59:12.918093+00:00",
-  "date": "2026-10-04",
+  "updated": "2026-10-05T21:22:34.630377+00:00",
+  "date": "2026-10-05",
   "predictions": [
     {
-      "game_time": "4:00 PM ET",
-      "away_team": "San Diego Padres",
-      "home_team": "Milwaukee Brewers",
-      "away_prob": 0.3799,
-      "home_prob": 0.6201,
-      "base_logr_home": 0.6387,
-      "base_xgb_home": 0.5616,
-      "base_mlp_home": 0.6246,
-      "pick": "Milwaukee Brewers",
-      "confidence": 0.6201,
+      "game_time": "5:00 PM ET",
+      "away_team": "Chicago White Sox",
+      "home_team": "Cleveland Guardians",
+      "away_prob": 0.438,
+      "home_prob": 0.562,
+      "base_logr_home": 0.5696,
+      "base_xgb_home": 0.5311,
+      "base_mlp_home": 0.8175,
+      "pick": "Cleveland Guardians",
+      "confidence": 0.562,
       "actual_winner": null,
       "correct": null
     },
     {
       "game_time": "8:00 PM ET",
-      "away_team": "Atlanta Braves",
-      "home_team": "Los Angeles Dodgers",
-      "away_prob": 0.3799,
-      "home_prob": 0.6201,
-      "base_logr_home": 0.6377,
-      "base_xgb_home": 0.6603,
-      "base_mlp_home": 0.7061,
-      "pick": "Los Angeles Dodgers",
-      "confidence": 0.6201,
+      "away_team": "New York Yankees",
+      "home_team": "Tampa Bay Rays",
+      "away_prob": 0.4665,
+      "home_prob": 0.5335,
+      "base_logr_home": 0.5425,
+      "base_xgb_home": 0.5825,
+      "base_mlp_home": 0.5229,
+      "pick": "Tampa Bay Rays",
+      "confidence": 0.5335,
       "actual_winner": null,
       "correct": null
     }
   ],
   "yesterday": {
-    "date": "2026-10-03",
+    "date": "2026-10-04",
     "total": {
-      "wins": 3,
+      "wins": 1,
       "losses": 1,
-      "total": 4
+      "total": 2
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 1,
-        "losses": 1,
-        "total": 2
+        "wins": 0,
+        "losses": 0,
+        "total": 0
       },
       {
         "band": "60-69%",
-        "wins": 2,
-        "losses": 0,
+        "wins": 1,
+        "losses": 1,
         "total": 2
       },
       {
@@ -67,9 +67,9 @@
   },
   "alltime": {
     "total": {
-      "wins": 986,
-      "losses": 829,
-      "total": 1815
+      "wins": 987,
+      "losses": 830,
+      "total": 1817
     },
     "by_confidence": [
       {
@@ -80,9 +80,9 @@
       },
       {
         "band": "60-69%",
-        "wins": 175,
-        "losses": 114,
-        "total": 289
+        "wins": 176,
+        "losses": 115,
+        "total": 291
       },
       {
         "band": "70-79%",

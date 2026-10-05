@@ -1,50 +1,50 @@
 {
-  "updated": "2026-10-04T17:59:24.784946+00:00",
-  "date": "2026-10-04",
+  "updated": "2026-10-05T21:22:48.723717+00:00",
+  "date": "2026-10-05",
   "predictions": [
     {
-      "game_time": "4:00 PM ET",
-      "away_team": "San Diego Padres",
-      "home_team": "Milwaukee Brewers",
+      "game_time": "8:00 PM ET",
+      "away_team": "New York Yankees",
+      "home_team": "Tampa Bay Rays",
       "log5": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.5966
+        "pick": "Tampa Bay Rays",
+        "confidence": 0.5482
       },
       "research": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.6201
+        "pick": "Tampa Bay Rays",
+        "confidence": 0.5335
       },
       "xgboost": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.6507
+        "pick": "Tampa Bay Rays",
+        "confidence": 0.6558
       },
       "random_forest": null,
-      "composite_pick": "Milwaukee Brewers",
-      "composite_confidence": 0.6225,
+      "composite_pick": "Tampa Bay Rays",
+      "composite_confidence": 0.5792,
       "vote_count": 3,
       "total_votes": 3,
       "actual_winner": null,
       "correct": null
     },
     {
-      "game_time": "8:00 PM ET",
-      "away_team": "Atlanta Braves",
-      "home_team": "Los Angeles Dodgers",
+      "game_time": "5:00 PM ET",
+      "away_team": "Chicago White Sox",
+      "home_team": "Cleveland Guardians",
       "log5": {
-        "pick": "Los Angeles Dodgers",
-        "confidence": 0.5585
+        "pick": "Cleveland Guardians",
+        "confidence": 0.5262
       },
       "research": {
-        "pick": "Los Angeles Dodgers",
-        "confidence": 0.6201
+        "pick": "Cleveland Guardians",
+        "confidence": 0.562
       },
       "xgboost": {
-        "pick": "Los Angeles Dodgers",
-        "confidence": 0.6003
+        "pick": "Cleveland Guardians",
+        "confidence": 0.581
       },
       "random_forest": null,
-      "composite_pick": "Los Angeles Dodgers",
-      "composite_confidence": 0.593,
+      "composite_pick": "Cleveland Guardians",
+      "composite_confidence": 0.5564,
       "vote_count": 3,
       "total_votes": 3,
       "actual_winner": null,
@@ -61,39 +61,39 @@
     },
     {
       "model": "Log5",
-      "wins": 999,
-      "losses": 817,
-      "total": 1816,
+      "wins": 1000,
+      "losses": 818,
+      "total": 1818,
       "pct": 0.5501
     },
     {
       "model": "Research",
-      "wins": 986,
-      "losses": 829,
-      "total": 1815,
-      "pct": 0.5433
+      "wins": 987,
+      "losses": 830,
+      "total": 1817,
+      "pct": 0.5432
     },
     {
       "model": "XGBoost",
-      "wins": 957,
-      "losses": 858,
-      "total": 1815,
-      "pct": 0.5273
+      "wins": 958,
+      "losses": 859,
+      "total": 1817,
+      "pct": 0.5272
     }
   ],
   "yesterday": {
-    "date": "2026-10-03",
+    "date": "2026-10-04",
     "total": {
-      "wins": 3,
+      "wins": 1,
       "losses": 1,
-      "total": 4
+      "total": 2
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 2,
+        "wins": 0,
         "losses": 1,
-        "total": 3
+        "total": 1
       },
       {
         "band": "60-69%",
@@ -117,22 +117,22 @@
   },
   "alltime": {
     "total": {
-      "wins": 1000,
-      "losses": 816,
-      "total": 1816
+      "wins": 1001,
+      "losses": 817,
+      "total": 1818
     },
     "by_confidence": [
       {
         "band": "50-59%",
         "wins": 829,
-        "losses": 695,
-        "total": 1524
+        "losses": 696,
+        "total": 1525
       },
       {
         "band": "60-69%",
-        "wins": 141,
+        "wins": 142,
         "losses": 94,
-        "total": 235
+        "total": 236
       },
       {
         "band": "70-79%",

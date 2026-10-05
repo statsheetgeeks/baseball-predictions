@@ -1,65 +1,65 @@
 {
-  "updated": "2026-10-04T17:59:18.737590+00:00",
-  "date": "2026-10-04",
+  "updated": "2026-10-05T21:22:41.782931+00:00",
+  "date": "2026-10-05",
   "predictions": [
     {
-      "game_time": "4:00 PM ET",
-      "away_team": "San Diego Padres",
-      "home_team": "Milwaukee Brewers",
-      "away_prob": 0.3493,
-      "home_prob": 0.6507,
-      "base_prob_home": 0.6357,
-      "home_sp": "Logan Henderson",
-      "home_sp_era": 2.17,
-      "away_sp": "Michael King",
-      "away_sp_era": 3.1,
-      "pick": "Milwaukee Brewers",
-      "confidence": 0.6507,
+      "game_time": "5:00 PM ET",
+      "away_team": "Chicago White Sox",
+      "home_team": "Cleveland Guardians",
+      "away_prob": 0.419,
+      "home_prob": 0.581,
+      "base_prob_home": 0.5302,
+      "home_sp": "Gavin Williams",
+      "home_sp_era": 2.54,
+      "away_sp": "Anthony Kay",
+      "away_sp_era": 5.48,
+      "pick": "Cleveland Guardians",
+      "confidence": 0.581,
       "actual_winner": null,
       "correct": null
     },
     {
       "game_time": "8:00 PM ET",
-      "away_team": "Atlanta Braves",
-      "home_team": "Los Angeles Dodgers",
-      "away_prob": 0.3997,
-      "home_prob": 0.6003,
-      "base_prob_home": 0.5457,
-      "home_sp": "Blake Snell",
-      "home_sp_era": 1.01,
-      "away_sp": "TBD",
-      "away_sp_era": null,
-      "pick": "Los Angeles Dodgers",
-      "confidence": 0.6003,
+      "away_team": "New York Yankees",
+      "home_team": "Tampa Bay Rays",
+      "away_prob": 0.3442,
+      "home_prob": 0.6558,
+      "base_prob_home": 0.652,
+      "home_sp": "Freddy Peralta",
+      "home_sp_era": 0.96,
+      "away_sp": "Cam Schlittler",
+      "away_sp_era": 1.2,
+      "pick": "Tampa Bay Rays",
+      "confidence": 0.6558,
       "actual_winner": null,
       "correct": null
     }
   ],
   "yesterday": {
-    "date": "2026-10-03",
+    "date": "2026-10-04",
     "total": {
-      "wins": 3,
+      "wins": 1,
       "losses": 1,
-      "total": 4
+      "total": 2
     },
     "by_confidence": [
       {
         "band": "50-59%",
+        "wins": 0,
+        "losses": 0,
+        "total": 0
+      },
+      {
+        "band": "60-69%",
         "wins": 1,
         "losses": 1,
         "total": 2
       },
       {
-        "band": "60-69%",
-        "wins": 1,
-        "losses": 0,
-        "total": 1
-      },
-      {
         "band": "70-79%",
-        "wins": 1,
+        "wins": 0,
         "losses": 0,
-        "total": 1
+        "total": 0
       },
       {
         "band": "80%+",
@@ -71,9 +71,9 @@
   },
   "alltime": {
     "total": {
-      "wins": 957,
-      "losses": 858,
-      "total": 1815
+      "wins": 958,
+      "losses": 859,
+      "total": 1817
     },
     "by_confidence": [
       {
@@ -84,9 +84,9 @@
       },
       {
         "band": "60-69%",
-        "wins": 278,
-        "losses": 219,
-        "total": 497
+        "wins": 279,
+        "losses": 220,
+        "total": 499
       },
       {
         "band": "70-79%",
