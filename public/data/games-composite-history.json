@@ -1,6 +1,59 @@
 {
   "records": [
     {
+      "date": "2026-10-06",
+      "games": [
+        {
+          "game_time": "6:00 PM ET",
+          "away_team": "Los Angeles Dodgers",
+          "home_team": "Atlanta Braves",
+          "log5": {
+            "pick": "Los Angeles Dodgers",
+            "confidence": 0.5185
+          },
+          "research": {
+            "pick": "Atlanta Braves",
+            "confidence": 0.6134
+          },
+          "xgboost": {
+            "pick": "Atlanta Braves",
+            "confidence": 0.5434
+          },
+          "random_forest": null,
+          "composite_pick": "Atlanta Braves",
+          "composite_confidence": 0.5461,
+          "vote_count": 2,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "9:30 PM ET",
+          "away_team": "Milwaukee Brewers",
+          "home_team": "San Diego Padres",
+          "log5": {
+            "pick": "Milwaukee Brewers",
+            "confidence": 0.5566
+          },
+          "research": {
+            "pick": "San Diego Padres",
+            "confidence": 0.5335
+          },
+          "xgboost": {
+            "pick": "Milwaukee Brewers",
+            "confidence": 0.5374
+          },
+          "random_forest": null,
+          "composite_pick": "Milwaukee Brewers",
+          "composite_confidence": 0.5202,
+          "vote_count": 2,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-05",
       "games": [
         {
@@ -24,8 +77,8 @@
           "composite_confidence": 0.5792,
           "vote_count": 3,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Tampa Bay Rays",
+          "correct": true
         },
         {
           "game_time": "5:00 PM ET",
@@ -48,8 +101,8 @@
           "composite_confidence": 0.5564,
           "vote_count": 3,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Chicago White Sox",
+          "correct": false
         }
       ]
     },

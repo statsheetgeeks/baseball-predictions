@@ -1,51 +1,51 @@
 {
-  "updated": "2026-10-05T21:22:48.723717+00:00",
-  "date": "2026-10-05",
+  "updated": "2026-10-06T19:19:17.279684+00:00",
+  "date": "2026-10-06",
   "predictions": [
     {
-      "game_time": "8:00 PM ET",
-      "away_team": "New York Yankees",
-      "home_team": "Tampa Bay Rays",
+      "game_time": "6:00 PM ET",
+      "away_team": "Los Angeles Dodgers",
+      "home_team": "Atlanta Braves",
       "log5": {
-        "pick": "Tampa Bay Rays",
-        "confidence": 0.5482
+        "pick": "Los Angeles Dodgers",
+        "confidence": 0.5185
       },
       "research": {
-        "pick": "Tampa Bay Rays",
-        "confidence": 0.5335
+        "pick": "Atlanta Braves",
+        "confidence": 0.6134
       },
       "xgboost": {
-        "pick": "Tampa Bay Rays",
-        "confidence": 0.6558
+        "pick": "Atlanta Braves",
+        "confidence": 0.5434
       },
       "random_forest": null,
-      "composite_pick": "Tampa Bay Rays",
-      "composite_confidence": 0.5792,
-      "vote_count": 3,
+      "composite_pick": "Atlanta Braves",
+      "composite_confidence": 0.5461,
+      "vote_count": 2,
       "total_votes": 3,
       "actual_winner": null,
       "correct": null
     },
     {
-      "game_time": "5:00 PM ET",
-      "away_team": "Chicago White Sox",
-      "home_team": "Cleveland Guardians",
+      "game_time": "9:30 PM ET",
+      "away_team": "Milwaukee Brewers",
+      "home_team": "San Diego Padres",
       "log5": {
-        "pick": "Cleveland Guardians",
-        "confidence": 0.5262
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.5566
       },
       "research": {
-        "pick": "Cleveland Guardians",
-        "confidence": 0.562
+        "pick": "San Diego Padres",
+        "confidence": 0.5335
       },
       "xgboost": {
-        "pick": "Cleveland Guardians",
-        "confidence": 0.581
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.5374
       },
       "random_forest": null,
-      "composite_pick": "Cleveland Guardians",
-      "composite_confidence": 0.5564,
-      "vote_count": 3,
+      "composite_pick": "Milwaukee Brewers",
+      "composite_confidence": 0.5202,
+      "vote_count": 2,
       "total_votes": 3,
       "actual_winner": null,
       "correct": null
@@ -61,28 +61,28 @@
     },
     {
       "model": "Log5",
-      "wins": 1000,
-      "losses": 818,
-      "total": 1818,
-      "pct": 0.5501
+      "wins": 1001,
+      "losses": 819,
+      "total": 1820,
+      "pct": 0.55
     },
     {
       "model": "Research",
-      "wins": 987,
-      "losses": 830,
-      "total": 1817,
+      "wins": 988,
+      "losses": 831,
+      "total": 1819,
       "pct": 0.5432
     },
     {
       "model": "XGBoost",
-      "wins": 958,
-      "losses": 859,
-      "total": 1817,
+      "wins": 959,
+      "losses": 860,
+      "total": 1819,
       "pct": 0.5272
     }
   ],
   "yesterday": {
-    "date": "2026-10-04",
+    "date": "2026-10-05",
     "total": {
       "wins": 1,
       "losses": 1,
@@ -91,15 +91,15 @@
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 0,
+        "wins": 1,
         "losses": 1,
-        "total": 1
+        "total": 2
       },
       {
         "band": "60-69%",
-        "wins": 1,
+        "wins": 0,
         "losses": 0,
-        "total": 1
+        "total": 0
       },
       {
         "band": "70-79%",
@@ -117,16 +117,16 @@
   },
   "alltime": {
     "total": {
-      "wins": 1001,
-      "losses": 817,
-      "total": 1818
+      "wins": 1002,
+      "losses": 818,
+      "total": 1820
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 829,
-        "losses": 696,
-        "total": 1525
+        "wins": 830,
+        "losses": 697,
+        "total": 1527
       },
       {
         "band": "60-69%",
