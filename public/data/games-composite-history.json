@@ -1,6 +1,107 @@
 {
   "records": [
     {
+      "date": "2026-10-07",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Tampa Bay Rays",
+          "home_team": "New York Yankees",
+          "log5": {
+            "pick": "Tampa Bay Rays",
+            "confidence": 0.5082
+          },
+          "research": {
+            "pick": "New York Yankees",
+            "confidence": 0.5651
+          },
+          "xgboost": {
+            "pick": "New York Yankees",
+            "confidence": 0.6258
+          },
+          "random_forest": null,
+          "composite_pick": "New York Yankees",
+          "composite_confidence": 0.5609,
+          "vote_count": 2,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "6:00 PM ET",
+          "away_team": "Los Angeles Dodgers",
+          "home_team": "Atlanta Braves",
+          "log5": {
+            "pick": "Los Angeles Dodgers",
+            "confidence": 0.5185
+          },
+          "research": {
+            "pick": "Atlanta Braves",
+            "confidence": 0.6134
+          },
+          "xgboost": {
+            "pick": "Atlanta Braves",
+            "confidence": 0.5766
+          },
+          "random_forest": null,
+          "composite_pick": "Atlanta Braves",
+          "composite_confidence": 0.5572,
+          "vote_count": 2,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "4:00 PM ET",
+          "away_team": "Cleveland Guardians",
+          "home_team": "Chicago White Sox",
+          "log5": {
+            "pick": "Chicago White Sox",
+            "confidence": 0.5138
+          },
+          "research": {
+            "pick": "Chicago White Sox",
+            "confidence": 0.5759
+          },
+          "xgboost": {
+            "pick": "Chicago White Sox",
+            "confidence": 0.5817
+          },
+          "random_forest": null,
+          "composite_pick": "Chicago White Sox",
+          "composite_confidence": 0.5571,
+          "vote_count": 3,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "10:00 PM ET",
+          "away_team": "Milwaukee Brewers",
+          "home_team": "San Diego Padres",
+          "log5": {
+            "pick": "Milwaukee Brewers",
+            "confidence": 0.5566
+          },
+          "research": {
+            "pick": "San Diego Padres",
+            "confidence": 0.5335
+          },
+          "xgboost": {
+            "pick": "Milwaukee Brewers",
+            "confidence": 0.5763
+          },
+          "random_forest": null,
+          "composite_pick": "Milwaukee Brewers",
+          "composite_confidence": 0.5331,
+          "vote_count": 2,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-06",
       "games": [
         {
@@ -24,8 +125,8 @@
           "composite_confidence": 0.5461,
           "vote_count": 2,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Los Angeles Dodgers",
+          "correct": false
         },
         {
           "game_time": "9:30 PM ET",
@@ -48,8 +149,8 @@
           "composite_confidence": 0.5202,
           "vote_count": 2,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "San Diego Padres",
+          "correct": false
         }
       ]
     },

@@ -1,59 +1,91 @@
 {
-  "updated": "2026-10-06T19:19:07.273143+00:00",
-  "date": "2026-10-06",
+  "updated": "2026-10-07T19:44:29.667909+00:00",
+  "date": "2026-10-07",
   "predictions": [
     {
-      "game_time": "6:00 PM ET",
-      "away_team": "Los Angeles Dodgers",
-      "home_team": "Atlanta Braves",
-      "away_prob": 0.4566,
-      "home_prob": 0.5434,
-      "base_prob_home": 0.543,
-      "home_sp": "Chris Sale",
-      "home_sp_era": 2.14,
-      "away_sp": "Yoshinobu Yamamoto",
-      "away_sp_era": 2.16,
-      "pick": "Atlanta Braves",
-      "confidence": 0.5434,
+      "game_time": "4:00 PM ET",
+      "away_team": "Cleveland Guardians",
+      "home_team": "Chicago White Sox",
+      "away_prob": 0.4183,
+      "home_prob": 0.5817,
+      "base_prob_home": 0.5817,
+      "home_sp": "Sean Newcomb",
+      "home_sp_era": 4.2,
+      "away_sp": "Daniel Espino",
+      "away_sp_era": 4.2,
+      "pick": "Chicago White Sox",
+      "confidence": 0.5817,
       "actual_winner": null,
       "correct": null
     },
     {
-      "game_time": "9:30 PM ET",
+      "game_time": "6:00 PM ET",
+      "away_team": "Los Angeles Dodgers",
+      "home_team": "Atlanta Braves",
+      "away_prob": 0.4234,
+      "home_prob": 0.5766,
+      "base_prob_home": 0.543,
+      "home_sp": "Tyler Mahle",
+      "home_sp_era": 2.35,
+      "away_sp": "Tyler Glasnow",
+      "away_sp_era": 4.3,
+      "pick": "Atlanta Braves",
+      "confidence": 0.5766,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "8:00 PM ET",
+      "away_team": "Tampa Bay Rays",
+      "home_team": "New York Yankees",
+      "away_prob": 0.3742,
+      "home_prob": 0.6258,
+      "base_prob_home": 0.6209,
+      "home_sp": "Max Fried",
+      "home_sp_era": 2.73,
+      "away_sp": "Nick Martinez",
+      "away_sp_era": 3.03,
+      "pick": "New York Yankees",
+      "confidence": 0.6258,
+      "actual_winner": null,
+      "correct": null
+    },
+    {
+      "game_time": "10:00 PM ET",
       "away_team": "Milwaukee Brewers",
       "home_team": "San Diego Padres",
-      "away_prob": 0.5374,
-      "home_prob": 0.4626,
+      "away_prob": 0.5763,
+      "home_prob": 0.4237,
       "base_prob_home": 0.4258,
-      "home_sp": "Nick Pivetta",
-      "home_sp_era": 1.25,
-      "away_sp": "Dustin May",
-      "away_sp_era": 3.38,
+      "home_sp": "Walker Buehler",
+      "home_sp_era": 4.32,
+      "away_sp": "TBD",
+      "away_sp_era": null,
       "pick": "Milwaukee Brewers",
-      "confidence": 0.5374,
+      "confidence": 0.5763,
       "actual_winner": null,
       "correct": null
     }
   ],
   "yesterday": {
-    "date": "2026-10-05",
+    "date": "2026-10-06",
     "total": {
-      "wins": 1,
-      "losses": 1,
+      "wins": 0,
+      "losses": 2,
       "total": 2
     },
     "by_confidence": [
       {
         "band": "50-59%",
         "wins": 0,
-        "losses": 1,
-        "total": 1
+        "losses": 2,
+        "total": 2
       },
       {
         "band": "60-69%",
-        "wins": 1,
+        "wins": 0,
         "losses": 0,
-        "total": 1
+        "total": 0
       },
       {
         "band": "70-79%",
@@ -72,15 +104,15 @@
   "alltime": {
     "total": {
       "wins": 959,
-      "losses": 860,
-      "total": 1819
+      "losses": 862,
+      "total": 1821
     },
     "by_confidence": [
       {
         "band": "50-59%",
         "wins": 628,
-        "losses": 605,
-        "total": 1233
+        "losses": 607,
+        "total": 1235
       },
       {
         "band": "60-69%",
