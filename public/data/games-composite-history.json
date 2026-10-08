@@ -1,6 +1,35 @@
 {
   "records": [
     {
+      "date": "2026-10-08",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Cleveland Guardians",
+          "home_team": "Chicago White Sox",
+          "log5": {
+            "pick": "Chicago White Sox",
+            "confidence": 0.5138
+          },
+          "research": {
+            "pick": "Chicago White Sox",
+            "confidence": 0.5759
+          },
+          "xgboost": {
+            "pick": "Chicago White Sox",
+            "confidence": 0.5646
+          },
+          "random_forest": null,
+          "composite_pick": "Chicago White Sox",
+          "composite_confidence": 0.5514,
+          "vote_count": 3,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-07",
       "games": [
         {
@@ -24,8 +53,8 @@
           "composite_confidence": 0.5609,
           "vote_count": 2,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Tampa Bay Rays",
+          "correct": false
         },
         {
           "game_time": "6:00 PM ET",
@@ -48,8 +77,8 @@
           "composite_confidence": 0.5572,
           "vote_count": 2,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Los Angeles Dodgers",
+          "correct": false
         },
         {
           "game_time": "4:00 PM ET",
@@ -72,8 +101,8 @@
           "composite_confidence": 0.5571,
           "vote_count": 3,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Cleveland Guardians",
+          "correct": false
         },
         {
           "game_time": "10:00 PM ET",
@@ -96,8 +125,8 @@
           "composite_confidence": 0.5331,
           "vote_count": 2,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Milwaukee Brewers",
+          "correct": true
         }
       ]
     },

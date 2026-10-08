@@ -1,6 +1,25 @@
 {
   "records": [
     {
+      "date": "2026-10-08",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Cleveland Guardians",
+          "home_team": "Chicago White Sox",
+          "away_prob": 0.4241,
+          "home_prob": 0.5759,
+          "base_logr_home": 0.6072,
+          "base_xgb_home": 0.5046,
+          "base_mlp_home": 0.4919,
+          "pick": "Chicago White Sox",
+          "confidence": 0.5759,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-07",
       "games": [
         {
@@ -14,8 +33,8 @@
           "base_mlp_home": 0.4919,
           "pick": "Chicago White Sox",
           "confidence": 0.5759,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Cleveland Guardians",
+          "correct": false
         },
         {
           "game_time": "6:00 PM ET",
@@ -28,8 +47,8 @@
           "base_mlp_home": 0.4989,
           "pick": "Atlanta Braves",
           "confidence": 0.6134,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Los Angeles Dodgers",
+          "correct": false
         },
         {
           "game_time": "8:00 PM ET",
@@ -42,8 +61,8 @@
           "base_mlp_home": 0.4837,
           "pick": "New York Yankees",
           "confidence": 0.5651,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Tampa Bay Rays",
+          "correct": false
         },
         {
           "game_time": "10:00 PM ET",
@@ -56,8 +75,8 @@
           "base_mlp_home": 0.6597,
           "pick": "San Diego Padres",
           "confidence": 0.5335,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Milwaukee Brewers",
+          "correct": false
         }
       ]
     },

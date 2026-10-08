@@ -1,57 +1,9 @@
 {
-  "updated": "2026-10-07T19:44:34.969132+00:00",
-  "date": "2026-10-07",
+  "updated": "2026-10-08T19:40:53.975541+00:00",
+  "date": "2026-10-08",
   "predictions": [
     {
       "game_time": "8:00 PM ET",
-      "away_team": "Tampa Bay Rays",
-      "home_team": "New York Yankees",
-      "log5": {
-        "pick": "Tampa Bay Rays",
-        "confidence": 0.5082
-      },
-      "research": {
-        "pick": "New York Yankees",
-        "confidence": 0.5651
-      },
-      "xgboost": {
-        "pick": "New York Yankees",
-        "confidence": 0.6258
-      },
-      "random_forest": null,
-      "composite_pick": "New York Yankees",
-      "composite_confidence": 0.5609,
-      "vote_count": 2,
-      "total_votes": 3,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
-      "game_time": "6:00 PM ET",
-      "away_team": "Los Angeles Dodgers",
-      "home_team": "Atlanta Braves",
-      "log5": {
-        "pick": "Los Angeles Dodgers",
-        "confidence": 0.5185
-      },
-      "research": {
-        "pick": "Atlanta Braves",
-        "confidence": 0.6134
-      },
-      "xgboost": {
-        "pick": "Atlanta Braves",
-        "confidence": 0.5766
-      },
-      "random_forest": null,
-      "composite_pick": "Atlanta Braves",
-      "composite_confidence": 0.5572,
-      "vote_count": 2,
-      "total_votes": 3,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
-      "game_time": "4:00 PM ET",
       "away_team": "Cleveland Guardians",
       "home_team": "Chicago White Sox",
       "log5": {
@@ -64,36 +16,12 @@
       },
       "xgboost": {
         "pick": "Chicago White Sox",
-        "confidence": 0.5817
+        "confidence": 0.5646
       },
       "random_forest": null,
       "composite_pick": "Chicago White Sox",
-      "composite_confidence": 0.5571,
+      "composite_confidence": 0.5514,
       "vote_count": 3,
-      "total_votes": 3,
-      "actual_winner": null,
-      "correct": null
-    },
-    {
-      "game_time": "10:00 PM ET",
-      "away_team": "Milwaukee Brewers",
-      "home_team": "San Diego Padres",
-      "log5": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.5566
-      },
-      "research": {
-        "pick": "San Diego Padres",
-        "confidence": 0.5335
-      },
-      "xgboost": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.5763
-      },
-      "random_forest": null,
-      "composite_pick": "Milwaukee Brewers",
-      "composite_confidence": 0.5331,
-      "vote_count": 2,
       "total_votes": 3,
       "actual_winner": null,
       "correct": null
@@ -109,39 +37,39 @@
     },
     {
       "model": "Log5",
-      "wins": 1002,
-      "losses": 820,
-      "total": 1822,
-      "pct": 0.5499
+      "wins": 1005,
+      "losses": 821,
+      "total": 1826,
+      "pct": 0.5504
     },
     {
       "model": "Research",
       "wins": 989,
-      "losses": 832,
-      "total": 1821,
-      "pct": 0.5431
+      "losses": 836,
+      "total": 1825,
+      "pct": 0.5419
     },
     {
       "model": "XGBoost",
-      "wins": 959,
-      "losses": 862,
-      "total": 1821,
-      "pct": 0.5266
+      "wins": 960,
+      "losses": 865,
+      "total": 1825,
+      "pct": 0.526
     }
   ],
   "yesterday": {
-    "date": "2026-10-06",
+    "date": "2026-10-07",
     "total": {
-      "wins": 0,
-      "losses": 2,
-      "total": 2
+      "wins": 1,
+      "losses": 3,
+      "total": 4
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 0,
-        "losses": 2,
-        "total": 2
+        "wins": 1,
+        "losses": 3,
+        "total": 4
       },
       {
         "band": "60-69%",
@@ -165,16 +93,16 @@
   },
   "alltime": {
     "total": {
-      "wins": 1002,
-      "losses": 820,
-      "total": 1822
+      "wins": 1003,
+      "losses": 823,
+      "total": 1826
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 830,
-        "losses": 699,
-        "total": 1529
+        "wins": 831,
+        "losses": 702,
+        "total": 1533
       },
       {
         "band": "60-69%",
