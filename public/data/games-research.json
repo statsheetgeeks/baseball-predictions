@@ -1,41 +1,26 @@
 {
-  "updated": "2026-10-08T19:40:40.283923+00:00",
-  "date": "2026-10-08",
-  "predictions": [
-    {
-      "game_time": "8:00 PM ET",
-      "away_team": "Cleveland Guardians",
-      "home_team": "Chicago White Sox",
-      "away_prob": 0.4241,
-      "home_prob": 0.5759,
-      "base_logr_home": 0.6072,
-      "base_xgb_home": 0.5046,
-      "base_mlp_home": 0.4919,
-      "pick": "Chicago White Sox",
-      "confidence": 0.5759,
-      "actual_winner": null,
-      "correct": null
-    }
-  ],
+  "updated": "2026-10-09T19:16:08.842928+00:00",
+  "date": "2026-10-09",
+  "predictions": [],
   "yesterday": {
-    "date": "2026-10-07",
+    "date": "2026-10-08",
     "total": {
       "wins": 0,
-      "losses": 4,
-      "total": 4
+      "losses": 1,
+      "total": 1
     },
     "by_confidence": [
       {
         "band": "50-59%",
         "wins": 0,
-        "losses": 3,
-        "total": 3
+        "losses": 1,
+        "total": 1
       },
       {
         "band": "60-69%",
         "wins": 0,
-        "losses": 1,
-        "total": 1
+        "losses": 0,
+        "total": 0
       },
       {
         "band": "70-79%",
@@ -54,15 +39,15 @@
   "alltime": {
     "total": {
       "wins": 989,
-      "losses": 836,
-      "total": 1825
+      "losses": 837,
+      "total": 1826
     },
     "by_confidence": [
       {
         "band": "50-59%",
         "wins": 813,
-        "losses": 719,
-        "total": 1532
+        "losses": 720,
+        "total": 1533
       },
       {
         "band": "60-69%",
