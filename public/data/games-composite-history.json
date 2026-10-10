@@ -1,6 +1,35 @@
 {
   "records": [
     {
+      "date": "2026-10-10",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Chicago White Sox",
+          "home_team": "Cleveland Guardians",
+          "log5": {
+            "pick": "Cleveland Guardians",
+            "confidence": 0.5262
+          },
+          "research": {
+            "pick": "Cleveland Guardians",
+            "confidence": 0.562
+          },
+          "xgboost": {
+            "pick": "Cleveland Guardians",
+            "confidence": 0.511
+          },
+          "random_forest": null,
+          "composite_pick": "Cleveland Guardians",
+          "composite_confidence": 0.5331,
+          "vote_count": 3,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-09",
       "games": []
     },

@@ -1,6 +1,25 @@
 {
   "records": [
     {
+      "date": "2026-10-10",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Chicago White Sox",
+          "home_team": "Cleveland Guardians",
+          "away_prob": 0.438,
+          "home_prob": 0.562,
+          "base_logr_home": 0.5696,
+          "base_xgb_home": 0.5311,
+          "base_mlp_home": 0.8175,
+          "pick": "Cleveland Guardians",
+          "confidence": 0.562,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-09",
       "games": []
     },
