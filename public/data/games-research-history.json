@@ -1,6 +1,25 @@
 {
   "records": [
     {
+      "date": "2026-10-11",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Los Angeles Dodgers",
+          "home_team": "Milwaukee Brewers",
+          "away_prob": 0.3866,
+          "home_prob": 0.6134,
+          "base_logr_home": 0.6029,
+          "base_xgb_home": 0.5616,
+          "base_mlp_home": 0.6316,
+          "pick": "Milwaukee Brewers",
+          "confidence": 0.6134,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-10",
       "games": [
         {
@@ -14,8 +33,8 @@
           "base_mlp_home": 0.8175,
           "pick": "Cleveland Guardians",
           "confidence": 0.562,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Cleveland Guardians",
+          "correct": true
         }
       ]
     },

@@ -1,6 +1,27 @@
 {
   "records": [
     {
+      "date": "2026-10-11",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Los Angeles Dodgers",
+          "home_team": "Milwaukee Brewers",
+          "away_prob": 0.3656,
+          "home_prob": 0.6344,
+          "base_prob_home": 0.6349,
+          "home_sp": "Jacob Misiorowski",
+          "home_sp_era": 2.28,
+          "away_sp": "Tarik Skubal",
+          "away_sp_era": 2.25,
+          "pick": "Milwaukee Brewers",
+          "confidence": 0.6344,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-10",
       "games": [
         {
@@ -16,8 +37,8 @@
           "away_sp_era": 1.44,
           "pick": "Cleveland Guardians",
           "confidence": 0.511,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Cleveland Guardians",
+          "correct": true
         }
       ]
     },
