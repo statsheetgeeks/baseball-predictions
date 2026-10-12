@@ -1,6 +1,43 @@
 {
   "records": [
     {
+      "date": "2026-10-12",
+      "games": [
+        {
+          "game_time": "5:00 PM ET",
+          "away_team": "Los Angeles Dodgers",
+          "home_team": "Milwaukee Brewers",
+          "away_prob": 0.3653,
+          "home_prob": 0.6347,
+          "base_prob_home": 0.6349,
+          "home_sp": "Logan Henderson",
+          "home_sp_era": 2.17,
+          "away_sp": "Yoshinobu Yamamoto",
+          "away_sp_era": 2.16,
+          "pick": "Milwaukee Brewers",
+          "confidence": 0.6347,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Cleveland Guardians",
+          "home_team": "Tampa Bay Rays",
+          "away_prob": 0.3164,
+          "home_prob": 0.6836,
+          "base_prob_home": 0.652,
+          "home_sp": "Drew Rasmussen",
+          "home_sp_era": 1.42,
+          "away_sp": "Foster Griffin",
+          "away_sp_era": 3.46,
+          "pick": "Tampa Bay Rays",
+          "confidence": 0.6836,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-11",
       "games": [
         {
@@ -16,8 +53,8 @@
           "away_sp_era": 2.25,
           "pick": "Milwaukee Brewers",
           "confidence": 0.6344,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Milwaukee Brewers",
+          "correct": true
         }
       ]
     },

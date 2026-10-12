@@ -1,6 +1,59 @@
 {
   "records": [
     {
+      "date": "2026-10-12",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Cleveland Guardians",
+          "home_team": "Tampa Bay Rays",
+          "log5": {
+            "pick": "Tampa Bay Rays",
+            "confidence": 0.6011
+          },
+          "research": {
+            "pick": "Tampa Bay Rays",
+            "confidence": 0.5335
+          },
+          "xgboost": {
+            "pick": "Tampa Bay Rays",
+            "confidence": 0.6836
+          },
+          "random_forest": null,
+          "composite_pick": "Tampa Bay Rays",
+          "composite_confidence": 0.6061,
+          "vote_count": 3,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        },
+        {
+          "game_time": "5:00 PM ET",
+          "away_team": "Los Angeles Dodgers",
+          "home_team": "Milwaukee Brewers",
+          "log5": {
+            "pick": "Milwaukee Brewers",
+            "confidence": 0.5398
+          },
+          "research": {
+            "pick": "Milwaukee Brewers",
+            "confidence": 0.6134
+          },
+          "xgboost": {
+            "pick": "Milwaukee Brewers",
+            "confidence": 0.6347
+          },
+          "random_forest": null,
+          "composite_pick": "Milwaukee Brewers",
+          "composite_confidence": 0.596,
+          "vote_count": 3,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-11",
       "games": [
         {
@@ -24,8 +77,8 @@
           "composite_confidence": 0.5959,
           "vote_count": 3,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Milwaukee Brewers",
+          "correct": true
         }
       ]
     },
