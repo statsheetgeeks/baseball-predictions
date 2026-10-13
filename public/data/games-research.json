@@ -1,21 +1,7 @@
 {
-  "updated": "2026-10-12T21:58:58.798693+00:00",
-  "date": "2026-10-12",
+  "updated": "2026-10-13T20:05:52.008201+00:00",
+  "date": "2026-10-13",
   "predictions": [
-    {
-      "game_time": "5:00 PM ET",
-      "away_team": "Los Angeles Dodgers",
-      "home_team": "Milwaukee Brewers",
-      "away_prob": 0.3866,
-      "home_prob": 0.6134,
-      "base_logr_home": 0.6029,
-      "base_xgb_home": 0.5616,
-      "base_mlp_home": 0.6316,
-      "pick": "Milwaukee Brewers",
-      "confidence": 0.6134,
-      "actual_winner": null,
-      "correct": null
-    },
     {
       "game_time": "8:00 PM ET",
       "away_team": "Cleveland Guardians",
@@ -32,18 +18,18 @@
     }
   ],
   "yesterday": {
-    "date": "2026-10-11",
+    "date": "2026-10-12",
     "total": {
       "wins": 1,
-      "losses": 0,
-      "total": 1
+      "losses": 1,
+      "total": 2
     },
     "by_confidence": [
       {
         "band": "50-59%",
         "wins": 0,
-        "losses": 0,
-        "total": 0
+        "losses": 1,
+        "total": 1
       },
       {
         "band": "60-69%",
@@ -67,22 +53,22 @@
   },
   "alltime": {
     "total": {
-      "wins": 991,
-      "losses": 837,
-      "total": 1828
+      "wins": 992,
+      "losses": 838,
+      "total": 1830
     },
     "by_confidence": [
       {
         "band": "50-59%",
         "wins": 814,
-        "losses": 720,
-        "total": 1534
+        "losses": 721,
+        "total": 1535
       },
       {
         "band": "60-69%",
-        "wins": 177,
+        "wins": 178,
         "losses": 117,
-        "total": 294
+        "total": 295
       },
       {
         "band": "70-79%",

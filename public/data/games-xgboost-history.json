@@ -1,6 +1,27 @@
 {
   "records": [
     {
+      "date": "2026-10-13",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Cleveland Guardians",
+          "home_team": "Tampa Bay Rays",
+          "away_prob": 0.3133,
+          "home_prob": 0.6867,
+          "base_prob_home": 0.652,
+          "home_sp": "Freddy Peralta",
+          "home_sp_era": 0.96,
+          "away_sp": "Parker Messick",
+          "away_sp_era": 3.2,
+          "pick": "Tampa Bay Rays",
+          "confidence": 0.6867,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-12",
       "games": [
         {
@@ -16,8 +37,8 @@
           "away_sp_era": 2.16,
           "pick": "Milwaukee Brewers",
           "confidence": 0.6347,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Milwaukee Brewers",
+          "correct": true
         },
         {
           "game_time": "8:00 PM ET",
@@ -32,8 +53,8 @@
           "away_sp_era": 3.46,
           "pick": "Tampa Bay Rays",
           "confidence": 0.6836,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Cleveland Guardians",
+          "correct": false
         }
       ]
     },
