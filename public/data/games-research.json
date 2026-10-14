@@ -1,41 +1,41 @@
 {
-  "updated": "2026-10-13T20:05:52.008201+00:00",
-  "date": "2026-10-13",
+  "updated": "2026-10-14T18:18:36.927370+00:00",
+  "date": "2026-10-14",
   "predictions": [
     {
       "game_time": "8:00 PM ET",
-      "away_team": "Cleveland Guardians",
-      "home_team": "Tampa Bay Rays",
-      "away_prob": 0.4665,
-      "home_prob": 0.5335,
-      "base_logr_home": 0.551,
-      "base_xgb_home": 0.5825,
-      "base_mlp_home": 0.5224,
-      "pick": "Tampa Bay Rays",
-      "confidence": 0.5335,
+      "away_team": "Milwaukee Brewers",
+      "home_team": "Los Angeles Dodgers",
+      "away_prob": 0.3866,
+      "home_prob": 0.6134,
+      "base_logr_home": 0.6107,
+      "base_xgb_home": 0.6603,
+      "base_mlp_home": 0.6817,
+      "pick": "Los Angeles Dodgers",
+      "confidence": 0.6134,
       "actual_winner": null,
       "correct": null
     }
   ],
   "yesterday": {
-    "date": "2026-10-12",
+    "date": "2026-10-13",
     "total": {
       "wins": 1,
-      "losses": 1,
-      "total": 2
+      "losses": 0,
+      "total": 1
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 0,
-        "losses": 1,
+        "wins": 1,
+        "losses": 0,
         "total": 1
       },
       {
         "band": "60-69%",
-        "wins": 1,
+        "wins": 0,
         "losses": 0,
-        "total": 1
+        "total": 0
       },
       {
         "band": "70-79%",
@@ -53,16 +53,16 @@
   },
   "alltime": {
     "total": {
-      "wins": 992,
+      "wins": 993,
       "losses": 838,
-      "total": 1830
+      "total": 1831
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 814,
+        "wins": 815,
         "losses": 721,
-        "total": 1535
+        "total": 1536
       },
       {
         "band": "60-69%",

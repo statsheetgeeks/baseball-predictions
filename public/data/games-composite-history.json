@@ -1,6 +1,35 @@
 {
   "records": [
     {
+      "date": "2026-10-14",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Milwaukee Brewers",
+          "home_team": "Los Angeles Dodgers",
+          "log5": {
+            "pick": "Los Angeles Dodgers",
+            "confidence": 0.5002
+          },
+          "research": {
+            "pick": "Los Angeles Dodgers",
+            "confidence": 0.6134
+          },
+          "xgboost": {
+            "pick": "Los Angeles Dodgers",
+            "confidence": 0.5522
+          },
+          "random_forest": null,
+          "composite_pick": "Los Angeles Dodgers",
+          "composite_confidence": 0.5553,
+          "vote_count": 3,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-13",
       "games": [
         {
@@ -24,8 +53,8 @@
           "composite_confidence": 0.6071,
           "vote_count": 3,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Tampa Bay Rays",
+          "correct": true
         }
       ]
     },

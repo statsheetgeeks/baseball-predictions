@@ -1,6 +1,25 @@
 {
   "records": [
     {
+      "date": "2026-10-14",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Milwaukee Brewers",
+          "home_team": "Los Angeles Dodgers",
+          "away_prob": 0.3866,
+          "home_prob": 0.6134,
+          "base_logr_home": 0.6107,
+          "base_xgb_home": 0.6603,
+          "base_mlp_home": 0.6817,
+          "pick": "Los Angeles Dodgers",
+          "confidence": 0.6134,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-13",
       "games": [
         {
@@ -14,8 +33,8 @@
           "base_mlp_home": 0.5224,
           "pick": "Tampa Bay Rays",
           "confidence": 0.5335,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Tampa Bay Rays",
+          "correct": true
         }
       ]
     },
