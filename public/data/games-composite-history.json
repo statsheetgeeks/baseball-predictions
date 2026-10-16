@@ -1,6 +1,35 @@
 {
   "records": [
     {
+      "date": "2026-10-16",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Tampa Bay Rays",
+          "home_team": "Cleveland Guardians",
+          "log5": {
+            "pick": "Tampa Bay Rays",
+            "confidence": 0.5611
+          },
+          "research": {
+            "pick": "Cleveland Guardians",
+            "confidence": 0.562
+          },
+          "xgboost": {
+            "pick": "Cleveland Guardians",
+            "confidence": 0.5116
+          },
+          "random_forest": null,
+          "composite_pick": "Cleveland Guardians",
+          "composite_confidence": 0.5042,
+          "vote_count": 2,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-15",
       "games": [
         {
@@ -24,8 +53,8 @@
           "composite_confidence": 0.565,
           "vote_count": 3,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Milwaukee Brewers",
+          "correct": false
         },
         {
           "game_time": "1:00 PM ET",
@@ -48,8 +77,8 @@
           "composite_confidence": 0.5007,
           "vote_count": 2,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Cleveland Guardians",
+          "correct": true
         }
       ]
     },

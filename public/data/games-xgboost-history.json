@@ -1,6 +1,27 @@
 {
   "records": [
     {
+      "date": "2026-10-16",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Tampa Bay Rays",
+          "home_team": "Cleveland Guardians",
+          "away_prob": 0.4884,
+          "home_prob": 0.5116,
+          "base_prob_home": 0.532,
+          "home_sp": "Shawn Armstrong",
+          "home_sp_era": 4.2,
+          "away_sp": "Nick Martinez",
+          "away_sp_era": 3.03,
+          "pick": "Cleveland Guardians",
+          "confidence": 0.5116,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-15",
       "games": [
         {
@@ -16,8 +37,8 @@
           "away_sp_era": 0.78,
           "pick": "Cleveland Guardians",
           "confidence": 0.5013,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Cleveland Guardians",
+          "correct": true
         },
         {
           "game_time": "8:00 PM ET",
@@ -32,8 +53,8 @@
           "away_sp_era": 6.65,
           "pick": "Los Angeles Dodgers",
           "confidence": 0.5813,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Milwaukee Brewers",
+          "correct": false
         }
       ]
     },
