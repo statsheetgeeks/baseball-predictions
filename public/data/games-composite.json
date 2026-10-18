@@ -1,9 +1,9 @@
 {
-  "updated": "2026-10-17T16:50:45.122959+00:00",
-  "date": "2026-10-17",
+  "updated": "2026-10-18T17:05:11.229993+00:00",
+  "date": "2026-10-18",
   "predictions": [
     {
-      "game_time": "8:08 PM ET",
+      "game_time": "5:08 PM ET",
       "away_team": "Tampa Bay Rays",
       "home_team": "Cleveland Guardians",
       "log5": {
@@ -16,11 +16,11 @@
       },
       "xgboost": {
         "pick": "Cleveland Guardians",
-        "confidence": 0.5116
+        "confidence": 0.5009
       },
       "random_forest": null,
       "composite_pick": "Cleveland Guardians",
-      "composite_confidence": 0.5042,
+      "composite_confidence": 0.5006,
       "vote_count": 2,
       "total_votes": 3,
       "actual_winner": null,
@@ -37,39 +37,39 @@
     },
     {
       "model": "Log5",
-      "wins": 1009,
+      "wins": 1010,
       "losses": 826,
-      "total": 1835,
-      "pct": 0.5499
+      "total": 1836,
+      "pct": 0.5501
     },
     {
       "model": "Research",
       "wins": 994,
-      "losses": 840,
-      "total": 1834,
-      "pct": 0.542
+      "losses": 841,
+      "total": 1835,
+      "pct": 0.5417
     },
     {
       "model": "XGBoost",
       "wins": 965,
-      "losses": 869,
-      "total": 1834,
-      "pct": 0.5262
+      "losses": 870,
+      "total": 1835,
+      "pct": 0.5259
     }
   ],
   "yesterday": {
-    "date": "2026-10-16",
+    "date": "2026-10-17",
     "total": {
       "wins": 0,
-      "losses": 0,
-      "total": 0
+      "losses": 1,
+      "total": 1
     },
     "by_confidence": [
       {
         "band": "50-59%",
         "wins": 0,
-        "losses": 0,
-        "total": 0
+        "losses": 1,
+        "total": 1
       },
       {
         "band": "60-69%",
@@ -94,15 +94,15 @@
   "alltime": {
     "total": {
       "wins": 1008,
-      "losses": 827,
-      "total": 1835
+      "losses": 828,
+      "total": 1836
     },
     "by_confidence": [
       {
         "band": "50-59%",
         "wins": 835,
-        "losses": 705,
-        "total": 1540
+        "losses": 706,
+        "total": 1541
       },
       {
         "band": "60-69%",
