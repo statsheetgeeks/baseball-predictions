@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-18T17:04:52.773901+00:00",
-  "date": "2026-10-18",
+  "updated": "2026-10-19T19:39:39.343266+00:00",
+  "date": "2026-10-19",
   "predictions": [
     {
-      "game_time": "5:08 PM ET",
-      "away_team": "Tampa Bay Rays",
-      "home_team": "Cleveland Guardians",
-      "away_prob": 0.438,
-      "home_prob": 0.562,
-      "base_logr_home": 0.5693,
-      "base_xgb_home": 0.5311,
-      "base_mlp_home": 0.8141,
-      "pick": "Cleveland Guardians",
-      "confidence": 0.562,
+      "game_time": "8:08 PM ET",
+      "away_team": "Cleveland Guardians",
+      "home_team": "Tampa Bay Rays",
+      "away_prob": 0.4665,
+      "home_prob": 0.5335,
+      "base_logr_home": 0.551,
+      "base_xgb_home": 0.5825,
+      "base_mlp_home": 0.5224,
+      "pick": "Tampa Bay Rays",
+      "confidence": 0.5335,
       "actual_winner": null,
       "correct": null
     }
   ],
   "yesterday": {
-    "date": "2026-10-17",
+    "date": "2026-10-18",
     "total": {
       "wins": 0,
       "losses": 1,
@@ -54,15 +54,15 @@
   "alltime": {
     "total": {
       "wins": 994,
-      "losses": 841,
-      "total": 1835
+      "losses": 842,
+      "total": 1836
     },
     "by_confidence": [
       {
         "band": "50-59%",
         "wins": 816,
-        "losses": 722,
-        "total": 1538
+        "losses": 723,
+        "total": 1539
       },
       {
         "band": "60-69%",

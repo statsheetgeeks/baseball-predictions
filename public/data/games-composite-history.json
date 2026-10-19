@@ -1,6 +1,35 @@
 {
   "records": [
     {
+      "date": "2026-10-19",
+      "games": [
+        {
+          "game_time": "8:08 PM ET",
+          "away_team": "Cleveland Guardians",
+          "home_team": "Tampa Bay Rays",
+          "log5": {
+            "pick": "Tampa Bay Rays",
+            "confidence": 0.6011
+          },
+          "research": {
+            "pick": "Tampa Bay Rays",
+            "confidence": 0.5335
+          },
+          "xgboost": {
+            "pick": "Tampa Bay Rays",
+            "confidence": 0.7015
+          },
+          "random_forest": null,
+          "composite_pick": "Tampa Bay Rays",
+          "composite_confidence": 0.612,
+          "vote_count": 3,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-18",
       "games": [
         {
@@ -24,8 +53,8 @@
           "composite_confidence": 0.5006,
           "vote_count": 2,
           "total_votes": 3,
-          "actual_winner": null,
-          "correct": null
+          "actual_winner": "Tampa Bay Rays",
+          "correct": false
         }
       ]
     },
