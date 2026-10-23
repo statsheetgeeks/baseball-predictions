@@ -1,7 +1,32 @@
 {
-  "updated": "2026-10-22T18:18:12.641872+00:00",
-  "date": "2026-10-22",
-  "predictions": [],
+  "updated": "2026-10-23T18:06:13.031297+00:00",
+  "date": "2026-10-23",
+  "predictions": [
+    {
+      "game_time": "8:00 PM ET",
+      "away_team": "Tampa Bay Rays",
+      "home_team": "Milwaukee Brewers",
+      "log5": {
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.5527
+      },
+      "research": {
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.6134
+      },
+      "xgboost": {
+        "pick": "Milwaukee Brewers",
+        "confidence": 0.6492
+      },
+      "random_forest": null,
+      "composite_pick": "Milwaukee Brewers",
+      "composite_confidence": 0.6051,
+      "vote_count": 3,
+      "total_votes": 3,
+      "actual_winner": null,
+      "correct": null
+    }
+  ],
   "model_standings": [
     {
       "model": "Random Forest",
@@ -33,7 +58,7 @@
     }
   ],
   "yesterday": {
-    "date": "2026-10-21",
+    "date": "2026-10-22",
     "total": {
       "wins": 0,
       "losses": 0,

@@ -1,6 +1,35 @@
 {
   "records": [
     {
+      "date": "2026-10-23",
+      "games": [
+        {
+          "game_time": "8:00 PM ET",
+          "away_team": "Tampa Bay Rays",
+          "home_team": "Milwaukee Brewers",
+          "log5": {
+            "pick": "Milwaukee Brewers",
+            "confidence": 0.5527
+          },
+          "research": {
+            "pick": "Milwaukee Brewers",
+            "confidence": 0.6134
+          },
+          "xgboost": {
+            "pick": "Milwaukee Brewers",
+            "confidence": 0.6492
+          },
+          "random_forest": null,
+          "composite_pick": "Milwaukee Brewers",
+          "composite_confidence": 0.6051,
+          "vote_count": 3,
+          "total_votes": 3,
+          "actual_winner": null,
+          "correct": null
+        }
+      ]
+    },
+    {
       "date": "2026-10-22",
       "games": []
     },
