@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-23T18:06:13.031297+00:00",
-  "date": "2026-10-23",
+  "updated": "2026-10-24T17:13:12.028264+00:00",
+  "date": "2026-10-24",
   "predictions": [
     {
       "game_time": "8:00 PM ET",
@@ -16,11 +16,11 @@
       },
       "xgboost": {
         "pick": "Milwaukee Brewers",
-        "confidence": 0.6492
+        "confidence": 0.625
       },
       "random_forest": null,
       "composite_pick": "Milwaukee Brewers",
-      "composite_confidence": 0.6051,
+      "composite_confidence": 0.597,
       "vote_count": 3,
       "total_votes": 3,
       "actual_winner": null,
@@ -37,32 +37,32 @@
     },
     {
       "model": "Log5",
-      "wins": 1012,
+      "wins": 1013,
       "losses": 826,
-      "total": 1838,
-      "pct": 0.5506
+      "total": 1839,
+      "pct": 0.5508
     },
     {
       "model": "Research",
-      "wins": 995,
+      "wins": 996,
       "losses": 842,
-      "total": 1837,
-      "pct": 0.5416
+      "total": 1838,
+      "pct": 0.5419
     },
     {
       "model": "XGBoost",
-      "wins": 966,
+      "wins": 967,
       "losses": 871,
-      "total": 1837,
-      "pct": 0.5259
+      "total": 1838,
+      "pct": 0.5261
     }
   ],
   "yesterday": {
-    "date": "2026-10-22",
+    "date": "2026-10-23",
     "total": {
-      "wins": 0,
+      "wins": 1,
       "losses": 0,
-      "total": 0
+      "total": 1
     },
     "by_confidence": [
       {
@@ -73,9 +73,9 @@
       },
       {
         "band": "60-69%",
-        "wins": 0,
+        "wins": 1,
         "losses": 0,
-        "total": 0
+        "total": 1
       },
       {
         "band": "70-79%",
@@ -93,9 +93,9 @@
   },
   "alltime": {
     "total": {
-      "wins": 1009,
+      "wins": 1010,
       "losses": 829,
-      "total": 1838
+      "total": 1839
     },
     "by_confidence": [
       {
@@ -106,9 +106,9 @@
       },
       {
         "band": "60-69%",
-        "wins": 144,
+        "wins": 145,
         "losses": 95,
-        "total": 239
+        "total": 240
       },
       {
         "band": "70-79%",
