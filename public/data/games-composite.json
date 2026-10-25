@@ -1,32 +1,7 @@
 {
-  "updated": "2026-10-24T17:13:12.028264+00:00",
-  "date": "2026-10-24",
-  "predictions": [
-    {
-      "game_time": "8:00 PM ET",
-      "away_team": "Tampa Bay Rays",
-      "home_team": "Milwaukee Brewers",
-      "log5": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.5527
-      },
-      "research": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.6134
-      },
-      "xgboost": {
-        "pick": "Milwaukee Brewers",
-        "confidence": 0.625
-      },
-      "random_forest": null,
-      "composite_pick": "Milwaukee Brewers",
-      "composite_confidence": 0.597,
-      "vote_count": 3,
-      "total_votes": 3,
-      "actual_winner": null,
-      "correct": null
-    }
-  ],
+  "updated": "2026-10-25T17:24:46.949533+00:00",
+  "date": "2026-10-25",
+  "predictions": [],
   "model_standings": [
     {
       "model": "Random Forest",
@@ -37,28 +12,28 @@
     },
     {
       "model": "Log5",
-      "wins": 1013,
+      "wins": 1014,
       "losses": 826,
-      "total": 1839,
-      "pct": 0.5508
+      "total": 1840,
+      "pct": 0.5511
     },
     {
       "model": "Research",
-      "wins": 996,
+      "wins": 997,
       "losses": 842,
-      "total": 1838,
-      "pct": 0.5419
+      "total": 1839,
+      "pct": 0.5421
     },
     {
       "model": "XGBoost",
-      "wins": 967,
+      "wins": 968,
       "losses": 871,
-      "total": 1838,
-      "pct": 0.5261
+      "total": 1839,
+      "pct": 0.5264
     }
   ],
   "yesterday": {
-    "date": "2026-10-23",
+    "date": "2026-10-24",
     "total": {
       "wins": 1,
       "losses": 0,
@@ -67,15 +42,15 @@
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 0,
-        "losses": 0,
-        "total": 0
-      },
-      {
-        "band": "60-69%",
         "wins": 1,
         "losses": 0,
         "total": 1
+      },
+      {
+        "band": "60-69%",
+        "wins": 0,
+        "losses": 0,
+        "total": 0
       },
       {
         "band": "70-79%",
@@ -93,16 +68,16 @@
   },
   "alltime": {
     "total": {
-      "wins": 1010,
+      "wins": 1011,
       "losses": 829,
-      "total": 1839
+      "total": 1840
     },
     "by_confidence": [
       {
         "band": "50-59%",
-        "wins": 835,
+        "wins": 836,
         "losses": 707,
-        "total": 1542
+        "total": 1543
       },
       {
         "band": "60-69%",

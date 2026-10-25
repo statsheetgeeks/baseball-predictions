@@ -1,24 +1,9 @@
 {
-  "updated": "2026-10-24T17:13:00.272248+00:00",
-  "date": "2026-10-24",
-  "predictions": [
-    {
-      "game_time": "8:00 PM ET",
-      "away_team": "Tampa Bay Rays",
-      "home_team": "Milwaukee Brewers",
-      "away_prob": 0.3866,
-      "home_prob": 0.6134,
-      "base_logr_home": 0.623,
-      "base_xgb_home": 0.5616,
-      "base_mlp_home": 0.6357,
-      "pick": "Milwaukee Brewers",
-      "confidence": 0.6134,
-      "actual_winner": null,
-      "correct": null
-    }
-  ],
+  "updated": "2026-10-25T17:24:36.983881+00:00",
+  "date": "2026-10-25",
+  "predictions": [],
   "yesterday": {
-    "date": "2026-10-23",
+    "date": "2026-10-24",
     "total": {
       "wins": 1,
       "losses": 0,
@@ -53,9 +38,9 @@
   },
   "alltime": {
     "total": {
-      "wins": 996,
+      "wins": 997,
       "losses": 842,
-      "total": 1838
+      "total": 1839
     },
     "by_confidence": [
       {
@@ -66,9 +51,9 @@
       },
       {
         "band": "60-69%",
-        "wins": 179,
+        "wins": 180,
         "losses": 119,
-        "total": 298
+        "total": 299
       },
       {
         "band": "70-79%",
