@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-26T19:45:32.373484+00:00",
-  "date": "2026-10-26",
+  "updated": "2026-10-27T19:13:52.914229+00:00",
+  "date": "2026-10-27",
   "predictions": [
     {
       "game_time": "8:00 PM ET",
@@ -16,11 +16,11 @@
       },
       "xgboost": {
         "pick": "Tampa Bay Rays",
-        "confidence": 0.658
+        "confidence": 0.6993
       },
       "random_forest": null,
       "composite_pick": "Tampa Bay Rays",
-      "composite_confidence": 0.5486,
+      "composite_confidence": 0.5623,
       "vote_count": 2,
       "total_votes": 3,
       "actual_winner": null,
@@ -37,39 +37,39 @@
     },
     {
       "model": "Log5",
-      "wins": 1014,
+      "wins": 1015,
       "losses": 826,
-      "total": 1840,
-      "pct": 0.5511
+      "total": 1841,
+      "pct": 0.5513
     },
     {
       "model": "Research",
       "wins": 997,
-      "losses": 842,
-      "total": 1839,
-      "pct": 0.5421
+      "losses": 843,
+      "total": 1840,
+      "pct": 0.5418
     },
     {
       "model": "XGBoost",
       "wins": 968,
-      "losses": 871,
-      "total": 1839,
-      "pct": 0.5264
+      "losses": 872,
+      "total": 1840,
+      "pct": 0.5261
     }
   ],
   "yesterday": {
-    "date": "2026-10-25",
+    "date": "2026-10-26",
     "total": {
       "wins": 0,
-      "losses": 0,
-      "total": 0
+      "losses": 1,
+      "total": 1
     },
     "by_confidence": [
       {
         "band": "50-59%",
         "wins": 0,
-        "losses": 0,
-        "total": 0
+        "losses": 1,
+        "total": 1
       },
       {
         "band": "60-69%",
@@ -94,15 +94,15 @@
   "alltime": {
     "total": {
       "wins": 1011,
-      "losses": 829,
-      "total": 1840
+      "losses": 830,
+      "total": 1841
     },
     "by_confidence": [
       {
         "band": "50-59%",
         "wins": 836,
-        "losses": 707,
-        "total": 1543
+        "losses": 708,
+        "total": 1544
       },
       {
         "band": "60-69%",
